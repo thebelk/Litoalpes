@@ -6,9 +6,8 @@
 @parent
 @stop
 @section('content')
-<div class="col col-sm-3">   
+<div class="col col-sm-3 complement">   
     <h3 class="highlight nav nav-stacked ">Cliente <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
-    <hr>
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color"> Datos </h3>
@@ -41,6 +40,7 @@
             </div>
         </div>
     </div> 
+    <hr>
     <div id="sidebar"> 
         <div class=" bhoechie-tab-menu">                  
             <div class="list-group">                        
@@ -69,7 +69,7 @@
                 <center>
                     <h1 class="glyphicon glyphicon-th-list color" ></h1>
                     <h2> Trabajos por Realizar</h2>
-                    <h4>Content</h4>
+                    <h5>Content</h5>
                     <div class="panel panel-default contenido">
                         <!-- Default panel contents -->
                         <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Nombre Trabajo</h3></div>
@@ -104,14 +104,21 @@
                 </center>
             </div>
         </div>
-        <!-- Thabajis -->
-        <div class="bhoechie-tab-content">
-            <center>
-                <h1 class="glyphicon glyphicon-th-list" style="font-size:12em;"></h1>
-                <h2>Trabajos</h2>
-            </center>
-        </div>
+        <!-- menu-->
+        <center>
+            <div class="list-group">
+                <a href="#" class="list-group-item ">
+                    <h1 class="glyphicon glyphicon-home"></h1>
+                    <h2>Orden/Trabajo</h2>
+                </a>
+                <a href="#" class="list-group-item ">
+                    <h1 class="glyphicon glyphicon-th-list"></h1>
+                    <h2>Home</h2>
+                </a>
+
+            </div>
+        </center>
     </div>
-</div>          
+</div>       
 
 @stop

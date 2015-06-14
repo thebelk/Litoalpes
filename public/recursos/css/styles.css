@@ -39,11 +39,11 @@ avbar-nav{
 }
 h1 {
     font-size:5em;
-    color:#55518a;
+    color:#565656;
 }
 h3,h2{
     margin-top: 0;
-    color:#55518a;
+    color:#565656;
 }
 h3.color{
     color:#428BCA;
@@ -55,8 +55,19 @@ h3.color{
     background-color:#fff; 
     border-color:#469DE0;
 }
-.contenido {
-    margin: 45px;
-    padding: 15px;  
+
+.complement {     
+    background-color: #E9E9E9;
+    padding: 8px;
+}
+@media  (max-width: 768px) { 
+    .dropdown{
+        margin-top:38px;
+    }
 }
 
+
+.dropdown-menu{
+    padding:8px;  
+    width: 285px;
+}

@@ -5,9 +5,10 @@
 @section('header')
 @parent
 @stop
-@section('content')<div class="col col-sm-3">   
+@section('content')
+
+<div class="col col-sm-3 complement">   
     <h3 class="highlight nav nav-stacked ">Clientes <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
-    <hr>
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color"> Datos </h3>
@@ -40,6 +41,7 @@
             </div>
         </div>
     </div> 
+    <hr>
     <div id="sidebar"> 
         <div class=" bhoechie-tab-menu">                  
             <div class="list-group">                        
@@ -63,6 +65,7 @@
     </div>
 </div>  
 
+
 <div class="col col-sm-9">
     <div class="row panel">
         <div class="bhoechie-tab">                     
@@ -71,10 +74,10 @@
                 <center>
                     <h1 class="glyphicon glyphicon-user color" ></h1>
                     <h2> Lista de Clientes</h2>
-                    <h6>Content</h6>
-                    <div class="panel panel-default contenido ">
+                    <h5>Content</h5>
+                    <div class="panel panel-default  contenido ">
                         <!-- Default panel contents -->
-                        <div class="panel-heading row panel"> <h3 class="list-group-item-heading color ">Nombre Clientes</h3></div>
+                        <div class="panel-heading row panel "> <h3 class="list-group-item-heading color ">Nombre Clientes</h3></div>
                         <div class="panel-body">
                             <p>
                                 <img src="//placehold.it/150x100/EEEEEE" class="img-responsive pull-right"> Farmhand ida quae ab illo inventore veritatis et quasi architecto beatae vitae 
@@ -103,20 +106,28 @@
                     <hr>                          
                     <h2>Media Queries</h2>
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                    <h1><a href="#"><i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></a></h1>
-                    <h3 class="color">Home</h3>
+                    <h1><a href="#"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a></h1>
+                    <h3 class="color">Clientes</h3>
                     <hr>
                 </center>
             </div>
         </div>
-        <!-- Thabajis -->
-        <div class="bhoechie-tab-content">
-            <center>
-                <h1 class="glyphicon glyphicon-th-list" style="font-size:12em;"></h1>
-                <h2>Clientes</h2>
-            </center>
-        </div>
+        <!-- menu-->
+        <center>
+            <div class="list-group">
+                <a href="#" class="list-group-item ">
+                    <h1 class="glyphicon glyphicon-home"></h1>
+                    <h2>Orden/Trabajo</h2>
+                </a>
+                <a href="#" class="list-group-item ">
+                    <h1 class="glyphicon glyphicon-th-list"></h1>
+                    <h2>Home</h2>
+                </a>
+
+            </div>
+        </center>
     </div>
-</div>  
+</div>
+
 
 @stop
