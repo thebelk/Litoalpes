@@ -13,7 +13,7 @@
 
 Route::get('/', function() {
     //return View::make('hello');
-    return View::make('Workorder.index');
+    return View::make('Workorder.workorderlist');
 });
 
 Route::resource('user', 'UserController');

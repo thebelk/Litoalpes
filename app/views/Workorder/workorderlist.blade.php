@@ -7,12 +7,12 @@
 @stop
 @section('content')
 <div class="col col-sm-3">   
-    <h3 class="highlight nav nav-stacked ">Cliente <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
+    <h3 class="highlight nav nav-stacked ">Lito Alpes <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
     <hr>
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color"> Datos </h3>
-            <p> Datos contacto de la empresa  </p>
+            <p> Datos  de la empresa  </p>
         </div>                                           
     </div>
     <div class="accordion" id="accordion2">
@@ -45,24 +45,30 @@
         <div class=" bhoechie-tab-menu">                  
             <div class="list-group">                        
                 <a href="#" class="list-group-item active text-center">                           
-                    <h4 class="glyphicon glyphicon-th-list"></h4><br/>Trabajos
+                    <h4 class="glyphicon glyphicon-earphone"></h4><br/>Contactos
                 </a>                         
                 <a href="#" class="list-group-item text-center">
-                    <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo 
+                    <h4 class="glyphicon glyphicon-plus-sign"></h4><br/>Cuentas
                 </a>
-            </div>                    
+
+            </div>                   
         </div>     
     </div>
     <hr>
+
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color" > Entregas de Hoy </h3>
             <p> Pruebas </p>
         </div>
+
     </div>
+
 </div>  
+
 <div class="col col-sm-9">
     <div class="row panel">
+
         <div class="bhoechie-tab">                     
             <!-- work section -->
             <div class="bhoechie-tab-content active">
@@ -72,7 +78,7 @@
                     <h4>Content</h4>
                     <div class="panel panel-default contenido">
                         <!-- Default panel contents -->
-                        <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Nombre Trabajo</h3></div>
+                        <div class="panel-heading row panel "> <h3 class="list-group-item-heading color">Nombre Trabajo</h3></div>
                         <div class="panel-body">
                             <p>
                                 <img src="//placehold.it/150x100/EEEEEE" class="img-responsive pull-right"> Farmhand ida quae ab illo inventore veritatis et quasi architecto beatae vitae 
@@ -83,13 +89,16 @@
                                 <br><br>
                                 <button class="btn btn-default">Edit</button>
                                 <button class="btn btn-primary">Ver</button>
+
                             </p>
                         </div>
                     </div>
                     <hr>
+
                     <div class="row">
                         <div class="col col-sm-6">
                             <img src="/assets/example/bg_smartphones.jpg" class="img-responsive">
+
                         </div> 
                         <div class="col col-sm-6">
                             <h1>loren insut .</h1>
@@ -112,6 +121,6 @@
             </center>
         </div>
     </div>
-</div>          
+</div>  
 
 @stop

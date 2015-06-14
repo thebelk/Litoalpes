@@ -21,7 +21,8 @@ class WorkorderController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+           ////return 'vista de Workorder.create'
+            return View::make('workorder.create');
 	}
 
 
