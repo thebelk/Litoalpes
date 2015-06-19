@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCustomer extends Migration {
+class CreatePhonebook extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,20 +12,17 @@ class CreateCustomer extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('customers', function(Blueprint $table)
+		Schema::create('phonebook', function(Blueprint $table)
 		{
-			$table->increments('id');
-                        $table->string('nit_cc');
-                        $table->string('cliente');
-                        $table->string('repsponsable');
-                        $table->integer('tipo_cliente'); //1.directo  2.intermediario
+			$table->increments('id');                    
+                        $table->string('nombre');
                         $table->string('direccion');
                         $table->string('ciudad');
                         $table->string('pais');
                         $table->string('telefono');
-                        $table->string('contacto');
+                        $table->string('celular');                
+                        $table->string('email'); 
                         $table->string('otro');
-                        $table->string('email')->unique();
                         $table->integer('users_id')->unsigned();
                         $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
 			$table->timestamps();
@@ -39,7 +36,7 @@ class CreateCustomer extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('costomers');
+		Schema::drop('workorders');
 	}
 
 }

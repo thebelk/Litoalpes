@@ -17,16 +17,19 @@ class CreateWorkorder extends Migration {
 			$table->increments('id');
                         $table->float('no_orden');
                         $table->string('clase_trabajo');
-                        $table->integer('cantidad');
-                        $table->date('fecha_entrega');
-                        $table->float('valor_trabajo');
+                        $table->float('valor_trabajo');                        
                         $table->float('iva');
                         $table->float('total');
                         $table->float('abono');
                         $table->float('saldo');
+                        $table->integer('cantidad');
+                        $table->date('fecha_entrega');  
+                        $table->integer('estado_trabajo'); //1. diseño 2.produccion 3.disponible 4.entregado 5.por realizar                       
                         $table->integer('tipo_trabajo'); //1.libreta 2.blocks 3.hojas 4.sobres 5.tarjetas 6.otros
                         $table->integer('tipo_elaboracion');//1.primera vez 2.igual al anterior 3. segun muestra
                         $table->integer('cantidad_material');
+                        $table->string('tipo_material');
+                        $table->string('atendido');
                         $table->integer('no_impresion');
                         $table->string('emblocado');
                         $table->integer('no_tintas');// 1. una tinta 2.dos tintas 3. tres tintas 4.poligromia 
@@ -44,8 +47,7 @@ class CreateWorkorder extends Migration {
                         $table->float('numeracion_final');
                         $table->string('corte');
                         $table->string('tamano');
-                        $table->integer('original'); //1.Si 2.No                                                
-                        $table->string('tipo_material');
+                        $table->integer('original'); //1.Si 2.No                                               
                         $table->integer('numerado'); //1.Si 2.No
                         $table->integer('tiro_retiro');
                         $table->integer('levante'); 
@@ -61,9 +63,7 @@ class CreateWorkorder extends Migration {
                         $table->integer('agrupados1');//1.pauetes  2.fajos 3.block
                         $table->integer('cant_agrup1');
                         $table->integer('agrupados2');//1.hojas cada uno  2.juegos cada uno
-                        $table->integer('cant_agrup2');
-                        $table->integer('machines_id')->unsigned();
-                        $table->foreign('machines_id')->references('id')->on('machines');                     
+                        $table->integer('cant_agrup2');                                          
                         $table->integer('customers_id')->unsigned();
                         $table->foreign('customers_id')->references('id')->on('customers');
 			$table->timestamps();

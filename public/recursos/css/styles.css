@@ -16,44 +16,55 @@ h3.highlight  {
     border:0;
     border-radius:0;
     position:static;
-
 }
+
 .navbar-nav > li > a {
     color:#fff;
     padding-left:20px;
     padding-right:20px;
     border-left:1px solid #1676A3;
 }
+
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
     color:#666666; 
 }
+
 .navbar-nav > li:last-child > a {
     border-right:1px solid #1676A3;
 }
+
 avbar-nav{
     color: #f0f0f0;
     background-color:transparent;
     opacity:.9;
     border-color:#469DE0;
-
 }
+
 h1 {
     font-size:5em;
     color:#565656;
 }
+
 h3,h2{
     margin-top: 0;
     color:#565656;
 }
+
 h3.color{
     color:#428BCA;
 
 }
+
 .row{
     margin: 8px;
     padding: 10px;
     background-color:#fff; 
     border-color:#469DE0;
+}
+
+.tam{
+    padding: 15px;
+    margin: 25px;
 }
 
 .complement {     
@@ -64,10 +75,16 @@ h3.color{
     .dropdown{
         margin-top:38px;
     }
+    .imp{
+        width: 99%;           
+    }
 }
-
-
 .dropdown-menu{
     padding:8px;  
     width: 285px;
+}
+
+h5{
+  
+   color:#05496C;
 }

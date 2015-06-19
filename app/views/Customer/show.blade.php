@@ -1,17 +1,17 @@
 @extends('layouts.master')
 <head> 
-    @section ('title')Trabajos @stop
+    @section ('title')Cliente @stop
 </head>
 @section('header')
 @parent
 @stop
 @section('content')
 <div class="col col-sm-3 complement">   
-    <h3 class="highlight nav nav-stacked ">Lito Alpes <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
+    <h3 class="highlight nav nav-stacked ">Cliente <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color"> Datos </h3>
-            <p> Datos  de la empresa  </p>
+            <p> Datos contacto de la empresa  </p>
         </div>                                           
     </div>
     <div class="accordion" id="accordion2">
@@ -43,28 +43,24 @@
     <hr>
     <div id="sidebar"> 
         <div class=" bhoechie-tab-menu">                  
-            <div class="list-group">                        
-                <a href="#" class="list-group-item active text-center">                           
-                    <h4 class="glyphicon glyphicon-earphone"></h4><br/>Contactos
-                </a>                         
-                 <a href="#" class="list-group-item text-center">
-                    <h4 class="glyphicon glyphicon-th-list"></h4><br/>Trabajos
+            <div class="list-group"> 
+                <a href="#" class="list-group-item active text-center">
+                    <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo
                 </a>
-
-            </div>                   
+                <a href="#" class="list-group-item  text-center">                           
+                    <h4 class="glyphicon glyphicon-th-list"></h4><br/> Lista Trabajos
+                </a>                          
+            </div>                    
         </div>     
     </div>
     <hr>
-
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color" > Entregas de Hoy </h3>
             <p> Pruebas </p>
         </div>
-
     </div>
-
-</div>   
+</div>  
 <div class="col col-sm-9">
     <div class="row panel">
         <div class="bhoechie-tab">                     
@@ -73,7 +69,7 @@
                 <center>
                     <h1 class="glyphicon glyphicon-th-list color" ></h1>
                     <h2> Lista Trabajos</h2>
-                    <h5>Trabajos realizados en el mes</h5>
+                    <h5>trabajos de cada cliente</h5>
                     <div class="panel panel-default tam">
                         <!-- Default panel contents -->
                         <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Nombre Trabajo</h3></div>

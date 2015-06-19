@@ -8,7 +8,7 @@
 @section('content')
 
 <div class="col col-sm-3 complement">   
-    <h3 class="highlight nav nav-stacked ">Clientes <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
+    <h3 class="highlight nav nav-stacked ">Lito Alpes <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color"> Datos </h3>
@@ -46,12 +46,11 @@
         <div class=" bhoechie-tab-menu">                  
             <div class="list-group">                        
                 <a href="#" class="list-group-item active text-center">                           
-                    <h4 class="glyphicon glyphicon-user"></h4><br/>Clientes
+                    <h4 class="glyphicon glyphicon-user"></h4><br/>Nuevo Cliente
                 </a>                         
-                <a href="#" class="list-group-item text-center">
-                    <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo 
+               <a href="#" class="list-group-item text-center">
+                    <h4 class="glyphicon glyphicon-th-list"></h4><br/>Trabajos
                 </a>
-
             </div>                   
         </div>     
     </div>
@@ -75,7 +74,7 @@
                     <h1 class="glyphicon glyphicon-user color" ></h1>
                     <h2> Lista de Clientes</h2>
                     <h5>Content</h5>
-                    <div class="panel panel-default  contenido ">
+                    <div class="panel panel-default  tam ">
                         <!-- Default panel contents -->
                         <div class="panel-heading row panel "> <h3 class="list-group-item-heading color ">Nombre Clientes</h3></div>
                         <div class="panel-body">
@@ -88,11 +87,12 @@
                                 <br><br>
                                 <button class="btn btn-default">Edit</button>
                                 <button class="btn btn-primary">Ver</button>
-
                             </p>
+
                         </div>
                     </div>
                     <hr>
+
 
                     <div class="row">
                         <div class="col col-sm-6">
@@ -104,10 +104,10 @@
                         </div>   
                     </div>
                     <hr>                          
-                    <h2>Media Queries</h2>
+                    <h2>MENU</h2>
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                    <h1><a href="#"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a></h1>
-                    <h3 class="color">Clientes</h3>
+                    <h2><a href="#"><i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></a></h2>
+                    <h3 class="color">Home</h3>
                     <hr>
                 </center>
             </div>
@@ -116,14 +116,13 @@
         <center>
             <div class="list-group">
                 <a href="#" class="list-group-item ">
-                    <h1 class="glyphicon glyphicon-home"></h1>
-                    <h2>Orden/Trabajo</h2>
+                    <h2 class="glyphicon glyphicon-user"></h2>
+                    <h3>Clientes</h3>
                 </a>
                 <a href="#" class="list-group-item ">
-                    <h1 class="glyphicon glyphicon-th-list"></h1>
-                    <h2>Home</h2>
-                </a>
-
+                    <h2 class="glyphicon glyphicon-th-list"></h2>
+                    <h3>Orden/Trabajo</h3>
+                </a>              
             </div>
         </center>
     </div>
@@ -131,3 +130,5 @@
 
 
 @stop
+
+

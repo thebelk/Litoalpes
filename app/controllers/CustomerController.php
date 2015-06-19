@@ -65,9 +65,11 @@ class CustomerController extends \BaseController {
      * @return Response
      */
     public function show($id) {
-// get the customer
+
         $customer = Customer::find($id); //->toJson();
-        return $customer;
+         return View::make('customer.show');
+      
+        
     }
 
     /**

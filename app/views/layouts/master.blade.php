@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <meta http-equiv="content-type" content="text/html;">
         <meta charset="utf-8">  
         <title>@yield('title', 'Litografia')</title>
@@ -58,12 +57,12 @@
 
             </div>
         </footer>
-        @show
-        <!-- script references -->
+        @show       
 
+        <!-- script references -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script src="/recursos/js/bootstrap.min.js"></script>
-        <script src="recursos/js/scripts.js"></script>
+        <script src="/recursos/js/scripts.js"></script>
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     </body>
 </html>

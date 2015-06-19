@@ -48,7 +48,7 @@
                     <h4 class="glyphicon glyphicon-earphone"></h4><br/>Contactos
                 </a>                         
                 <a href="#" class="list-group-item text-center">
-                    <h4 class="glyphicon glyphicon-plus-sign"></h4><br/>Cuentas
+                    <h4 class="glyphicon glyphicon-th-list"></h4><br/>Trabajos
                 </a>
 
             </div>                   
