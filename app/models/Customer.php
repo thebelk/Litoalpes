@@ -7,14 +7,15 @@ class Customer extends Eloquent {
         'id',
         'nit_cc',
         'cliente',
-        'representante',
-        'dependencia',
+        'repsponsable',
+        'tipo_cliente',
         'direccion',
+        'barrio',
         'ciudad',
         'pais',
         'telefono',
-        'celular',
-        'email'
+        'contacto',
+        'otro'
     );
 
     public function workorders() {

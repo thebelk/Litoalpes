@@ -25,10 +25,10 @@ Route::get('customerlist', 'CustomerController@index');
 Route::get('customer/create', 'CustomerController@create');
 Route::get('customer/{userlito}/edit', 'CustomerController@edit');
 
-Route::resource('machine', 'MachineController');
-Route::get('machine', 'MachineController@index');
-Route::get('machine/create', 'MachineController@create');
-Route::delete('machine/{userlito}', 'MachineController@destroy');
+Route::resource('quotation', 'QuotationController');
+Route::get('quotation', 'QuotationController@index');
+Route::get('quotation/create', 'QuotationController@create');
+Route::delete('quotation/{userlito}', 'QuotationController@destroy');
 
 Route::resource('workorder', 'WorkorderController');
 Route::get('workorderlist', 'WorkorderController@index');

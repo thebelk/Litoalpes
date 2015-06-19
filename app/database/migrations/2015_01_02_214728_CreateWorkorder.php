@@ -18,52 +18,53 @@ class CreateWorkorder extends Migration {
                         $table->float('no_orden');
                         $table->string('clase_trabajo');
                         $table->float('valor_trabajo');                        
-                        $table->float('iva');
+                        $table->integer('iva'); //1.si  2.no
+                        $table->float('%iva');
                         $table->float('total');
                         $table->float('abono');
                         $table->float('saldo');
+                        $table->float('pago');
                         $table->integer('cantidad');
                         $table->date('fecha_entrega');  
-                        $table->integer('estado_trabajo'); //1. diseño 2.produccion 3.disponible 4.entregado 5.por realizar                       
-                        $table->integer('tipo_trabajo'); //1.libreta 2.blocks 3.hojas 4.sobres 5.tarjetas 6.otros
-                        $table->integer('tipo_elaboracion');//1.primera vez 2.igual al anterior 3. segun muestra
+                        $table->integer('estado_trabajo'); //1. diseño 2.produccion 3.disponible 4.entregado 5.por realizar                      
+                        $table->integer('tipo_elaborado');//1.primera vez 2.igual al anterior 3. segun muestra
+                        $table->integer('diseño');//1.correcion 2.arte 3.ninguno
+                        $table->string('diseñador');
+                        $table->string('habilitado_dian');
+                        $table->string('fecha_dian');
                         $table->integer('cantidad_material');
                         $table->string('tipo_material');
-                        $table->string('atendido');
-                        $table->integer('no_impresion');
+                        $table->string('atendido');                        
                         $table->string('emblocado');
                         $table->integer('no_tintas');// 1. una tinta 2.dos tintas 3. tres tintas 4.poligromia 
-                        $table->string('color_tinta');
-                        $table->integer('color_basico'); //1.negro 2.magenta 3.amarillo
-                        $table->integer('color_preparado1'); //1.azul pocess  2.verde  3.azul bronce
-                        $table->integer('color_preparado2'); //1.rojo  2.naranja  3.sepia
-                        $table->integer('no_copia');
-                        $table->integer('color_copia'); // 1. Amarillo 2. Rosado 3. Verde 4.Azul 5.Blanco
-                        $table->integer('copia1');//orden de copias
-                        $table->integer('copia2');
-                        $table->integer('copia3');
-                        $table->integer('copia4');
-                        $table->float('numeracion_inicial');
-                        $table->float('numeracion_final');
-                        $table->string('corte');
-                        $table->string('tamano');
-                        $table->integer('original'); //1.Si 2.No                                               
+                        $table->integer('tipo_color'); //1.basico 2.preparado
+                        $table->string('color1');
+                        $table->string('color2');
+                        $table->string('color3');                     
+                        $table->integer('no_copia'); // 1.una copia  2.dos copias 3.tres copias 4.cuatro copias
+                        $table->integer('copia1'); //1. Amarillo 2. Rosado 3. Verde 4.Azul 5.Blanco
+                        $table->integer('copia1');// 1. Amarillo 2. Rosado 3. Verde 4.Azul 5.Blanco                     
+                        $table->integer('copia3');// 1. Amarillo 2. Rosado 3. Verde 4.Azul 5.Blanco
+                        $table->integer('copia4');// 1. Amarillo 2. Rosado 3. Verde 4.Azul 5.Blanco
+                        $table->float('no_inicial');
+                        $table->float('no_final');                      
+                        $table->integer('original_todas'); //1.Si 2.No                                               
                         $table->integer('numerado'); //1.Si 2.No
                         $table->integer('tiro_retiro');
                         $table->integer('levante'); 
                         $table->integer('perforado'); 
-                        $table->integer('quemado');
-                        $table->integer('master_empresa');//1.Si 2.No
+                        $table->integer('quemado');                        
                         $table->integer('acabados'); //1.Por la cabeza 2.lado izquierdo 3.lado derecho 
                         $table->integer('no_master');
+                        $table->integer('no_plancha');
+                        $table->integer('engomado'); //1.si 2.no
+                        $table->integer('engrapado'); //1.si 2.no                        
                         $table->string('observaciones');
+                        $table->string('maquina');
+                        $table->string('deetalles');
                         $table->integer('daños');//1.Si 2.No
                         $table->string('justificacion_daño');
-                        $table->string('nombre_recibe_pedido');
-                        $table->integer('agrupados1');//1.pauetes  2.fajos 3.block
-                        $table->integer('cant_agrup1');
-                        $table->integer('agrupados2');//1.hojas cada uno  2.juegos cada uno
-                        $table->integer('cant_agrup2');                                          
+                        $table->string('nombre_registro_pedido');                                                                
                         $table->integer('customers_id')->unsigned();
                         $table->foreign('customers_id')->references('id')->on('customers');
 			$table->timestamps();

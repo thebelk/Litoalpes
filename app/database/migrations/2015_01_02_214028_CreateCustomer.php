@@ -20,6 +20,7 @@ class CreateCustomer extends Migration {
                         $table->string('repsponsable');
                         $table->integer('tipo_cliente'); //1.directo  2.intermediario
                         $table->string('direccion');
+                        $table->string('barrio');
                         $table->string('ciudad');
                         $table->string('pais');
                         $table->string('telefono');

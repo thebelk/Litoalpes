@@ -1,6 +1,6 @@
 <?php
 
-class MachineController extends \BaseController {
+class QuotationController extends \BaseController {
 
     /**
      * Display a listing of the resource.
@@ -8,8 +8,8 @@ class MachineController extends \BaseController {
      * @return Response
      */
     public function index() {
-        //return 'vista de maquinas.index';
-        return View::make('machine.index');
+        //return 'vista de quotation.index';
+        return View::make('quotation.index');
     }
 
     /**
