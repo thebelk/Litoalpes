@@ -1,6 +1,6 @@
 <?php
 
-class QuotationController extends \BaseController {
+class SessionsController extends \BaseController {
 
     /**
      * Display a listing of the resource.
@@ -8,8 +8,7 @@ class QuotationController extends \BaseController {
      * @return Response
      */
     public function index() {
-        //return 'vista de quotation.index';
-        return View::make('quotation.index');
+        //
     }
 
     /**
@@ -18,7 +17,11 @@ class QuotationController extends \BaseController {
      * @return Response
      */
     public function create() {
-         return View::make('quotation.create');
+        if (Auth::check()) {
+            return Redirect::intended('workorder');
+        } else {
+            return View::make('sessions.index');
+        }
     }
 
     /**
@@ -27,7 +30,21 @@ class QuotationController extends \BaseController {
      * @return Response
      */
     public function store() {
-        //
+
+        // validate
+
+        $input = Input::all();
+        $attempt = Auth::attempt([
+                    'email' => $input['email'],
+                    'password' => $input['password']
+        ]);
+
+        if ($attempt) {
+            return Redirect::intended('/workorderlist');
+        } else {
+            // dd('problem');
+            return View::make('sessions.uplogin');
+        }
     }
 
     /**
@@ -66,8 +83,10 @@ class QuotationController extends \BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id) {
-        //
+     public function destroy() {
+        Auth::logout();
+
+       Session::flush();
     }
 
 }

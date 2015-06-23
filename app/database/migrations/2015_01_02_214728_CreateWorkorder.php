@@ -41,8 +41,7 @@ class CreateWorkorder extends Migration {
                         $table->string('color1');
                         $table->string('color2');
                         $table->string('color3');                     
-                        $table->integer('no_copia'); // 1.una copia  2.dos copias 3.tres copias 4.cuatro copias
-                        $table->integer('copia1'); //1. Amarillo 2. Rosado 3. Verde 4.Azul 5.Blanco
+                        $table->integer('no_copia'); // 1.una copia  2.dos copias 3.tres copias 4.cuatro copias                      
                         $table->integer('copia1');// 1. Amarillo 2. Rosado 3. Verde 4.Azul 5.Blanco                     
                         $table->integer('copia3');// 1. Amarillo 2. Rosado 3. Verde 4.Azul 5.Blanco
                         $table->integer('copia4');// 1. Amarillo 2. Rosado 3. Verde 4.Azul 5.Blanco
@@ -61,9 +60,7 @@ class CreateWorkorder extends Migration {
                         $table->integer('engrapado'); //1.si 2.no                        
                         $table->string('observaciones');
                         $table->string('maquina');
-                        $table->string('deetalles');
-                        $table->integer('daños');//1.Si 2.No
-                        $table->string('justificacion_daño');
+                        $table->string('deetalles');                        
                         $table->string('nombre_registro_pedido');                                                                
                         $table->integer('customers_id')->unsigned();
                         $table->foreign('customers_id')->references('id')->on('customers');

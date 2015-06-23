@@ -11,11 +11,6 @@
   |
  */
 
-Route::get('/', function() {
-    //return View::make('hello');
-    return View::make('Workorder.workorderlist');
-});
-
 Route::resource('user', 'UserController');
 Route::get('user', 'UserController@index');
 Route::get('user/{user}/edit', 'UserController@edit');
@@ -28,6 +23,7 @@ Route::get('customer/{userlito}/edit', 'CustomerController@edit');
 Route::resource('quotation', 'QuotationController');
 Route::get('quotation', 'QuotationController@index');
 Route::get('quotation/create', 'QuotationController@create');
+Route::get('quotation/{userlito}/edit', 'QuotationController@edit');
 Route::delete('quotation/{userlito}', 'QuotationController@destroy');
 
 Route::resource('workorder', 'WorkorderController');
@@ -35,8 +31,14 @@ Route::get('workorderlist', 'WorkorderController@index');
 Route::get('workorder/create', 'WorkorderController@create');
 Route::get('workorder/{workorder}/edit', 'WorkorderController@edit');
 
+Route::resource('phonebook', 'PhonebookController');
+Route::get('phonebook', 'PhonebookController@index');
+Route::get('phonebook/create', 'PhonebookController@create');
+Route::get('phonebook/{userlito}/edit', 'PhonebookController@edit');
+Route::delete('phonebook/{userlito}', 'PhonebookController@destroy');
+
 Route::resource('sessions', 'SessionsController');
-Route::get('/usercreate', 'SessionsController@create');
 Route::post('/signup', 'UserController@store');
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
+Route::get('/', 'SessionsController@create');

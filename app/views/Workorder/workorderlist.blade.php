@@ -88,7 +88,7 @@
                                 Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
                                 <br><br>
                                 <button class="btn btn-default">Edit</button>
-                                <button class="btn btn-primary">Ver</button>
+                                <button class="btn  btn-success">Ver</button>
 
                             </p>
                         </div>

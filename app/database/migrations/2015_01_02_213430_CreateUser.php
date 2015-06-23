@@ -19,11 +19,12 @@ class CreateUser extends Migration {
                         $table->string('razon_social');               
                         $table->string('direccion');
                         $table->string('ciudad');
+                        $table->string('barrio');
                         $table->string('pais');
                         $table->string('telefono');
                         $table->string('celular');                
                         $table->string('email')->unique();
-                        $table->string('confirmemail')->unique();
+                        $table->string('confiremail')->unique();
                         $table->string('password');
                         $table->string('confirpassword'); 
 			$table->timestamps();

@@ -15,15 +15,16 @@ class CreateQuotation extends Migration {
             Schema::create('quotation', function(Blueprint $table)
 		{
 			$table->increments('id');  
-                        $table->integer('estado_cotizacion'); //1.espera  2.elaborada 3.enviada
-                        $table->string('nombre'); 
-                        $table->string('apellido');
+                        $table->integer('estado_cotizacion'); // 1.espera 2.elaborada 3.enviado 4.autorizado 
+                        $table->string('nombre_cliente'); 
+                        $table->string('clase trabajo');
+                        $table->string('especificaciones');
+                        $table->string('cotizacion');
                         $table->string('direccion');
                         $table->string('barrio');                       
                         $table->string('telefono');                        
                         $table->string('celular');
-                        $table->string('email');
-                        $table->string('cotizacion');
+                        $table->string('email');                        
                         $table->integer('users_id')->unsigned();
                         $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
 			$table->timestamps();
@@ -37,7 +38,7 @@ class CreateQuotation extends Migration {
 	 */
 	public function down()
 	{
-            Schema::drop('costomers');
+            Schema::drop('quotation');
 	}
 
 }

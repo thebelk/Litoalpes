@@ -16,13 +16,14 @@ class CreatePhonebook extends Migration {
 		{
 			$table->increments('id');                    
                         $table->string('nombre');
+                        $table->string('ocupacion');
                         $table->string('direccion');
                         $table->string('ciudad');
                         $table->string('pais');
                         $table->string('telefono');
                         $table->string('celular');                
                         $table->string('email'); 
-                        $table->string('otro');
+                        $table->string('empresa');
                         $table->integer('users_id')->unsigned();
                         $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
 			$table->timestamps();
@@ -36,7 +37,7 @@ class CreatePhonebook extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('workorders');
+		Schema::drop('phonebook');
 	}
 
 }

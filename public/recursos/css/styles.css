@@ -68,6 +68,7 @@ h3.color{
 }
 
 .complement {     
+   // background-color: #fff;
     background-color: #E9E9E9;
     padding: 8px;
 }
@@ -83,8 +84,16 @@ h3.color{
     padding:8px;  
     width: 285px;
 }
-
-h5{
-  
-   color:#05496C;
+.bootoom{
+    padding: 15px;
 }
+.colo{     
+     color:#05496C;     
+}
+.cont{
+    background-color:#05496C; 
+     color:#fff; 
+}
+
+
+

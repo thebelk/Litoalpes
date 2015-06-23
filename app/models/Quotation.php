@@ -6,14 +6,15 @@ class Quotation extends Eloquent {
     protected $fillable = array(
         'id',
         'estado_cotizacion',
-        'nombre',
-        'apellido',
+        'nombre_cliente',
+        'clase trabajo',
+        'especificaciones',
+        'cotizacion',
         'direccion',
         'barrio',
         'telefono',
         'celular',
-        'email',
-        'cotizacion'
+        'email'
     );
 
     public function users() {

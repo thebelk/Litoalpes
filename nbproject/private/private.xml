@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/database/migrations/2015_01_02_214728_CreateWorkorder.php</file>
-            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/views/layouts/master.blade.php</file>
-            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/views/Workorder/create.blade.php</file>
+            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/database/seeds/UserTableSeeder.php</file>
+            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/controllers/UserController.php</file>
+            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/controllers/SessionsController.php</file>
+            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/routes.php</file>
             <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/views/Customer/create.blade.php</file>
         </group>
     </open-files>

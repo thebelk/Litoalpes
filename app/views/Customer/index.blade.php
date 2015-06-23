@@ -46,7 +46,7 @@
         <div class=" bhoechie-tab-menu">                  
             <div class="list-group">                        
                 <a href="#" class="list-group-item active text-center">                           
-                    <h4 class="glyphicon glyphicon-user"></h4><br/>Nuevo Cliente
+                    <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Cliente
                 </a>                         
                <a href="#" class="list-group-item text-center">
                     <h4 class="glyphicon glyphicon-th-list"></h4><br/>Trabajos

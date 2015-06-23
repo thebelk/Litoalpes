@@ -50,9 +50,7 @@ class Workorder extends Eloquent {
         'engrapado',
         'observaciones',
         'maquina',
-        'deetalles',
-        'daños',
-        'justificacion_daño',
+        'deetalles',        
         'nombre_registro_pedido'
     );
 

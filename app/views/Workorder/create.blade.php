@@ -48,7 +48,7 @@
                     <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
                 </a>
                 <a href="#" class="list-group-item  text-center">                           
-                    <h4 class="glyphicon glyphicon-th-list"></h4><br/> Lista Trabajos
+                    <h4 class="glyphicon glyphicon-th-list"></h4><br/> Listar Trabajos
                 </a>                       
             </div>                    
         </div>     
@@ -66,7 +66,7 @@
         <!-- work order -->            
         <center>
             <h3 class="glyphicon glyphicon-th-list " ></h3>
-            <h3> Orden/Trabajo</h3>                    
+            <h3> Nuevo Trabajo</h3>                    
             <div class="panel panel-default tam">
                 <!-- Default panel contents -->
                 <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Pedido</h3></div>
@@ -88,7 +88,7 @@
                                 </select>
                             </div>
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">VENDEDOR</h4></label>
+                                <label for="ex1"><h4 class="tex">ATENDIDO</h4></label>
                                 <input class="form-control" id="ex1" type="text">
                             </div>
                         </div>                       
@@ -159,7 +159,7 @@
                 </div>
                 <p>                                
                     <button class="btn btn-default">Reset</button>
-                    <button class="btn btn-primary">Save</button>
+                    <button class="btn  btn-success">Save</button>
                 </p>
             </div>                        
             <div class="panel panel-default tam">
@@ -183,7 +183,7 @@
                                 <input class="form-control" id="ex1" type="text">
                             </div>
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">No.COPIAS</h4></label>                               
+                                <label for="ex1"><h4 class="tex">ELABORADO</h4></label>                               
                                 <select class="form-control" id="ex1"><option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -192,7 +192,25 @@
                                 </select>
                             </div>
                         </div>                     
-                        <div class="row ">                            
+                        <div class="row "> 
+                            <div class="col-xs-6 col-md-4 imp ">
+                                <label for="ex1"><h4 class="tex">ORIGINAL</h4></label>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        Original todas las copias 
+                                    </label>
+                                </div>
+                            </div> 
+                            <div class="col-xs-6 col-md-4 imp">
+                                <label for="ex1"><h4 class="tex">No.COPIAS</h4></label>                               
+                                <select class="form-control" id="ex1"><option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
                             <div class="col-xs-6 col-md-4 imp">
                                 <label for="ex1"><h4 class="tex">COPIA1</h4></label>                               
                                 <select class="form-control" id="ex1"><option>1</option>
@@ -201,7 +219,9 @@
                                     <option>4</option>
                                     <option>5</option>
                                 </select>
-                            </div>
+                            </div>                          
+                        </div>   
+                        <div class="row "> 
                             <div class="col-xs-6 col-md-4 imp">
                                 <label for="ex1"><h4 class="tex">COPIA2</h4></label>                               
                                 <select class="form-control" id="ex1"><option>1</option>
@@ -220,8 +240,6 @@
                                     <option>5</option>
                                 </select>
                             </div>
-                        </div>   
-                        <div class="row ">                            
                             <div class="col-xs-6 col-md-4 imp">
                                 <label for="ex1"><h4 class="tex">COPIA4</h4></label>                               
                                 <select class="form-control" id="ex1"><option>1</option>
@@ -230,7 +248,9 @@
                                     <option>4</option>
                                     <option>5</option>
                                 </select>
-                            </div>
+                            </div>                                                      
+                        </div> 
+                        <div class="row "> 
                             <div class="col-xs-6 col-md-4 imp">
                                 <label for="ex1"><h4 class="tex">No.TINTA</h4></label>                               
                                 <select class="form-control" id="ex1"><option>1</option>
@@ -239,17 +259,27 @@
                                     <option>4</option>
                                     <option>5</option>
                                 </select>
-                            </div>
+                            </div> 
+                            <div class="col-xs-6 col-md-4 imp">
+                                <label for="ex1"><h4 class="tex">TIPO COLOR</h4></label>                               
+                                <select class="form-control" id="ex1"><option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div> 
                             <div class="col-xs-6 col-md-4 imp">
                                 <label for="ex1"><h4 class="tex">COLOR1</h4></label>                               
                                 <input class="form-control" id="ex1" type="text">
                             </div>
-                        </div> 
-                        <div class="row ">                            
+
+                        </div>   
+                        <div class="row "> 
                             <div class="col-xs-6 col-md-4 imp ">
                                 <label for="ex1"><h4 class="tex">COLOR2</h4></label>
                                 <input class="form-control" id="ex1" type="text">
-                            </div>                              
+                            </div> 
                             <div class="col-xs-6 col-md-4 imp">
                                 <label for="ex1"><h4 class="tex">COLOR3</h4></label>
                                 <input class="form-control" id="ex1" type="text">
@@ -262,10 +292,9 @@
                                         Trabajo enumerado
                                     </label>
                                 </div>
-
-                            </div>
-                        </div>                             
-                        <div class="row ">   
+                            </div>                            
+                        </div>
+                        <div class="row "> 
                             <div class="col-xs-6 col-md-4 imp">
                                 <div class="col-xs-6 col-md-6 imp">
                                     <label for="ex1"><h4 class="tex">No.INICIAL</h4></label>
@@ -357,17 +386,45 @@
                                 </div>
                             </div>
                         </div> 
+                        <div class="row">
+                            <div class="row ">                            
+                                <div class="col-xs-6 col-md-4 imp ">
+                                    <label for="ex1"><h4 class="tex">ACABADOS</h4></label>
+                                    <select class="form-control" id="ex1"><option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>                              
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <label for="ex1"><h4 class="tex">CANTIDAD/MATERIAL</h4></label>
+                                    <input class="form-control" id="ex1" type="text">
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <label for="ex1"><h4 class="tex">MAQUINA</h4></label>
+                                    <input class="form-control" id="ex1" type="text">
+                                </div>
+                            </div> 
+                        </div>
+
                     </div>
                     <div class="row "> 
                         <label for="ex1"><h4 class="tex">OBSERVACIONES</h4></label>                                    
                         <textarea class="form-control" rows="3"></textarea>
                     </div>
+                    <div class="row ">                       
+                        <div class="col-xs-12 col-md-6 imp">
+                            <label for="ex1"><h4 class="tex">REGISTRADO POR</h4></label>
+                            <input class="form-control" id="ex1" type="text"> 
+                        </div>                       
+                    </div>
                 </div>
                 <p>                                
                     <button class="btn btn-default">Reset</button>
-                    <button class="btn btn-primary">Save</button>
+                    <button class="btn  btn-success">Save</button>
                 </p>
-            </div>
+            </div>           
             <hr>                          
             <h2>Menu</h2>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 

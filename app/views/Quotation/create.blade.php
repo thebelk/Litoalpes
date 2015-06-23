@@ -1,8 +1,8 @@
 @extends('layouts.master')
 <head> 
-    @section ('title')Clientes @stop
+    @section ('title')Cotizacion  @stop
 </head>
-@section('header')
+@section('header')  
 @parent
 @stop
 @section('content')
@@ -45,11 +45,12 @@
         <div class=" bhoechie-tab-menu">                  
             <div class="list-group">                        
                 <a href="#" class="list-group-item active text-center">
-                    <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
+                    <h4 class="glyphicon glyphicon-plus"></h4><br/>Nueva Cotización 
                 </a>                        
                 <a href="#" class="list-group-item  text-center">                           
-                    <h4 class="glyphicon glyphicon-user"></h4><br/>Perfil
+                    <h4 class="glyphicon glyphicon-th-list"></h4><br/>Listar Cotización
                 </a>
+
             </div>                   
         </div>     
     </div>
@@ -68,77 +69,77 @@
         <!-- cho section -->
         <div class="bhoechie-tab-content active">
             <center>
-                <h2 class="glyphicon glyphicon-user color" ></h2>
-                <h3> Nuevo Cliente</h3>    
+                <h2 class="glyphicon glyphicon-pencil color" ></h2>
+                <h3> Nueva Cotización</h3>    
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->
-                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Cliente / id / fecha registro</h3></div>
+                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Registro</h3></div>
                     <div class="panel-body">
                         <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                         <div class="panel panel-default ">
                             <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                             <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">CLIENTE</h4></label>
+                                    <label for="ex1"><h4 class="tex">NOMBRE CLIENTE</h4></label>
                                     <input class="form-control" id="ex1" type="text">
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">NIT/CC</h4></label>                               
+                                    <label for="ex1"><h4 class="tex">TELEFONO</h4></label>                               
                                     <input class="form-control" id="ex1" type="text">
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">TIPO CLIENTE</h4></label>
+                                    <label for="ex1"><h4 class="tex">CELULAR</h4></label>
                                     <input class="form-control" id="ex1" type="text">
                                 </div>
                             </div>
                             <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">TELEFONO</h4></label>
+                                    <label for="ex1"><h4 class="tex">E-MAIL</h4></label>
                                     <input class="form-control" id="ex1" type="text">
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">E-MAIL</h4></label>                               
+                                    <label for="ex1"><h4 class="tex">DIRECCIÓN</h4></label>                               
                                     <input class="form-control" id="ex1" type="text">
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">OTRO</h4></label>
+                                    <label for="ex1"><h4 class="tex">BARRIO</h4></label>
                                     <input class="form-control" id="ex1" type="text">
                                 </div>
                             </div>                        
+                        </div>
+                        <div class="panel panel-default ">
+                            <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                             <div class="row ">                            
-                                <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">DIRECCIÓN</h4></label>
+                                <div class="col-xs-12 col-md-6 imp ">
+                                    <label for="ex1"><h4 class="tex">CLASE DE TRABAJO</h4></label>
                                     <input class="form-control" id="ex1" type="text">
                                 </div>
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">BARRIO</h4></label>                               
-                                    <input class="form-control" id="ex1" type="text">
-                                </div>
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">CIUDAD</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                <div class="col-xs-12 col-md-6 imp">
+                                    <label for="ex1"><h4 class="tex">ESTADO DE COTIZACIÓN</h4></label>                               
+                                    <select class="form-control" id="ex1"><option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="row ">                            
-                                <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">PAIS</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
-                                </div>
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">RESPONSABLE</h4></label>                               
-                                    <input class="form-control" id="ex1" type="text">
-                                </div>
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">CONTACTO</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
-                                </div>
+                            <div class="row "> 
+                                <label for="ex1"><h4 class="tex">ESPECIFICACIONES</h4></label>                                    
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="row "> 
+                                <label for="ex1"><h4 class="tex">COTIZACIÓN</h4></label>                                    
+                                <textarea class="form-control" rows="3"></textarea>
                             </div>
                         </div>
                     </div>
                     <p>                                
                         <button class="btn btn-default">Reset</button>
-                        <button class="btn  btn-success">Save</button>
+                        <button class="btn  btn-success">Save</button> 
+                         <button class="btn btn-default">Enviar</button>
                     </p>
+                    
                 </div> 
                 <hr>                          
                 <h2>Menu</h2>
@@ -166,4 +167,3 @@
     </div>
 </div>  
 @stop
-

@@ -48,7 +48,7 @@
                     <h4 class="glyphicon glyphicon-earphone"></h4><br/>Contactos
                 </a>                         
                  <a href="#" class="list-group-item text-center">
-                    <h4 class="glyphicon glyphicon-th-list"></h4><br/>Trabajos
+                    <h4 class="glyphicon glyphicon-th-list"></h4><br/>Listar Trabajos
                 </a>
 
             </div>                   
@@ -72,7 +72,7 @@
             <div class="bhoechie-tab-content active">
                 <center>
                     <h1 class="glyphicon glyphicon-th-list color" ></h1>
-                    <h2> Lista Trabajos</h2>
+                    <h2> Listar Trabajos</h2>
                     <h5>Trabajos realizados en el mes</h5>
                     <div class="panel panel-default tam">
                         <!-- Default panel contents -->
@@ -86,7 +86,7 @@
                                 Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
                                 <br><br>
                                 <button class="btn btn-default">Edit</button>
-                                <button class="btn btn-primary">Ver</button>
+                                <button class="btn  btn-success">Ver</button>
                             </p>
                         </div>
                     </div>
