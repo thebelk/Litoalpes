@@ -40,7 +40,7 @@ class SessionsController extends \BaseController {
         ]);
 
         if ($attempt) {
-            return Redirect::intended('/workorderlist');
+            return Redirect::intended('/user');
         } else {
             // dd('problem');
             return View::make('sessions.uplogin');

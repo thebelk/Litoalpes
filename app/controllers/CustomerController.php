@@ -66,8 +66,15 @@ class CustomerController extends \BaseController {
      */
     public function show($id) {
 
-        $customer = Customer::find($id); //->toJson();
-         return View::make('customer.show');
+        $customer = Customer::find($id);
+         if ($customer == null) {
+            $message = 'Usuario no registrado.';
+            return View::make('customer.show', compact('message'));
+        } else if ($customer->id == Auth::customer()->id) {
+            return View::make('customer.show');
+        } else {
+            return View::make('users.publicprofile', compact('user'));
+        }
       
         
     }

@@ -25,7 +25,7 @@
                         <div class=" navbar-right"> 
                             <div class="bootoom">
                               <!--   <button type="button" class="btn btn-primary colo"><b>Registrate</b></button>  -->
-                                <button type="button" class="btn btn-default btn-lg colo">Registrate</button>
+                                <button type="button" class="btn btn-default btn-lg">{{ HTML::link('/user/create',' Registrate',array ('class' => ' colo')) }}</button>                                                               
                             </div>                                                          
                         </div>
                     </div>                

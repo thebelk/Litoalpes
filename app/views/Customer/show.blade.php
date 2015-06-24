@@ -1,12 +1,14 @@
 @extends('layouts.master')
-<head> 
-    @section ('title')Cliente @stop
-</head>
 @section('header')
 @parent
 @stop
 @section('content')
-<div class="col col-sm-3 complement">   
+<h3 class="message">     @if(isset($message))
+    {{$message}}
+    @endif
+</h3>
+<div class="col col-sm-3 complement">  
+
     <h3 class="highlight nav nav-stacked ">Cliente <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
@@ -42,16 +44,14 @@
     </div> 
     <hr>
     <div id="sidebar"> 
-        <div class=" bhoechie-tab-menu">                  
-            <div class="list-group"> 
-                <a href="#" class="list-group-item active text-center">
-                    <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo
-                </a>
-                <a href="#" class="list-group-item  text-center">                           
-                    <h4 class="glyphicon glyphicon-th-list"></h4><br/> Lista Trabajos
-                </a>                          
-            </div>                    
-        </div>     
+        <div class="list-group">    
+            <a href="workorder/create" class="list-group-item active text-center">
+                <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
+            </a>
+            <a href="customer/profile" class="list-group-item  text-center">                           
+                <h4 class="glyphicon glyphicon-th-list"></h4><br/> Listar Trabajos
+            </a>                       
+        </div>    
     </div>
     <hr>
     <div class="row panel">

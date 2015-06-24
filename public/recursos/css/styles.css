@@ -68,7 +68,7 @@ h3.color{
 }
 
 .complement {     
-   // background-color: #fff;
+    // background-color: #fff;
     background-color: #E9E9E9;
     padding: 8px;
 }
@@ -87,12 +87,20 @@ h3.color{
 .bootoom{
     padding: 15px;
 }
-.colo{     
-     color:#05496C;     
+.colo{   
+    color:#05496C;
+}
+.colt:link,.colo:link{
+    text-decoration:none; 
+    
+}
+.colt{  color: #ffffff; }
+h3.message{
+    color: red;
 }
 .cont{
     background-color:#05496C; 
-     color:#fff; 
+    color:#fff; 
 }
 
 

@@ -8,7 +8,7 @@ class UserController extends \BaseController {
      * @return Response
      */
     public function index() {
-        //
+        return View::make('user.index');
     }
 
     /**
@@ -17,6 +17,7 @@ class UserController extends \BaseController {
      * @return Response
      */
     public function create() {
+        return View::make('user.create');
         
     }
 
@@ -28,8 +29,10 @@ class UserController extends \BaseController {
     public function store() {
         $post_data = Input::all();
         $rules = [
-            'nit_cc' => 'required',
+            'nit_cc' => 'required', 
             'razon_social' => 'required',
+            'representante' => 'required',
+            'otro' => 'required',
             'direccion' => 'required',
             'barrio' => 'required',
             'ciudad' => 'required',
@@ -92,6 +95,8 @@ class UserController extends \BaseController {
         $rules = [
             'nit_cc' => 'required',
             'razon_social' => 'required',
+            'representante' => 'required',
+            'otro' => 'required',
             'direccion' => 'required',
             'barrio' => 'required',
             'ciudad' => 'required',
@@ -108,6 +113,8 @@ class UserController extends \BaseController {
             $user2 = User::find($user['id']);
             $user2->nit_cc = $user['nit_cc'];
             $user2->razon_social = $user['razon_social'];
+            $user2->representante = $user['representante'];
+            $user2->otro = $user['otro'];
             $user2->direccion = $user['direccion'];
             $user2->barrio = $user['barrio'];
             $user2->pais = $user['pais'];

@@ -8,7 +8,9 @@ class UserTableSeeder extends Seeder {
         User::create(array(
             'id' => 1,
             'nit_cc' => '73153114-3',
-            'razon_social' => 'litoalpes',
+            'razon_social' => 'Artes Graficas Los Alpes',
+            'representante' => 'Alvaro Buelvas',
+            'otro'=> 'litografialosalpes@gmail.com',
             'direccion' => 'cra 7 No.38 - 23',
             'barrio' => 'los alpes ',
             'ciudad' => 'cartagena',

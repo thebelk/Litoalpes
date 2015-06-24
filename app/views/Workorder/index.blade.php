@@ -7,52 +7,57 @@
 @stop
 @section('content')
 <div class="col col-sm-3 complement">   
-    <h3 class="highlight nav nav-stacked ">Lito Alpes <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
+    <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
-            <h3 class="color"> Datos </h3>
-            <p> Datos  de la empresa  </p>
+            <h3 class="color">{{ Auth::user()->representante}}  </h3>
+            <h4 class="color"> Nit: {{ Auth::user()->nit_cc}}  </h4>
+            <h4>Telefono: {{ Auth::user()->telefono}} </h4>
+            <h4>Celular: {{ Auth::user()->celular}} </h4>   
+            <h4>{{ Auth::user()->otro}} </h4>  
         </div>                                           
     </div>
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                    Accordion
+                    Correo Electronico
                 </a>
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
                 <div class="accordion-inner">
-                    <p>There is a lot to be said about RWD.</p>
+                    <p> <h4>Email: {{ Auth::user()->email}} </h4></p>
                 </div>
             </div>
         </div>
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                    Accordion
+                    Dirección
                 </a>
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    <p>Use @media queries or utility classes to customize responsiveness.</p>
+                    <p><h5>Direccion: {{ Auth::user()->direccion}} </h5>
+                    <h5> Barrio: {{ Auth::user()->barrio}} </h5>
+                    <h5> Ciudad: {{ Auth::user()->ciudad}} </h5>
+                    <h5> Pais: {{ Auth::user()->pais}} </h5></p>
                 </div>
             </div>
         </div>
     </div> 
     <hr>
     <div id="sidebar"> 
-        <div class=" bhoechie-tab-menu">                  
-            <div class="list-group">                        
-                <a href="#" class="list-group-item active text-center">                           
-                    <h4 class="glyphicon glyphicon-earphone"></h4><br/>Contactos
-                </a>                         
-                 <a href="#" class="list-group-item text-center">
-                    <h4 class="glyphicon glyphicon-th-list"></h4><br/>Listar Trabajos
-                </a>
-
-            </div>                   
-        </div>     
+        <div class="list-group">
+        <a href="/phonebook" class="list-group-item active text-center">
+            <h4 class="list-group-item-heading glyphicon glyphicon-earphone"></h4><h5>Contactos</h5>
+            
+        </a>
+        <a href="/workorderlist" class="list-group-item text-center">
+            <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h5>Trabajos</h5>
+           
+        </a>
+    </div>
     </div>
     <hr>
 
@@ -85,7 +90,7 @@
                                 sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
                                 Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
                                 <br><br>
-                                <button class="btn btn-default">Edit</button>
+                                <button class="btn btn-default">{{ HTML::link('/user/'.Auth::user()->id.'/edit','Edit', false) }}</button>
                                 <button class="btn  btn-success">Ver</button>
                             </p>
                         </div>

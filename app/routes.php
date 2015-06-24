@@ -13,15 +13,17 @@
 
 Route::resource('user', 'UserController');
 Route::get('user', 'UserController@index');
+Route::get('user/create', 'UserController@create');
 Route::get('user/{user}/edit', 'UserController@edit');
 
 Route::resource('customer', 'CustomerController');
 Route::get('customerlist', 'CustomerController@index');
 Route::get('customer/create', 'CustomerController@create');
+Route::get('customer/profile', 'CustomerController@show');
 Route::get('customer/{userlito}/edit', 'CustomerController@edit');
 
 Route::resource('quotation', 'QuotationController');
-Route::get('quotation', 'QuotationController@index');
+Route::get('quotationlist', 'QuotationController@index');
 Route::get('quotation/create', 'QuotationController@create');
 Route::get('quotation/{userlito}/edit', 'QuotationController@edit');
 Route::delete('quotation/{userlito}', 'QuotationController@destroy');
@@ -32,7 +34,7 @@ Route::get('workorder/create', 'WorkorderController@create');
 Route::get('workorder/{workorder}/edit', 'WorkorderController@edit');
 
 Route::resource('phonebook', 'PhonebookController');
-Route::get('phonebook', 'PhonebookController@index');
+Route::get('phonebooklist', 'PhonebookController@index');
 Route::get('phonebook/create', 'PhonebookController@create');
 Route::get('phonebook/{userlito}/edit', 'PhonebookController@edit');
 Route::delete('phonebook/{userlito}', 'PhonebookController@destroy');

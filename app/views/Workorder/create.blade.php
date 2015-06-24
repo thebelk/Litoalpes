@@ -41,17 +41,15 @@
         </div>
     </div> 
     <hr>
-    <div id="sidebar"> 
-        <div class=" bhoechie-tab-menu">                  
-            <div class="list-group">    
-                <a href="#" class="list-group-item active text-center">
-                    <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
-                </a>
-                <a href="#" class="list-group-item  text-center">                           
-                    <h4 class="glyphicon glyphicon-th-list"></h4><br/> Listar Trabajos
-                </a>                       
-            </div>                    
-        </div>     
+    <div id="sidebar">                           
+        <div class="list-group">    
+            <a href="create" class="list-group-item active text-center">
+                <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
+            </a>
+            <a href="customer/profile" class="list-group-item  text-center">                           
+                <h4 class="glyphicon glyphicon-user"></h4><br/> Perfil
+            </a>                       
+        </div>                     
     </div>
     <hr>
     <div class="row panel">
