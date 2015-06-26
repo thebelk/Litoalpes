@@ -11,10 +11,10 @@
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color">{{ Auth::user()->representante}}  </h3>
-            <h4 class="color"> Nit: {{ Auth::user()->nit_cc}}  </h4>
-            <h4>Telefono: {{ Auth::user()->telefono}} </h4>
-            <h4>Celular: {{ Auth::user()->celular}} </h4>   
-            <h4>{{ Auth::user()->otro}} </h4>  
+            <h5 class="color"> Nit: {{ Auth::user()->nit_cc}}  </h5>
+            <h5>Telefono: {{ Auth::user()->telefono}} </h5>
+            <h5>Celular: {{ Auth::user()->celular}} </h5>   
+            <h5>{{ Auth::user()->otro}} </h5>  
         </div>                                           
     </div>
     <div class="accordion" id="accordion2">
@@ -38,10 +38,10 @@
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    <p><h5>Direccion: {{ Auth::user()->direccion}} </h5>
+                    <h5>Direccion: {{ Auth::user()->direccion}} </h5>
                     <h5> Barrio: {{ Auth::user()->barrio}} </h5>
                     <h5> Ciudad: {{ Auth::user()->ciudad}} </h5>
-                    <h5> Pais: {{ Auth::user()->pais}} </h5></p>
+                    <h5> Pais: {{ Auth::user()->pais}} </h5>
                 </div>
             </div>
         </div>
@@ -49,18 +49,18 @@
     <hr>
     <div id="sidebar"> 
         <div class="list-group">
-        <a href="/phonebooklist" class="list-group-item active text-center">
-            <h4 class="list-group-item-heading glyphicon glyphicon-earphone"></h4><h5>Contactos</h5>
-            
-        </a>
-        <a href="/workorderlist" class="list-group-item text-center">
-            <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h5>Trabajos</h5>
-           
-        </a>
-    </div>
+            <a href="/phonebooklist" class="list-group-item active text-center">
+                <h4 class="list-group-item-heading glyphicon glyphicon-earphone"></h4><h5>Contactos</h5>
+
+            </a>
+            <a href="/workorderlist" class="list-group-item text-center">
+                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h5>Trabajos</h5>
+
+            </a>
+        </div>
     </div>
     <hr>
-    
+
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color" > Entregas de Hoy </h3>
@@ -74,9 +74,8 @@
             <!-- work section -->
             <div class="bhoechie-tab-content active">
                 <center>
-                    <h1 class="glyphicon glyphicon-th-list color" ></h1>
-                    <h2> Trabajos por Realizar</h2>
-                    <h5>Content</h5>
+                    <h2 class="glyphicon glyphicon-th-list color" ></h2>
+                    <h3> Trabajos por Realizar</h3>                   
                     <div class="panel panel-default contenido">
                         <!-- Default panel contents -->
                         <div class="panel-heading row panel "> <h3 class="list-group-item-heading color">Nombre Trabajo</h3></div>
@@ -106,7 +105,7 @@
                     <hr>                          
                     <h2>Media Queries</h2>
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                    <h1><a href="#"><i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></a></h1>
+                    <h2><a href="#"><i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></a></h2>
                     <h3 class="color">Home</h3>
                     <hr>
                 </center>
@@ -115,18 +114,18 @@
         <!-- menu-->
         <center>
             <div class="list-group">
-                <a href="/customer" class="list-group-item ">
-                    <h1 class="glyphicon glyphicon-home"></h1>
-                    <h2>Orden/Trabajo</h2>
+                <a href="#" class="list-group-item ">
+                    <h2 class="glyphicon glyphicon-user"></h2>
+                    <h3>Clientes</h3>
                 </a>
                 <a href="#" class="list-group-item ">
-                    <h1 class="glyphicon glyphicon-th-list"></h1>
-                    <h2>Home</h2>
+                    <h2 class="glyphicon glyphicon-th-list"></h2>
+                    <h3>Orden/Trabajo</h3>
                 </a>
 
             </div>
         </center>
     </div>
-</div>  
+</div>       
 
 @stop

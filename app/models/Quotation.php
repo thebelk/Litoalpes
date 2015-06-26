@@ -2,12 +2,12 @@
 
 class Quotation extends Eloquent {
 
-    protected $table = 'quotation';
+    protected $table = 'quotations';
     protected $fillable = array(
         'id',
         'estado_cotizacion',
         'nombre_cliente',
-        'clase trabajo',
+        'clase_trabajo',
         'especificaciones',
         'cotizacion',
         'direccion',

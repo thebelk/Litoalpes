@@ -2,7 +2,7 @@
 
 class Phonebook extends Eloquent {
 
-    protected $table = 'phonebook';
+    protected $table = 'phonebooks';
     protected $fillable = array(
         'id',
         'nombre',

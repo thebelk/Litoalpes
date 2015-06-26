@@ -1,7 +1,9 @@
+
 <?php
 
 class Workorder extends Eloquent {
 
+    protected $table = 'workorders';
     protected $fillable = array(
         'id',
         'no_orden',
@@ -50,7 +52,7 @@ class Workorder extends Eloquent {
         'engrapado',
         'observaciones',
         'maquina',
-        'deetalles',        
+        'deetalles',
         'nombre_registro_pedido'
     );
 

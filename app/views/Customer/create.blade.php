@@ -11,10 +11,10 @@
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color">{{ Auth::user()->representante}}  </h3>
-            <h4 class="color"> Nit: {{ Auth::user()->nit_cc}}  </h4>
-            <h4>Telefono: {{ Auth::user()->telefono}} </h4>
-            <h4>Celular: {{ Auth::user()->celular}} </h4>   
-            <h4>{{ Auth::user()->otro}} </h4>  
+            <h5 class="color"> Nit: {{ Auth::user()->nit_cc}}  </h5>
+            <h5>Telefono: {{ Auth::user()->telefono}} </h5>
+            <h5>Celular: {{ Auth::user()->celular}} </h5>   
+            <h5>{{ Auth::user()->otro}} </h5>  
         </div>                                           
     </div>
     <div class="accordion" id="accordion2">
@@ -38,24 +38,24 @@
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    <p><h5>Direccion: {{ Auth::user()->direccion}} </h5>
+                    <h5>Direccion: {{ Auth::user()->direccion}} </h5>
                     <h5> Barrio: {{ Auth::user()->barrio}} </h5>
                     <h5> Ciudad: {{ Auth::user()->ciudad}} </h5>
-                    <h5> Pais: {{ Auth::user()->pais}} </h5></p>
+                    <h5> Pais: {{ Auth::user()->pais}} </h5>
                 </div>
             </div>
         </div>
     </div> 
     <hr>
     <div id="sidebar">  
-            <div class="list-group">                        
-                <a href="/workorder/create" class="list-group-item active text-center">
-                    <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
-                </a>                        
-                <a href="/customer/profile" class="list-group-item  text-center">                           
-                    <h4 class="glyphicon glyphicon-user"></h4><br/>Perfil
-                </a>
-            </div>  
+        <div class="list-group">                        
+            <a href="/workorder/create" class="list-group-item active text-center">
+                <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
+            </a>                        
+            <a href="/customer/profile" class="list-group-item  text-center">                           
+                <h4 class="glyphicon glyphicon-user"></h4><br/>Perfil
+            </a>
+        </div>  
     </div>
     <hr>
     <div class="row panel">
@@ -76,98 +76,119 @@
                 <h3> Nuevo Cliente</h3>    
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->
-                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Cliente / id / fecha registro</h3></div>
+                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">
+                            Cliente: {{  Auth::user()->id }} - Fecha registro {{  Auth::user()->created_at }}  </h3>
+                    </div>
                     <div class="panel-body">
                         <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                         <div class="panel panel-default ">
-                            <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+                            {{Form::open(array('route' => 'customer.store','role'=>'form', 'class'=>'form-inline')) }}
                             <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">CLIENTE</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('cliente', 'CLIENTE:') }}
+                                        {{ Form::text('cliente', null, array('placeholder' => 'Cliente', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">NIT/CC</h4></label>                               
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('nit_cc', 'NIT/CC:') }}
+                                        {{ Form::text('nit_cc', null, array('placeholder' => 'Nit/CC', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">TIPO CLIENTE</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                <div class="col-xs-6 col-md-4 imp">                                    
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('tipo_cliente', 'TIPO CLIENTE:') }}
+                                        {{ Form::text('tipo_cliente', null, array('placeholder' => 'Tipo Cliente', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                             </div>
                             <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">TELEFONO</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('telefono', 'TELEFONO:') }}
+                                        {{ Form::text('telefono', null, array('placeholder' => 'Telefono', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">E-MAIL</h4></label>                               
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('email', 'E-MAIL:') }}
+                                        {{ Form::text('email', null, array('placeholder' => 'Email', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">OTRO</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('otro', 'OTRO:') }}
+                                        {{ Form::text('otro', null, array('placeholder' => 'Otro', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                             </div>                        
                             <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">DIRECCIÓN</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('direccion', 'DIRECCIÓN:') }}
+                                        {{ Form::text('direccion', null, array('placeholder' => 'DirecciÓn', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">BARRIO</h4></label>                               
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('barrio', 'BARRIO:') }}
+                                        {{ Form::text('barrio', null, array('placeholder' => 'Barrio', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">CIUDAD</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('ciudad', 'CIUDAD:') }}
+                                        {{ Form::text('ciudad', null, array('placeholder' => 'Ciudad', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                             </div>
                             <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">PAIS</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('pais', 'PAIS:') }}
+                                        {{ Form::text('pais', null, array('placeholder' => 'Pais', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">RESPONSABLE</h4></label>                               
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('repsponsable', 'RESPONSABLE:') }}
+                                        {{ Form::text('repsponsable', null, array('placeholder' => 'Repsponsable', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">CONTACTO</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('contacto', 'CONTACTO:') }}
+                                        {{ Form::text('contacto', null, array('placeholder' => 'Contacto', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
-                            </div>
+                            </div>                            
                         </div>
                     </div>
-                    <p>                                
-                        <button class="btn btn-default">Reset</button>
-                        <button class="btn  btn-success">Save</button>
-                    </p>
+                    <div class='row buttons'>                                
+                        {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
+                        {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                                 
+                    </div>
+                    {{ Form::close() }}
                 </div> 
                 <hr>                          
-                <h2>Menu</h2>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                <h2><a href="#"><i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></a></h2>
-                <h3 class="color">Home</h3>
-                <hr>
+
+                <!-- menu-->
+
+                <div class="list-group">                
+                    <h4>Menu</h4>   
+                    <a href="#" class="list-group-item ">
+                        <h3 class="color"> <i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></h3>
+                        <h3 class="color">Home</h3>
+                    </a>
+                    <a href="#" class="list-group-item ">
+                        <h3 class="glyphicon glyphicon-user"></h3>
+                        <h3>Clientes</h3>
+                    </a>                       
+                </div>
             </center>
         </div>
-
-        <!-- menu-->
-        <center>
-            <div class="list-group">
-                <a href="#" class="list-group-item ">
-                    <h2 class="glyphicon glyphicon-user"></h2>
-                    <h3>Clientes</h3>
-                </a>
-                <a href="#" class="list-group-item ">
-                    <h2 class="glyphicon glyphicon-th-list"></h2>
-                    <h3>Orden/Trabajo</h3>
-                </a>
-
-            </div>
-        </center>
-    </div>
+    </div>  
 </div>  
 @stop
 

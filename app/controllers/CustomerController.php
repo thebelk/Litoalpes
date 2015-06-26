@@ -8,12 +8,11 @@ class CustomerController extends \BaseController {
      * @return Response
      */
     public function index() {
-        // return 'vista de Custor.index'; 
         return View::make('customer.index');
         // get all the customer        
         /* $customer = Customer::where('users_id', '=', Auth::user()->id)->get()->toJson();
           return $customer; */
-        $customer = DB::table('customers')->where('users_id', '=', Auth::user()->id)->get();
+       // $customer = DB::table('customers')->where('users_id', '=', Auth::user()->id)->get();
         // return View::make('customers.customerlist')->with('customer', $customer);
     }
 
@@ -32,29 +31,26 @@ class CustomerController extends \BaseController {
      * @return Response
      */
     public function store() {
-// validate
-// read more on validation 
-        $rules = array(
+        $post_data = Input::all();
+        $rules = [
             'nit_cc' => 'required',
             'cliente' => 'required',
-            'representante' => 'required',
-            'dependencia' => 'required',
+            'repsponsable' => 'required',
+            'tipo_cliente' => 'required',
             'direccion' => 'required',
+            'barrio' => 'required',
             'ciudad' => 'required',
             'pais' => 'required',
             'telefono' => 'required',
-            'celular' => 'required',
-            'email' => 'required|email'
-        );
-        $customer = Validator::make(Input::all(), $rules);
-        if ($customer) {
-            $customer['users_id'] = Auth::user()->id;
-            $customer['status'] = true;
-            Vehicle::create($customer);
-            Session::flash('message', 'Successfully created customer!');
-            $customer->save();
-            return Redirect::intended('/customerlist');
-            //return json_encode($customer);
+            'contacto' => 'required',
+            'otro' => 'required',
+            'email' => 'required'
+        ];
+        $validate = Validator::make($post_data, $rules);
+        if ($validate) {
+            $post_data['users_id'] = Auth::user()->id;
+            Customer::create($post_data);
+            return Redirect::intended('/workorder/create');
         }
     }
 
@@ -67,7 +63,7 @@ class CustomerController extends \BaseController {
     public function show($id) {
 
         $customer = Customer::find($id);
-         if ($customer == null) {
+        if ($customer == null) {
             $message = 'Usuario no registrado.';
             return View::make('customer.show', compact('message'));
         } else if ($customer->id == Auth::customer()->id) {
@@ -75,8 +71,6 @@ class CustomerController extends \BaseController {
         } else {
             return View::make('users.publicprofile', compact('user'));
         }
-      
-        
     }
 
     /**
@@ -103,27 +97,31 @@ class CustomerController extends \BaseController {
         $rules = array(
             'nit_cc' => 'required',
             'cliente' => 'required',
-            'representante' => 'required',
-            'dependencia' => 'required',
+            'repsponsable' => 'required',
+            'tipo_cliente' => 'required',
             'direccion' => 'required',
+            'barrio' => 'required',
             'ciudad' => 'required',
             'pais' => 'required',
             'telefono' => 'required',
-            'celular' => 'required',
-            'email' => 'required|email'
+            'contacto' => 'required',
+            'otro' => 'required',
+            'email' => 'required'
         );
         $customer = Validator::make(Input::all(), $rules);
         if ($validate) {
             $customer2 = Customer::find($customer['id']);
             $customer2->nit_cc = $customer['nit_cc'];
             $customer2->cliente = $customer['cliente'];
-            $customer2->representante = $customer['representante'];
-            $customer2->dependencia = $customer['dependencia'];
+            $customer2->representante = $customer['representante'];            
+            $customer2->tipo_cliente = $customer['tipo_cliente'];
             $customer2->direccion = $customer['direccion'];
+            $customer2->barrio = $customer['barrio'];
             $customer2->ciudad = $customer['ciudad'];
             $customer2->pais = $customer['pais'];
             $customer2->telefono = $customer['telefono'];
-            $customer2->celular = $customer['celular'];
+            $customer2->contacto = $customer['contacto'];
+            $customer2->otro = $customer['otro'];
             $customer2->email = $customer['email'];
             $customer2->save();
             Session::flash('message', 'Successfully updated customer!');

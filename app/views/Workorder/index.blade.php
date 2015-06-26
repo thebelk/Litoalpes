@@ -11,10 +11,10 @@
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color">{{ Auth::user()->representante}}  </h3>
-            <h4 class="color"> Nit: {{ Auth::user()->nit_cc}}  </h4>
-            <h4>Telefono: {{ Auth::user()->telefono}} </h4>
-            <h4>Celular: {{ Auth::user()->celular}} </h4>   
-            <h4>{{ Auth::user()->otro}} </h4>  
+            <h5 class="color"> Nit: {{ Auth::user()->nit_cc}}  </h5>
+            <h5>Telefono: {{ Auth::user()->telefono}} </h5>
+            <h5>Celular: {{ Auth::user()->celular}} </h5>   
+            <h5>{{ Auth::user()->otro}} </h5>  
         </div>                                           
     </div>
     <div class="accordion" id="accordion2">
@@ -38,10 +38,10 @@
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    <p><h5>Direccion: {{ Auth::user()->direccion}} </h5>
+                    <h5>Direccion: {{ Auth::user()->direccion}} </h5>
                     <h5> Barrio: {{ Auth::user()->barrio}} </h5>
                     <h5> Ciudad: {{ Auth::user()->ciudad}} </h5>
-                    <h5> Pais: {{ Auth::user()->pais}} </h5></p>
+                    <h5> Pais: {{ Auth::user()->pais}} </h5>
                 </div>
             </div>
         </div>
@@ -49,15 +49,15 @@
     <hr>
     <div id="sidebar"> 
         <div class="list-group">
-        <a href="/phonebook" class="list-group-item active text-center">
-            <h4 class="list-group-item-heading glyphicon glyphicon-earphone"></h4><h5>Contactos</h5>
-            
-        </a>
-        <a href="/workorderlist" class="list-group-item text-center">
-            <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h5>Trabajos</h5>
-           
-        </a>
-    </div>
+            <a href="/phonebook" class="list-group-item active text-center">
+                <h4 class="list-group-item-heading glyphicon glyphicon-earphone"></h4><h5>Contactos</h5>
+
+            </a>
+            <a href="/workorderlist" class="list-group-item text-center">
+                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h5>Trabajos</h5>
+
+            </a>
+        </div>
     </div>
     <hr>
 
@@ -76,9 +76,8 @@
             <!-- work section -->
             <div class="bhoechie-tab-content active">
                 <center>
-                    <h1 class="glyphicon glyphicon-th-list color" ></h1>
-                    <h2> Listar Trabajos</h2>
-                    <h5>Trabajos realizados en el mes</h5>
+                    <h2 class="glyphicon glyphicon-th-list color" ></h2>
+                    <h3> Listar Trabajos</h3>                      
                     <div class="panel panel-default tam">
                         <!-- Default panel contents -->
                         <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Nombre Trabajo</h3></div>

@@ -5,10 +5,11 @@
         <group>
             <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/controllers/UserController.php</file>
             <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/controllers/SessionsController.php</file>
+            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/storage/logs/laravel.log</file>
             <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/controllers/CustomerController.php</file>
-            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/views/Workorder/create.blade.php</file>
-            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/views/User/index.blade.php</file>
+            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/views/User/create.blade.php</file>
             <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/routes.php</file>
+            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/views/Customer/create.blade.php</file>
         </group>
     </open-files>
 </project-private>

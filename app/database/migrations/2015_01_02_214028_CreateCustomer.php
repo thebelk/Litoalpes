@@ -26,7 +26,7 @@ class CreateCustomer extends Migration {
                         $table->string('telefono');
                         $table->string('contacto');
                         $table->string('otro');
-                        $table->string('email')->unique();
+                        $table->string('email');
                         $table->integer('users_id')->unsigned();
                         $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
 			$table->timestamps();

@@ -17,7 +17,7 @@ class CreateQuotation extends Migration {
 			$table->increments('id');  
                         $table->integer('estado_cotizacion'); // 1.espera 2.elaborada 3.enviado 4.autorizado 
                         $table->string('nombre_cliente'); 
-                        $table->string('clase trabajo');
+                        $table->string('clase_trabajo');
                         $table->string('especificaciones');
                         $table->string('cotizacion');
                         $table->string('direccion');
