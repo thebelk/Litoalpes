@@ -14,7 +14,8 @@ class Quotation extends Eloquent {
         'barrio',
         'telefono',
         'celular',
-        'email'
+        'email',
+        'users_id'
     );
 
     public function users() {

@@ -13,7 +13,8 @@ class Phonebook extends Eloquent {
         'telefono',
         'celular',
         'email',
-        'empresa'
+        'empresa',
+        'users_id'
     );
 
     public function users() {

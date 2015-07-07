@@ -8,12 +8,14 @@ class CustomerController extends \BaseController {
      * @return Response
      */
     public function index() {
+        
         return View::make('customer.index');
+        
         // get all the customer        
         /* $customer = Customer::where('users_id', '=', Auth::user()->id)->get()->toJson();
           return $customer; */
        // $customer = DB::table('customers')->where('users_id', '=', Auth::user()->id)->get();
-        // return View::make('customers.customerlist')->with('customer', $customer);
+        // return View::make('customer.index')->with('customer', $customer);
     }
 
     /**
@@ -35,22 +37,22 @@ class CustomerController extends \BaseController {
         $rules = [
             'nit_cc' => 'required',
             'cliente' => 'required',
-            'repsponsable' => 'required',
+            'repsponsable',
             'tipo_cliente' => 'required',
             'direccion' => 'required',
             'barrio' => 'required',
             'ciudad' => 'required',
             'pais' => 'required',
             'telefono' => 'required',
-            'contacto' => 'required',
-            'otro' => 'required',
+            'contacto',
+            'otro',
             'email' => 'required'
         ];
         $validate = Validator::make($post_data, $rules);
         if ($validate) {
-            $post_data['users_id'] = Auth::user()->id;
+            $post_data['users_id']= Auth::user()->id;
             Customer::create($post_data);
-            return Redirect::intended('/workorder/create');
+            return Redirect::intended('/workorder/create');    
         }
     }
 

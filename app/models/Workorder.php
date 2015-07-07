@@ -53,7 +53,9 @@ class Workorder extends Eloquent {
         'observaciones',
         'maquina',
         'deetalles',
-        'nombre_registro_pedido'
+        'nombre_registro_pedido',
+        'users_id',
+        'customer_id'
     );
 
     public function users() {

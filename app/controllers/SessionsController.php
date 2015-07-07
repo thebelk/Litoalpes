@@ -18,7 +18,7 @@ class SessionsController extends \BaseController {
      */
     public function create() {
         if (Auth::check()) {
-            return Redirect::intended('workorder');
+            return Redirect::intended('user');
         } else {
             return View::make('sessions.index');
         }

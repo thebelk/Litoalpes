@@ -16,7 +16,8 @@ class Customer extends Eloquent {
         'telefono',
         'contacto',
         'otro',
-        'email'
+        'email',
+        'users_id'
     );
 
     public function workorders() {

@@ -13,7 +13,7 @@
 
 Route::resource('user', 'UserController');
 Route::get('user', 'UserController@index');
-Route::get('user/create', 'UserController@create');
+Route::get('signup', 'UserController@create');
 Route::get('user/{user}/edit', 'UserController@edit');
 
 Route::resource('customer', 'CustomerController');
@@ -42,5 +42,5 @@ Route::delete('phonebook/{userlito}', 'PhonebookController@destroy');
 Route::resource('sessions', 'SessionsController');
 Route::post('/signup', 'UserController@store');
 Route::get('login', 'SessionsController@create');
-Route::get('logout', 'SessionsController@destroy');
+Route::get('logout/', 'SessionsController@destroy');
 Route::get('/', 'SessionsController@create');

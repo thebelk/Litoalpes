@@ -168,6 +168,12 @@
                     <div class="panel panel-default ">
                         <div class="row ">                            
                             <div class="col-xs-6 col-md-4 imp ">
+
+                                <div class='form-group form-register'>
+                                    {{ Form::label('razon_social', 'DISEÑO:') }}<br>
+                                    {{ Form::select('age', ['Under 18', '19 to 30', 'Over 30'],['class' => 'form-control']) }}
+                                   
+                                </div>
                                 <label for="ex1"><h4 class="tex">DISEÑO</h4></label>
                                 <select class="form-control" id="ex1"><option>1</option>
                                     <option>2</option>

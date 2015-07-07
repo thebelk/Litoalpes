@@ -82,7 +82,7 @@
                     <div class="panel-body">
                         <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                         <div class="panel panel-default ">
-                            {{Form::open(array('route' => 'customer.store','role'=>'form', 'class'=>'form-inline')) }}
+                            {{Form::open(array('url' => '/customer','role'=>'form', 'method' => 'POST')) }}
                             <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
                                     <div class='form-group form-register'>
@@ -102,6 +102,7 @@
                                         {{ Form::text('tipo_cliente', null, array('placeholder' => 'Tipo Cliente', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
+                               
                             </div>
                             <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
@@ -113,13 +114,13 @@
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('email', 'E-MAIL:') }}
-                                        {{ Form::text('email', null, array('placeholder' => 'Email', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('email', null, array('placeholder' => 'Email', 'class' => 'form-control')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('otro', 'OTRO:') }}
-                                        {{ Form::text('otro', null, array('placeholder' => 'Otro', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('otro', null, array('placeholder' => 'Otro', 'class' => 'form-control')) }}
                                     </div>
                                 </div>
                             </div>                        
@@ -153,13 +154,13 @@
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('repsponsable', 'RESPONSABLE:') }}
-                                        {{ Form::text('repsponsable', null, array('placeholder' => 'Repsponsable', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('repsponsable', null, array('placeholder' => 'Repsponsable', 'class' => 'form-control')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('contacto', 'CONTACTO:') }}
-                                        {{ Form::text('contacto', null, array('placeholder' => 'Contacto', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('contacto', null, array('placeholder' => 'Contacto', 'class' => 'form-control')) }}
                                     </div>
                                 </div>
                             </div>                            

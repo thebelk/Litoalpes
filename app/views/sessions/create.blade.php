@@ -71,7 +71,7 @@
                                 <div class="col-md-6">
                                     <div class='form-group form-register'>
                                         {{ Form::label('confiremail', 'Confirmar Email:') }}<br>
-                                        {{ Form::email('confiremail', null, array('placeholder' => 'Confirm Email', 'class' => 'form-control', 'required' => 'required', 'pattern' => '[A-Za-z]*[0-9]*@gmail.com|[A-Za-z]*[0-9]*@hotmail.com|[A-Za-z]*[0-9]*@yahoo.es|[A-Za-z]*[0-9]*@outlook.com' ,'title' => 'Must be @hotmail.com or @gmail.com')) }}
+                                        {{ Form::email('confiremail', null, array('placeholder' => 'Confirm Email', 'class' => 'form-control', 'pattern' => '[A-Za-z]*[0-9]*@gmail.com|[A-Za-z]*[0-9]*@hotmail.com|[A-Za-z]*[0-9]*@yahoo.es|[A-Za-z]*[0-9]*@outlook.com' ,'title' => 'Must be @hotmail.com or @gmail.com')) }}
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group form-register">
                                         {{ Form::label('otro', 'Otro:') }}<br>
-                                        {{ Form::text('otro', null, array('placeholder' => 'Otro', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('otro', null, array('placeholder' => 'Otro', 'class' => 'form-control')) }}
                                     </div>
                                 </div>
                             </div>

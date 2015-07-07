@@ -24,8 +24,8 @@
                         </div>
                         <div class=" navbar-right"> 
                             <div class="bootoom">
-                              <!--   <button type="button" class="btn btn-primary colo"><b>Registrate</b></button>  -->
-                                <button type="button" class="btn btn-default btn-lg">{{ HTML::link('/user/create',' Registrate',array ('class' => ' colo')) }}</button>                                                               
+                                <!--   <button type="button" class="btn btn-primary colo"><b>Registrate</b></button>  -->
+                                <button type="button" class="btn btn-default btn-lg">{{ HTML::link('/signup','Crear cuenta',array ('class' => ' colo')) }}</button>                                                               
                             </div>                                                          
                         </div>
                     </div>                
@@ -62,34 +62,38 @@
                                 <label for="inputEmail3" class="col-sm-1 control-label">Password</label>
                                 {{ Form::password('password', array('placeholder' => 'Password', 'class' => 'form-control', 'required' => 'required')) }}
                             </div>
-                            <!--  <div class='form-group'>
-                            {{ Form::checkbox('remember-me', 'value')}}
-                            </div>-->
                             <div class='form-group '>
-                                {{ Form::button('iniciar seción', array('type' => 'submit', 'class' => 'btn btn-success')) }}  
-                            </div> 
+                                <!--    <label for="remember" >Recordar mis datos </label>
+                                   {{ Form::input('checkbox','remember','on') }}
+                               </div>
+                              <div class='form-group'>
+                                   {{ Form::checkbox('remember-me', 'value')}}
+                               </div>-->
+                                <div class='form-group '>
+                                    {{ Form::button('iniciar seción', array('type' => 'submit', 'class' => 'btn btn-success')) }}  
+                                </div> 
 
-                            {{Form::close()}}
-                            <p> ¿Olvidaste tu contraseña ? </p>
-                            <button type="button" class="btn btn-link">Crear cuenta</button>                          
-                        </div>                        
-                    </div>
+                                {{Form::close()}}
+                                <p> ¿Olvidaste tu contraseña ? </p>
+                                <button type="button" class="btn btn-link">Crear cuenta</button>                          
+                            </div>                        
+                        </div>
                 </center>
             </div>        
-    </div>
-    <footer>
-        <div class="footer">
-            @yield('footer')
-
-
         </div>
-    </footer>
-    @show    
+        <footer>
+            <div class="footer">
+                @yield('footer')
 
-    <!-- script references -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="/recursos/js/bootstrap.min.js"></script>
-    <script src="/recursos/js/scripts.js"></script>
-    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-</body>
+
+            </div>
+        </footer>
+        @show    
+
+        <!-- script references -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="/recursos/js/bootstrap.min.js"></script>
+        <script src="/recursos/js/scripts.js"></script>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    </body>
 </html>
