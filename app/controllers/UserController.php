@@ -58,14 +58,7 @@ class UserController extends \BaseController {
      * @return Response
      */
     public function show($id) {
-        if ($user == null) {
-            $message = 'El usuario no existe.';
-            return View::make('users.profile', compact('message'));
-        } else if ($user->id == Auth::user()->id) {
-            return View::make('users.profile');
-        } else {
-            return View::make('users.publicprofile', compact('user'));
-        }
+        //
     }
 
     /**
@@ -102,7 +95,7 @@ class UserController extends \BaseController {
             'password' => 'required',
             'confirpassword' => 'required'
         ];
-        $validate = Validator::make($post_data, $rules);
+        $validate = Validator::make($user, $rules);
         if ($validate) {
             $user2 = User::find($user['id']);
             $user2->nit_cc = $user['nit_cc'];

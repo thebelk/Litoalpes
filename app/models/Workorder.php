@@ -10,12 +10,13 @@ class Workorder extends Eloquent {
         'clase_trabajo',
         'valor_trabajo',
         'iva',
-        '%iva',
+        'iva2',
         'total',
         'abono',
         'saldo',
         'pago',
         'cantidad',
+        'tamano',
         'fecha_entrega',
         'estado_trabajo',
         'tipo_elaborado',
@@ -53,15 +54,9 @@ class Workorder extends Eloquent {
         'observaciones',
         'maquina',
         'deetalles',
-        'nombre_registro_pedido',
-        'users_id',
+        'nombre_registro_pedido',        
         'customer_id'
     );
-
-    public function users() {
-        return $this->belongsTo('User');
-    }
-
     public function customers() {
         return $this->belongsTo('Customer');
     }

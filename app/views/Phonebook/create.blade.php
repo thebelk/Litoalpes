@@ -42,16 +42,13 @@
     </div> 
     <hr>
     <div id="sidebar"> 
-        <div class=" bhoechie-tab-menu">                  
-            <div class="list-group">                        
-                <a href="#" class="list-group-item active text-center">
-                    <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Contacto 
-                </a>                        
-                <a href="#" class="list-group-item  text-center">                           
-                    <h4 class="glyphicon glyphicon-earphone"></h4><br/>Listar Contactos
-                </a>
-
-            </div>                   
+        <div class="list-group">                        
+            <a href="create" class="list-group-item active text-center">
+                <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Contacto 
+            </a>                        
+            <a href="/phonebook" class="list-group-item  text-center">                           
+                <h4 class="glyphicon glyphicon-earphone"></h4><br/>Listar Contactos
+            </a>
         </div>     
     </div>
     <hr>
@@ -75,81 +72,96 @@
                     <!-- Default panel contents -->
                     <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Contacto</h3></div>
                     <div class="panel-body">
-                        <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+                        {{Form::open(array('url' => '/phonebook','role'=>'form', 'method' => 'POST')) }}
                         <div class="panel panel-default ">
                             <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                             <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">NOMBRE</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('nombre', 'NOMBRE:') }}
+                                        {{ Form::text('nombre', null, array('placeholder' => 'Nombre', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">EMPRESA</h4></label>                               
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('empresa', 'EMPRESA:') }}
+                                        {{ Form::text('empresa', null, array('placeholder' => 'Empresa', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">OCUPACIÓN</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('ocupacion', 'OCUPACIÓN:') }}
+                                        {{ Form::text('ocupacion', null, array('placeholder' => 'Ocupación', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row ">                            
-                                <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">TELEFONO</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                            <div class="row "> 
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('telefono', 'TELEFONO:') }}
+                                        {{ Form::text('telefono', null, array('placeholder' => 'Telefono', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
+                                </div>                               
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('celular', 'CELULAR:') }}
+                                        {{ Form::text('celular', null, array('placeholder' => 'Celular', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">CELULAR</h4></label>                               
-                                    <input class="form-control" id="ex1" type="text">
-                                </div>
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">E-MAIL</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('email', 'E-MAIL:') }}
+                                        {{ Form::text('email', null, array('placeholder' => 'Email', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                             </div>                        
                             <div class="row ">                            
-                                <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">DIRECCIÓN</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
-                                </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">BARRIO</h4></label>                               
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('direccion', 'DIRECCIÓN:') }}
+                                        {{ Form::text('direccion', null, array('placeholder' => 'Direccion', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
+                                
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">CIUDAD</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('barrio', 'BARRIO:') }}
+                                        {{ Form::text('barrio', null, array('placeholder' => 'Barrio', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
+                                </div>
+                                
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('ciudad', 'CIUDAD:') }}
+                                        {{ Form::text('ciudad', null, array('placeholder' => 'Ciudad', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <p>                                
-                        <button class="btn btn-default">Reset</button>
-                        <button class="btn btn-primary">Save</button>
-                    </p>
+                    <div class='row buttons'>                                
+                        {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
+                        {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                                 
+                    </div>
+                    {{ Form::close() }}
                 </div> 
+
                 <hr>                          
-                <h2>Menu</h2>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                <h2><a href="#"><i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></a></h2>
-                <h3 class="color">Home</h3>
-                <hr>
+                <!-- menu-->
+
+                <div class="list-group">                
+                    <h4>Menu</h4>   
+                    <a href="#" class="list-group-item ">
+                        <h3 class="color"> <i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></h3>
+                        <h3 class="color">Home</h3>
+                    </a>
+                    <a href="#" class="list-group-item ">
+                        <h3 class="glyphicon glyphicon-user"></h3>
+                        <h3>Clientes</h3>
+                    </a>                       
+                </div>
             </center>
         </div>
-
-        <!-- menu-->
-        <center>
-            <div class="list-group">
-                <a href="#" class="list-group-item ">
-                    <h2 class="glyphicon glyphicon-user"></h2>
-                    <h3>Clientes</h3>
-                </a>
-                <a href="#" class="list-group-item ">
-                    <h2 class="glyphicon glyphicon-th-list"></h2>
-                    <h3>Orden/Trabajo</h3>
-                </a>
-
-            </div>
-        </center>
-    </div>
+    </div>  
 </div>  
 @stop

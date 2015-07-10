@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/controllers/SessionsController.php</file>
-            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/controllers/UserController.php</file>
-            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/controllers/CustomerController.php</file>
-            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/views/User/create.blade.php</file>
+            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/database/migrations/2015_01_02_214728_CreateWorkorder.php</file>
+            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/models/Workorder.php</file>
+            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/storage/logs/laravel.log</file>
+            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/views/Workorder/create.blade.php</file>
             <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/controllers/WorkorderController.php</file>
             <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/routes.php</file>
-            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/views/sessions/index.blade.php</file>
-            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/views/Customer/create.blade.php</file>
+            <file>file:/C:/Users/PERSONAL/Documents/GitHub/litoalpes/app/views/Quotation/create.blade.php</file>
         </group>
     </open-files>
 </project-private>

@@ -19,12 +19,13 @@ class CreateWorkorder extends Migration {
                         $table->string('clase_trabajo');
                         $table->float('valor_trabajo');                        
                         $table->integer('iva'); //1.si  2.no
-                        $table->float('%iva');
+                        $table->float('iva2');
                         $table->float('total');
                         $table->float('abono');
                         $table->float('saldo');
                         $table->float('pago');
                         $table->integer('cantidad');
+                        $table->integer('tamano');
                         $table->date('fecha_entrega');  
                         $table->integer('estado_trabajo'); //1. diseño 2.produccion 3.disponible 4.entregado 5.por realizar                      
                         $table->integer('tipo_elaborado');//1.primera vez 2.igual al anterior 3. segun muestra

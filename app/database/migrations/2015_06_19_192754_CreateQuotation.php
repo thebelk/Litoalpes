@@ -12,7 +12,7 @@ class CreateQuotation extends Migration {
 	 */
 	public function up()
 	{
-            Schema::create('quotation', function(Blueprint $table)
+            Schema::create('quotations', function(Blueprint $table)
 		{
 			$table->increments('id');  
                         $table->integer('estado_cotizacion'); // 1.espera 2.elaborada 3.enviado 4.autorizado 
@@ -38,7 +38,7 @@ class CreateQuotation extends Migration {
 	 */
 	public function down()
 	{
-            Schema::drop('quotation');
+            Schema::drop('quotations');
 	}
 
 }

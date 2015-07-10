@@ -9,7 +9,7 @@ class Phonebook extends Eloquent {
         'ocupacion',
         'direccion',
         'ciudad',
-        'pais',
+        'barrio',
         'telefono',
         'celular',
         'email',

@@ -12,14 +12,14 @@ class CreatePhonebook extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('phonebook', function(Blueprint $table)
+		Schema::create('phonebooks', function(Blueprint $table)
 		{
 			$table->increments('id');                    
                         $table->string('nombre');
                         $table->string('ocupacion');
                         $table->string('direccion');
                         $table->string('ciudad');
-                        $table->string('pais');
+                        $table->string('barrio');
                         $table->string('telefono');
                         $table->string('celular');                
                         $table->string('email'); 
@@ -37,7 +37,7 @@ class CreatePhonebook extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('phonebook');
+		Schema::drop('phonebooks');
 	}
 
 }

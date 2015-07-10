@@ -77,7 +77,7 @@
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->
                     <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">
-                            Cliente: {{  Auth::user()->id }} - Fecha registro {{  Auth::user()->created_at }}  </h3>
+                            Fecha registro {{  Auth::user()->created_at }}  </h3>
                     </div>
                     <div class="panel-body">
                         <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
@@ -96,13 +96,13 @@
                                         {{ Form::text('nit_cc', null, array('placeholder' => 'Nit/CC', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
-                                <div class="col-xs-6 col-md-4 imp">                                    
+
+                                <div class="col-xs-6 col-md-4 imp">                                     
                                     <div class='form-group form-register'>
                                         {{ Form::label('tipo_cliente', 'TIPO CLIENTE:') }}
-                                        {{ Form::text('tipo_cliente', null, array('placeholder' => 'Tipo Cliente', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::select('tipo_cliente', array('Tipo Cliente' => array( '1' => 'Seleccionar','1' => 'Directo ', '2' => 'Intermediario')),null ,array('class' => 'form-control')); }}
                                     </div>
                                 </div>
-                               
                             </div>
                             <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
@@ -134,13 +134,13 @@
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('barrio', 'BARRIO:') }}
-                                        {{ Form::text('barrio', null, array('placeholder' => 'Barrio', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('barrio', null, array('placeholder' => 'Barrio', 'class' => 'form-control')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('ciudad', 'CIUDAD:') }}
-                                        {{ Form::text('ciudad', null, array('placeholder' => 'Ciudad', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('ciudad', null, array('placeholder' => 'Ciudad', 'class' => 'form-control')) }}
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@
                                 <div class="col-xs-6 col-md-4 imp ">
                                     <div class='form-group form-register'>
                                         {{ Form::label('pais', 'PAIS:') }}
-                                        {{ Form::text('pais', null, array('placeholder' => 'Pais', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('pais', null, array('placeholder' => 'Pais', 'class' => 'form-control')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">

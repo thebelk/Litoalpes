@@ -8,14 +8,8 @@ class CustomerController extends \BaseController {
      * @return Response
      */
     public function index() {
-        
+
         return View::make('customer.index');
-        
-        // get all the customer        
-        /* $customer = Customer::where('users_id', '=', Auth::user()->id)->get()->toJson();
-          return $customer; */
-       // $customer = DB::table('customers')->where('users_id', '=', Auth::user()->id)->get();
-        // return View::make('customer.index')->with('customer', $customer);
     }
 
     /**
@@ -37,22 +31,23 @@ class CustomerController extends \BaseController {
         $rules = [
             'nit_cc' => 'required',
             'cliente' => 'required',
-            'repsponsable',
+            'repsponsable' => '',
             'tipo_cliente' => 'required',
-            'direccion' => 'required',
-            'barrio' => 'required',
-            'ciudad' => 'required',
-            'pais' => 'required',
+            'direccion' => '',
+            'barrio' => '',
+            'ciudad' => '',
+            'pais' => '',
             'telefono' => 'required',
-            'contacto',
-            'otro',
+            'contacto' => '',
+            'otro' => '',
             'email' => 'required'
         ];
         $validate = Validator::make($post_data, $rules);
         if ($validate) {
-            $post_data['users_id']= Auth::user()->id;
+            $post_data['users_id'] = Auth::user()->id;
             Customer::create($post_data);
-            return Redirect::intended('/workorder/create');    
+            return Redirect::intended('/workorder/create')
+                            ->with('flash', 'The new customer has been created');
         }
     }
 
@@ -64,15 +59,7 @@ class CustomerController extends \BaseController {
      */
     public function show($id) {
 
-        $customer = Customer::find($id);
-        if ($customer == null) {
-            $message = 'Usuario no registrado.';
-            return View::make('customer.show', compact('message'));
-        } else if ($customer->id == Auth::customer()->id) {
-            return View::make('customer.show');
-        } else {
-            return View::make('users.publicprofile', compact('user'));
-        }
+      //
     }
 
     /**
@@ -83,10 +70,10 @@ class CustomerController extends \BaseController {
      */
     public function edit($id) {
         // get the customer
-        $customer = Customer::find($id);  //->toJson();        
+        $customer = Customer::find($id);         
         // show the edit form and pass the customer
         return View::make('customer.edit')->with('customer', $customer);
-        // return $customer;
+      
     }
 
     /**
@@ -96,26 +83,27 @@ class CustomerController extends \BaseController {
      * @return Response
      */
     public function update($id) {
+        $customer = Input::all();
         $rules = array(
             'nit_cc' => 'required',
             'cliente' => 'required',
-            'repsponsable' => 'required',
+            'repsponsable' => '',
             'tipo_cliente' => 'required',
-            'direccion' => 'required',
-            'barrio' => 'required',
-            'ciudad' => 'required',
-            'pais' => 'required',
+            'direccion' => '',
+            'barrio' => '',
+            'ciudad' => '',
+            'pais' => '',
             'telefono' => 'required',
-            'contacto' => 'required',
-            'otro' => 'required',
+            'contacto' => '',
+            'otro' => '',
             'email' => 'required'
         );
-        $customer = Validator::make(Input::all(), $rules);
+        $validate = Validator::make(Input::all(), $rules);
         if ($validate) {
             $customer2 = Customer::find($customer['id']);
             $customer2->nit_cc = $customer['nit_cc'];
             $customer2->cliente = $customer['cliente'];
-            $customer2->representante = $customer['representante'];            
+            $customer2->representante = $customer['representante'];
             $customer2->tipo_cliente = $customer['tipo_cliente'];
             $customer2->direccion = $customer['direccion'];
             $customer2->barrio = $customer['barrio'];
@@ -128,7 +116,6 @@ class CustomerController extends \BaseController {
             $customer2->save();
             Session::flash('message', 'Successfully updated customer!');
             return Redirect::intended('/customerlist');
-            //return json_encode($customer);
         }
     }
 
@@ -139,11 +126,7 @@ class CustomerController extends \BaseController {
      * @return Response
      */
     public function destroy($id) {
-        $datos = Input::all();
-        $customer = Customer::find($datos['id']);
-        $customer->delete();
-        Session::flash('message', 'Successfully deleted the customer!');
-        return Redirect::intended('/customerlist');
+        //
     }
 
 }

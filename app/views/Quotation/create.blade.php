@@ -42,16 +42,13 @@
     </div> 
     <hr>
     <div id="sidebar"> 
-        <div class=" bhoechie-tab-menu">                  
-            <div class="list-group">                        
-                <a href="#" class="list-group-item active text-center">
-                    <h4 class="glyphicon glyphicon-plus"></h4><br/>Nueva Cotización 
-                </a>                        
-                <a href="#" class="list-group-item  text-center">                           
-                    <h4 class="glyphicon glyphicon-th-list"></h4><br/>Listar Cotización
-                </a>
-
-            </div>                   
+        <div class="list-group">                        
+            <a href="create" class="list-group-item active text-center">
+                <h4 class="glyphicon glyphicon-plus"></h4><br/>Nueva Cotización 
+            </a>                        
+            <a href="/quotation" class="list-group-item  text-center">                           
+                <h4 class="glyphicon glyphicon-th-list"></h4><br/>Listar Cotización
+            </a>
         </div>     
     </div>
     <hr>
@@ -77,69 +74,86 @@
                     <div class="panel-body">
                         <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                         <div class="panel panel-default ">
+                            {{Form::open(array('url' => '/quotation','role'=>'form', 'method' => 'POST')) }}
                             <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-                            <div class="row ">                            
-                                <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">NOMBRE CLIENTE</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
-                                </div>
+                            <div class="row ">
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">TELEFONO</h4></label>                               
-                                    <input class="form-control" id="ex1" type="text">
-                                </div>
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('nombre_cliente', 'NOMBRE CLIENTE:') }}
+                                        {{ Form::text('nombre_cliente', null, array('placeholder' => 'Nombre Cliente', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>                               
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">CELULAR</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('telefono', 'TELEFONO:') }}
+                                        {{ Form::text('telefono', null, array('placeholder' => 'Telefono', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>                                
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('celular', 'CELULAR:') }}
+                                        {{ Form::text('celular', null, array('placeholder' => 'Celular', 'class' => 'form-control')) }}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row ">                            
-                                <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">E-MAIL</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
-                                </div>
+                            <div class="row ">   
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">DIRECCIÓN</h4></label>                               
-                                    <input class="form-control" id="ex1" type="text">
-                                </div>
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('email', 'E-MAIL:') }}
+                                        {{ Form::text('email', null, array('placeholder' => 'E-mail', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>                               
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">BARRIO</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('direccion', 'DIRECCIÓN:') }}
+                                        {{ Form::text('direccion', null, array('placeholder' => 'Direccion', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>                                
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('barrio', 'BARRIO:') }}
+                                        {{ Form::text('barrio', null, array('placeholder' => 'Barrio', 'class' => 'form-control')) }}
+                                    </div>
                                 </div>
                             </div>                        
                         </div>
                         <div class="panel panel-default ">
                             <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                             <div class="row ">                            
-                                <div class="col-xs-12 col-md-6 imp ">
-                                    <label for="ex1"><h4 class="tex">CLASE DE TRABAJO</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                <div class="col-xs-12 col-md-6 imp ">                                   
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('clase_trabajo', 'CLASE DE TRABAJO:') }}
+                                        {{ Form::text('clase_trabajo', null, array('placeholder' => 'Clase Trabajo', 'class' => 'form-control')) }}
+                                    </div>
                                 </div>
-                                <div class="col-xs-12 col-md-6 imp">
-                                    <label for="ex1"><h4 class="tex">ESTADO DE COTIZACIÓN</h4></label>                               
-                                    <select class="form-control" id="ex1"><option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                <div class="col-xs-12 col-md-6 imp">                                     
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('clase_trabajo', 'ESTADO DE COTIZACIÓN:') }}
+                                        {{ Form::select('estado_cotizacion', array('Estado Cotizacion' => array('1' => 'Espera', '2' => 'Elaborada', '3' => 'Enviado', '4' => 'Autorizado')),null ,array('class' => 'form-control')); }}
+                                    </div>
                                 </div>
                             </div>
                             <div class="row "> 
-                                <label for="ex1"><h4 class="tex">ESPECIFICACIONES</h4></label>                                    
-                                <textarea class="form-control" rows="3"></textarea>
+                                <div class='form-group form-register tex'>
+                                    {{ Form::label('especificaciones', 'ESPECIFICACIONES:') }}
+                                    {{ Form::textarea('especificaciones', null, array('rows' => '4', 'placeholder' => 'Especificaciones', 'class' => 'form-control')) }}
+                                </div>
                             </div>
+
                             <div class="row "> 
-                                <label for="ex1"><h4 class="tex">COTIZACIÓN</h4></label>                                    
-                                <textarea class="form-control" rows="3"></textarea>
+                                <div class='form-group form-register tex'>
+                                    {{ Form::label('cotizacion', 'COTIZACIÓN:') }}
+                                    {{ Form::textarea('cotizacion', null, array('rows' => '4', 'placeholder' => 'Cotización', 'class' => 'form-control')) }}
+                                </div>
                             </div>
                         </div>
+                    </div>                   
+                    <div class='row buttons'>                                
+                        {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
+                        {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}  
+                        {{ Form::button('Enviar', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
                     </div>
-                    <p>                                
-                        <button class="btn btn-default">Reset</button>
-                        <button class="btn  btn-success">Save</button> 
-                         <button class="btn btn-default">Enviar</button>
-                    </p>
-                    
+                    {{ Form::close() }}
                 </div> 
                 <hr>                          
                 <h2>Menu</h2>

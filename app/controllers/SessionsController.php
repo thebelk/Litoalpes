@@ -83,10 +83,11 @@ class SessionsController extends \BaseController {
      * @param  int  $id
      * @return Response
      */
-     public function destroy() {
-        Auth::logout();
-
-       Session::flush();
+    public function destroy() {
+        $logout = Auth::logout();
+        if ($logout) {
+            return Redirect::intended('/login');
+        }
     }
 
 }

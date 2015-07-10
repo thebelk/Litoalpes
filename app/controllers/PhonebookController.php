@@ -8,7 +8,6 @@ class PhonebookController extends \BaseController {
      * @return Response
      */
     public function index() {
-        // return 'vista de phonebook.index'; 
         return View::make('phonebook.index');
     }
 
@@ -28,28 +27,29 @@ class PhonebookController extends \BaseController {
      */
     public function store() {
 // validate
-// read more on validation 
-        $rules = array(
+        $post_data = Input::all();
+        $rules = [
             'nombre' => 'required',
             'ocupacion' => 'required',
-            'direccion' => 'required',
-            'ciudad' => 'required',
-            'pais' => 'required',
+            'direccion' => '',
+            'ciudad' => '',
+            'barrio' => '',
             'telefono' => 'required',
-            'celular' => 'required',
-            'email' => 'required',
+            'celular' => '',
+            'email' => '',
             'empresa' => 'required'
-        );
-        $phonebook = Validator::make(Input::all(), $rules);
-        if ($phonebook) {
-            $phonebook['users_id'] = Auth::user()->id;
-            $phonebook['status'] = true;
-            Vehicle::create($phonebook);
-            Session::flash('message', 'Successfully created phonebook!');
-            $phonebook->save();
-            return Redirect::intended('/phonebooklist');
-            //return json_encode($phonebook);
+        ];
+        $validate = Validator::make($post_data, $rules);
+        if ($validate) {
+            $post_data['users_id'] = Auth::user()->id;
+            Phonebook::create($post_data);
+
+            return Redirect::route('phonebook.index')
+                            ->with('flash', 'The new phonebook has been created');
         }
+        return Redirect::route('phonebook.create')
+                        ->withInput()
+                        ->withErrors($post_data->errors());
     }
 
     /**
@@ -60,8 +60,7 @@ class PhonebookController extends \BaseController {
      */
     public function show($id) {
 
-        $phonebook = Phonebook::find($id); //->toJson();
-        return View::make('phonebook.show');
+       //
     }
 
     /**
@@ -72,10 +71,10 @@ class PhonebookController extends \BaseController {
      */
     public function edit($id) {
         // get the phonebook
-        $phonebook = Phonebook::find($id);  //->toJson();        
+        $phonebook = Phonebook::find($id);
         // show the edit form and pass the phonebook
         return View::make('phonebook.edit')->with('phonebook', $phonebook);
-        // return $phonebook;
+       
     }
 
     /**
@@ -85,18 +84,19 @@ class PhonebookController extends \BaseController {
      * @return Response
      */
     public function update($id) {
+        $phonebook = Input::all();
         $rules = array(
             'nombre' => 'required',
             'ocupacion' => 'required',
-            'direccion' => 'required',
-            'ciudad' => 'required',
-            'pais' => 'required',
+            'direccion' => '',
+            'ciudad' => '',
+            'barrio' => '',
             'telefono' => 'required',
-            'celular' => 'required',
-            'email' => 'required',
+            'celular' => '',
+            'email' => '',
             'empresa' => 'required'
         );
-        $phonebook = Validator::make(Input::all(), $rules);
+        $validate = Validator::make($phonebook, $rules);
         if ($validate) {
             $phonebook2 = Phonebook::find($phonebook['id']);
             $phonebook2->nombre = $phonebook['nombre'];
@@ -111,7 +111,6 @@ class PhonebookController extends \BaseController {
             $phonebook2->save();
             Session::flash('message', 'Successfully updated phonebook!');
             return Redirect::intended('/phonebooklist');
-            //return json_encode($phonebook);
         }
     }
 
@@ -125,7 +124,6 @@ class PhonebookController extends \BaseController {
         $datos = Input::all();
         $phonebook = Phonebook::find($datos['id']);
         $phonebook->delete();
-        Session::flash('message', 'Successfully deleted the phonebook!');
         return Redirect::intended('/phonebooklist');
     }
 

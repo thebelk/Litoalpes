@@ -42,5 +42,5 @@ Route::delete('phonebook/{userlito}', 'PhonebookController@destroy');
 Route::resource('sessions', 'SessionsController');
 Route::post('/signup', 'UserController@store');
 Route::get('login', 'SessionsController@create');
-Route::get('logout/', 'SessionsController@destroy');
+Route::get('logout', 'SessionsController@destroy');
 Route::get('/', 'SessionsController@create');

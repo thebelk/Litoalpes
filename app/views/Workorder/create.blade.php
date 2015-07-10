@@ -46,7 +46,7 @@
             <a href="create" class="list-group-item active text-center">
                 <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
             </a>
-            <a href="customer/profile" class="list-group-item  text-center">                           
+            <a href="/customer/profile" class="list-group-item  text-center">                           
                 <h4 class="glyphicon glyphicon-user"></h4><br/> Perfil
             </a>                       
         </div>                     
@@ -70,388 +70,385 @@
                 <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Pedido</h3></div>
                 <div class="panel-body">
                     <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+                    {{Form::open(array('url' => '/workorder','role'=>'form', 'method' => 'POST')) }}
                     <div class="panel panel-default ">
-                        <div class="row ">                            
-                            <div class="col-xs-6 col-md-4 imp ">
-                                <label for="ex1"><h4 class="tex">FECHANENTREGA</h4></label>
-                                <input class="form-control" id="ex1" type="date">
-                            </div>
+                        <div class="row "> 
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">ESTADO ENTREGA</h4></label>                               
-                                <select class="form-control" id="ex1"><option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
+                                <div class='form-group form-register'>
+                                    {{ Form::label('fecha_entrega', 'FECHANENTREGA:') }}
+                                    <input type='date' id='date' name='date' class='form-control'/>
+                                </div>
+                            </div>                            
+                            <div class="col-xs-6 col-md-4 imp">                                    
+                                <div class='form-group form-register'>
+                                    {{ Form::label('estado_trabajo', 'ESTADO TRABAJO:') }}
+                                    {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Espera', '2' => 'Elaborada', '3' => 'Enviado', '4' => 'Autorizado')),null ,array('class' => 'form-control')); }}
+                                </div>
+                            </div>                            
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">ATENDIDO</h4></label>
-                                <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('atendido', 'ATENDIDO:') }}
+                                    {{ Form::text('atendido', null, array('placeholder' => 'Atendido por', 'class' => 'form-control')) }}
+                                </div>
                             </div>
                         </div>                       
-                        <div class="row ">                            
-                            <div class="col-xs-6 col-md-4 imp ">
-                                <label for="ex1"><h4 class="tex">CLASE DE TRABAJO</h4></label>
-                                <input class="form-control" id="ex1" type="text">
-                            </div>                              
+                        <div class="row ">                          
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">MATERIAL</h4></label>
-                                <input class="form-control" id="ex1" type="text">
-                            </div>
-                            <div class="col-xs-6 col-md-4 imp">
-                                <div class="col-xs-6 col-md-6 imp">
-                                    <label for="ex1"><h4 class="tex">CANTIDAD</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('clase_trabajo', 'CLASE DE TRABAJO:') }}
+                                    {{ Form::text('clase_trabajo', null, array('placeholder' => 'Clase Trabajo', 'class' => 'form-control')) }}
                                 </div>
+                            </div>                            
+                            <div class="col-xs-6 col-md-4 imp">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('tipo_material', 'MATERIAL:') }}
+                                    {{ Form::text('tipo_material', null, array('placeholder' => 'Tipo Material', 'class' => 'form-control')) }}
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-4 imp">                                
                                 <div class="col-xs-6 col-md-6 imp">
-                                    <label for="ex1"><h4 class="tex">TAMAÑO</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('cantidad', 'CANTIDAD:') }}
+                                        {{ Form::text('cantidad', null, array('placeholder' => 'Cantidad ', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>                                
+                                <div class="col-xs-6 col-md-6 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('tamano', 'TAMAÑO:') }}
+                                        {{ Form::text('tamano', null, array('placeholder' => 'Tamaño', 'class' => 'form-control')) }}
+                                    </div>
                                 </div>
                             </div>
                         </div>  
                     </div>
                     <div class="panel panel-default ">
-                        <div class="row ">                            
-                            <div class="col-xs-6 col-md-4 imp ">
-                                <label for="ex1"><h4 class="tex">VALOR</h4></label>
-                                <input class="form-control" id="ex1" type="text">
-                            </div>                            
+                        <div class="row ">     
                             <div class="col-xs-6 col-md-4 imp">
-                                <div class="col-xs-6 col-md-6 imp">
-                                    <label for="ex1"><h4 class="tex">IVA</h4></label>
-                                    <select class="form-control" id="ex1"><option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>                                       
-                                    </select>
-                                </div>
-                                <div class="col-xs-6 col-md-6 imp">
-                                    <label for="ex1"><h4 class="tex">%IVA</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('valor_trabajo', 'VALOR:') }}
+                                    {{ Form::text('valor_trabajo', null, array('placeholder' => 'Valor Trabajo', 'class' => 'form-control')) }}
                                 </div>
                             </div>
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">TOTAL</h4></label>
-                                <input class="form-control" id="ex1" type="text">
+                                <div class="col-xs-6 col-md-6 imp">                                    
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('iva', 'IVA:') }}
+                                        {{ Form::select('iva', array('iva' => array('1' => 'Ninguno', '2' => 'Si', '3' => 'No')),null ,array('class' => 'form-control')); }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 imp">                                   
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('iva2', '%IVA:') }}
+                                        {{ Form::text('iva2', null, array('placeholder' => '%iva', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-4 imp">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('total', 'TOTAL:') }}
+                                    {{ Form::text('total', null, array('placeholder' => 'Total', 'class' => 'form-control')) }}
+                                </div>
                             </div>
                         </div> 
                         <div class="row ">                            
                             <div class="col-xs-6 col-md-4 imp ">
-                                <label for="ex1"><h4 class="tex">ABONO</h4></label>
-                                <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('abono', 'ABONO:') }}
+                                    {{ Form::text('abono', null, array('placeholder' => 'Abono', 'class' => 'form-control')) }}
+                                </div>
                             </div>                              
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">SALDO</h4></label>
-                                <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('saldo', 'SALDO:') }}
+                                    {{ Form::text('saldo', null, array('placeholder' => 'Saldo', 'class' => 'form-control')) }}
+                                </div>
                             </div>
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">PAGO</h4></label>
-                                <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('pago', 'PAGO:') }}
+                                    {{ Form::text('pago', null, array('placeholder' => 'Pago', 'class' => 'form-control')) }}
+                                </div>
                             </div>
                         </div> 
-                    </div>
+                    </div>                    
                     <div class="row "> 
-                        <label for="ex1"><h4 class="tex">DETALLES</h4></label>                                    
-                        <textarea class="form-control" rows="3"></textarea>
+                        <div class='form-group form-register tex'>
+                            {{ Form::label('deetalles', 'DETALLES:') }}
+                            {{ Form::textarea('deetalles', null, array('rows' => '4', 'placeholder' => 'Detalles', 'class' => 'form-control')) }}
+                        </div>
                     </div>
                 </div>
-                <p>                                
-                    <button class="btn btn-default">Reset</button>
-                    <button class="btn  btn-success">Save</button>
-                </p>
+                <div class='row buttons'>                                
+                    {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
+                    {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                    
+                </div>
+                {{ Form::close() }}
             </div>                        
             <div class="panel panel-default tam">
                 <!-- Default panel contents -->
                 <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Orden de Producción</h3></div>
                 <div class="panel-body">
                     <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+                    {{Form::open(array('url' => '/workorder','role'=>'form', 'method' => 'POST')) }}
                     <div class="panel panel-default ">
                         <div class="row ">                            
                             <div class="col-xs-6 col-md-4 imp ">
-
                                 <div class='form-group form-register'>
-                                    {{ Form::label('razon_social', 'DISEÑO:') }}<br>
-                                    {{ Form::select('age', ['Under 18', '19 to 30', 'Over 30'],['class' => 'form-control']) }}
-                                   
+                                    {{ Form::label('diseño', 'DISEÑO:') }}
+                                    {{ Form::select('diseño', array('Tipo Diseño' => array('1' => 'Ninguno', '2' => 'Correcion', '3' => 'Arte')),null ,array('class' => 'form-control')); }}
                                 </div>
-                                <label for="ex1"><h4 class="tex">DISEÑO</h4></label>
-                                <select class="form-control" id="ex1"><option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
                             </div>                              
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">DISEÑADOR</h4></label>
-                                <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('diseñador', 'DISEÑADOR:') }}
+                                    {{ Form::text('diseñador', null, array('placeholder' => 'Diseñador', 'class' => 'form-control')) }}
+                                </div>
                             </div>
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">ELABORADO</h4></label>                               
-                                <select class="form-control" id="ex1"><option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <div class='form-group form-register'>
+                                    {{ Form::label('tipo_elaborado', 'ELABORADO:') }}
+                                    {{ Form::select('tipo_elaborado', array('Tipo Elaborado' => array('1' => 'Ninguno', '2' => 'primera vez', '3' => 'igual al anterior','4' => 'segun muestra')),null ,array('class' => 'form-control')); }}
+                                </div>
                             </div>
                         </div>                     
                         <div class="row "> 
                             <div class="col-xs-6 col-md-4 imp ">
-                                <label for="ex1"><h4 class="tex">ORIGINAL</h4></label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Original todas las copias 
-                                    </label>
+                                <br>                              
+                                <div class='form-group'>
+                                    {{ Form::label('original_todas', 'ORIGINAL:') }}
+                                    {{ Form::checkbox('original_todas', 'value')}}
+                                    
                                 </div>
                             </div> 
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">No.COPIAS</h4></label>                               
-                                <select class="form-control" id="ex1"><option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <div class='form-group form-register'>
+                                    {{ Form::label('no_copia', 'No.COPIAS:') }} 
+                                    {{ Form::select('no_copia', array('Seleccionar Copia' => array('1' => 'Ninguno','2' => 'una copia', '3' => 'dos copias ', '4' => 'tres copias ', '5' => 'cuatro copias')),null ,array('class' => 'form-control')); }}
+                                </div>
                             </div>
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">COPIA1</h4></label>                               
-                                <select class="form-control" id="ex1"><option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <div class='form-group form-register'>                                   
+                                    {{ Form::label('copia1', 'COPIA1:') }}
+                                    {{ Form::select('copia1', array('Copia 1' => array('1' => 'Ninguno ', '2' => 'Amarillo ', '3' => 'Rosado', '4' => 'Verde','5' => 'Azul','6' => 'Blanco')),null ,array('class' => 'form-control')); }}
+                                </div>
                             </div>                          
                         </div>   
                         <div class="row "> 
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">COPIA2</h4></label>                               
-                                <select class="form-control" id="ex1"><option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <div class='form-group form-register'>
+                                    {{ Form::label('copia2', 'COPIA2:') }}
+                                    {{ Form::select('copia2', array('COPIA 2' => array('1' => 'Ninguno ', '2' => 'Amarillo ', '3' => 'Rosado', '4' => 'Verde','5' => 'Azul','6' => 'Blanco')),null ,array('class' => 'form-control')); }}
+                                </div>
                             </div>
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">COPIA3</h4></label>                               
-                                <select class="form-control" id="ex1"><option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <div class='form-group form-register'>
+                                    {{ Form::label('copia3', 'COPIA3:') }}
+                                    {{ Form::select('copia3', array('COPIA 3' => array('1' => 'Ninguno ', '2' => 'Amarillo ', '3' => 'Rosado', '4' => 'Verde','5' => 'Azul','6' => 'Blanco')),null ,array('class' => 'form-control')); }}
+                                </div>                                                           
                             </div>
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">COPIA4</h4></label>                               
-                                <select class="form-control" id="ex1"><option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <div class='form-group form-register'>
+                                    {{ Form::label('copia4', 'COPIA4:') }}
+                                    {{ Form::select('copia4', array('COPIA 4' => array('1' => 'Ninguno ', '2' => 'Amarillo ', '3' => 'Rosado', '4' => 'Verde','5' => 'Azul','6' => 'Blanco')),null ,array('class' => 'form-control')); }}
+                                </div>                               
                             </div>                                                      
                         </div> 
                         <div class="row "> 
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">No.TINTA</h4></label>                               
-                                <select class="form-control" id="ex1"><option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <div class='form-group form-register'>
+                                    {{ Form::label('no_tintas', 'No.TINTA:') }}
+                                    {{ Form::select('no_tintas', array('No.Tintas' => array('1' => 'Ninguno','2' => 'una tinta', '3' => 'dos tintas ', '4' => 'tres tintas', '5' => 'poligromia ')),null ,array('class' => 'form-control')); }}
+                                </div>                                
                             </div> 
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">TIPO COLOR</h4></label>                               
-                                <select class="form-control" id="ex1"><option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <div class='form-group form-register'>
+                                    {{ Form::label('tipo_color', 'TIPO COLOR:') }}
+                                    {{ Form::select('tipo_color', array('Estado Trabajo' => array('1' => 'Ninguno','2' => 'basico', '2' => 'preparado')),null ,array('class' => 'form-control')); }}
+                                </div>                               
                             </div> 
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">COLOR1</h4></label>                               
-                                <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('color1', 'COLOR1:') }}
+                                    {{ Form::text('color1', null, array('placeholder' => 'color 1', 'class' => 'form-control')) }}
+                                </div>
                             </div>
 
                         </div>   
                         <div class="row "> 
                             <div class="col-xs-6 col-md-4 imp ">
-                                <label for="ex1"><h4 class="tex">COLOR2</h4></label>
-                                <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('color2', 'COLOR2:') }}
+                                    {{ Form::text('color2', null, array('placeholder' => 'color 2', 'class' => 'form-control')) }}
+                                </div>
                             </div> 
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">COLOR3</h4></label>
-                                <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('color3', 'COLOR3:') }}
+                                    {{ Form::text('color3', null, array('placeholder' => 'color 3', 'class' => 'form-control')) }}
+                                </div>
                             </div>
-                            <div class="col-xs-6 col-md-4 imp">                            
-                                <label for="ex1"><h4 class="tex">NUMERADO</h4></label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Trabajo enumerado
-                                    </label>
+                            <div class="col-xs-6 col-md-4 imp"> 
+                                <br>
+                                <div class='form-group'>
+                                    {{ Form::label('numerado', 'NUMERADO:') }}
+                                    {{ Form::checkbox('numerado', 'value')}}
+                                    
                                 </div>
                             </div>                            
                         </div>
                         <div class="row "> 
                             <div class="col-xs-6 col-md-4 imp">
                                 <div class="col-xs-6 col-md-6 imp">
-                                    <label for="ex1"><h4 class="tex">No.INICIAL</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('no_inicial', 'No.INICIAL:') }}
+                                        {{ Form::text('no_inicial', null, array('placeholder' => 'No.inicial', 'class' => 'form-control')) }}
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-md-6 imp">
-                                    <label for="ex1"><h4 class="tex">No.FINAL </h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('no_final', 'No.FINAL:') }}
+                                        {{ Form::text('no_final', null, array('placeholder' => 'No. final', 'class' => 'form-control')) }}
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-md-4 imp ">
-                                <label for="ex1"><h4 class="tex">HABILITA DIAN</h4></label>
-                                <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('habilitado_dian', 'HABILITA DIAN:') }}
+                                    {{ Form::text('habilitado_dian', null, array('placeholder' => 'No. Dian', 'class' => 'form-control')) }}
+                                </div>
                             </div>                            
                             <div class="col-xs-6 col-md-4 imp ">
-                                <label for="ex1"><h4 class="tex">FECHA DIAN </h4></label>
-                                <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('fecha_dian', 'FECHA DIAN:') }}
+                                    {{ Form::text('fecha_dian', null, array('placeholder' => 'Fecha Dian', 'class' => 'form-control')) }}
+                                </div>
                             </div>
                         </div>                    
                         <div class="row ">                                                        
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">EMBLOCADO</h4></label>
-                                <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('emblocado', 'EMBLOCADO:') }}
+                                    {{ Form::text('emblocado', null, array('placeholder' => 'Emblocado', 'class' => 'form-control')) }}
+                                </div>
                             </div>
                             <div class="col-xs-6 col-md-4 imp ">
-                                <label for="ex1"><h4 class="tex">QUEMADO</h4></label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Quemar trabajo 
-                                    </label>
+                                <br>                              
+                                <div class='form-group'>
+                                    {{ Form::label('quemado', 'QUEMADO:') }}
+                                    {{ Form::checkbox('quemado', 'value')}}                                    
                                 </div>
                             </div> 
-                            <div class="col-xs-6 col-md-4 imp">                            
-                                <label for="ex1"><h4 class="tex">TIRO/RETIRO</h4></label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Trabajo dos caras
-                                    </label>
+                            <div class="col-xs-6 col-md-4 imp"> 
+                                <br>                              
+                                <div class='form-group'>
+                                    {{ Form::label('tiro_retiro', 'TIRO/RETIRO:') }}
+                                    {{ Form::checkbox('tiro_retiro', 'value')}}                                    
                                 </div>
                             </div>
                         </div>  
                         <div class="row ">                            
                             <div class="col-xs-6 col-md-4 imp ">
-                                <label for="ex1"><h4 class="tex">No. PLANCHA</h4></label>
-                                <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('no_plancha', 'No. PLANCHA:') }}
+                                    {{ Form::text('no_plancha', null, array('placeholder' => 'No. Plancha', 'class' => 'form-control')) }}
+                                </div>
                             </div>                              
                             <div class="col-xs-6 col-md-4 imp">
-                                <label for="ex1"><h4 class="tex">No. MASTER</h4></label>
-                                <input class="form-control" id="ex1" type="text">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('no_master', 'No. MASTER:') }}
+                                    {{ Form::text('no_master', null, array('placeholder' => 'No. Master', 'class' => 'form-control')) }}
+                                </div>
                             </div>
-                            <div class="col-xs-6 col-md-4 imp">                            
-                                <label for="ex1"><h4 class="tex">ENGOMADO</h4></label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Engomar trabajo 
-                                    </label>
+                            <div class="col-xs-6 col-md-4 imp"> 
+                                <br>                              
+                                <div class='form-group'>
+                                    {{ Form::label('engomado', 'ENGOMADO:') }}
+                                    {{ Form::checkbox('engomado', 'value')}}                                    
                                 </div>
                             </div>
                         </div> 
                         <div class="row ">                            
-                            <div class="col-xs-6 col-md-4 imp">                            
-                                <label for="ex1"><h4 class="tex">PERFORADO</h4></label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Perforar trabajo 
-                                    </label>
-                                </div>
+                            <div class="col-xs-6 col-md-4 imp">  
+                                <br>                              
+                                <div class='form-group'>
+                                    {{ Form::label('perforado', 'PERFORADO:') }}
+                                    {{ Form::checkbox('perforado', 'value')}}                                    
+                                </div>                               
                             </div>                             
-                            <div class="col-xs-6 col-md-4 imp">                            
-                                <label for="ex1"><h4 class="tex">LEVANTE</h4></label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        levantar trabajo
-                                    </label>
-                                </div>
+                            <div class="col-xs-6 col-md-4 imp"> 
+                                <br>                              
+                                <div class='form-group'>
+                                    {{ Form::label('levante', 'LEVANTE:') }}
+                                    {{ Form::checkbox('levante', 'value')}}                                    
+                                </div>                               
                             </div>
-                            <div class="col-xs-6 col-md-4 imp">                            
-                                <label for="ex1"><h4 class="tex">ENGRAPADO</h4></label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Engrapar trabajo
-                                    </label>
-                                </div>
+                            <div class="col-xs-6 col-md-4 imp">   
+                                <br>                              
+                                <div class='form-group'>
+                                    {{ Form::label('engrapado', 'ENGRAPADO:') }}
+                                    {{ Form::checkbox('engrapado', 'value')}}                                    
+                                </div>                               
                             </div>
                         </div> 
                         <div class="row">
                             <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
-                                    <label for="ex1"><h4 class="tex">ACABADOS</h4></label>
-                                    <select class="form-control" id="ex1"><option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('acabados', 'ACABADOS:') }}
+                                        {{ Form::select('acabados', array('Acabados' => array('1' => 'Ninguno', '2' => 'Por la cabeza', '3' => 'Lado izquierdo', '4' => 'Lado derecho ')),null ,array('class' => 'form-control')); }}
+                                    </div>                                   
                                 </div>                              
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">CANTIDAD/MATERIAL</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('cantidad_material', 'CANTIDAD/MATERIAL:') }}
+                                        {{ Form::text('cantidad_material', null, array('placeholder' => 'Cantidad Material', 'class' => 'form-control')) }}
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <label for="ex1"><h4 class="tex">MAQUINA</h4></label>
-                                    <input class="form-control" id="ex1" type="text">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('maquina', 'MAQUINA:') }}
+                                        {{ Form::text('maquina', null, array('placeholder' => 'maquina', 'class' => 'form-control')) }}
+                                    </div>
                                 </div>
                             </div> 
                         </div>
-
-                    </div>
+                    </div>                    
                     <div class="row "> 
-                        <label for="ex1"><h4 class="tex">OBSERVACIONES</h4></label>                                    
-                        <textarea class="form-control" rows="3"></textarea>
+                        <div class='form-group form-register tex'>
+                            {{ Form::label('observaciones', 'OBSERVACIONES:') }}
+                            {{ Form::textarea('observaciones', null, array('rows' => '4', 'placeholder' => 'Observaciones', 'class' => 'form-control')) }}
+                        </div>
                     </div>
                     <div class="row ">                       
-                        <div class="col-xs-12 col-md-6 imp">
-                            <label for="ex1"><h4 class="tex">REGISTRADO POR</h4></label>
-                            <input class="form-control" id="ex1" type="text"> 
+                        <div class="col-xs-12 col-md-6 imp"> 
+                            <div class='form-group form-register'>
+                                {{ Form::label('nombre_registro_pedido', 'REGISTRADO POR:') }}
+                                {{ Form::text('nombre_registro_pedido', null, array('placeholder' => 'Quien Registro Pedido', 'class' => 'form-control')) }}
+                            </div>
                         </div>                       
                     </div>
                 </div>
-                <p>                                
-                    <button class="btn btn-default">Reset</button>
-                    <button class="btn  btn-success">Save</button>
-                </p>
+                <div class='row buttons'>                                
+                    {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
+                    {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                    
+                </div>
+                {{ Form::close() }}
             </div>           
             <hr>                          
-            <h2>Menu</h2>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-            <h2><a href="#"><i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></a></h2>
-            <h3 class="color">Home</h3>
-            <hr>
-        </center>           
-
-        <!-- menu-->
-        <center>
-            <div class="list-group">
+            <!-- menu-->
+            <div class="list-group">                
+                <h4>Menu</h4>   
                 <a href="#" class="list-group-item ">
-                    <h2 class="glyphicon glyphicon-user"></h2>
+                    <h3 class="color"> <i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></h3>
+                    <h3 class="color">Home</h3>
+                </a>
+                <a href="#" class="list-group-item ">
+                    <h3 class="glyphicon glyphicon-user"></h3>
                     <h3>Clientes</h3>
-                </a>
-                <a href="#" class="list-group-item ">
-                    <h2 class="glyphicon glyphicon-th-list"></h2>
-                    <h3>Orden/Trabajo</h3>
-                </a>
-
+                </a>                       
             </div>
         </center>
     </div>
-</div>       
-
+</div>  
+</div>  
 @stop

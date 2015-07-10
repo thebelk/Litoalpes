@@ -49,14 +49,14 @@
     </div> 
     <hr>
     <div id="sidebar">                         
-            <div class="list-group">                        
-                <a href="customer/create" class="list-group-item active text-center">                           
-                    <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Cliente
-                </a>                         
-               <a href="workorderlist" class="list-group-item text-center">
-                    <h4 class="glyphicon glyphicon-th-list"></h4><br/>Trabajos
-                </a>
-            </div>        
+        <div class="list-group">                        
+            <a href="customer/create" class="list-group-item active text-center">                           
+                <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Cliente
+            </a>                         
+            <a href="workorderlist" class="list-group-item text-center">
+                <h4 class="glyphicon glyphicon-th-list"></h4><br/>Trabajos
+            </a>
+        </div>        
     </div>
     <hr>
     <div class="row panel">
@@ -95,42 +95,23 @@
                     </div>
                     <hr>
 
+                    <!-- menu-->
 
-                    <div class="row">
-                        <div class="col col-sm-6">
-                            <img src="/assets/example/bg_smartphones.jpg" class="img-responsive">
-
-                        </div> 
-                        <div class="col col-sm-6">
-                            <h1>loren insut .</h1>
-                        </div>   
+                    <div class="list-group">                
+                        <h4>Menu</h4>   
+                        <a href="#" class="list-group-item ">
+                            <h3 class="color"> <i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></h3>
+                            <h3 class="color">Home</h3>
+                        </a>
+                        <a href="#" class="list-group-item ">
+                            <h3 class="glyphicon glyphicon-user"></h3>
+                            <h3>Clientes</h3>
+                        </a>                       
                     </div>
-                    <hr>                          
-                    <h2>MENU</h2>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                    <h2><a href="#"><i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></a></h2>
-                    <h3 class="color">Home</h3>
-                    <hr>
                 </center>
             </div>
-        </div>
-        <!-- menu-->
-        <center>
-            <div class="list-group">
-                <a href="#" class="list-group-item ">
-                    <h2 class="glyphicon glyphicon-user"></h2>
-                    <h3>Clientes</h3>
-                </a>
-                <a href="#" class="list-group-item ">
-                    <h2 class="glyphicon glyphicon-th-list"></h2>
-                    <h3>Orden/Trabajo</h3>
-                </a>              
-            </div>
-        </center>
-    </div>
+        </div>  
+    </div>  
 </div>
-
-
-@stop
-
+    @stop
 
