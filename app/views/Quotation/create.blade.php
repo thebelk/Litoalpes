@@ -7,35 +7,42 @@
 @stop
 @section('content')
 <div class="col col-sm-3 complement">   
-    <h3 class="highlight nav nav-stacked ">Lito Alpes <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
+    <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
-            <h3 class="color"> Datos </h3>
-            <p> Datos  de la empresa  </p>
+            <h3 class="color">{{ Auth::user()->representante}}  </h3>
+            <h5 class="color"> Nit: {{ Auth::user()->nit_cc}}  </h5>
+            <h5>Telefono: {{ Auth::user()->telefono}} </h5>
+            <h5>Celular: {{ Auth::user()->celular}} </h5>   
+            <h5>{{ Auth::user()->otro}} </h5>  
         </div>                                           
     </div>
+    <br>
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                    Accordion
+                    Correo Electronico
                 </a>
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
                 <div class="accordion-inner">
-                    <p>There is a lot to be said about RWD.</p>
+                    <p> <h4>Email: {{ Auth::user()->email}} </h4></p>
                 </div>
             </div>
         </div>
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                    Accordion
+                    Dirección
                 </a>
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    <p>Use @media queries or utility classes to customize responsiveness.</p>
+                    <h5>Direccion: {{ Auth::user()->direccion}} </h5>
+                    <h5> Barrio: {{ Auth::user()->barrio}} </h5>
+                    <h5> Ciudad: {{ Auth::user()->ciudad}} </h5>
+                    <h5> Pais: {{ Auth::user()->pais}} </h5>
                 </div>
             </div>
         </div>
@@ -128,7 +135,7 @@
                                 </div>
                                 <div class="col-xs-12 col-md-6 imp">                                     
                                     <div class='form-group form-register'>
-                                        {{ Form::label('clase_trabajo', 'ESTADO DE COTIZACIÓN:') }}
+                                        {{ Form::label('estado_cotizacion', 'ESTADO DE COTIZACIÓN:') }}
                                         {{ Form::select('estado_cotizacion', array('Estado Cotizacion' => array('1' => 'Espera', '2' => 'Elaborada', '3' => 'Enviado', '4' => 'Autorizado')),null ,array('class' => 'form-control')); }}
                                     </div>
                                 </div>

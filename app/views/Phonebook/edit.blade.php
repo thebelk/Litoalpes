@@ -79,26 +79,27 @@
                     <!-- Default panel contents -->
                     <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Contacto</h3></div>
                     <div class="panel-body">
-                        {{Form::open(array('url' => '/phonebook','role'=>'form', 'method' => 'POST')) }}
+                         {{Form::open(array('url' => '/phonebook/'.$phonebook->id,'method' => 'PUT', 'role'=>'form', 'class'=>'form-inline')) }}
                         <div class="panel panel-default ">
                             <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                             <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
                                     <div class='form-group form-register'>
                                         {{ Form::label('nombre', 'NOMBRE:') }}
-                                        {{ Form::text('nombre', null, array('placeholder' => 'Nombre', 'class' => 'form-control', 'required' => 'required')) }}
+                                         {{ Form::text('id', $phonebook->id, array('hidden' => 'true')) }}  
+                                        {{ Form::text('nombre', $phonebook->nombre, array('placeholder' => 'Nombre', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('empresa', 'EMPRESA:') }}
-                                        {{ Form::text('empresa', null, array('placeholder' => 'Empresa', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('empresa', $phonebook->empresa, array('placeholder' => 'Empresa', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('ocupacion', 'OCUPACIÓN:') }}
-                                        {{ Form::text('ocupacion', null, array('placeholder' => 'Ocupación', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('ocupacion', $phonebook->ocupacion, array('placeholder' => 'Ocupación', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
                             </div>
@@ -106,19 +107,19 @@
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('telefono', 'TELEFONO:') }}
-                                        {{ Form::text('telefono', null, array('placeholder' => 'Telefono', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('telefono', $phonebook->telefono, array('placeholder' => 'Telefono', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>                               
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('celular', 'CELULAR:') }}
-                                        {{ Form::text('celular', null, array('placeholder' => 'Celular', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('celular', $phonebook->celular, array('placeholder' => 'Celular', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('email', 'E-MAIL:') }}
-                                        {{ Form::text('email', null, array('placeholder' => 'Email', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('email', $phonebook->email, array('placeholder' => 'Email', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
                             </div>                        
@@ -126,21 +127,21 @@
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('direccion', 'DIRECCIÓN:') }}
-                                        {{ Form::text('direccion', null, array('placeholder' => 'Direccion', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('direccion', $phonebook->direccion, array('placeholder' => 'Direccion', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
 
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('barrio', 'BARRIO:') }}
-                                        {{ Form::text('barrio', null, array('placeholder' => 'Barrio', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('barrio', $phonebook->barrio, array('placeholder' => 'Barrio', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
 
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('ciudad', 'CIUDAD:') }}
-                                        {{ Form::text('ciudad', null, array('placeholder' => 'Ciudad', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('ciudad', $phonebook->ciudad, array('placeholder' => 'Ciudad', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
                             </div>
@@ -178,4 +179,3 @@
         </div>
     </div>  
 </div>  
-@stop

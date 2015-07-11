@@ -89,8 +89,10 @@
                         <strong>Ciudad </strong>: {{ $phonlist->ciudad }}</p>
                     <p>
                         <br>
-                        <button class="btn btn-default">Edit</button>
-                        <button class="btn btn-primary">Borrar</button>
+                    <div class="col-md-1">
+                        {{ HTML::link('/phonebook/'.$phonlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
+                    </div>                    
+                    <button class="btn btn-primary">Borrar</button>
                     </p>
                     <hr>
                     @endforeach

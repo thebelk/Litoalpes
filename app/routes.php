@@ -20,12 +20,12 @@ Route::resource('customer', 'CustomerController');
 Route::get('customerlist', 'CustomerController@index');
 Route::get('customer/create', 'CustomerController@create');
 Route::get('customer/profile', 'CustomerController@show');
-Route::get('customer/{userlito}/edit', 'CustomerController@edit');
+Route::get('customer/{customer}/edit', 'CustomerController@edit');
 
 Route::resource('quotation', 'QuotationController');
 Route::get('quotationlist', 'QuotationController@index');
 Route::get('quotation/create', 'QuotationController@create');
-Route::get('quotation/{userlito}/edit', 'QuotationController@edit');
+Route::get('quotation/{quotation}/edit', 'QuotationController@edit');
 Route::delete('quotation/{userlito}', 'QuotationController@destroy');
 
 Route::resource('workorder', 'WorkorderController');
@@ -36,7 +36,7 @@ Route::get('workorder/{workorder}/edit', 'WorkorderController@edit');
 Route::resource('phonebook', 'PhonebookController');
 Route::get('phonebooklist', 'PhonebookController@index');
 Route::get('phonebook/create', 'PhonebookController@create');
-Route::get('phonebook/{userlito}/edit', 'PhonebookController@edit');
+Route::get('phonebook/{phonebook}/edit', 'PhonebookController@edit');
 Route::delete('phonebook/{userlito}', 'PhonebookController@destroy');
 
 Route::resource('sessions', 'SessionsController');

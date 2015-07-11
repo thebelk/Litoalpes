@@ -98,12 +98,12 @@ class CustomerController extends \BaseController {
             'otro' => '',
             'email' => 'required'
         );
-        $validate = Validator::make(Input::all(), $rules);
+        $validate = Validator::make( $customer, $rules);
         if ($validate) {
             $customer2 = Customer::find($customer['id']);
             $customer2->nit_cc = $customer['nit_cc'];
             $customer2->cliente = $customer['cliente'];
-            $customer2->representante = $customer['representante'];
+            $customer2->repsponsable = $customer['repsponsable'];
             $customer2->tipo_cliente = $customer['tipo_cliente'];
             $customer2->direccion = $customer['direccion'];
             $customer2->barrio = $customer['barrio'];
@@ -114,11 +114,12 @@ class CustomerController extends \BaseController {
             $customer2->otro = $customer['otro'];
             $customer2->email = $customer['email'];
             $customer2->save();
-            Session::flash('message', 'Successfully updated customer!');
+           // Session::flash('message', 'Successfully updated customer!');
             return Redirect::intended('/customerlist');
         }
     }
 
+    
     /**
      * Remove the specified resource from storage.
      *

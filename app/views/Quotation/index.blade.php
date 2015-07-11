@@ -87,8 +87,11 @@
                             <strong>E-mail </strong>: {{ $quotlist->email }} </p>                        
                         <p>
                             <br>
-                            <button class="btn btn-default">Edit</button>
-                            <button class="btn btn-primary">Ver</button>
+                        <div class="col-md-1">
+                            {{ HTML::link('/quotation/'.$quotlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
+                        </div>
+                        <button class="btn btn-default">Edit</button>
+                        <button class="btn btn-primary">Ver</button>
                         </p>
                         <hr>
                         @endforeach

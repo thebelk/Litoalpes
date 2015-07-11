@@ -1,13 +1,13 @@
 @extends('layouts.master')
 <head> 
-    @section ('title')Contactos @stop
+    @section ('title')Clientes @stop
 </head>
 @section('header')
 @parent
 @stop
 @section('content')
 <div class="col col-sm-3 complement">   
-   <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
+    <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color">{{ Auth::user()->representante}}  </h3>
@@ -17,7 +17,6 @@
             <h5>{{ Auth::user()->otro}} </h5>  
         </div>                                           
     </div>
-    <br>
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
             <div class="accordion-heading">
@@ -48,15 +47,15 @@
         </div>
     </div> 
     <hr>
-    <div id="sidebar"> 
+    <div id="sidebar">  
         <div class="list-group">                        
-            <a href="create" class="list-group-item active text-center">
-                <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Contacto 
+            <a href="/workorder/create" class="list-group-item active text-center">
+                <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
             </a>                        
-            <a href="/phonebook" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-earphone"></h4><br/>Listar Contactos
+            <a href="/customer/profile" class="list-group-item  text-center">                           
+                <h4 class="glyphicon glyphicon-user"></h4><br/>Perfil
             </a>
-        </div>     
+        </div>  
     </div>
     <hr>
     <div class="row panel">
@@ -74,76 +73,98 @@
         <div class="bhoechie-tab-content active">
             <center>
                 <h2 class="glyphicon glyphicon-user color" ></h2>
-                <h3> Nuevo Contacto</h3>    
+                <h3> Editar Cliente</h3>    
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->
-                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Contacto</h3></div>
+                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">
+                            Fecha registro {{  Auth::user()->created_at }}  </h3>
+                    </div>
                     <div class="panel-body">
-                        {{Form::open(array('url' => '/phonebook','role'=>'form', 'method' => 'POST')) }}
-                        <div class="panel panel-default ">
-                            <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+                        <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+                        <div class="panel panel-default ">                            
+                            {{Form::open(array('url' => '/customer/'.$customer->id,'method' => 'PUT', 'role'=>'form', 'class'=>'form-inline')) }}
                             <div class="row ">                            
-                                <div class="col-xs-6 col-md-4 imp ">
+                                <div class="col-xs-6 col-md-4 imp ">                                   
                                     <div class='form-group form-register'>
-                                        {{ Form::label('nombre', 'NOMBRE:') }}
-                                        {{ Form::text('nombre', null, array('placeholder' => 'Nombre', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::label('cliente', 'CLIENTE:') }}
+                                        {{ Form::text('id', $customer->id, array('hidden' => 'true')) }}                                        
+                                        {{ Form::text('cliente', $customer->cliente, array('placeholder' => 'Cliente', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
-                                        {{ Form::label('empresa', 'EMPRESA:') }}
-                                        {{ Form::text('empresa', null, array('placeholder' => 'Empresa', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::label('nit_cc', 'NIT/CC:') }}
+                                        {{ Form::text('nit_cc', $customer->nit_cc, array('placeholder' => 'Nit/CC', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
-                                <div class="col-xs-6 col-md-4 imp">
+
+                                <div class="col-xs-6 col-md-4 imp">                                     
                                     <div class='form-group form-register'>
-                                        {{ Form::label('ocupacion', 'OCUPACIÓN:') }}
-                                        {{ Form::text('ocupacion', null, array('placeholder' => 'Ocupación', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::label('tipo_cliente', 'TIPO CLIENTE:') }}
+                                        {{ Form::select('tipo_cliente', array('Tipo Cliente' => array( '1' => 'Seleccionar','1' => 'Directo ', '2' => 'Intermediario')),$customer->tipo_cliente ,array('class' => 'form-control')); }}
                                     </div>
                                 </div>
                             </div>
-                            <div class="row "> 
-                                <div class="col-xs-6 col-md-4 imp">
+                            <div class="row ">                            
+                                <div class="col-xs-6 col-md-4 imp ">
                                     <div class='form-group form-register'>
                                         {{ Form::label('telefono', 'TELEFONO:') }}
-                                        {{ Form::text('telefono', null, array('placeholder' => 'Telefono', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>                               
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
-                                        {{ Form::label('celular', 'CELULAR:') }}
-                                        {{ Form::text('celular', null, array('placeholder' => 'Celular', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('telefono', $customer->telefono, array('placeholder' => 'Telefono', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('email', 'E-MAIL:') }}
-                                        {{ Form::text('email', null, array('placeholder' => 'Email', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('email', $customer->email, array('placeholder' => 'Email', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('otro', 'OTRO:') }}
+                                        {{ Form::text('otro', $customer->otro, array('placeholder' => 'Otro', 'class' => 'form-control')) }}
                                     </div>
                                 </div>
                             </div>                        
                             <div class="row ">                            
-                                <div class="col-xs-6 col-md-4 imp">
+                                <div class="col-xs-6 col-md-4 imp ">
                                     <div class='form-group form-register'>
                                         {{ Form::label('direccion', 'DIRECCIÓN:') }}
-                                        {{ Form::text('direccion', null, array('placeholder' => 'Direccion', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('direccion', $customer->direccion, array('placeholder' => 'DirecciÓn', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
-
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('barrio', 'BARRIO:') }}
-                                        {{ Form::text('barrio', null, array('placeholder' => 'Barrio', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('barrio', $customer->barrio, array('placeholder' => 'Barrio', 'class' => 'form-control')) }}
                                     </div>
                                 </div>
-
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
                                         {{ Form::label('ciudad', 'CIUDAD:') }}
-                                        {{ Form::text('ciudad', null, array('placeholder' => 'Ciudad', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('ciudad', $customer->ciudad, array('placeholder' => 'Ciudad', 'class' => 'form-control')) }}
                                     </div>
                                 </div>
                             </div>
+                            <div class="row ">                            
+                                <div class="col-xs-6 col-md-4 imp ">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('pais', 'PAIS:') }}
+                                        {{ Form::text('pais', $customer->pais, array('placeholder' => 'Pais', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('repsponsable', 'RESPONSABLE:') }}
+                                        {{ Form::text('repsponsable', $customer->repsponsable, array('placeholder' => 'Repsponsable', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('contacto', 'CONTACTO:') }}
+                                        {{ Form::text('contacto', $customer->contacto, array('placeholder' => 'Contacto', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                            </div>                            
                         </div>
                     </div>
                     <div class='row buttons'>                                
@@ -152,8 +173,8 @@
                     </div>
                     {{ Form::close() }}
                 </div> 
-
                 <hr>                          
+
                 <!-- menu-->
                 <div class="list-group">                
                     <h4>Menu</h4>   
@@ -179,3 +200,4 @@
     </div>  
 </div>  
 @stop
+

@@ -35,7 +35,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->hasMany('Customer ');
     }
 
-    public function phonebook() {
+    public function phonebooks() {
         return $this->hasMany('Phonebook ');
     }
 
@@ -43,7 +43,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->hasMany('Workorder');
     }
 
-    public function quotation() {
+    public function quotations() {
         return $this->hasMany('Quotation');
     }
 

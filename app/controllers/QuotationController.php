@@ -10,7 +10,7 @@ class QuotationController extends \BaseController {
     public function index() {
 
         $quotation = DB::table('quotations')->where('users_id', '=', Auth::user()->id)->get();
-        return View::make('quotation.index')->with('quotation', $quotation);
+        return View::make('quotation.index')->with('quotation',$quotation);
     }
 
     /**
@@ -43,8 +43,8 @@ class QuotationController extends \BaseController {
         ];
         $validate = Validator::make($post_data, $rules);
         if ($validate) {
-            $post_data['users_id'] = Auth::quotation()->id;
-            Quotation::create($post_data);
+            $post_data['users_id'] = Auth::user()->id;
+            Quotation::create($post_data);            
             return Redirect::intended('/quotationlist')
                             ->with('flash', 'The new quotation has been created');
         }

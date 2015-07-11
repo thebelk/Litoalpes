@@ -83,12 +83,14 @@
                     <p><strong>Telefono</strong>: {{ $custlist->telefono }} ,
                         <strong>Tipo Cliente </strong>: {{ $custlist->tipo_cliente }},
                         <strong>E-mail </strong>: {{ $custlist->email }} </p> 
-
-                    <p>
-                        <br>
-                        <button class="btn btn-default">Edit</button>
-                        <button class="btn btn-primary">Borrar</button>
-                    </p>
+                    <br>
+                    <div class="col-md-1">
+                        {{ HTML::link('/customer/'.$custlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
+                    </div>
+                    <div class="col-md-1">
+                        {{ HTML::link('/customer/'.$custlist->id.'/edit','Borrar', array('class' => 'btn btn-success'), false)}} 
+                    </div>                    
+                    <br> <br>
                     <hr>
                     @endforeach
                 </div>

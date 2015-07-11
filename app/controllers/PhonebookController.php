@@ -103,7 +103,7 @@ class PhonebookController extends \BaseController {
             $phonebook2->ocupacion = $phonebook['ocupacion'];
             $phonebook2->direccion = $phonebook['direccion'];
             $phonebook2->ciudad = $phonebook['ciudad'];
-            $phonebook2->pais = $phonebook['pais'];
+            $phonebook2->barrio = $phonebook['barrio'];
             $phonebook2->telefono = $phonebook['telefono'];
             $phonebook2->celular = $phonebook['celular'];
             $phonebook2->email = $phonebook['email'];

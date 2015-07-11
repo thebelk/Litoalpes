@@ -1,13 +1,13 @@
 @extends('layouts.master')
 <head> 
-    @section ('title')Contactos @stop
+    @section ('title')Cotizacion  @stop
 </head>
-@section('header')
+@section('header')  
 @parent
 @stop
 @section('content')
 <div class="col col-sm-3 complement">   
-   <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
+    <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color">{{ Auth::user()->representante}}  </h3>
@@ -51,10 +51,10 @@
     <div id="sidebar"> 
         <div class="list-group">                        
             <a href="create" class="list-group-item active text-center">
-                <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Contacto 
+                <h4 class="glyphicon glyphicon-plus"></h4><br/>Nueva Cotización 
             </a>                        
-            <a href="/phonebook" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-earphone"></h4><br/>Listar Contactos
+            <a href="/quotation" class="list-group-item  text-center">                           
+                <h4 class="glyphicon glyphicon-th-list"></h4><br/>Listar Cotización
             </a>
         </div>     
     </div>
@@ -73,88 +73,97 @@
         <!-- cho section -->
         <div class="bhoechie-tab-content active">
             <center>
-                <h2 class="glyphicon glyphicon-user color" ></h2>
-                <h3> Nuevo Contacto</h3>    
+                <h2 class="glyphicon glyphicon-pencil color" ></h2>
+                <h3> Nueva Cotización</h3>    
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->
-                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Contacto</h3></div>
+                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Registro</h3></div>
                     <div class="panel-body">
-                        {{Form::open(array('url' => '/phonebook','role'=>'form', 'method' => 'POST')) }}
+                        <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                         <div class="panel panel-default ">
+                            {{Form::open(array('url' => '/quotation/'.$quotation->id,'method' => 'PUT', 'role'=>'form', 'class'=>'form-inline')) }}
                             <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-                            <div class="row ">                            
-                                <div class="col-xs-6 col-md-4 imp ">
-                                    <div class='form-group form-register'>
-                                        {{ Form::label('nombre', 'NOMBRE:') }}
-                                        {{ Form::text('nombre', null, array('placeholder' => 'Nombre', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
+                            <div class="row ">
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
-                                        {{ Form::label('empresa', 'EMPRESA:') }}
-                                        {{ Form::text('empresa', null, array('placeholder' => 'Empresa', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
-                                        {{ Form::label('ocupacion', 'OCUPACIÓN:') }}
-                                        {{ Form::text('ocupacion', null, array('placeholder' => 'Ocupación', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row "> 
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
-                                        {{ Form::label('telefono', 'TELEFONO:') }}
-                                        {{ Form::text('telefono', null, array('placeholder' => 'Telefono', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::label('nombre_cliente', 'NOMBRE CLIENTE:') }}
+                                        {{ Form::text('id', $quotation->id, array('hidden' => 'true')) }} 
+                                        {{ Form::text('nombre_cliente', $quotation->nombre_cliente, array('placeholder' => 'Nombre Cliente', 'class' => 'form-control')) }}
                                     </div>
                                 </div>                               
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
+                                        {{ Form::label('telefono', 'TELEFONO:') }}
+                                        {{ Form::text('telefono', $quotation->telefono, array('placeholder' => 'Telefono', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>                                
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
                                         {{ Form::label('celular', 'CELULAR:') }}
-                                        {{ Form::text('celular', null, array('placeholder' => 'Celular', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
-                                        {{ Form::label('email', 'E-MAIL:') }}
-                                        {{ Form::text('email', null, array('placeholder' => 'Email', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
-                            </div>                        
-                            <div class="row ">                            
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
-                                        {{ Form::label('direccion', 'DIRECCIÓN:') }}
-                                        {{ Form::text('direccion', null, array('placeholder' => 'Direccion', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
-
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
-                                        {{ Form::label('barrio', 'BARRIO:') }}
-                                        {{ Form::text('barrio', null, array('placeholder' => 'Barrio', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
-
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
-                                        {{ Form::label('ciudad', 'CIUDAD:') }}
-                                        {{ Form::text('ciudad', null, array('placeholder' => 'Ciudad', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::text('celular', $quotation->celular, array('placeholder' => 'Celular', 'class' => 'form-control')) }}
                                     </div>
                                 </div>
                             </div>
+                            <div class="row ">   
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('email', 'E-MAIL:') }}
+                                        {{ Form::text('email', $quotation->email, array('placeholder' => 'E-mail', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>                               
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('direccion', 'DIRECCIÓN:') }}
+                                        {{ Form::text('direccion', $quotation->direccion, array('placeholder' => 'Direccion', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>                                
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('barrio', 'BARRIO:') }}
+                                        {{ Form::text('barrio', $quotation->barrio, array('placeholder' => 'Barrio', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                            </div>                        
                         </div>
-                    </div>
+                        <div class="panel panel-default ">
+                            <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+                            <div class="row ">                            
+                                <div class="col-xs-12 col-md-6 imp ">                                   
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('clase_trabajo', 'CLASE DE TRABAJO:') }}
+                                        {{ Form::text('clase_trabajo', $quotation->clase_trabajo, array('placeholder' => 'Clase Trabajo', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 imp">                                     
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('estado_cotizacion', 'ESTADO DE COTIZACIÓN:') }}
+                                        {{ Form::select('estado_cotizacion', array('Estado Cotizacion' => array('1' => 'Espera', '2' => 'Elaborada', '3' => 'Enviado', '4' => 'Autorizado')), $quotation->estado_cotizacion, array('class' => 'form-control')); }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row "> 
+                                <div class='form-group form-register tex'>
+                                    {{ Form::label('especificaciones', 'ESPECIFICACIONES:') }}
+                                    {{ Form::textarea('especificaciones', $quotation->especificaciones, array('rows' => '4', 'placeholder' => 'Especificaciones', 'class' => 'form-control')) }}
+                                </div>
+                            </div>
+
+                            <div class="row "> 
+                                <div class='form-group form-register tex'>
+                                    {{ Form::label('cotizacion', 'COTIZACIÓN:') }}
+                                    {{ Form::textarea('cotizacion', $quotation->cotizacion, array('rows' => '4', 'placeholder' => 'Cotización', 'class' => 'form-control')) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>                   
                     <div class='row buttons'>                                
                         {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
-                        {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                                 
+                        {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}  
+                        {{ Form::button('Enviar', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
                     </div>
                     {{ Form::close() }}
                 </div> 
-
-                <hr>                          
-                <!-- menu-->
+                <hr>   
                 <div class="list-group">                
                     <h4>Menu</h4>   
                     <a href="/user" class="list-group-item ">
@@ -177,5 +186,4 @@
             </center>
         </div>
     </div>  
-</div>  
-@stop
+    @stop
