@@ -8,8 +8,9 @@ class QuotationController extends \BaseController {
      * @return Response
      */
     public function index() {
-        //return 'vista de quotation.index';
-        return View::make('quotation.index');
+
+        $quotation = DB::table('quotations')->where('users_id', '=', Auth::user()->id)->get();
+        return View::make('quotation.index')->with('quotation', $quotation);
     }
 
     /**
@@ -107,7 +108,7 @@ class QuotationController extends \BaseController {
             $quotation2->barrio = $quotation['barrio'];
             $quotation2->telefono = $quotation['telefono'];
             $quotation2->celular = $quotation['celular'];
-            $quotation2->email = $quotation['email'];            
+            $quotation2->email = $quotation['email'];
             $quotation2->save();
             return Redirect::intended('/quotationlist');
         }

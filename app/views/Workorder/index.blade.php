@@ -91,28 +91,27 @@
                         </p>
                     </div>
                 </div>
-                <hr>
-                <div class="row">
-                    <div class="col col-sm-6">
-                        <img src="/assets/example/bg_smartphones.jpg" class="img-responsive">
-                    </div> 
-                    <div class="col col-sm-6">
-                        <h1>loren insut .</h1>
-                    </div>   
-                </div>
+
                 <hr>                          
                 <!-- menu-->
-
                 <div class="list-group">                
                     <h4>Menu</h4>   
-                    <a href="#" class="list-group-item ">
+                    <a href="/user" class="list-group-item ">
                         <h3 class="color"> <i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></h3>
                         <h3 class="color">Home</h3>
                     </a>
-                    <a href="#" class="list-group-item ">
+                    <a href="/customer" class="list-group-item ">
                         <h3 class="glyphicon glyphicon-user"></h3>
                         <h3>Clientes</h3>
-                    </a>                       
+                    </a>   
+                    <a href="/quotation" class="list-group-item ">
+                        <h3 class="glyphicon glyphicon-pencil"></h3>
+                        <h3>Cotizar</h3>
+                    </a>
+                    <a href="#" class="list-group-item ">
+                        <h3 class="glyphicon glyphicon-bell"></h3>
+                        <h3>Notificaciones</h3>
+                    </a>                   
                 </div>
             </center>
         </div>

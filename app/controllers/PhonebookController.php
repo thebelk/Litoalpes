@@ -8,7 +8,8 @@ class PhonebookController extends \BaseController {
      * @return Response
      */
     public function index() {
-        return View::make('phonebook.index');
+        $phonebook = DB::table('phonebooks')->where('users_id', '=', Auth::user()->id)->get();
+        return View::make('phonebook.index')->with('phonebook', $phonebook);
     }
 
     /**
@@ -60,7 +61,7 @@ class PhonebookController extends \BaseController {
      */
     public function show($id) {
 
-       //
+        //
     }
 
     /**
@@ -74,7 +75,6 @@ class PhonebookController extends \BaseController {
         $phonebook = Phonebook::find($id);
         // show the edit form and pass the phonebook
         return View::make('phonebook.edit')->with('phonebook', $phonebook);
-       
     }
 
     /**

@@ -9,7 +9,8 @@ class CustomerController extends \BaseController {
      */
     public function index() {
 
-        return View::make('customer.index');
+        $customer = DB::table('customers')->where('users_id', '=', Auth::user()->id)->get();
+        return View::make('customer.index')->with('customer', $customer);
     }
 
     /**
@@ -59,7 +60,7 @@ class CustomerController extends \BaseController {
      */
     public function show($id) {
 
-      //
+        //
     }
 
     /**
@@ -70,10 +71,9 @@ class CustomerController extends \BaseController {
      */
     public function edit($id) {
         // get the customer
-        $customer = Customer::find($id);         
+        $customer = Customer::find($id);
         // show the edit form and pass the customer
         return View::make('customer.edit')->with('customer', $customer);
-      
     }
 
     /**

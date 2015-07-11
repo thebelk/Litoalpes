@@ -69,60 +69,56 @@
 
 
 <div class="col col-sm-9">
-    <div class="row panel">                             
-        <!-- cho section -->
+    <div class="row panel">  
         <div class="bhoechie-tab-content active">
             <center>
                 <h2 class="glyphicon glyphicon-user color" ></h2>
-                <h3> Lista de Contactos</h3>                  
-                <div class="panel panel-default  tam ">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading row panel "> <h3 class="list-group-item-heading color ">Nombre Contactos</h3></div>
-                    <div class="panel-body">
-                        <p>
-                            <img src="//placehold.it/150x100/EEEEEE" class="img-responsive pull-right"> Farmhand ida quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
-                            eos qui ratione voluptatem sequi nesciunt. I met him on the Internet. He's a French model. Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-                            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                            <br><br>
-                            <button class="btn btn-default">Edit</button>
-                            <button class="btn btn-primary">Ver</button>
-                        </p>
-
-                    </div>
+                <h3> Lista de Contactos</h3>  
+            </center>
+            <div class="panel panel-default tam">                  
+                <div class="panel-body">
+                    <hr>                        
+                    @foreach($phonebook as $phonlist)                      
+                    <h3><strong> {{ $phonlist->nombre }} {{ $phonlist->ocupacion }}</strong></h3>
+                    <p><strong>Empresa</strong>: {{ $phonlist->empresa}}, 
+                        <strong>Telefono</strong>: {{ $phonlist->telefono }} ,
+                        <strong>Celular </strong>: {{ $phonlist->celular }},
+                        <strong>E-mail </strong>: {{ $phonlist->email }} </p>  
+                    <P><strong>Dirección </strong>: {{ $phonlist->direccion }},
+                        <strong>Barrio </strong>: {{ $phonlist->barrio }},
+                        <strong>Ciudad </strong>: {{ $phonlist->ciudad }}</p>
+                    <p>
+                        <br>
+                        <button class="btn btn-default">Edit</button>
+                        <button class="btn btn-primary">Borrar</button>
+                    </p>
+                    <hr>
+                    @endforeach
                 </div>
-                <hr>
-
-
-                <div class="row">
-                    <div class="col col-sm-6">
-                        <img src="/assets/example/bg_smartphones.jpg" class="img-responsive">
-
-                    </div> 
-                    <div class="col col-sm-6">
-                        <h1>loren insut .</h1>
-                    </div>   
-                </div>
-                <hr>                          
-                <!-- menu-->
-
+            </div> 
+            <hr> <!-- menu-->
+            <center>
                 <div class="list-group">                
                     <h4>Menu</h4>   
-                    <a href="#" class="list-group-item ">
+                    <a href="/user" class="list-group-item ">
                         <h3 class="color"> <i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></h3>
                         <h3 class="color">Home</h3>
                     </a>
-                    <a href="#" class="list-group-item ">
+                    <a href="/customer" class="list-group-item ">
                         <h3 class="glyphicon glyphicon-user"></h3>
                         <h3>Clientes</h3>
-                    </a>                       
+                    </a>   
+                    <a href="/quotation" class="list-group-item ">
+                        <h3 class="glyphicon glyphicon-pencil"></h3>
+                        <h3>Cotizar</h3>
+                    </a>
+                    <a href="#" class="list-group-item ">
+                        <h3 class="glyphicon glyphicon-bell"></h3>
+                        <h3>Notificaciones</h3>
+                    </a>                   
                 </div>
             </center>
         </div>
-    </div>  
-</div>  
+    </div> 
+</div>
 @stop
-
-
-

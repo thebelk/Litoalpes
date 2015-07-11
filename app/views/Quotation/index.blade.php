@@ -74,48 +74,50 @@
         <div class="bhoechie-tab-content active">
             <center>
                 <h2 class="glyphicon glyphicon-th-list color" ></h2>
-                <h3> Listar Cotización</h3>                      
-                <div class="panel panel-default tam">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Cotizar</h3></div>
+                <h3> Listar Cotización</h3> 
+            </center>                     
+            <div class="panel panel-default tam">      
+                <div class="panel panel-default tam">                  
                     <div class="panel-body">
+                        <hr>                        
+                        @foreach($quotation as $quotlist)                      
+                        <h3><strong> {{ $quotlist->clase_trabajo }} {{ $quotlist->estado_cotizacion }}</strong></h3>
+                        <p><strong>Cliente</strong>: {{ $quotlist->nombre_cliente}}, 
+                            <strong>Telefono</strong>: {{ $quotlist->telefono }} ,
+                            <strong>E-mail </strong>: {{ $quotlist->email }} </p>                        
                         <p>
-                            <img src="//placehold.it/150x100/EEEEEE" class="img-responsive pull-right"> Farmhand ida quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
-                            eos qui ratione voluptatem sequi nesciunt. I met him on the Internet. He's a French model. Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-                            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                            <br><br>
-                            <button class="btn btn-default">{{ HTML::link('/user/'.Auth::user()->id.'/edit','Edit', false) }}</button>
-                            <button class="btn  btn-success">Ver</button>
+                            <br>
+                            <button class="btn btn-default">Edit</button>
+                            <button class="btn btn-primary">Ver</button>
                         </p>
+                        <hr>
+                        @endforeach
                     </div>
                 </div>
-                <hr>
-                <div class="row">
-                    <div class="col col-sm-6">
-                        <img src="/assets/example/bg_smartphones.jpg" class="img-responsive">
-                    </div> 
-                    <div class="col col-sm-6">
-                        <h1>loren insut .</h1>
-                    </div>   
-                </div>
-                <hr>                          
+                <hr>                                      
                 <!-- menu-->
-
-                <div class="list-group">                
-                    <h4>Menu</h4>   
-                    <a href="#" class="list-group-item ">
-                        <h3 class="color"> <i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></h3>
-                        <h3 class="color">Home</h3>
-                    </a>
-                    <a href="#" class="list-group-item ">
-                        <h3 class="glyphicon glyphicon-user"></h3>
-                        <h3>Clientes</h3>
-                    </a>                       
-                </div>
-            </center>
-        </div>
+                <center>
+                    <div class="list-group">                
+                        <h4>Menu</h4>   
+                        <a href="/user" class="list-group-item ">
+                            <h3 class="color"> <i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></h3>
+                            <h3 class="color">Home</h3>
+                        </a>
+                        <a href="/customer" class="list-group-item ">
+                            <h3 class="glyphicon glyphicon-user"></h3>
+                            <h3>Clientes</h3>
+                        </a>   
+                        <a href="/quotation" class="list-group-item ">
+                            <h3 class="glyphicon glyphicon-pencil"></h3>
+                            <h3>Cotizar</h3>
+                        </a>
+                        <a href="#" class="list-group-item ">
+                            <h3 class="glyphicon glyphicon-bell"></h3>
+                            <h3>Notificaciones</h3>
+                        </a>                   
+                    </div>
+                </center>
+            </div>
+        </div>  
     </div>  
-</div>  
-@stop
+    @stop
