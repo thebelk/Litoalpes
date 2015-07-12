@@ -80,15 +80,22 @@
                     <hr>                        
                     @foreach($customer as $custlist)                      
                     <h3><strong> {{ $custlist->cliente }} {{ $custlist->nit_cc }}</strong></h3>
-                    <p><strong>Telefono</strong>: {{ $custlist->telefono }} ,
+                    <p><strong>Telefono</strong>: {{ $custlist->telefono }},
                         <strong>Tipo Cliente </strong>: {{ $custlist->tipo_cliente }},
-                        <strong>E-mail </strong>: {{ $custlist->email }} </p> 
-                    <br>
+                        <strong>E-mail </strong>: {{ $custlist->email }}</p> 
+                    <p><strong>Direccion</strong>: {{ $custlist->direccion }},
+                        <strong>Barrio </strong>: {{ $custlist->barrio }},
+                        <strong>Ciudad </strong>: {{ $custlist->ciudad }},
+                        <strong>Pais </strong>: {{ $custlist->pais}}</p> 
+                        <p><strong>Responsable</strong>: {{ $custlist->repsponsable }},
+                        <strong>Contacto</strong>: {{ $custlist->contacto }},
+                        <strong>otro </strong>: {{ $custlist->otro}}</p> 
+                    <br>                  
                     <div class="col-md-1">
                         {{ HTML::link('/customer/'.$custlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
                     </div>
                     <div class="col-md-1">
-                        {{ HTML::link('/customer/'.$custlist->id.'/edit','Borrar', array('class' => 'btn btn-success'), false)}} 
+                        {{ HTML::link('/customer/'.$custlist->id.'/profile','Ver', array('class' => 'btn btn-success'), false)}} 
                     </div>                    
                     <br> <br>
                     <hr>

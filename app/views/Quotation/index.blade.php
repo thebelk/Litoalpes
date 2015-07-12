@@ -75,52 +75,55 @@
             <center>
                 <h2 class="glyphicon glyphicon-th-list color" ></h2>
                 <h3> Listar Cotización</h3> 
-            </center>                     
-            <div class="panel panel-default tam">      
-                <div class="panel panel-default tam">                  
-                    <div class="panel-body">
-                        <hr>                        
-                        @foreach($quotation as $quotlist)                      
-                        <h3><strong> {{ $quotlist->clase_trabajo }} {{ $quotlist->estado_cotizacion }}</strong></h3>
-                        <p><strong>Cliente</strong>: {{ $quotlist->nombre_cliente}}, 
-                            <strong>Telefono</strong>: {{ $quotlist->telefono }} ,
-                            <strong>E-mail </strong>: {{ $quotlist->email }} </p>                        
-                        <p>
-                            <br>
-                        <div class="col-md-1">
-                            {{ HTML::link('/quotation/'.$quotlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
-                        </div>
-                        <button class="btn btn-default">Edit</button>
-                        <button class="btn btn-primary">Ver</button>
-                        </p>
-                        <hr>
-                        @endforeach
-                    </div>
+            </center>    
+            <div class="panel panel-default tam">                  
+                <div class="panel-body">
+                    <hr>                        
+                    @foreach($quotation as $quotlist)                      
+                    <h3><strong> {{ $quotlist->clase_trabajo }} {{ $quotlist->estado_cotizacion }}</strong></h3>
+                    <p><strong>Cliente</strong>: {{ $quotlist->nombre_cliente}}, 
+                        <strong>Telefono</strong>: {{ $quotlist->telefono }} ,
+                        <strong>Celular</strong>: {{ $quotlist->celular }} ,
+                        <strong>E-mail </strong>: {{ $quotlist->email }} </p> 
+                     <p><strong>direccion</strong>: {{ $quotlist->direccion}},                         
+                        <strong>Barrio</strong>: {{ $quotlist->barrio }} ,
+                      <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }}</p> 
+                    <br>
+                    <div class="col-md-1">
+                        {{ HTML::link('/quotation/'.$quotlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
+                    </div>  
+                    <div class="col-md-1">
+                        {{ HTML::link('/quotation/'.$quotlist->id.'/edit','Ver', array('class' => 'btn btn-default'), false)}}                       
+                    </div>                     
+                    <br> <br>
+                    <hr>
+                    @endforeach
                 </div>
-                <hr>                                      
-                <!-- menu-->
-                <center>
-                    <div class="list-group">                
-                        <h4>Menu</h4>   
-                        <a href="/user" class="list-group-item ">
-                            <h3 class="color"> <i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></h3>
-                            <h3 class="color">Home</h3>
-                        </a>
-                        <a href="/customer" class="list-group-item ">
-                            <h3 class="glyphicon glyphicon-user"></h3>
-                            <h3>Clientes</h3>
-                        </a>   
-                        <a href="/quotation" class="list-group-item ">
-                            <h3 class="glyphicon glyphicon-pencil"></h3>
-                            <h3>Cotizar</h3>
-                        </a>
-                        <a href="#" class="list-group-item ">
-                            <h3 class="glyphicon glyphicon-bell"></h3>
-                            <h3>Notificaciones</h3>
-                        </a>                   
-                    </div>
-                </center>
             </div>
-        </div>  
+            <hr>                                      
+            <!-- menu-->
+            <center>
+                <div class="list-group">                
+                    <h4>Menu</h4>   
+                    <a href="/user" class="list-group-item ">
+                        <h3 class="color"> <i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></h3>
+                        <h3 class="color">Home</h3>
+                    </a>
+                    <a href="/customer" class="list-group-item ">
+                        <h3 class="glyphicon glyphicon-user"></h3>
+                        <h3>Clientes</h3>
+                    </a>   
+                    <a href="/quotation" class="list-group-item ">
+                        <h3 class="glyphicon glyphicon-pencil"></h3>
+                        <h3>Cotizar</h3>
+                    </a>
+                    <a href="#" class="list-group-item ">
+                        <h3 class="glyphicon glyphicon-bell"></h3>
+                        <h3>Notificaciones</h3>
+                    </a>                   
+                </div>
+            </center>
+        </div>
     </div>  
-    @stop
+</div>  
+@stop

@@ -98,7 +98,7 @@ class QuotationController extends \BaseController {
         );
         $validate = Validator::make($quotation, $rules);
         if ($validate) {
-            $quotation2 = User::find($quotation['id']);
+            $quotation2 = Quotation::find($quotation['id']);
             $quotation2->estado_cotizacion = $quotation['estado_cotizacion'];
             $quotation2->nombre_cliente = $quotation['nombre_cliente'];
             $quotation2->clase_trabajo = $quotation['clase_trabajo'];
@@ -111,6 +111,7 @@ class QuotationController extends \BaseController {
             $quotation2->email = $quotation['email'];
             $quotation2->save();
             return Redirect::intended('/quotationlist');
+            
         }
     }
 

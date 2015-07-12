@@ -9,35 +9,42 @@
 </h3>
 <div class="col col-sm-3 complement">  
 
-    <h3 class="highlight nav nav-stacked ">Cliente <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
+    <h3 class="highlight nav nav-stacked ">{{$customer->cliente}} <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
-            <h3 class="color"> Datos </h3>
-            <p> Datos contacto de la empresa  </p>
+            <h3 class="color">{{$customer->tipo_cliente}} </h3>            
+            <h5 class="color"> Nit: {{ $customer->nit_cc}}  </h5>           
+            <h5>Telefono: {{$customer->telefono}} </h5>   
+            <h5>Repsponsable: {{$customer->repsponsable}} </h5> 
+            <h5>Contacto: {{$customer->contacto}} </h5> 
+            <h5>{{ $customer->otro}} </h5>  
         </div>                                           
     </div>
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                    Accordion
+                    Correo Electronico
                 </a>
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
                 <div class="accordion-inner">
-                    <p>There is a lot to be said about RWD.</p>
+                    <p> <h4>Email: {{ $customer->email}} </h4></p>
                 </div>
             </div>
         </div>
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                    Accordion
+                    Dirección
                 </a>
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    <p>Use @media queries or utility classes to customize responsiveness.</p>
+                    <h5>Direccion: {{$customer->direccion}} </h5>
+                    <h5> Barrio: {{ $customer->barrio}} </h5>
+                    <h5> Ciudad: {{$customer->ciudad}} </h5>
+                    <h5> Pais: {{$customer->pais}} </h5>
                 </div>
             </div>
         </div>

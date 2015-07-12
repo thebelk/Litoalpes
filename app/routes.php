@@ -19,7 +19,7 @@ Route::get('user/{user}/edit', 'UserController@edit');
 Route::resource('customer', 'CustomerController');
 Route::get('customerlist', 'CustomerController@index');
 Route::get('customer/create', 'CustomerController@create');
-Route::get('customer/profile', 'CustomerController@show');
+Route::get('customer/{customer}/profile', 'CustomerController@show');
 Route::get('customer/{customer}/edit', 'CustomerController@edit');
 
 Route::resource('quotation', 'QuotationController');
