@@ -16,8 +16,11 @@ class WorkorderController extends \BaseController {
      *
      * @return Response
      */
-    public function create() {
-        return View::make('workorder.create');
+    public function create($id) {
+
+        $customer = Customer::find($id);
+        // show the edit form and pass the customer
+        return View::make('workorder.create')->with('customer', $customer);
     }
 
     /**
@@ -80,7 +83,8 @@ class WorkorderController extends \BaseController {
         ];
         $validate = Validator::make($post_data, $rules);
         if ($validate) {
-            $post_data['customer_id'] = Auth::user()->id;
+            $customer = Customer::find($id);
+            $post_data['customers_id'] = $customer->id;
             Workorder::create($post_data);
             return Redirect::intended('/customer/profile')
                             ->with('flash', 'The new customer has been created');
@@ -185,7 +189,7 @@ class WorkorderController extends \BaseController {
             $workorder2->saldo = $workorder['saldo'];
             $workorder2->pago = $workorder['pago'];
             $workorder2->cantidad = $workorder['cantidad'];
-            $workorder2->tamano = $workorder['tamano'];      
+            $workorder2->tamano = $workorder['tamano'];
             $workorder2->fecha_entrega = $workorder['fecha_entrega'];
             $workorder2->estado_trabajo = $workorder['estado_trabajo'];
             $workorder2->tipo_elaborado = $workorder['tipo_elaborado'];
@@ -196,8 +200,9 @@ class WorkorderController extends \BaseController {
             $workorder2->cantidad_material = $workorder['cantidad_material'];
             $workorder2->tipo_material = $workorder['tipo_material'];
             $workorder2->atendido = $workorder['atendido'];
-            $workorder2->emblocado = $workorder['emblocado'];            $
-            $workorder2->no_tintas = $workorder['no_tintas'];
+            $workorder2->emblocado = $workorder['emblocado'];
+            $
+                    $workorder2->no_tintas = $workorder['no_tintas'];
             $workorder2->tipo_color = $workorder['tipo_color'];
             $workorder2->color1 = $workorder['color1'];
             $workorder2->color2 = $workorder['color2'];
@@ -207,7 +212,7 @@ class WorkorderController extends \BaseController {
             $workorder2->copia2 = $workorder['copia2'];
             $workorder2->copia3 = $workorder['copia3'];
             $workorder2->copia4 = $workorder['copia4'];
-            $workorder2->no_inicial = $workorder['no_inicial'];           
+            $workorder2->no_inicial = $workorder['no_inicial'];
             $workorder2->no_final = $workorder['no_final'];
             $workorder2->original_todas = $workorder['original_todas'];
             $workorder2->numerado = $workorder['numerado'];
@@ -218,12 +223,12 @@ class WorkorderController extends \BaseController {
             $workorder2->acabados = $workorder['acabados'];
             $workorder2->no_master = $workorder['no_master'];
             $workorder2->no_plancha = $workorder['no_plancha'];
-            $workorder2->engomado = $workorder['engomado'];         
+            $workorder2->engomado = $workorder['engomado'];
             $workorder2->engrapado = $workorder['engrapado'];
             $workorder2->observaciones = $workorder['observaciones'];
             $workorder2->maquina = $workorder['maquina'];
             $workorder2->deetalles = $workorder['deetalles'];
-            $workorder2->nombre_registro_pedido = $workorder['nombre_registro_pedido'];            
+            $workorder2->nombre_registro_pedido = $workorder['nombre_registro_pedido'];
             $workorder2->save();
             return Redirect::intended('/customer/profile');
         }
