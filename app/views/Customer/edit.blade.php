@@ -52,7 +52,7 @@
             <a href="/workorder/create" class="list-group-item active text-center">
                 <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
             </a>                        
-            <a href="/customer/profile" class="list-group-item  text-center">                           
+            <a href="profile" class="list-group-item  text-center">                           
                 <h4 class="glyphicon glyphicon-user"></h4><br/>Perfil
             </a>
         </div>  
@@ -101,7 +101,7 @@
                                 <div class="col-xs-6 col-md-4 imp">                                     
                                     <div class='form-group form-register'>
                                         {{ Form::label('tipo_cliente', 'TIPO CLIENTE:') }}
-                                        {{ Form::select('tipo_cliente', array('Tipo Cliente' => array( '1' => 'Seleccionar','1' => 'Directo ', '2' => 'Intermediario')),$customer->tipo_cliente ,array('class' => 'form-control')); }}
+                                        {{ Form::select('tipo_cliente', array('Tipo Cliente' => array( '1' => 'Seleccionar','2' => 'Directo ', '3' => 'Intermediario')),$customer->tipo_cliente ,array('class' => 'form-control')); }}
                                     </div>
                                 </div>
                             </div>

@@ -121,8 +121,7 @@ class PhonebookController extends \BaseController {
      * @return Response
      */
     public function destroy($id) {
-        $datos = Input::all();
-        $phonebook = Phonebook::find($datos['id']);
+        $phonebook = Phonebook::find($id);
         $phonebook->delete();
         return Redirect::intended('/phonebooklist');
     }

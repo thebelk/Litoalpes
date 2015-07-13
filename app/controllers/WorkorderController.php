@@ -80,7 +80,7 @@ class WorkorderController extends \BaseController {
         ];
         $validate = Validator::make($post_data, $rules);
         if ($validate) {
-            $post_data['customer_id'] = Auth::customer_id()->id;
+            $post_data['customer_id'] = Auth::user()->id;
             Workorder::create($post_data);
             return Redirect::intended('/customer/profile')
                             ->with('flash', 'The new customer has been created');

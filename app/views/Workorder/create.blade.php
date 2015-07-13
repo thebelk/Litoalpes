@@ -67,22 +67,29 @@
             <h3> Nuevo Trabajo</h3>                    
             <div class="panel panel-default tam">
                 <!-- Default panel contents -->
-                <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Pedido</h3></div>
+                {{Form::open(array('url' => '/workorder','role'=>'form', 'method' => 'POST')) }}
+                <div class="panel-heading row panel"> 
+                    <div class="col-xs-8 col-md-9 imp">
+                        <h3 class="list-group-item-heading color">Pedido</h3>
+                    </div>
+                    <div class="col-xs-2 col-md-3 imp"> 
+                        {{ Form::text('no_orden', null, array('placeholder' => 'No.ORDEN', 'class' => 'form-control')) }}
+                    </div>
+                </div>
                 <div class="panel-body">
-                    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-                    {{Form::open(array('url' => '/workorder','role'=>'form', 'method' => 'POST')) }}
+                    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->                    
                     <div class="panel panel-default ">
                         <div class="row "> 
                             <div class="col-xs-6 col-md-4 imp">
                                 <div class='form-group form-register'>
                                     {{ Form::label('fecha_entrega', 'FECHANENTREGA:') }}
-                                    <input type='date' id='date' name='date' class='form-control'/>
+                                    <input type='date' id='fecha_entrega' name='fecha_entrega' class='form-control'/>
                                 </div>
                             </div>                            
                             <div class="col-xs-6 col-md-4 imp">                                    
                                 <div class='form-group form-register'>
                                     {{ Form::label('estado_trabajo', 'ESTADO TRABAJO:') }}
-                                    {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Espera', '2' => 'Elaborada', '3' => 'Enviado', '4' => 'Autorizado')),null ,array('class' => 'form-control')); }}
+                                    {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Diseño', '3' => 'Produccion', '4' => 'Entregado')),null ,array('class' => 'form-control')); }}
                                 </div>
                             </div>                            
                             <div class="col-xs-6 col-md-4 imp">
@@ -182,14 +189,14 @@
                     {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
                     {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                    
                 </div>
-                {{ Form::close() }}
+               
             </div>                        
             <div class="panel panel-default tam">
                 <!-- Default panel contents -->
                 <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Orden de Producción</h3></div>
                 <div class="panel-body">
                     <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-                    {{Form::open(array('url' => '/workorder','role'=>'form', 'method' => 'POST')) }}
+                    
                     <div class="panel panel-default ">
                         <div class="row ">                            
                             <div class="col-xs-6 col-md-4 imp ">
@@ -216,7 +223,7 @@
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('original_todas', 'ORIGINAL:') }}
-                                    {{ Form::checkbox('original_todas', 'value')}}
+                                    {{ Form::checkbox('original_todas',  1, true)}}                                    
 
                                 </div>
                             </div> 
@@ -291,7 +298,7 @@
                                 <br>
                                 <div class='form-group'>
                                     {{ Form::label('numerado', 'NUMERADO:') }}
-                                    {{ Form::checkbox('numerado', 'value')}}
+                                    {{ Form::checkbox('numerado',  1, true)}}
 
                                 </div>
                             </div>                            
@@ -335,14 +342,14 @@
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('quemado', 'QUEMADO:') }}
-                                    {{ Form::checkbox('quemado', 'value')}}                                    
+                                    {{ Form::checkbox('quemado', 1, true)}}                                    
                                 </div>
                             </div> 
                             <div class="col-xs-6 col-md-4 imp"> 
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('tiro_retiro', 'TIRO/RETIRO:') }}
-                                    {{ Form::checkbox('tiro_retiro', 'value')}}                                    
+                                    {{ Form::checkbox('tiro_retiro', 1, true)}}                                    
                                 </div>
                             </div>
                         </div>  
@@ -363,7 +370,7 @@
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('engomado', 'ENGOMADO:') }}
-                                    {{ Form::checkbox('engomado', 'value')}}                                    
+                                    {{ Form::checkbox('engomado', 1, true)}}                                    
                                 </div>
                             </div>
                         </div> 
@@ -372,21 +379,21 @@
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('perforado', 'PERFORADO:') }}
-                                    {{ Form::checkbox('perforado', 'value')}}                                    
+                                    {{ Form::checkbox('perforado',  1, true)}}                                    
                                 </div>                               
                             </div>                             
                             <div class="col-xs-6 col-md-4 imp"> 
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('levante', 'LEVANTE:') }}
-                                    {{ Form::checkbox('levante', 'value')}}                                    
+                                    {{ Form::checkbox('levante',  1, true)}}                                    
                                 </div>                               
                             </div>
                             <div class="col-xs-6 col-md-4 imp">   
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('engrapado', 'ENGRAPADO:') }}
-                                    {{ Form::checkbox('engrapado', 'value')}}                                    
+                                    {{ Form::checkbox('engrapado',  1, true)}}                                    
                                 </div>                               
                             </div>
                         </div> 

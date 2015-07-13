@@ -79,22 +79,34 @@
             <div class="panel panel-default tam">                  
                 <div class="panel-body">
                     <hr>                        
-                    @foreach($quotation as $quotlist)                      
-                    <h3><strong> {{ $quotlist->clase_trabajo }} {{ $quotlist->estado_cotizacion }}</strong></h3>
+                    @foreach($quotation as $quotlist)                    
+                    <h3><strong> {{ $quotlist->clase_trabajo }} / Cotizacion:
+                            <span class="estilo">
+                                @if($quotlist->estado_cotizacion==1) Espera
+                                @elseif($quotlist->estado_cotizacion==2) Elaborada
+                                @elseif($quotlist->estado_cotizacion==3) Enviado 
+                                @elseif($quotlist->estado_cotizacion==4) Autorizado 
+                                @endif 
+                            </span>
+                        </strong></h3>
                     <p><strong>Cliente</strong>: {{ $quotlist->nombre_cliente}}, 
                         <strong>Telefono</strong>: {{ $quotlist->telefono }} ,
                         <strong>Celular</strong>: {{ $quotlist->celular }} ,
                         <strong>E-mail </strong>: {{ $quotlist->email }} </p> 
-                     <p><strong>direccion</strong>: {{ $quotlist->direccion}},                         
+                    <p><strong>direccion</strong>: {{ $quotlist->direccion}},                         
                         <strong>Barrio</strong>: {{ $quotlist->barrio }} ,
-                      <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }}</p> 
+                        <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }}</p> 
                     <br>
                     <div class="col-md-1">
                         {{ HTML::link('/quotation/'.$quotlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
                     </div>  
-                    <div class="col-md-1">
-                        {{ HTML::link('/quotation/'.$quotlist->id.'/edit','Ver', array('class' => 'btn btn-default'), false)}}                       
-                    </div>                     
+
+                    {{ Form::model($quotation, array('url' => array('/quotation/'.$quotlist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
+                        <div class="col-md-1">
+                            {{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
+                        </div>                    
+                    {{ Form::close() }}                       
+
                     <br> <br>
                     <hr>
                     @endforeach

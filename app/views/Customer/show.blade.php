@@ -12,7 +12,12 @@
     <h3 class="highlight nav nav-stacked ">{{$customer->cliente}} <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
-            <h3 class="color">{{$customer->tipo_cliente}} </h3>            
+            <h3 class="color">Cliente:          
+                @if($customer->tipo_cliente==1) Seleccionar
+                @elseif($customer->tipo_cliente==2) Directo
+                @elseif($customer->tipo_cliente==3) Intermediario                
+                @endif
+            </h3>            
             <h5 class="color"> Nit: {{ $customer->nit_cc}}  </h5>           
             <h5>Telefono: {{$customer->telefono}} </h5>   
             <h5>Repsponsable: {{$customer->repsponsable}} </h5> 
@@ -52,10 +57,10 @@
     <hr>
     <div id="sidebar"> 
         <div class="list-group">    
-            <a href="/workorder/create" class="list-group-item active text-center">
+            <a href="workorder/create" class="list-group-item active text-center">
                 <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
             </a>
-            <a href="/customer/profile" class="list-group-item  text-center">                           
+            <a href="profile" class="list-group-item  text-center">                           
                 <h4 class="glyphicon glyphicon-th-list"></h4><br/> Listar Trabajos
             </a>                       
         </div>    

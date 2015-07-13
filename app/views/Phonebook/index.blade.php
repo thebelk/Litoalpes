@@ -86,14 +86,17 @@
                         <strong>E-mail </strong>: {{ $phonlist->email }} </p>  
                     <P><strong>Dirección </strong>: {{ $phonlist->direccion }},
                         <strong>Barrio </strong>: {{ $phonlist->barrio }},
-                        <strong>Ciudad </strong>: {{ $phonlist->ciudad }}</p>
-                    <p>
+                        <strong>Ciudad </strong>: {{ $phonlist->ciudad }}</p>                    
                         <br>
                     <div class="col-md-1">
                         {{ HTML::link('/phonebook/'.$phonlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
+                    </div>  
+                    {{ Form::model($phonebook, array('url' => array('/phonebook/'.$phonlist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
+                    <div class="col-md-1">
+                        {{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
                     </div>                    
-                    <button class="btn btn-primary">Borrar</button>
-                    </p>
+                    {{ Form::close() }}
+                    <br> <br>
                     <hr>
                     @endforeach
                 </div>

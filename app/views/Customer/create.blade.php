@@ -52,7 +52,7 @@
             <a href="/workorder/create" class="list-group-item active text-center">
                 <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
             </a>                        
-            <a href="/customer/profile" class="list-group-item  text-center">                           
+            <a href="profile" class="list-group-item  text-center">                           
                 <h4 class="glyphicon glyphicon-user"></h4><br/>Perfil
             </a>
         </div>  

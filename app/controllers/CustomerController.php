@@ -59,9 +59,9 @@ class CustomerController extends \BaseController {
      * @return Response
      */
     public function show($id) {
-
         $customer = Customer::find($id);
         return View::make('customer.show', compact('customer'));
+        
     }
 
     /**

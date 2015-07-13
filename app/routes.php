@@ -26,7 +26,7 @@ Route::resource('quotation', 'QuotationController');
 Route::get('quotationlist', 'QuotationController@index');
 Route::get('quotation/create', 'QuotationController@create');
 Route::get('quotation/{quotation}/edit', 'QuotationController@edit');
-Route::delete('quotation/{userlito}', 'QuotationController@destroy');
+Route::delete('/quotation/{quotation}', 'QuotationController@destroy');
 
 Route::resource('workorder', 'WorkorderController');
 Route::get('workorderlist', 'WorkorderController@index');
@@ -37,7 +37,7 @@ Route::resource('phonebook', 'PhonebookController');
 Route::get('phonebooklist', 'PhonebookController@index');
 Route::get('phonebook/create', 'PhonebookController@create');
 Route::get('phonebook/{phonebook}/edit', 'PhonebookController@edit');
-Route::delete('phonebook/{userlito}', 'PhonebookController@destroy');
+Route::delete('phonebook/{phonebook}', 'PhonebookController@destroy');
 
 Route::resource('sessions', 'SessionsController');
 Route::post('/signup', 'UserController@store');

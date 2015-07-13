@@ -121,9 +121,8 @@ class QuotationController extends \BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id) {
-        $datos = Input::all();
-        $quotation = Quotation::find($datos['id']);
+    public function destroy($id) {  
+         $quotation = Quotation::find($id);       
         $quotation->delete();
         return Redirect::intended('/quotationlist');
     }

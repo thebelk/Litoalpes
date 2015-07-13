@@ -54,11 +54,16 @@ class Workorder extends Eloquent {
         'observaciones',
         'maquina',
         'deetalles',
-        'nombre_registro_pedido',        
-        'customer_id'
+        'nombre_registro_pedido',
+        'customers_id'
     );
+
     public function customers() {
         return $this->belongsTo('Customer');
+    }
+
+    public function users() {
+        return $this->belongsTo('User');
     }
 
 }
