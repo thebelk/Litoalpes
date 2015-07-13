@@ -79,16 +79,17 @@
                     <!-- Default panel contents -->
                     <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Nombre Trabajo</h3></div>
                     <div class="panel-body">
-                        <p>
-                            <img src="//placehold.it/150x100/EEEEEE" class="img-responsive pull-right"> Farmhand ida quae ab illo inventore veritatis et quasi architecto beatae vitae 
+						<img src="//placehold.it/150x100/EEEEEE" class="img-responsive pull-right"> 
+                        <p align="justify">
+                            Farmhand ida quae ab illo inventore veritatis et quasi architecto beatae vitae 
                             dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
                             eos qui ratione voluptatem sequi nesciunt. I met him on the Internet. He's a French model. Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
                             sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
                             Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
                             <br><br>
-                            <button class="btn btn-default">{{ HTML::link('/user/'.Auth::user()->id.'/edit','Edit', false) }}</button>
-                            <button class="btn  btn-success">Ver</button>
                         </p>
+						<button class="btn btn-default">{{ HTML::link('/user/'.Auth::user()->id.'/edit','Edit', false) }}</button>
+						<button class="btn  btn-success">Ver</button>
                     </div>
                 </div>
 
