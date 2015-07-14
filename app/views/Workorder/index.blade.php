@@ -75,25 +75,48 @@
             <center>
                 <h2 class="glyphicon glyphicon-th-list color" ></h2>
                 <h3> Listar Trabajos</h3>                      
-                <div class="panel panel-default tam">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Nombre Trabajo</h3></div>
-                    <div class="panel-body">
-                        <p>
-                            <img src="//placehold.it/150x100/EEEEEE" class="img-responsive pull-right"> Farmhand ida quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
-                            eos qui ratione voluptatem sequi nesciunt. I met him on the Internet. He's a French model. Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-                            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                            <br><br>
-                            <button class="btn btn-default">{{ HTML::link('/user/'.Auth::user()->id.'/edit','Edit', false) }}</button>
-                            <button class="btn  btn-success">Ver</button>
-                        </p>
-                    </div>
-                </div>
+            </center>    
+            <div class="panel panel-default tam">                  
+                <div class="panel-body">
+                    <hr>                       
+                    @foreach($workorder as $worklist)                    
+                    <h3><strong> {{ $worklist->clase_trabajo}} / ESTADO TRABAJO
+                            <span class="estilo">
+                                @if($worklist->estado_trabajo==1) Por realizar                                
+                                @elseif($worklist->estado_trabajo==2) Diseño 
+                                @elseif($worklist->estado_trabajo==3) Produccion 
+                                @elseif($worklist->estado_trabajo==3) Entregado 
+                                @endif 
+                            </span>
+                        </strong></h3>
+                    <p><strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
+                        <strong>Material</strong>: {{ $worklist->tipo_material }} ,
+                        <strong>Cantidad</strong>: {{ $worklist->cantidad }} ,
+                        <strong>Tamaño </strong>: {{ $worklist->tamano }} </p> 
+                    <p><strong>Valor Trabajo</strong>: {{ $worklist->valor_trabajo}},                         
+                        <strong>Abono</strong>: {{ $worklist->abono }} ,
+                        <strong>Saldo</strong>: {{ $worklist->saldo }} ,
+                        <strong>Atendido</strong>: {{ $worklist->atendido }}</p> 
+                    <br>
+                    <div class="col-md-1">
+                        {{ HTML::link('/worklist/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
+                    </div>  
 
-                <hr>                          
-                <!-- menu-->
+                    {{ Form::model($worklist, array('url' => array('/worklist/'.$worklist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
+                    <div class="col-md-1">
+                        {{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
+                    </div>                    
+                    {{ Form::close() }}                       
+
+                    <br> <br>
+                    <hr>
+                    @endforeach
+                </div>
+            </div>
+
+            <hr>                          
+            <!-- menu-->
+            <center>
                 <div class="list-group">                
                     <h4>Menu</h4>   
                     <a href="/user" class="list-group-item ">

@@ -8,7 +8,9 @@ class WorkorderController extends \BaseController {
      * @return Response
      */
     public function index() {
-        return View::make('workorder.index');
+        $workorder = Workorder::all();
+        return View::make('workorder.index')->with('workorder', $workorder);  
+        
     }
 
     /**
@@ -19,7 +21,6 @@ class WorkorderController extends \BaseController {
     public function create($id) {
 
         $customer = Customer::find($id);
-        // show the edit form and pass the customer
         return View::make('workorder.create')->with('customer', $customer);
     }
 
@@ -83,8 +84,6 @@ class WorkorderController extends \BaseController {
         ];
         $validate = Validator::make($post_data, $rules);
         if ($validate) {
-            $customer = Customer::find($id);
-            $post_data['customers_id'] = $customer->id;
             Workorder::create($post_data);
             return Redirect::intended('/customer/profile')
                             ->with('flash', 'The new customer has been created');
@@ -101,7 +100,8 @@ class WorkorderController extends \BaseController {
      * @return Response
      */
     public function show($id) {
-        //
+        $workorder = Workorder::find($id);
+        return View::make('workorder.show', compact('workorder'));
     }
 
     /**
@@ -201,8 +201,7 @@ class WorkorderController extends \BaseController {
             $workorder2->tipo_material = $workorder['tipo_material'];
             $workorder2->atendido = $workorder['atendido'];
             $workorder2->emblocado = $workorder['emblocado'];
-            $
-                    $workorder2->no_tintas = $workorder['no_tintas'];
+            $workorder2->no_tintas = $workorder['no_tintas'];
             $workorder2->tipo_color = $workorder['tipo_color'];
             $workorder2->color1 = $workorder['color1'];
             $workorder2->color2 = $workorder['color2'];
@@ -241,8 +240,7 @@ class WorkorderController extends \BaseController {
      * @return Response
      */
     public function destroy($id) {
-        $datos = Input::all();
-        $workorder = Workorder::find($datos['id']);
+        $workorder = Workorder::find($id);
         $workorder->delete();
         return Redirect::intended('/customer/profile');
     }
