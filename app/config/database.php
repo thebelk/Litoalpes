@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'litografia',
 			'username'  => 'root',
-			'password'  => 'root',
+			'password'  => 'thomas4',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

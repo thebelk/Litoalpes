@@ -24,8 +24,8 @@
                         </div>
                         <div class=" navbar-right"> 
                             <div class="bootoom">
-                                <button type="button" class="btn btn-default btn-lg">{{ HTML::link('/signup','Regístrate',array ('class' => 'colo')) }}</button>
-                                <button type="button" class="btn btn-success btn-lg">{{ HTML::link('/login',' Iniciar Sesión',array ('class' => 'colt')) }}</button>
+                                <button type="button" class="btn btn-default btn-lg">{{ HTML::link('/signup','Registrate',array ('class' => 'colo')) }}</button>
+                                <button type="button" class="btn btn-success btn-lg">{{ HTML::link('/login',' Iniciar sección',array ('class' => 'colt')) }}</button>
                             </div>                                                          
                         </div>
                     </div>                
