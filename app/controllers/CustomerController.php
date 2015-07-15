@@ -43,11 +43,12 @@ class CustomerController extends \BaseController {
             'otro' => '',
             'email' => 'required'
         ];
+
         $validate = Validator::make($post_data, $rules);
         if ($validate) {
             $post_data['users_id'] = Auth::user()->id;
             Customer::create($post_data);
-            return Redirect::intended('/workorder/create')
+            return Redirect::intended('customer/' . $post_data['id'] . '/workorder/create')
                             ->with('flash', 'The new customer has been created');
         }
     }
@@ -60,8 +61,8 @@ class CustomerController extends \BaseController {
      */
     public function show($id) {
         $customer = Customer::find($id);
-        return View::make('customer.show', compact('customer'));
-        
+        $workorder = DB::table('workorders')->where('customers_id', '=', $customer['id'])->get();
+        return View::make('customer.show', compact('customer'))->with('workorder', $workorder);
     }
 
     /**
@@ -99,7 +100,7 @@ class CustomerController extends \BaseController {
             'otro' => '',
             'email' => 'required'
         );
-        $validate = Validator::make( $customer, $rules);
+        $validate = Validator::make($customer, $rules);
         if ($validate) {
             $customer2 = Customer::find($customer['id']);
             $customer2->nit_cc = $customer['nit_cc'];
@@ -115,12 +116,11 @@ class CustomerController extends \BaseController {
             $customer2->otro = $customer['otro'];
             $customer2->email = $customer['email'];
             $customer2->save();
-           // Session::flash('message', 'Successfully updated customer!');
+            // Session::flash('message', 'Successfully updated customer!');
             return Redirect::intended('/customerlist');
         }
     }
 
-    
     /**
      * Remove the specified resource from storage.
      *

@@ -8,7 +8,8 @@ class WorkorderController extends \BaseController {
      * @return Response
      */
     public function index() {
-        return View::make('workorder.index');
+        $workorder= Workorder::all();
+        return View::make('workorder.index')->with('workorder', $workorder);
     }
 
     /**
@@ -80,7 +81,7 @@ class WorkorderController extends \BaseController {
             'maquina' => '',
             'deetalles' => '',
             'nombre_registro_pedido' => '',
-			'customers_id' => 'required'
+            'customers_id' => 'required'
         ];
         $validate = Validator::make($post_data, $rules);		
 		$post_data['pago'] = (int)$post_data['pago'];
@@ -89,7 +90,7 @@ class WorkorderController extends \BaseController {
             //$customer = Customer::find($id);
             //$post_data['customers_id'] = $customer->id;
             Workorder::create($post_data);
-            return Redirect::intended('/customer/'.$post_data['customers_id'].'/profile')
+            return Redirect::intended('customer/'.$post_data['customers_id'].'/profile')
                             ->with('flash', 'The new customer has been created');
         }
         return Redirect::route('workorder.create')
@@ -104,7 +105,12 @@ class WorkorderController extends \BaseController {
      * @return Response
      */
     public function show($id) {
-        //
+        $workorder = Workorder::find($id);         
+        $customer = Customer::find($workorder['customers_id']);
+        return View::make('workorder.show', compact('workorder'))->with('customer', $customer);    
+       
+       
+        
     }
 
     /**
