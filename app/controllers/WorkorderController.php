@@ -79,14 +79,17 @@ class WorkorderController extends \BaseController {
             'observaciones' => '',
             'maquina' => '',
             'deetalles' => '',
-            'nombre_registro_pedido' => ''
+            'nombre_registro_pedido' => '',
+			'customers_id' => 'required'
         ];
-        $validate = Validator::make($post_data, $rules);
+        $validate = Validator::make($post_data, $rules);		
+		$post_data['pago'] = (int)$post_data['pago'];
+		//return $post_data;
         if ($validate) {
-            $customer = Customer::find($id);
-            $post_data['customers_id'] = $customer->id;
+            //$customer = Customer::find($id);
+            //$post_data['customers_id'] = $customer->id;
             Workorder::create($post_data);
-            return Redirect::intended('/customer/profile')
+            return Redirect::intended('/customer/'.$post_data['customers_id'].'/profile')
                             ->with('flash', 'The new customer has been created');
         }
         return Redirect::route('workorder.create')
