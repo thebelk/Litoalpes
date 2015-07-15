@@ -39,7 +39,7 @@ class SessionsController extends \BaseController {
                     'password' => $input['password']
         ]);
 
-        if ($attempt) {
+        if ($attempt) {			
             return Redirect::intended('/user');
         } else {
             // dd('problem');

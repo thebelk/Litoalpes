@@ -6,7 +6,7 @@ class CustomerTableSeeder extends Seeder {
     public function run() {
         DB::table('customers')->delete();
 
-        User::create(array(
+        Customer::create(array(
             'id' => 1,
             'users_id' => 1,
             'nit_cc' => '7358688-1',
