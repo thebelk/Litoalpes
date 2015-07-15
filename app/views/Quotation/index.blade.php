@@ -82,9 +82,10 @@
                     @foreach($quotation as $quotlist)                    
                     <h3><strong> {{ $quotlist->clase_trabajo }} / Cotizacion:
                             <span class="estilo">
-                                @if($quotlist->estado_cotizacion==1) Por Cotizar                                
-                                @elseif($quotlist->estado_cotizacion==2) Enviado 
-                                @elseif($quotlist->estado_cotizacion==3) Autorizado 
+                                @if($quotlist->estado_cotizacion==1) Espera
+                                @elseif($quotlist->estado_cotizacion==2) Elaborada
+                                @elseif($quotlist->estado_cotizacion==3) Enviado 
+                                @elseif($quotlist->estado_cotizacion==4) Autorizado 
                                 @endif 
                             </span>
                         </strong></h3>

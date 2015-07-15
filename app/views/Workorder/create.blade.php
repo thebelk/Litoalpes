@@ -83,7 +83,7 @@
                 <div class="panel-heading row panel"> 
                     <div class="col-xs-8 col-md-9 imp">
                         <h3 class="list-group-item-heading color">Pedido</h3>
-                        {{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} 
+                        {{ Form::text('id', $customer->id, array('hidden' => 'true')) }} 
                     </div>
                     <div class="col-xs-2 col-md-3 imp"> 
                         {{ Form::text('no_orden', null, array('placeholder' => 'No.ORDEN', 'class' => 'form-control')) }}
@@ -236,7 +236,7 @@
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('original_todas', 'ORIGINAL:') }}
-                                    {{ Form::checkbox('original_todas',1,false)}}                                    
+                                    {{ Form::checkbox('original_todas',  1, true)}}                                    
 
                                 </div>
                             </div> 
@@ -311,7 +311,7 @@
                                 <br>
                                 <div class='form-group'>
                                     {{ Form::label('numerado', 'NUMERADO:') }}
-                                    {{ Form::checkbox('numerado',1,false)}}
+                                    {{ Form::checkbox('numerado',  1, true)}}
 
                                 </div>
                             </div>                            
@@ -355,14 +355,14 @@
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('quemado', 'QUEMADO:') }}
-                                    {{ Form::checkbox('quemado',1,false)}}                                    
+                                    {{ Form::checkbox('quemado', 1, true)}}                                    
                                 </div>
                             </div> 
                             <div class="col-xs-6 col-md-4 imp"> 
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('tiro_retiro', 'TIRO/RETIRO:') }}
-                                    {{ Form::checkbox('tiro_retiro',1,false)}}                                    
+                                    {{ Form::checkbox('tiro_retiro', 1, true)}}                                    
                                 </div>
                             </div>
                         </div>  
@@ -383,7 +383,7 @@
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('engomado', 'ENGOMADO:') }}
-                                    {{ Form::checkbox('engomado',1,false)}}                                    
+                                    {{ Form::checkbox('engomado', 1, true)}}                                    
                                 </div>
                             </div>
                         </div> 
@@ -392,21 +392,21 @@
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('perforado', 'PERFORADO:') }}
-                                    {{ Form::checkbox('perforado',1,false)}}                                    
+                                    {{ Form::checkbox('perforado',  1, true)}}                                    
                                 </div>                               
                             </div>                             
                             <div class="col-xs-6 col-md-4 imp"> 
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('levante', 'LEVANTE:') }}
-                                    {{ Form::checkbox('levante',1,false)}}                                    
+                                    {{ Form::checkbox('levante',  1, true)}}                                    
                                 </div>                               
                             </div>
                             <div class="col-xs-6 col-md-4 imp">   
                                 <br>                              
                                 <div class='form-group'>
                                     {{ Form::label('engrapado', 'ENGRAPADO:') }}
-                                    {{ Form::checkbox('engrapado',1,false)}}                                    
+                                    {{ Form::checkbox('engrapado',  1, true)}}                                    
                                 </div>                               
                             </div>
                         </div> 

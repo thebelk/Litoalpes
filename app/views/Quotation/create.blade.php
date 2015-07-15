@@ -136,7 +136,7 @@
                                 <div class="col-xs-12 col-md-6 imp">                                     
                                     <div class='form-group form-register'>
                                         {{ Form::label('estado_cotizacion', 'ESTADO DE COTIZACIÓN:') }}
-                                        {{ Form::select('estado_cotizacion', array('Estado Cotizacion' => array('1' => 'Por Cotizar', '2' => 'Enviado', '3' => 'Autorizado')),null ,array('class' => 'form-control')); }}
+                                        {{ Form::select('estado_cotizacion', array('Estado Cotizacion' => array('1' => 'Espera', '2' => 'Elaborado', '3' => 'Enviado', '4' => 'Autorizado')),null ,array('class' => 'form-control')); }}
                                     </div>
                                 </div>
                             </div>
