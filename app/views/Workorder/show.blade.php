@@ -262,8 +262,6 @@
                             <div class="col-xs-6 col-md-4 imp">
                                 <div class='form-group form-register'>
                                     <p><strong>COLOR1:</strong>: {{ $workorder->color1}}</p>
-                                    {{ Form::label('color1', 'COLOR1:') }}
-                                    {{ Form::text('color1', null, array('placeholder' => 'color 1', 'class' => 'form-control')) }}
                                 </div>
                             </div>
 
@@ -280,7 +278,6 @@
                                 </div>
                             </div>
                             <div class="col-xs-6 col-md-4 imp"> 
-                                <br>
                                 <div class='form-group'>
                                     <p><strong>NUMERADO:</strong>: {{ $workorder->numerado}}</p>                                  
                                 </div>
@@ -288,17 +285,17 @@
                         </div>
                         <div class="row "> 
                             <div class="col-xs-6 col-md-4 imp">
-                                <div class="col-xs-6 col-md-6 imp">
-                                    <div class='form-group form-register'>
-                                        <p><strong>No.INICIAL:</strong>: {{ $workorder->no_inicial}}</p>
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 col-md-6 imp">
-                                    <div class='form-group form-register'>
-                                        <p><strong>No.FINAL:</strong>: {{ $workorder->no_final}}</p>
-                                    </div>
-                                </div>
-                            </div>
+								<div class='form-group form-register'>
+									<p><strong>No. INICIAL:</strong>: {{ $workorder->no_inicial}}</p>
+								</div>
+							</div>
+                            <div class="col-xs-6 col-md-4 imp">
+								<div class='form-group form-register'>
+									<p><strong>No. FINAL:</strong>: {{ $workorder->no_final}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="row "> 
                             <div class="col-xs-6 col-md-4 imp ">
                                 <div class='form-group form-register'>
                                     <p><strong>HABILITA DIAN:</strong>: {{ $workorder->habilitado_dian}}</p>
@@ -316,25 +313,21 @@
                                     <p><strong>EMBLOCADO:</strong>: {{ $workorder->emblocado}}</p>
                                 </div>
                             </div>
-                            <div class="col-xs-6 col-md-4 imp ">
-                                <br>                              
+                            <div class="col-xs-6 col-md-4 imp ">                                
                                 <div class='form-group'>
                                     <p><strong>QUEMADO:</strong>: {{ $workorder->quemado}}</p>
                                 </div>
                             </div> 
-                            <div class="col-xs-6 col-md-4 imp"> 
-                                <br>                              
+                            <div class="col-xs-6 col-md-4 imp">                                 
                                 <div class='form-group'>
                                     <p><strong>TIRO/RETIRO:</strong>: {{ $workorder->tiro_retiro}}</p>
                                 </div>
                             </div>
                         </div>  
-                        <div class="row ">                            
-                            <div class="col-xs-6 col-md-4 imp ">
+                        <div class="row ">                                                        
+							<div class="col-xs-6 col-md-4 imp ">
                                 <div class='form-group form-register'>
-                                    <p><strong>No.ORDEN</strong>: {{ $workorder->no_orden}}</p>
-                                    {{ Form::label('no_plancha', 'No. PLANCHA:') }}
-                                    {{ Form::text('no_plancha', null, array('placeholder' => 'No. Plancha', 'class' => 'form-control')) }}
+                                    <p><strong>No.PLANCHA</strong>: {{ $workorder->no_plancha}}</p>                                    
                                 </div>
                             </div>                              
                             <div class="col-xs-6 col-md-4 imp">
@@ -342,51 +335,45 @@
                                     <p><strong>No. MASTER:</strong>: {{ $workorder->no_master}}</p>
                                 </div>
                             </div>
-                            <div class="col-xs-6 col-md-4 imp"> 
-                                <br>                              
+                            <div class="col-xs-6 col-md-4 imp">                                 
                                 <div class='form-group'>
                                     <p><strong>ENGOMADO:</strong>: {{ $workorder->engomado}}</p>
                                 </div>
                             </div>
                         </div> 
                         <div class="row ">                            
-                            <div class="col-xs-6 col-md-4 imp">  
-                                <br>                              
+                            <div class="col-xs-6 col-md-4 imp">                                  
                                 <div class='form-group'>
                                     <p><strong>PERFORADO:</strong>: {{ $workorder->perforado}}</p>
                                 </div>                               
                             </div>                             
-                            <div class="col-xs-6 col-md-4 imp"> 
-                                <br>                              
+                            <div class="col-xs-6 col-md-4 imp">                                 
                                 <div class='form-group'>
                                     <p><strong>LEVANTE:</strong>: {{ $workorder->levante}}</p>
                                 </div>                               
                             </div>
-                            <div class="col-xs-6 col-md-4 imp">   
-                                <br>                              
+                            <div class="col-xs-6 col-md-4 imp">                                   
                                 <div class='form-group'>
                                     <p><strong>ENGRAPADO:</strong>: {{ $workorder->engrapado}}</p>
                                 </div>                               
                             </div>
                         </div> 
-                        <div class="row">
-                            <div class="row ">                            
-                                <div class="col-xs-6 col-md-4 imp ">
-                                    <div class='form-group form-register'>
-                                        <p><strong>ACABADOS:</strong>: {{ $workorder->acabados}}</p>
-                                    </div>                                   
-                                </div>                              
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
-                                        <p><strong>CANTIDAD/MATERIAL:</strong>: {{ $workorder->cantidad_material}}</p>
-                                    </div>
+                        <div class="row">                            
+                            <div class="col-xs-6 col-md-4 imp ">
+                                <div class='form-group form-register'>
+                                    <p><strong>ACABADOS:</strong>: {{ $workorder->acabados}}</p>
+                                </div>                                   
+                            </div>                              
+                            <div class="col-xs-6 col-md-4 imp">
+                                <div class='form-group form-register'>
+                                    <p><strong>CANTIDAD/MATERIAL:</strong>: {{ $workorder->cantidad_material}}</p>
                                 </div>
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
-                                        <p><strong>MAQUINA:</strong>: {{ $workorder->maquina}}</p>
-                                    </div>
+                            </div>
+                            <div class="col-xs-6 col-md-4 imp">
+                                <div class='form-group form-register'>
+                                    <p><strong>MAQUINA:</strong>: {{ $workorder->maquina}}</p>
                                 </div>
-                            </div> 
+                            </div>                            
                         </div>
                     </div>                    
                     <div class="row "> 

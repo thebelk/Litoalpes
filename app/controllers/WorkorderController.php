@@ -122,8 +122,9 @@ class WorkorderController extends \BaseController {
     public function edit($id) {
         // get the workorder
         $workorder = Workorder::find($id);
+		$customer = Customer::find($workorder['customers_id']);
         // show the edit form and pass the workorder
-        return View::make('workorder.edit')->with('workorder', $workorder);
+        return View::make('workorder.edit', compact('workorder'))->with('customer', $customer);
     }
 
     /**
@@ -132,7 +133,7 @@ class WorkorderController extends \BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function update($id) {
+    public function update() {		
         $workorder = Input::all();
         $rules = [
             'no_orden' => '',
@@ -183,11 +184,14 @@ class WorkorderController extends \BaseController {
             'observaciones' => '',
             'maquina' => '',
             'deetalles' => '',
-            'nombre_registro_pedido' => ''
+            'nombre_registro_pedido' => '',
+			'customers_id' => 'required'
         ];
+		
         $validate = Validator::make($workorder, $rules);
+		//return $workorder;
         if ($validate) {
-            $workorder2 = User::find($workorder['id']);
+            $workorder2 = Workorder::find($workorder['workorder_id']);
             $workorder2->no_orden = $workorder['no_orden'];
             $workorder2->clase_trabajo = $workorder['clase_trabajo'];
             $workorder2->valor_trabajo = $workorder['valor_trabajo'];
@@ -210,8 +214,7 @@ class WorkorderController extends \BaseController {
             $workorder2->tipo_material = $workorder['tipo_material'];
             $workorder2->atendido = $workorder['atendido'];
             $workorder2->emblocado = $workorder['emblocado'];
-            $
-                    $workorder2->no_tintas = $workorder['no_tintas'];
+            $workorder2->no_tintas = $workorder['no_tintas'];
             $workorder2->tipo_color = $workorder['tipo_color'];
             $workorder2->color1 = $workorder['color1'];
             $workorder2->color2 = $workorder['color2'];
@@ -223,24 +226,24 @@ class WorkorderController extends \BaseController {
             $workorder2->copia4 = $workorder['copia4'];
             $workorder2->no_inicial = $workorder['no_inicial'];
             $workorder2->no_final = $workorder['no_final'];
-            $workorder2->original_todas = $workorder['original_todas'];
-            $workorder2->numerado = $workorder['numerado'];
-            $workorder2->tiro_retiro = $workorder['tiro_retiro'];
-            $workorder2->levante = $workorder['levante'];
-            $workorder2->perforado = $workorder['perforado'];
-            $workorder2->quemado = $workorder['quemado'];
+			$workorder2->original_todas = Input::has('original_todas') ? 1 : 0;
+            $workorder2->numerado = Input::has('numerado') ? 1 : 0;
+            $workorder2->tiro_retiro = Input::has('tiro_retiro') ? 1 : 0;
+            $workorder2->levante = Input::has('levante') ? 1 : 0;
+            $workorder2->perforado = Input::has('perforado') ? 1 : 0;;
+            $workorder2->quemado = Input::has('quemado') ? 1 : 0;;
             $workorder2->acabados = $workorder['acabados'];
             $workorder2->no_master = $workorder['no_master'];
             $workorder2->no_plancha = $workorder['no_plancha'];
-            $workorder2->engomado = $workorder['engomado'];
-            $workorder2->engrapado = $workorder['engrapado'];
+            $workorder2->engomado = Input::has('engomado') ? 1 : 0;
+            $workorder2->engrapado = Input::has('engrapado') ? 1 : 0;
             $workorder2->observaciones = $workorder['observaciones'];
             $workorder2->maquina = $workorder['maquina'];
             $workorder2->deetalles = $workorder['deetalles'];
             $workorder2->nombre_registro_pedido = $workorder['nombre_registro_pedido'];
-            $workorder2->save();
-            return Redirect::intended('/customer/profile');
-        }
+            $workorder2->save();			
+            return Redirect::intended('/customer/'.$workorder['customers_id'].'/profile');
+        }		
     }
 
     /**

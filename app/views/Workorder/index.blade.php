@@ -99,15 +99,15 @@
                     <strong>Atendido</strong>: {{ $worklist->atendido }}</p> 
                 <br>
                 <div class="col-md-1">
-                    {{ HTML::link('/worklist/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
+                    {{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
                 </div>  
 
-                {{ Form::model($worklist, array('url' => array('/worklist/'.$worklist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
+                {{ Form::model($worklist, array('url' => array('/workorder/'.$worklist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
                 <div class="col-md-1">
                     {{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
                 </div>    
                 <div class="col-md-1">
-                        {{ HTML::link('/worklist/'.$worklist->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
+                        {{ HTML::link('/workorder/'.$worklist->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
                     </div> 
                 {{ Form::close() }}                       
 
