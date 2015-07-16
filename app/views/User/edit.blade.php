@@ -1,6 +1,6 @@
 @extends('layouts.master')
 <head> 
-    @section ('title')Clientes @stop
+    @section ('title')Usuario @stop
 </head>
 @section('header')
 @parent
@@ -73,7 +73,7 @@
             <div class="bhoechie-tab-content active">
 
                 <h2 class="glyphicon glyphicon-user color" ></h2>
-                <h3> Editar Cliente</h3>   
+                <h3> Editar Usuario</h3>   
 
                 <div class="panel-body">
                     {{Form::open(array('url' => '/user/'.Auth::user()->id,'method' => 'PUT', 'role'=>'form', 'class'=>'form-inline')) }}

@@ -24,8 +24,9 @@
                         </div>
                         <div class=" navbar-right"> 
                             <div class="bootoom">
-                                 <button type="button" class="btn btn-success btn-lg"><b>Registrate</b></button> 
-                                <button type="button" class="btn btn-default btn-lg colo">Registrate</button>
+                                <button type="button" class="btn btn-default btn-lg">{{ HTML::link('/user/create','Crear cuenta',array ('class' => 'colo')) }}</button>
+                                <button type="button" class="btn btn-success btn-lg">{{ HTML::link('/login',' Iniciar sección',array ('class' => 'colt')) }}</button> 
+
                             </div>                                                          
                         </div>
                     </div>                
@@ -43,7 +44,6 @@
                                 <h2 class="form-signin-heading" >Lito Alpes</h2>                                                            
                                 <h4> Por favor, vuelva a introducir su contraseña. </h4>
                                 <p> El correo electrónico y la contraseña que ingresaste no coinciden. Por favor, asegúrate de que el bloqueo de mayúsculas no está activado e inténtalo de nuevo. </P>
-                                <p> ¿Olvidaste tu contraseña ? </p>
                             </div>
                         </div> 
                         <div class=" row panel panel-default"style=" padding: 25px;">
@@ -64,7 +64,7 @@
                             </div> 
                             {{Form::close()}}
                             <p> ¿Olvidaste tu contraseña ? </p>
-                            <button type="button" class="btn btn-link">Crear cuenta</button> 
+                            <button type="button" class="btn btn-link">Recuperar clave</button> 
                         </div>
                     </div>
                 </div>

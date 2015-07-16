@@ -75,7 +75,7 @@
 
                                 {{Form::close()}}
                                 <p> ¿Olvidaste tu contraseña ? </p>
-                                <button type="button" class="btn btn-link">Crear cuenta</button>                          
+                                <button type="button" class="btn btn-link">Recuperar clave</button>                          
                             </div>                        
                         </div>
                 </center>
