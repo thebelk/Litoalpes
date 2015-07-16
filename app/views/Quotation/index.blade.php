@@ -15,7 +15,11 @@
             <h5>Telefono: {{ Auth::user()->telefono}} </h5>
             <h5>Celular: {{ Auth::user()->celular}} </h5>   
             <h5>{{ Auth::user()->otro}} </h5>  
-        </div>                                           
+        </div>    
+        <div class="col-md-8"></div>
+        <div class="col-md-1">
+            {{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}    
+        </div> 
     </div>
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
@@ -102,9 +106,9 @@
                     </div>  
 
                     {{ Form::model($quotation, array('url' => array('/quotation/'.$quotlist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
-                        <div class="col-md-1">
-                            {{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
-                        </div>                    
+                    <div class="col-md-1">
+                        {{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
+                    </div>                    
                     {{ Form::close() }}                       
 
                     <br> <br>

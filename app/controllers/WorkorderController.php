@@ -83,14 +83,14 @@ class WorkorderController extends \BaseController {
             'nombre_registro_pedido' => '',
             'customers_id' => 'required'
         ];
-        $validate = Validator::make($post_data, $rules);		
-		$post_data['pago'] = (int)$post_data['pago'];
-		//return $post_data;
+        $validate = Validator::make($post_data, $rules);
+        $post_data['pago'] = (int) $post_data['pago'];
+        //return $post_data;
         if ($validate) {
             //$customer = Customer::find($id);
             //$post_data['customers_id'] = $customer->id;
             Workorder::create($post_data);
-            return Redirect::intended('customer/'.$post_data['customers_id'].'/profile')
+            return Redirect::intended('customer/' . $post_data['customers_id'] . '/profile')
                             ->with('flash', 'The new customer has been created');
         }
         return Redirect::route('workorder.create')
@@ -105,12 +105,9 @@ class WorkorderController extends \BaseController {
      * @return Response
      */
     public function show($id) {
-        $workorder = Workorder::find($id);         
+        $workorder = Workorder::find($id);
         $customer = Customer::find($workorder['customers_id']);
-        return View::make('workorder.show', compact('workorder'))->with('customer', $customer);    
-       
-       
-        
+        return View::make('workorder.show', compact('workorder'))->with('customer', $customer);
     }
 
     /**
@@ -183,7 +180,8 @@ class WorkorderController extends \BaseController {
             'observaciones' => '',
             'maquina' => '',
             'deetalles' => '',
-            'nombre_registro_pedido' => ''
+            'nombre_registro_pedido' => '',
+            'customers_id' => 'required'
         ];
         $validate = Validator::make($workorder, $rules);
         if ($validate) {
@@ -210,8 +208,7 @@ class WorkorderController extends \BaseController {
             $workorder2->tipo_material = $workorder['tipo_material'];
             $workorder2->atendido = $workorder['atendido'];
             $workorder2->emblocado = $workorder['emblocado'];
-            $
-                    $workorder2->no_tintas = $workorder['no_tintas'];
+            $workorder2->no_tintas = $workorder['no_tintas'];
             $workorder2->tipo_color = $workorder['tipo_color'];
             $workorder2->color1 = $workorder['color1'];
             $workorder2->color2 = $workorder['color2'];
@@ -239,7 +236,8 @@ class WorkorderController extends \BaseController {
             $workorder2->deetalles = $workorder['deetalles'];
             $workorder2->nombre_registro_pedido = $workorder['nombre_registro_pedido'];
             $workorder2->save();
-            return Redirect::intended('/customer/profile');
+            return Redirect::intended('customer/'.$workorder['customers_id'] . '/profile');
+            
         }
     }
 
@@ -250,10 +248,9 @@ class WorkorderController extends \BaseController {
      * @return Response
      */
     public function destroy($id) {
-        $datos = Input::all();
-        $workorder = Workorder::find($datos['id']);
+        $workorder = Workorder::find($id);
         $workorder->delete();
-        return Redirect::intended('/customer/profile');
+        return Redirect::intended('customer/' .$workorder['customers_id'] . '/profile');
     }
 
 }

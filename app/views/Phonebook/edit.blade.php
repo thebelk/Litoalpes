@@ -74,7 +74,7 @@
         <div class="bhoechie-tab-content active">
             <center>
                 <h2 class="glyphicon glyphicon-user color" ></h2>
-                <h3> Nuevo Contacto</h3>    
+                <h3> Editar Contacto</h3>    
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->
                     <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Contacto</h3></div>

@@ -74,7 +74,7 @@
         <div class="bhoechie-tab-content active">
             <center>
                 <h2 class="glyphicon glyphicon-pencil color" ></h2>
-                <h3> Nueva Cotización</h3>    
+                <h3> Editar Cotización</h3>    
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->
                     <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Registro</h3></div>

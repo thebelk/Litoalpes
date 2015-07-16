@@ -8,7 +8,8 @@ class UserController extends \BaseController {
      * @return Response
      */
     public function index() {
-        return View::make('user.index');
+        $workorder = Workorder::all();
+        return View::make('user.index')->with('workorder', $workorder);
     }
 
     /**
@@ -69,7 +70,7 @@ class UserController extends \BaseController {
      */
     public function edit($id) {
         $user = User::find($id);
-        return View::make('users.edit')->with('user', $user);
+        return View::make('user.edit')->with('user', $user);
     }
 
     /**
@@ -106,11 +107,8 @@ class UserController extends \BaseController {
             $user2->telefono = $user['telefono'];
             $user2->otro = $user['otro'];
             $user2->representante = $user['representante'];
-            $user2->email = $user['email'];
-            $user2->password = $user['password'];
-            $user2->confirpassword = $user['confirpassword'];
             $user2->save();
-            return Redirect::intended('/profile');
+            return Redirect::intended('/user');
         }
     }
 

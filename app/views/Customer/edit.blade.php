@@ -167,8 +167,8 @@
                             </div>                            
                         </div>
                     </div>
-                    <div class='row buttons'>                                
-                        {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
+                    <div class='row buttons'>   
+                          {{ HTML::link('/customer/'.$customer->id.'/profile','Cancelar', array('class' => 'btn btn-default'), false)}}                       
                         {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                                 
                     </div>
                     {{ Form::close() }}

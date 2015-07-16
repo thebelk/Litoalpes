@@ -9,7 +9,7 @@
 <div class="col col-sm-3 complement">   
     <h3 class="highlight nav nav-stacked ">{{$customer->cliente}}  <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
     <div class="row panel">
-   <div class="col-sm-8 col-md-12">
+        <div class="col-sm-8 col-md-12">
             <h3 class="color">Cliente:          
                 @if($customer->tipo_cliente==1) Seleccionar
                 @elseif($customer->tipo_cliente==2) Directo
@@ -21,7 +21,11 @@
             <h5>Repsponsable: {{$customer->repsponsable}} </h5> 
             <h5>Contacto: {{$customer->contacto}} </h5> 
             <h5>{{ $customer->otro}} </h5>  
-        </div>                                           
+        </div>  
+        <div class="col-md-8"></div>
+        <div class="col-md-1">
+            {{ HTML::link('/customer/'.$customer->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}    
+        </div> 
     </div>
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
@@ -58,7 +62,7 @@
             <a href="create" class="list-group-item active text-center">
                 <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
             </a>
-            <a href="/customer/profile" class="list-group-item  text-center">                           
+            <a href="/customer/{{$customer->id}}/profile" class="list-group-item  text-center">                           
                 <h4 class="glyphicon glyphicon-user"></h4><br/> Perfil
             </a>                       
         </div>                     
@@ -153,7 +157,7 @@
                                 <div class="col-xs-6 col-md-6 imp">                                    
                                     <div class='form-group form-register'>
                                         {{ Form::label('iva', 'IVA:') }}
-                                        {{ Form::select('iva', array('iva' => array('1' => 'Ninguno', '2' => 'Si', '3' => 'No')),null ,array('class' => 'form-control')); }}
+                                        {{ Form::select('iva', array('iva' => array('1'  => 'No', '2' => 'Si')),null ,array('class' => 'form-control')); }}
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-6 imp">                                   
@@ -202,14 +206,14 @@
                     {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
                     {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                    
                 </div>
-               
+
             </div>                        
             <div class="panel panel-default tam">
                 <!-- Default panel contents -->
                 <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Orden de Producción</h3></div>
                 <div class="panel-body">
                     <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-                    
+
                     <div class="panel panel-default ">
                         <div class="row ">                            
                             <div class="col-xs-6 col-md-4 imp ">
@@ -478,5 +482,5 @@
         </center>
     </div>
 </div>  
-</div>  
+
 @stop

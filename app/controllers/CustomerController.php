@@ -47,9 +47,9 @@ class CustomerController extends \BaseController {
         $validate = Validator::make($post_data, $rules);
         if ($validate) {
             $post_data['users_id'] = Auth::user()->id;
-            Customer::create($post_data);
-            return Redirect::intended('customer/' . $post_data['id'] . '/workorder/create')
-                            ->with('flash', 'The new customer has been created');
+          $customer   = Customer::create($post_data);
+            return View::make('workorder.create')->with('customer', $customer);
+                            
         }
     }
 

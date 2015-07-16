@@ -9,13 +9,17 @@
 <div class="col col-sm-3 complement">   
     <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
     <div class="row panel">
-        <div class="col-sm-8 col-md-12">
+        <div class="col-sm-8 col-md-12">             
             <h3 class="color">{{ Auth::user()->representante}}  </h3>
             <h5 class="color"> Nit: {{ Auth::user()->nit_cc}}  </h5>
             <h5>Telefono: {{ Auth::user()->telefono}} </h5>
             <h5>Celular: {{ Auth::user()->celular}} </h5>   
-            <h5>{{ Auth::user()->otro}} </h5>  
-        </div>                                           
+            <h5>{{ Auth::user()->otro}} </h5>            
+        </div> 
+        <div class="col-md-8"></div>
+        <div class="col-md-1">
+            {{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}    
+        </div> 
     </div>
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
@@ -89,26 +93,29 @@
                             @endif 
                         </span>
                     </strong></h3>
-                <p><strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
+                <p><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
+                    <strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
                     <strong>Material</strong>: {{ $worklist->tipo_material }} ,
                     <strong>Cantidad</strong>: {{ $worklist->cantidad }} ,
                     <strong>Tamaño </strong>: {{ $worklist->tamano }} </p> 
                 <p><strong>Valor Trabajo</strong>: {{ $worklist->valor_trabajo}},                         
                     <strong>Abono</strong>: {{ $worklist->abono }} ,
                     <strong>Saldo</strong>: {{ $worklist->saldo }} ,
+                    <strong>Diseño</strong>:
+                    @if($worklist->estado_trabajo==1) Ninguno                                
+                    @elseif($worklist->diseño==2) Correcion
+                    @elseif($worklist->diseño==3) Art
+                    @endif,
+                    <strong>Diseñador</strong>: {{ $worklist->diseñador}},
                     <strong>Atendido</strong>: {{ $worklist->atendido }}</p> 
                 <br>
                 <div class="col-md-1">
                     {{ HTML::link('/worklist/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
                 </div>  
 
-                {{ Form::model($worklist, array('url' => array('/worklist/'.$worklist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
                 <div class="col-md-1">
-                    {{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
-                </div>    
-                <div class="col-md-1">
-                        {{ HTML::link('/worklist/'.$worklist->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
-                    </div> 
+                    {{ HTML::link('/worklist/'.$worklist->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
+                </div> 
                 {{ Form::close() }}                       
 
                 <br> <br>
@@ -142,5 +149,5 @@
         </center>
     </div>
 </div>  
-</div>  
+
 @stop

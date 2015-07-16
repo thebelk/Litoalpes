@@ -15,7 +15,11 @@
             <h5>Telefono: {{ Auth::user()->telefono}} </h5>
             <h5>Celular: {{ Auth::user()->celular}} </h5>   
             <h5>{{ Auth::user()->otro}} </h5>  
-        </div>                                           
+        </div>    
+        <div class="col-md-8"></div>
+        <div class="col-md-1">
+            {{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}    
+        </div> 
     </div>
     <br>
     <div class="accordion" id="accordion2">
@@ -87,13 +91,14 @@
                         <strong>Barrio </strong>: {{ $custlist->barrio }},
                         <strong>Ciudad </strong>: {{ $custlist->ciudad }},
                         <strong>Pais </strong>: {{ $custlist->pais}}</p> 
-                        <p><strong>Responsable</strong>: {{ $custlist->repsponsable }},
+                    <p><strong>Responsable</strong>: {{ $custlist->repsponsable }},
                         <strong>Contacto</strong>: {{ $custlist->contacto }},
                         <strong>otro </strong>: {{ $custlist->otro}}</p> 
                     <br>                  
                     <div class="col-md-1">
                         {{ HTML::link('/customer/'.$custlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
                     </div>
+                    
                     <div class="col-md-1">
                         {{ HTML::link('/customer/'.$custlist->id.'/profile','Ver', array('class' => 'btn btn-success'), false)}} 
                     </div>                    

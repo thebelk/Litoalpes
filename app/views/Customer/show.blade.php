@@ -23,7 +23,11 @@
             <h5>Repsponsable: {{$customer->repsponsable}} </h5> 
             <h5>Contacto: {{$customer->contacto}} </h5> 
             <h5>{{ $customer->otro}} </h5>  
-        </div>                                           
+        </div>   
+        <div class="col-md-8"></div>
+        <div class="col-md-1">
+            {{ HTML::link('/customer/'.$customer->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}    
+        </div> 
     </div>
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
@@ -82,67 +86,70 @@
                     <h1 class="glyphicon glyphicon-th-list color" ></h1>
                     <h2> Lista Trabajos</h2>
                     <h5>trabajos de cada cliente</h5>
-                    <div class="panel panel-default tam">
-                        <!-- Default panel contents -->                
-                        <hr>                       
-                        @foreach($workorder as $worklist)                    
-                        <h3><strong> {{ $worklist->clase_trabajo}} / ESTADO TRABAJO
-                                <span class="estilo">
-                                    @if($worklist->estado_trabajo==1) Por realizar                                
-                                    @elseif($worklist->estado_trabajo==2) Diseño 
-                                    @elseif($worklist->estado_trabajo==3) Produccion 
-                                    @elseif($worklist->estado_trabajo==3) Entregado 
-                                    @endif 
-                                </span>
-                            </strong></h3>
-                        <p><strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
-                            <strong>Material</strong>: {{ $worklist->tipo_material }} ,
-                            <strong>Cantidad</strong>: {{ $worklist->cantidad }} ,
-                            <strong>Tamaño </strong>: {{ $worklist->tamano }} </p> 
-                        <p><strong>Valor Trabajo</strong>: {{ $worklist->valor_trabajo}},                         
-                            <strong>Abono</strong>: {{ $worklist->abono }} ,
-                            <strong>Saldo</strong>: {{ $worklist->saldo }} ,
-                            <strong>Atendido</strong>: {{ $worklist->atendido }}</p> 
-                        <br>
-                        <div class="col-md-1">
-                            {{ HTML::link('/worklist/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
-                        </div>  
+                </center>
+                <div class="panel panel-default tam">
+                    <!-- Default panel contents -->                
+                    <hr>                       
+                    @foreach($workorder as $worklist)                    
+                    <h3><strong> {{ $worklist->clase_trabajo}} / ESTADO TRABAJO
+                            <span class="estilo">
+                                @if($worklist->estado_trabajo==1) Por realizar                                
+                                @elseif($worklist->estado_trabajo==2) Diseño 
+                                @elseif($worklist->estado_trabajo==3) Produccion 
+                                @elseif($worklist->estado_trabajo==3) Entregado 
+                                @endif 
+                            </span>
+                        </strong></h3>
+                    <p><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
+                        <strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
+                        <strong>Material</strong>: {{ $worklist->tipo_material }} ,
+                        <strong>Cantidad</strong>: {{ $worklist->cantidad }} ,
+                        <strong>Tamaño </strong>: {{ $worklist->tamano }} </p> 
+                    <p><strong>Valor Trabajo</strong>: {{ $worklist->valor_trabajo}},                         
+                        <strong>Abono</strong>: {{ $worklist->abono }} ,
+                        <strong>Saldo</strong>: {{ $worklist->saldo }} ,
+                        <strong>Diseño</strong>:
+                        @if($worklist->estado_trabajo==1) Ninguno                                
+                        @elseif($worklist->diseño==2) Correcion
+                        @elseif($worklist->diseño==3) Art
+                        @endif,
+                        <strong>Diseñador</strong>: {{ $worklist->diseñador}},
+                        <strong>Atendido</strong>: {{ $worklist->atendido }}</p> 
+                    <br>
+                  <div class="col-md-1">
+                        {{ HTML::link('/worklist/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
+                    </div>  
+                    
+                    <div class="col-md-1">
+                        {{ HTML::link('/worklist/'.$worklist->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
+                    </div> 
+                    {{ Form::close() }}                       
 
-                        {{ Form::model($worklist, array('url' => array('/worklist/'.$worklist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
-                        <div class="col-md-1">
-                            {{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
-                        </div>    
-                        <div class="col-md-1">
-                            {{ HTML::link('/worklist/'.$worklist->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
-                        </div> 
-                        {{ Form::close() }}                       
-
-                        <br> <br>
-                        <hr>
-                        @endforeach
-                    </div>
+                    <br> <br>
                     <hr>
-                    <div class="row">
-                        <div class="col col-sm-6">
-                            <img src="/assets/example/bg_smartphones.jpg" class="img-responsive">
-                        </div> 
-                        <div class="col col-sm-6">
-                            <h1>loren insut .</h1>
-                        </div>   
-                    </div>
-                    <hr>                          
-                    <!-- menu-->
-
+                    @endforeach
+                </div>
+                <hr>                          
+                <!-- menu-->
+                <center>
                     <div class="list-group">                
                         <h4>Menu</h4>   
-                        <a href="#" class="list-group-item ">
+                        <a href="/user" class="list-group-item ">
                             <h3 class="color"> <i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></h3>
                             <h3 class="color">Home</h3>
                         </a>
-                        <a href="#" class="list-group-item ">
+                        <a href="/customer" class="list-group-item ">
                             <h3 class="glyphicon glyphicon-user"></h3>
                             <h3>Clientes</h3>
-                        </a>                       
+                        </a>   
+                        <a href="/quotation" class="list-group-item ">
+                            <h3 class="glyphicon glyphicon-pencil"></h3>
+                            <h3>Cotizar</h3>
+                        </a>
+                        <a href="#" class="list-group-item ">
+                            <h3 class="glyphicon glyphicon-bell"></h3>
+                            <h3>Notificaciones</h3>
+                        </a>                   
                     </div>
                 </center>
             </div>

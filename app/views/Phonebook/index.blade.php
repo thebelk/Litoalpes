@@ -15,7 +15,11 @@
             <h5>Telefono: {{ Auth::user()->telefono}} </h5>
             <h5>Celular: {{ Auth::user()->celular}} </h5>   
             <h5>{{ Auth::user()->otro}} </h5>  
-        </div>                                           
+        </div> 
+        <div class="col-md-8"></div>
+        <div class="col-md-1">
+            {{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}    
+        </div> 
     </div>
     <br>
     <div class="accordion" id="accordion2">
@@ -87,7 +91,7 @@
                     <P><strong>Dirección </strong>: {{ $phonlist->direccion }},
                         <strong>Barrio </strong>: {{ $phonlist->barrio }},
                         <strong>Ciudad </strong>: {{ $phonlist->ciudad }}</p>                    
-                        <br>
+                    <br>
                     <div class="col-md-1">
                         {{ HTML::link('/phonebook/'.$phonlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
                     </div>  

@@ -76,7 +76,7 @@
         <!-- work order -->            
         <center>
             <h3 class="glyphicon glyphicon-th-list " ></h3>
-            <h3> Nuevo Trabajo</h3>                    
+            <h3> Editar Trabajo</h3>                    
             <div class="panel panel-default tam">
                 <!-- Default panel contents -->
                 {{Form::open(array('url' => '/workorder/','role'=>'form', 'method' => 'POST')) }}
