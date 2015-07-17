@@ -8,7 +8,7 @@ class WorkorderController extends \BaseController {
      * @return Response
      */
     public function index() {
-        $workorder= Workorder::all();
+        $workorder = Workorder::all();
         return View::make('workorder.index')->with('workorder', $workorder);
     }
 
@@ -117,10 +117,11 @@ class WorkorderController extends \BaseController {
      * @return Response
      */
     public function edit($id) {
-        // get the workorder
+
         $workorder = Workorder::find($id);
-        // show the edit form and pass the workorder
-        return View::make('workorder.edit')->with('workorder', $workorder);
+        $customer = Customer::find($workorder['customers_id']);
+        return View::make('workorder.edit', compact('workorder'))->with('customer', $customer, 'workorder', $workorder);
+        
     }
 
     /**
@@ -181,11 +182,12 @@ class WorkorderController extends \BaseController {
             'maquina' => '',
             'deetalles' => '',
             'nombre_registro_pedido' => '',
+            'customers_id' => 'required',
             'customers_id' => 'required'
         ];
         $validate = Validator::make($workorder, $rules);
         if ($validate) {
-            $workorder2 = User::find($workorder['id']);
+            $workorder2 = Workorder::find($workorder['id']);
             $workorder2->no_orden = $workorder['no_orden'];
             $workorder2->clase_trabajo = $workorder['clase_trabajo'];
             $workorder2->valor_trabajo = $workorder['valor_trabajo'];
@@ -220,24 +222,23 @@ class WorkorderController extends \BaseController {
             $workorder2->copia4 = $workorder['copia4'];
             $workorder2->no_inicial = $workorder['no_inicial'];
             $workorder2->no_final = $workorder['no_final'];
-            $workorder2->original_todas = $workorder['original_todas'];
-            $workorder2->numerado = $workorder['numerado'];
-            $workorder2->tiro_retiro = $workorder['tiro_retiro'];
-            $workorder2->levante = $workorder['levante'];
-            $workorder2->perforado = $workorder['perforado'];
-            $workorder2->quemado = $workorder['quemado'];
+            $workorder2->original_todas = Input::has('original_todas') ? 1 : 0;
+            $workorder2->numerado = Input::has('numerado') ? 1 : 0;
+            $workorder2->tiro_retiro = Input::has('tiro_retiro') ? 1 : 0;
+            $workorder2->levante = Input::has('levante') ? 1 : 0;
+            $workorder2->perforado = Input::has('perforado') ? 1 : 0;
+            $workorder2->quemado = Input::has('quemado') ? 1 : 0;
             $workorder2->acabados = $workorder['acabados'];
             $workorder2->no_master = $workorder['no_master'];
             $workorder2->no_plancha = $workorder['no_plancha'];
-            $workorder2->engomado = $workorder['engomado'];
-            $workorder2->engrapado = $workorder['engrapado'];
+            $workorder2->engomado = Input::has('engomado') ? 1 : 0;
+            $workorder2->engrapado = Input::has('engrapado') ? 1 : 0;
             $workorder2->observaciones = $workorder['observaciones'];
             $workorder2->maquina = $workorder['maquina'];
             $workorder2->deetalles = $workorder['deetalles'];
             $workorder2->nombre_registro_pedido = $workorder['nombre_registro_pedido'];
             $workorder2->save();
-            return Redirect::intended('customer/'.$workorder['customers_id'] . '/profile');
-            
+            return Redirect::intended('customer/' . $workorder['customers_id'] . '/profile');
         }
     }
 
@@ -250,7 +251,7 @@ class WorkorderController extends \BaseController {
     public function destroy($id) {
         $workorder = Workorder::find($id);
         $workorder->delete();
-        return Redirect::intended('customer/' .$workorder['customers_id'] . '/profile');
+        return Redirect::intended('customer/' . $workorder['customers_id'] . '/profile');
     }
 
 }

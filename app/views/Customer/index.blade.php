@@ -57,8 +57,8 @@
             <a href="customer/create" class="list-group-item active text-center">                           
                 <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Cliente
             </a>                         
-            <a href="workorderlist" class="list-group-item text-center">
-                <h4 class="glyphicon glyphicon-th-list"></h4><br/>Trabajos
+            <a href="customer" class="list-group-item text-center">
+                <h4 class="glyphicon glyphicon-user "></h4><br/>Listar Clientes
             </a>
         </div>        
     </div>

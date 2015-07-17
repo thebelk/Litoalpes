@@ -77,7 +77,7 @@
         <!-- cho section -->
         <div class="bhoechie-tab-content active">
             <center>
-                <h2 class="glyphicon glyphicon-th-list color" ></h2>
+                <h2 class="glyphicon glyphicon-pencil color" ></h2>
                 <h3> Listar Cotización</h3> 
             </center>    
             <div class="panel panel-default tam">                  

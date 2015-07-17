@@ -14,16 +14,13 @@ class CreateWorkorder extends Migration {
         Schema::create('workorders', function(Blueprint $table) {
             $table->increments('id');
             $table->string('no_orden')->default("");
-
             $table->date('fecha_entrega');
             $table->integer('estado_trabajo'); //1. diseño 2.produccion 3.disponible 4.entregado 5.por realizar                      
             $table->string('atendido');
             $table->string('clase_trabajo');
             $table->string('tipo_material');
             $table->integer('cantidad');
-
             $table->string('tamano');
-
             $table->float('valor_trabajo');
             $table->integer('iva')->default(2); //1.si  2.no
             $table->float('iva2')->default(0);
@@ -31,11 +28,7 @@ class CreateWorkorder extends Migration {
             $table->float('abono');
             $table->float('saldo');
             $table->float('pago')->default(0);
-
             $table->string('deetalles')->default("");
-
-
-
             $table->integer('diseño')->default(1); //1.ninguno 2.correcion 3.arte 
             $table->string('diseñador')->default("");
             $table->integer('tipo_elaborado')->default(1); //1.Ninguno 2.primera vez 3.igual al anterior 4. segun muestra
@@ -57,10 +50,8 @@ class CreateWorkorder extends Migration {
             $table->string('fecha_dian')->default("");
             $table->string('emblocado')->default("");
             $table->integer('quemado')->default(0);
-            $table->integer('tiro_retiro')->default(0);
-            //$table->integer('no_plancha')->default(0);
-            $table->string('no_plancha')->default("");
-            //$table->integer('no_master')->default(0);
+            $table->integer('tiro_retiro')->default(0);         
+            $table->string('no_plancha')->default("");           
             $table->string('no_master')->default("");
             $table->integer('engomado')->default(0); //1.si 0.no
             $table->integer('perforado')->default(0); //1.si 0.no 
@@ -70,7 +61,6 @@ class CreateWorkorder extends Migration {
             $table->string('cantidad_material')->default("");
             $table->string('maquina')->default("");
             $table->string('observaciones')->default("");
-
             $table->string('nombre_registro_pedido')->default("");
             $table->integer('customers_id')->unsigned();
             $table->foreign('customers_id')->references('id')->on('customers');

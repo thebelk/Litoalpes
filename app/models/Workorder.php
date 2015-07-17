@@ -55,6 +55,7 @@ class Workorder extends Eloquent {
         'maquina',
         'deetalles',
         'nombre_registro_pedido',
+        'customers_id',
         'customers_id'
     );
 

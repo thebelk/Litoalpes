@@ -58,7 +58,7 @@
 
             </a>
             <a href="/workorderlist" class="list-group-item text-center">
-                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h5>Trabajos</h5>
+                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h5>Listar Trabajos</h5>
 
             </a>
         </div>

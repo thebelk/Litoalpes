@@ -57,8 +57,8 @@
             <a href="phonebook/create" class="list-group-item active text-center">                           
                 <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Contacto
             </a>                         
-            <a href="phonebook" class="list-group-item text-center">
-                <h4 class="glyphicon glyphicon-th-list"></h4><br/> Lista Contactos
+             <a href="/phonebook" class="list-group-item  text-center">                           
+                <h4 class="glyphicon glyphicon-earphone"></h4><br/>Listar Contactos
             </a>
         </div>        
     </div>

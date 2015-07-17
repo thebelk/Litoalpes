@@ -54,7 +54,7 @@
                 <h4 class="glyphicon glyphicon-plus"></h4><br/>Nueva Cotización 
             </a>                        
             <a href="/quotation" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-th-list"></h4><br/>Listar Cotización
+                <h4 class="glyphicon glyphicon-pencil"></h4><br/>Listar Cotización
             </a>
         </div>     
     </div>
