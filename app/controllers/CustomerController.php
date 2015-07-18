@@ -117,7 +117,8 @@ class CustomerController extends \BaseController {
             $customer2->email = $customer['email'];
             $customer2->save();
             // Session::flash('message', 'Successfully updated customer!');
-            return Redirect::intended('/customerlist');
+          
+              return Redirect::intended('customer/' . $customer['id'] . '/profile');
         }
     }
 

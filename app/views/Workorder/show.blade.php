@@ -11,9 +11,8 @@
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color">Cliente:          
-                @if($customer->tipo_cliente==1) Seleccionar
-                @elseif($customer->tipo_cliente==2) Directo
-                @elseif($customer->tipo_cliente==3) Intermediario                
+                @if($customer->tipo_cliente==1) Directo
+                @elseif($customer->tipo_cliente==2) Intermediario                             
                 @endif
             </h3>            
             <h5 class="color"> Nit: {{ $customer->nit_cc}}  </h5>           
@@ -62,7 +61,7 @@
             <a href="create" class="list-group-item active text-center">
                 <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
             </a>
-            <a href="/customer/profile" class="list-group-item  text-center">                           
+            <a href="/customer/{{$customer->id}}/profile" class="list-group-item  text-center">                           
                 <h4 class="glyphicon glyphicon-user"></h4><br/> Perfil
             </a>                       
         </div>                     

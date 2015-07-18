@@ -13,9 +13,8 @@
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color">Cliente:          
-                @if($customer->tipo_cliente==1) Seleccionar
-                @elseif($customer->tipo_cliente==2) Directo
-                @elseif($customer->tipo_cliente==3) Intermediario                
+                @if($customer->tipo_cliente==1) Directo
+                @elseif($customer->tipo_cliente==2) Intermediario                             
                 @endif
             </h3>            
             <h5 class="color"> Nit: {{ $customer->nit_cc}}  </h5>           
@@ -117,7 +116,7 @@
                         <strong>Atendido</strong>: {{ $worklist->atendido }}</p> 
                     <br>
                   <div class="col-md-1">
-                        {{ HTML::link('/worklist/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
+                        {{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
                     </div>  
                     
                     <div class="col-md-1">

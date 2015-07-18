@@ -11,9 +11,8 @@
     <div class="row panel">
    <div class="col-sm-8 col-md-12">
             <h3 class="color">Cliente:          
-                @if($customer->tipo_cliente==1) Seleccionar
-                @elseif($customer->tipo_cliente==2) Directo
-                @elseif($customer->tipo_cliente==3) Intermediario                
+                @if($customer->tipo_cliente==1) Directo
+                @elseif($customer->tipo_cliente==2) Intermediario                             
                 @endif
             </h3>            
             <h5 class="color"> Nit: {{ $customer->nit_cc}}  </h5>           
@@ -58,7 +57,7 @@
             <a href="create" class="list-group-item active text-center">
                 <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
             </a>
-            <a href="/customer/profile" class="list-group-item  text-center">                           
+            <a href="/customer/{{$customer->id}}/profile" class="list-group-item  text-center">                           
                 <h4 class="glyphicon glyphicon-user"></h4><br/> Perfil
             </a>                       
         </div>                     
@@ -79,7 +78,8 @@
             <h3> Editar Trabajo</h3>                    
             <div class="panel panel-default tam">
                 <!-- Default panel contents -->
-                 {{Form::open(array('url' => '/worklist/'.$workorder->id,'method' => 'PUT', 'role'=>'form')) }}                
+                 {{Form::open(array('url' => '/workorder/'.$workorder->id,'method' => 'PUT', 'role'=>'form')) }}                
+                 <!--  'worklist/1' -->
                 <div class="panel-heading row panel"> 
                     <div class="col-xs-8 col-md-9 imp">
                         <h3 class="list-group-item-heading color">Pedido</h3>
@@ -199,9 +199,9 @@
                         </div>
                     </div>
                 </div>
-                <div class='row buttons'>                                
-                    {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
-                    {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                    
+                <div class='row buttons'> 
+                    {{ HTML::link('/user','Cancelar', array('class' => 'btn btn-default'), false)}}
+                    {{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                    
                 </div>
                
             </div>                        
@@ -450,8 +450,8 @@
                     </div>
                 </div>
                 <div class='row buttons'>                                
-                    {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
-                    {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                    
+                     {{ HTML::link('/user','Cancelar', array('class' => 'btn btn-default'), false)}}
+                    {{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                    
                 </div>
                 {{ Form::close() }}
             </div>           

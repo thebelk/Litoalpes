@@ -97,7 +97,7 @@
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
-                                        {{ Form::label('ocupacion', 'OCUPACIÓN:') }}
+                                        {{ Form::label('ocupacion', 'ACTIVIDAD:') }}
                                         {{ Form::text('ocupacion', null, array('placeholder' => 'Ocupación', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>

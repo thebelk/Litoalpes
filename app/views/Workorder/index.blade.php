@@ -110,7 +110,7 @@
                     <strong>Atendido</strong>: {{ $worklist->atendido }}</p> 
                 <br>
                 <div class="col-md-1">
-                    {{ HTML::link('/worklist/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
+                    {{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
                 </div>  
 
                 <div class="col-md-1">

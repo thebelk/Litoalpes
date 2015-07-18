@@ -30,9 +30,9 @@ Route::delete('/quotation/{quotation}', 'QuotationController@destroy');
 
 Route::resource('workorder', 'WorkorderController');
 Route::get('workorderlist', 'WorkorderController@index');
-Route::get('customer/{customer}/workorder/create', 'WorkorderController@create');
+Route::get('customer/{customer}/workorder/create','WorkorderController@create');
 Route::get('worklist/{workorder}/ver', 'WorkorderController@show');
-Route::get('worklist/{workorder}/edit', 'WorkorderController@edit');
+Route::get('workorder/{workorder}/edit', 'WorkorderController@edit');
 Route::delete('/worklist/{workorder}', 'WorkorderController@destroy');
 
 Route::resource('phonebook', 'PhonebookController');

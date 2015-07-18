@@ -7,7 +7,7 @@
 @stop
 @section('content')
 <div class="col col-sm-3 complement">   
-   <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
+    <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
     <div class="row panel">
         <div class="col-sm-8 col-md-12">
             <h3 class="color">{{ Auth::user()->representante}}  </h3>
@@ -79,14 +79,14 @@
                     <!-- Default panel contents -->
                     <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Contacto</h3></div>
                     <div class="panel-body">
-                         {{Form::open(array('url' => '/phonebook/'.$phonebook->id,'method' => 'PUT', 'role'=>'form', 'class'=>'form-inline')) }}
+                        {{Form::open(array('url' => '/phonebook/'.$phonebook->id,'method' => 'PUT', 'role'=>'form', 'class'=>'form-inline')) }}
                         <div class="panel panel-default ">
                             <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                             <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
                                     <div class='form-group form-register'>
                                         {{ Form::label('nombre', 'NOMBRE:') }}
-                                         {{ Form::text('id', $phonebook->id, array('hidden' => 'true')) }}  
+                                        {{ Form::text('id', $phonebook->id, array('hidden' => 'true')) }}  
                                         {{ Form::text('nombre', $phonebook->nombre, array('placeholder' => 'Nombre', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
                                     <div class='form-group form-register'>
-                                        {{ Form::label('ocupacion', 'OCUPACIÓN:') }}
+                                        {{ Form::label('ocupacion', 'ACTIVIDAD:') }}
                                         {{ Form::text('ocupacion', $phonebook->ocupacion, array('placeholder' => 'Ocupación', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
@@ -179,3 +179,4 @@
         </div>
     </div>  
 </div>  
+@stop
