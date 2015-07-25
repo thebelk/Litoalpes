@@ -127,4 +127,29 @@ class QuotationController extends \BaseController {
         return Redirect::intended('/quotationlist');
     }
 
+    public function sendmail() {
+    
+    	$config = array(
+    			'driver' => $mail->driver,
+    			'host' => $mail->host,
+    			'port' => $mail->port,
+    			'from' => array('address' => $mail->from_address, 'name' => $mail->from_name),
+    			'encryption' => $mail->encryption,
+    			'username' => $mail->username,
+    			'password' => $mail->password,
+    			'sendmail' => '/usr/sbin/sendmail -bs',
+    			'pretend' => false
+    	);
+    	Config::set('mail',$config);
+    	 
+    	/*Mail::send('emails.welcome', [], function($message)
+    	 {
+    	 $message
+    	 ->to('belkis_buelvas06@hotmail.com', 'Belkis Buelvas')
+    	 ->cc('jotallamas_o@hotmail.com', 'Jorge Llamas')
+    	 ->subject('Litografía Los Alpes: Cotización');
+    	});
+    	*/
+    	return View::make('emails.welcome');
+    }
 }
