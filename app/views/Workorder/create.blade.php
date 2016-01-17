@@ -74,8 +74,7 @@
         </div>
     </div>
 </div>  
-<div class="col col-sm-9">
-    <div class="row panel">                           
+<div class="col col-sm-9">                           
         <!-- work order -->            
         <center>
             <h3 class="glyphicon glyphicon-th-list " ></h3>
@@ -456,30 +455,9 @@
                     {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                    
                 </div>
                 {{ Form::close() }}
-            </div>           
-            <hr>                          
-            <!-- menu-->
-            <div class="list-group">                
-                <h4>Menu</h4>   
-                <a href="/user" class="list-group-item ">
-                    <h3 class="color"> <i class="glyphicon glyphicon-home"></i> <i class="glyphicon glyphicon-chevron-down"></i></h3>
-                    <h3 class="color">Home</h3>
-                </a>
-                <a href="/customer" class="list-group-item ">
-                    <h3 class="glyphicon glyphicon-user"></h3>
-                    <h3>Clientes</h3>
-                </a>   
-                <a href="/quotation" class="list-group-item ">
-                    <h3 class="glyphicon glyphicon-pencil"></h3>
-                    <h3>Cotizar</h3>
-                </a>
-                <a href="#" class="list-group-item ">
-                    <h3 class="glyphicon glyphicon-bell"></h3>
-                    <h3>Notificaciones</h3>
-                </a>                   
             </div>
         </center>
-    </div>
+    
 </div>  
 
 @stop

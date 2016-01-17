@@ -14,11 +14,13 @@ h3.highlight  {
 }
 
 .navbar {
-    background-color:#469DE0;
-    color:#ffffff;
-    border:0;
-    border-radius:0;
-    position:static;
+    background-color: #469DE0;
+    color: #ffffff;
+    border: 0;
+    border-radius: 0;
+    position: fixed;
+    z-index: 1051;
+    width: 100%;
 }
 
 .navbar-nav > li > a {
@@ -60,7 +62,7 @@ h3.color{
 
 .row{
     margin: 8px;
-    padding: 10px;
+    padding-top:75px; 
     background-color:#FFFFFF; 
     border-color:#469DE0;
 }
@@ -71,9 +73,9 @@ h3.color{
 }
 
 .complement {     
-    // background-color: #fff;
+    background-color: #fff;
     background-color: #F5F5F5;
-    padding: 8px;
+    padding-top: 75px;
 }
 @media  (max-width: 768px) { 
     .dropdown{
