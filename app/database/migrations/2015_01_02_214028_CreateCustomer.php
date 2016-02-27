@@ -17,14 +17,14 @@ class CreateCustomer extends Migration {
 			$table->increments('id');
                         $table->string('nit_cc');
                         $table->string('cliente');
-                        $table->string('repsponsable');
+                        $table->string('empresa');
                         $table->integer('tipo_cliente'); //1.directo  2.intermediario
                         $table->string('direccion');
-                        $table->string('barrio');
+                        $table->string('pagina_web');
                         $table->string('ciudad');
                         $table->string('pais');
-                        $table->string('telefono');
-                        $table->string('contacto');
+                        $table->string('telefonos');
+                        $table->string('cel_contacto');
                         $table->string('otro');
                         $table->string('email');
                         $table->integer('users_id')->unsigned();

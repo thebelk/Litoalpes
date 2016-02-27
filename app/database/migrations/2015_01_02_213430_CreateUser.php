@@ -18,13 +18,11 @@ class CreateUser extends Migration {
                         $table->string('nit_cc');
                         $table->string('razon_social');               
                         $table->string('direccion');
-                        $table->string('otro');
+                        $table->string('celular');
                         $table->string('ciudad');
-                        $table->string('barrio');
                         $table->string('representante');
                         $table->string('pais');
-                        $table->string('telefono');
-                        $table->string('celular');                
+                        $table->string('telefono');                                       
                         $table->string('email')->unique();                    
                         $table->string('password');
                         $table->string('confirpassword'); 

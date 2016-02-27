@@ -54,7 +54,7 @@
     <div id="sidebar"> 
         <div class="list-group">
             <a href="/phonebooklist" class="list-group-item active text-center">
-                <h4 class="list-group-item-heading glyphicon glyphicon-earphone"></h4><h5>Contactos</h5>
+                <h4 class="list-group-item-heading glyphicon glyphicon-earphone"></h4><h5>Contactos / Proveedor</h5>
 
             </a>
             <a href="/workorderlist" class="list-group-item text-center">

@@ -30,18 +30,18 @@ class CustomerController extends \BaseController {
     public function store() {
         $post_data = Input::all();
         $rules = [
-            'nit_cc' => 'required',
+            'nit_cc' => '',
             'cliente' => 'required',
-            'repsponsable' => '',
+            'empresa' => '',
             'tipo_cliente' => 'required',
             'direccion' => '',
-            'barrio' => '',
+            'pagina_web' => '',
             'ciudad' => '',
             'pais' => '',
-            'telefono' => 'required',
+            'telefono' => '',
             'contacto' => '',
-            'otro' => '',
-            'email' => 'required'
+            'otro' => 'required',
+            'email' => ''
         ];
 
         $validate = Validator::make($post_data, $rules);
@@ -87,28 +87,28 @@ class CustomerController extends \BaseController {
     public function update($id) {
         $customer = Input::all();
         $rules = array(
-            'nit_cc' => 'required',
+           'nit_cc' => '',
             'cliente' => 'required',
-            'repsponsable' => '',
+            'empresa' => '',
             'tipo_cliente' => 'required',
             'direccion' => '',
-            'barrio' => '',
+            'pagina_web' => '',
             'ciudad' => '',
             'pais' => '',
-            'telefono' => 'required',
+            'telefono' => '',
             'contacto' => '',
-            'otro' => '',
-            'email' => 'required'
+            'otro' => 'required',
+            'email' => ''
         );
         $validate = Validator::make($customer, $rules);
         if ($validate) {
             $customer2 = Customer::find($customer['id']);
             $customer2->nit_cc = $customer['nit_cc'];
             $customer2->cliente = $customer['cliente'];
-            $customer2->repsponsable = $customer['repsponsable'];
+            $customer2->empresa = $customer['empresa'];
             $customer2->tipo_cliente = $customer['tipo_cliente'];
             $customer2->direccion = $customer['direccion'];
-            $customer2->barrio = $customer['barrio'];
+            $customer2->pagina_web = $customer['pagina_web'];
             $customer2->ciudad = $customer['ciudad'];
             $customer2->pais = $customer['pais'];
             $customer2->telefono = $customer['telefono'];

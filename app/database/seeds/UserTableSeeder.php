@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder {
             'email' => 'litoalpes6677@hotmail.com',
             'confiremail' => 'litoalpes6677@hotmail.com',
             'password' => Hash::make('Lito663441'),
-            'confirpassword' => Hash::make('Lito663441')
+            'confirpassword' => Hash::make('Lito6634041')
         ));
     }
 

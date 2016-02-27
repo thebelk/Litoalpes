@@ -69,62 +69,103 @@
 </div>  
 
 <div class="col col-sm-9">
-    <div class="row panel">                             
+    <div class="row ">                             
         <!-- cho section -->
         <div class="bhoechie-tab-content active">
             <center>
                 <h2 class="glyphicon glyphicon-pencil color" ></h2>
                 <h3> Nueva Cotización</h3>    
-                <div class="panel panel-default tam">
+               <div class="panel panel-default tam">
                     <!-- Default panel contents -->
-                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">Registro</h3></div>
-                    <div class="panel-body">
+                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">
+                            Fecha registro {{  Auth::user()->created_at }}  </h3>
+                    </div>
+			</center>
+					<div class="panel-body">
                         <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                         <div class="panel panel-default ">
                             {{Form::open(array('url' => '/quotation','role'=>'form', 'method' => 'POST')) }}
                             <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                             <div class="row ">
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
-                                        {{ Form::label('nombre_cliente', 'NOMBRE CLIENTE:') }}
-                                        {{ Form::text('nombre_cliente', null, array('placeholder' => 'Nombre Cliente', 'class' => 'form-control')) }}
+                                <div class="col-xs-6 col-md-4 imp ">
+                                    <div class='form-group form-register'align="justify">
+                                        {{ Form::label('cliente', 'CLIENTE:') }}
+                                        {{ Form::text('cliente', null, array('placeholder' => 'Cliente', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
-                                </div>                               
+                                </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
+                                    <div class='form-group form-register'align="justify">
+                                        {{ Form::label('contacto', 'NUMERO DE CONTACTO:') }}
+                                        {{ Form::text('contacto', null, array('placeholder' => 'Telefonos', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">                                     
+                                    <div class='form-group form-register'align="justify">
+                                        {{ Form::label('tipo_cliente', 'TIPO CLIENTE:') }}
+                                        {{ Form::select('tipo_cliente', array('Tipo Cliente' => array( '1' => 'Seleccionar','1' => 'Nuevo ', '2' => 'Existente')),null ,array('class' => 'form-control')); }}
+                                    </div>
+									<br>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'align="justify">
+                                        {{ Form::label('nit_cc', 'NIT / CC:') }}
+                                        {{ Form::text('nit_cc', null, array('placeholder' => 'Nit / CC', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'align="justify">
+                                        {{ Form::label('repsponsable', 'EMPRESA:') }}
+                                        {{ Form::text('repsponsable', null, array('placeholder' => 'Empresa', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp ">
+                                    <div class='form-group form-register'align="justify">
                                         {{ Form::label('telefono', 'TELEFONO:') }}
-                                        {{ Form::text('telefono', null, array('placeholder' => 'Telefono', 'class' => 'form-control')) }}
+                                        {{ Form::text('telefono', null, array('placeholder' => 'Telefono', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
-                                </div>                                
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
-                                        {{ Form::label('celular', 'CELULAR:') }}
-                                        {{ Form::text('celular', null, array('placeholder' => 'Celular', 'class' => 'form-control')) }}
-                                    </div>
+									<br>
                                 </div>
-                            </div>
-                            <div class="row ">   
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
-                                        {{ Form::label('email', 'E-MAIL:') }}
-                                        {{ Form::text('email', null, array('placeholder' => 'E-mail', 'class' => 'form-control')) }}
-                                    </div>
-                                </div>                               
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
+                                <div class="col-xs-6 col-md-4 imp ">
+                                    <div class='form-group form-register'align="justify">
                                         {{ Form::label('direccion', 'DIRECCIÓN:') }}
-                                        {{ Form::text('direccion', null, array('placeholder' => 'Direccion', 'class' => 'form-control')) }}
-                                    </div>
-                                </div>                                
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'>
-                                        {{ Form::label('barrio', 'BARRIO:') }}
-                                        {{ Form::text('barrio', null, array('placeholder' => 'Barrio', 'class' => 'form-control')) }}
+                                        {{ Form::text('direccion', null, array('placeholder' => 'DirecciÓn', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
-                            </div>                        
-                        </div>
-                        <div class="panel panel-default ">
+								<div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'align="justify">
+                                        {{ Form::label('ciudad', 'CIUDAD:') }}
+                                        {{ Form::text('ciudad', null, array('placeholder' => 'Ciudad', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+								 <div class="col-xs-6 col-md-4 imp ">
+                                    <div class='form-group form-register'align="justify">
+                                        {{ Form::label('pais', 'PAIS:') }}
+                                        {{ Form::text('pais', null, array('placeholder' => 'Pais', 'class' => 'form-control')) }}
+                                    </div>
+									<br>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'align="justify">
+                                        {{ Form::label('email', 'E-MAIL:') }}
+                                        {{ Form::text('email', null, array('placeholder' => 'Email', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'align="justify">
+                                        {{ Form::label('pagina_web', 'PAGINA WEB:') }}
+                                        {{ Form::text('pagina_web', null, array('placeholder' => 'Pagina Web', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'align="justify">
+                                        {{ Form::label('otro', 'OTRO:') }}
+                                        {{ Form::text('otro', null, array('placeholder' => 'Otro', 'class' => 'form-control')) }}
+                                    </div>
+									<br>
+                                </div>
+                            </div> 
+                            </div>
+							<div class="panel panel-default ">
                             <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                             <div class="row ">                            
                                 <div class="col-xs-12 col-md-6 imp ">                                   
@@ -153,7 +194,8 @@
                                     {{ Form::textarea('cotizacion', null, array('rows' => '4', 'placeholder' => 'Cotización', 'class' => 'form-control')) }}
                                 </div>
                             </div>
-                        </div>
+                        </div>	
+                        </div>                       
                     </div>                   
                     <div class='row buttons'>                                
                         {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
@@ -162,7 +204,5 @@
                     </div>
                     {{ Form::close() }}
                 </div> 
-            </center>
         </div>
-    </div>  
     @stop

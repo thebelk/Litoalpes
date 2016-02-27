@@ -68,7 +68,7 @@
 </div>  
 
 <div class="col col-sm-9">
-    <div class="row ">                             
+    <div class="row panel">                             
         <!-- cho section -->
         <div class="bhoechie-tab-content active">
             <center>
@@ -83,92 +83,93 @@
                         <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                         <div class="panel panel-default ">
                             {{Form::open(array('url' => '/customer','role'=>'form', 'method' => 'POST')) }}
-                            <div class="row ">                                  
+                            <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
-                                    <div class='form-group form-register'align="justify">
+                                    <div class='form-group form-register'>
                                         {{ Form::label('cliente', 'CLIENTE:') }}
                                         {{ Form::text('cliente', null, array('placeholder' => 'Cliente', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'align="justify">
-                                        {{ Form::label('contacto', 'NUMERO DE CONTACTO:') }}
-                                        {{ Form::text('contacto', null, array('placeholder' => 'Telefonos', 'class' => 'form-control')) }}
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('nit_cc', 'NIT/CC:') }}
+                                        {{ Form::text('nit_cc', null, array('placeholder' => 'Nit/CC', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
+
                                 <div class="col-xs-6 col-md-4 imp">                                     
-                                    <div class='form-group form-register'align="justify">
+                                    <div class='form-group form-register'>
                                         {{ Form::label('tipo_cliente', 'TIPO CLIENTE:') }}
-                                        {{ Form::select('tipo_cliente', array('Tipo Cliente' => array( '1' => 'Seleccionar','1' => 'Nuevo ', '2' => 'Existente')),null ,array('class' => 'form-control')); }}
-                                    </div>
-									<br>
-                                </div>
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'align="justify">
-                                        {{ Form::label('nit_cc', 'NIT / CC:') }}
-                                        {{ Form::text('nit_cc', null, array('placeholder' => 'Nit / CC', 'class' => 'form-control')) }}
+                                        {{ Form::select('tipo_cliente', array('Tipo Cliente' => array( '1' => 'Seleccionar','1' => 'Directo ', '2' => 'Intermediario')),null ,array('class' => 'form-control')); }}
                                     </div>
                                 </div>
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'align="justify">
-                                        {{ Form::label('repsponsable', 'EMPRESA:') }}
-                                        {{ Form::text('repsponsable', null, array('placeholder' => 'Empresa', 'class' => 'form-control')) }}
-                                    </div>
-                                </div>
+                            </div>
+                            <div class="row ">                            
                                 <div class="col-xs-6 col-md-4 imp ">
-                                    <div class='form-group form-register'align="justify">
+                                    <div class='form-group form-register'>
                                         {{ Form::label('telefono', 'TELEFONO:') }}
                                         {{ Form::text('telefono', null, array('placeholder' => 'Telefono', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
-									<br>
-                                </div>
-                                <div class="col-xs-6 col-md-4 imp ">
-                                    <div class='form-group form-register'align="justify">
-                                        {{ Form::label('direccion', 'DIRECCIÓN:') }}
-                                        {{ Form::text('direccion', null, array('placeholder' => 'DirecciÓn', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
-								<div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'align="justify">
-                                        {{ Form::label('ciudad', 'CIUDAD:') }}
-                                        {{ Form::text('ciudad', null, array('placeholder' => 'Ciudad', 'class' => 'form-control')) }}
-                                    </div>
-                                </div>
-								 <div class="col-xs-6 col-md-4 imp ">
-                                    <div class='form-group form-register'align="justify">
-                                        {{ Form::label('pais', 'PAIS:') }}
-                                        {{ Form::text('pais', null, array('placeholder' => 'Pais', 'class' => 'form-control')) }}
-                                    </div>
-									<br>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'align="justify">
+                                    <div class='form-group form-register'>
                                         {{ Form::label('email', 'E-MAIL:') }}
                                         {{ Form::text('email', null, array('placeholder' => 'Email', 'class' => 'form-control')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'align="justify">
-                                        {{ Form::label('pagina_web', 'PAGINA WEB:') }}
-                                        {{ Form::text('pagina_web', null, array('placeholder' => 'Pagina Web', 'class' => 'form-control')) }}
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 col-md-4 imp">
-                                    <div class='form-group form-register'align="justify">
+                                    <div class='form-group form-register'>
                                         {{ Form::label('otro', 'OTRO:') }}
                                         {{ Form::text('otro', null, array('placeholder' => 'Otro', 'class' => 'form-control')) }}
                                     </div>
-									<br>
                                 </div>
-                            </div>                              
+                            </div>                        
+                            <div class="row ">                            
+                                <div class="col-xs-6 col-md-4 imp ">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('direccion', 'DIRECCIÓN:') }}
+                                        {{ Form::text('direccion', null, array('placeholder' => 'DirecciÓn', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('barrio', 'BARRIO:') }}
+                                        {{ Form::text('barrio', null, array('placeholder' => 'Barrio', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('ciudad', 'CIUDAD:') }}
+                                        {{ Form::text('ciudad', null, array('placeholder' => 'Ciudad', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">                            
+                                <div class="col-xs-6 col-md-4 imp ">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('pais', 'PAIS:') }}
+                                        {{ Form::text('pais', null, array('placeholder' => 'Pais', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('repsponsable', 'RESPONSABLE:') }}
+                                        {{ Form::text('repsponsable', null, array('placeholder' => 'Repsponsable', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-4 imp">
+                                    <div class='form-group form-register'>
+                                        {{ Form::label('contacto', 'CONTACTO:') }}
+                                        {{ Form::text('contacto', null, array('placeholder' => 'Contacto', 'class' => 'form-control')) }}
+                                    </div>
+                                </div>
+                            </div>                            
                         </div>
-                        <div class='row buttons'>                                
-                            {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
-                            {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                                 
-                        </div>
-
                     </div>
-
+                    <div class='row buttons'>                                
+                        {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
+                        {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                                 
+                    </div>
                     {{ Form::close() }}
                 </div>
             </center>
