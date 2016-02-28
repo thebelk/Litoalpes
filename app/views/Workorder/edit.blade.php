@@ -54,7 +54,7 @@
     <hr>
     <div id="sidebar">                           
         <div class="list-group">    
-            <a href="create" class="list-group-item active text-center">
+            <a href="/customer/create" class="list-group-item active text-center">
                 <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
             </a>
             <a href="/customer/{{$customer->id}}/profile" class="list-group-item  text-center">                           

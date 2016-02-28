@@ -15,18 +15,18 @@ class CreateCustomer extends Migration {
 		Schema::create('customers', function(Blueprint $table)
 		{
 			$table->increments('id');
-                        $table->string('nit_cc');
                         $table->string('cliente');
-                        $table->string('empresa');
-                        $table->integer('tipo_cliente'); //1.directo  2.intermediario
-                        $table->string('direccion');
-                        $table->string('pagina_web');
-                        $table->string('ciudad');
-                        $table->string('pais');
-                        $table->string('telefonos');
                         $table->string('cel_contacto');
-                        $table->string('otro');
+                        $table->integer('tipo_cliente'); //1.Directo   2.Servicio
+                        $table->string('nit_cc');                        
+                        $table->string('empresa');
+                        $table->string('telefono');
+                        $table->string('direccion');
+                        $table->string('ciudad');
+                        $table->string('pais');                        
                         $table->string('email');
+                        $table->string('pagina_web');
+                        $table->string('otro');                        
                         $table->integer('users_id')->unsigned();
                         $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
 			$table->timestamps();

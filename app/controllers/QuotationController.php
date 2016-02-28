@@ -29,17 +29,25 @@ class QuotationController extends \BaseController {
      */
     public function store() {
         $post_data = Input::all();
-        $rules = [
-            'estado_cotizacion' => 'required',
-            'nombre_cliente' => 'required',
-            'clase_trabajo' => 'required',
+        $rules = [            
+            'cliente' => 'required',
+            'cel_contacto' => '',
+            'tipo_cliente' => '', //1.Directo   2.Servicio
+            'nit_cc' => '',                        
+            'empresa' => '',
+            'telefono' => '',
+            'direccion' => '',
+            'ciudad' => '',
+            'pais' => '',                        
+            'email' => '',
+            'pagina_web' => '',
+            'otro' => '',
+            'clase_trabajo' => 'required',                        
+            'estado_cotizacion' => 'required', // 1.espera 2.elaborada 3.enviado 4.autorizado 
             'especificaciones' => 'required',
-            'cotizacion' => '',
-            'direccion' => 'required',
-            'barrio' => 'required',
-            'telefono' => 'required',
-            'celular' => '',
-            'email' => ''
+            'cotizacion' => ''
+            
+            
         ];
         $validate = Validator::make($post_data, $rules);
         if ($validate) {
@@ -85,30 +93,42 @@ class QuotationController extends \BaseController {
     public function update($id) {
         $quotation = Input::all();
         $rules = array(
-            'estado_cotizacion' => 'required',
-            'nombre_cliente' => 'required',
-            'clase_trabajo' => 'required',
+            'cliente' => 'required',
+            'cel_contacto' => '',
+            'tipo_cliente' => '', //1.Directo   2.Servicio
+            'nit_cc' => '',                        
+            'empresa' => '',
+            'telefono' => '',
+            'direccion' => '',
+            'ciudad' => '',
+            'pais' => '',                        
+            'email' => '',
+            'pagina_web' => '',
+            'otro' => '',
+            'clase_trabajo' => 'required',                        
+            'estado_cotizacion' => 'required', // 1.espera 2.elaborada 3.enviado 4.autorizado 
             'especificaciones' => 'required',
-            'cotizacion' => '',
-            'direccion' => 'required',
-            'barrio' => 'required',
-            'telefono' => 'required',
-            'celular' => '',
-            'email' => ''
+            'cotizacion' => ''
         );
         $validate = Validator::make($quotation, $rules);
         if ($validate) {
             $quotation2 = Quotation::find($quotation['id']);
-            $quotation2->estado_cotizacion = $quotation['estado_cotizacion'];
-            $quotation2->nombre_cliente = $quotation['nombre_cliente'];
-            $quotation2->clase_trabajo = $quotation['clase_trabajo'];
-            $quotation2->especificaciones = $quotation['especificaciones'];
-            $quotation2->cotizacion = $quotation['cotizacion'];
-            $quotation2->direccion = $quotation['direccion'];
-            $quotation2->barrio = $quotation['barrio'];
-            $quotation2->telefono = $quotation['telefono'];
-            $quotation2->celular = $quotation['celular'];
-            $quotation2->email = $quotation['email'];
+            $quotation2->cliente = $quotation['cliente'];
+            $quotation2->cel_contacto=$quotation['cel_contacto'];
+            $quotation2->tipo_cliente=$quotation['tipo_cliente']; //1.Directo   2.Servicio
+            $quotation2->nit_cc=$quotation['nit_c'];                        
+            $quotation2->empresa=$quotation['empresa'];
+            $quotation2->telefono=$quotation['telefono'];
+            $quotation2->direccion=$quotation['direccion'];
+            $quotation2->ciudad=$quotation['ciudad'];
+            $quotation2->pais=$quotation['pais'];                        
+            $quotation2->email=$quotation['email'];
+            $quotation2->pagina_web=$quotation['pagina_web'];
+            $quotation2->otro=$quotation['otro'];
+            $quotation2->clase_trabajo=$quotation['clase_trabajo'];                        
+            $quotation2->estado_cotizacion=$quotation['estado_cotizacion']; // 1.espera 2.elaborada 3.enviado 4.autorizado 
+            $quotation2->especificaciones=$quotation['especificaciones'];
+            $quotation2->cotizacion=$quotation['cotizacion']; 
             $quotation2->save();
             return Redirect::intended('/quotationlist');
             
@@ -147,7 +167,7 @@ class QuotationController extends \BaseController {
     	 $message
     	 ->to('belkis_buelvas06@hotmail.com', 'Belkis Buelvas')
     	 ->cc('jotallamas_o@hotmail.com', 'Jorge Llamas')
-    	 ->subject('Litografía Los Alpes: Cotización');
+    	 ->subject('Litografï¿½a Los Alpes: Cotizaciï¿½n');
     	});
     	*/
     	return View::make('emails.welcome');

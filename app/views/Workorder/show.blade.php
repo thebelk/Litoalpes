@@ -8,30 +8,30 @@
 @section('content')
 <div class="col col-sm-3 complement">   
     <h3 class="highlight nav nav-stacked ">{{$customer->cliente}}  <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
-    <div class="row panel">
-        <div class="col-sm-8 col-md-12">
+    <div class="row ">
+        
             <h3 class="color">Cliente:          
                 @if($customer->tipo_cliente==1) Directo
                 @elseif($customer->tipo_cliente==2) Intermediario                             
                 @endif
             </h3>            
-            <h5 class="color"> Nit: {{ $customer->nit_cc}}  </h5>           
-            <h5>Telefono: {{$customer->telefono}} </h5>   
-            <h5>Repsponsable: {{$customer->repsponsable}} </h5> 
-            <h5>Contacto: {{$customer->contacto}} </h5> 
-            <h5>{{ $customer->otro}} </h5>
+            <h4 class="color"> Nit: {{ $customer->nit_cc}}  </h4>           
+            <h4>Telefono: {{$customer->telefono}} </h4>   
+            <h4>Repsponsable: {{$customer->repsponsable}} </h4> 
+            <h4>Contacto: {{$customer->contacto}} </h4> 
+            <h4>{{ $customer->otro}} </h4>
             <div class="col-md-8"></div>
             <div class="col-md-1">
                 {{ HTML::link('/customer/'.$customer->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}    
             </div> 
-        </div>                                           
+                                                  
     </div>
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
-            <div class="accordion-heading">
+            <div class="accordion-heading"><h4>
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
                     Correo Electronico
-                </a>
+                </a></h4>
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
                 <div class="accordion-inner">
@@ -40,17 +40,16 @@
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading">
+            <div class="accordion-heading"><h4>
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                     Dirección
-                </a>
+                </a></h4>
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    <h5>Direccion: {{$customer->direccion}} </h5>
-                    <h5> Barrio: {{ $customer->barrio}} </h5>
-                    <h5> Ciudad: {{$customer->ciudad}} </h5>
-                    <h5> Pais: {{$customer->pais}} </h5>
+                    <h4>Direccion: {{$customer->direccion}} </h4>
+                    <h4> Ciudad: {{$customer->ciudad}} </h4>
+                    <h4> Pais: {{$customer->pais}} </h4>
                 </div>
             </div>
         </div>
@@ -67,7 +66,7 @@
         </div>                     
     </div>
     <hr>
-    <div class="row panel">
+    <div class="row ">
         <div class="col-sm-8 col-md-12">
             <h3 class="color" > Entregas de Hoy </h3>
             <p> Pruebas </p>

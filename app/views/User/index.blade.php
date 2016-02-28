@@ -43,7 +43,6 @@
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
                     <h5>Direccion: {{ Auth::user()->direccion}} </h5>
-                    <h5> Barrio: {{ Auth::user()->barrio}} </h5>
                     <h5> Ciudad: {{ Auth::user()->ciudad}} </h5>
                     <h5> Pais: {{ Auth::user()->pais}} </h5>
                 </div>
@@ -73,7 +72,7 @@
     </div>
 </div>  
 <div class="col col-sm-9">
-    <div class="row panel">
+    <div class="row ">
         <div class="bhoechie-tab">                     
             <!-- work section -->
             <div class="bhoechie-tab-content active">

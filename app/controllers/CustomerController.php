@@ -29,27 +29,26 @@ class CustomerController extends \BaseController {
      */
     public function store() {
         $post_data = Input::all();
-        $rules = [
-            'nit_cc' => '',
+        $rules= array(
             'cliente' => 'required',
+            'cel_contacto' => '',
+            'tipo_cliente' => 'required', //1.Directo   2.Servicio
+            'nit_cc' => '',
             'empresa' => '',
-            'tipo_cliente' => 'required',
+            'telefono' => '',
             'direccion' => '',
-            'pagina_web' => '',
             'ciudad' => '',
             'pais' => '',
-            'telefono' => '',
-            'contacto' => '',
-            'otro' => 'required',
-            'email' => ''
-        ];
+            'email' => '',
+            'pagina_web' => '',
+            'otro' => ''
+        );
 
         $validate = Validator::make($post_data, $rules);
         if ($validate) {
             $post_data['users_id'] = Auth::user()->id;
-          $customer   = Customer::create($post_data);
+            $customer = Customer::create($post_data);
             return View::make('workorder.create')->with('customer', $customer);
-                            
         }
     }
 
@@ -87,38 +86,38 @@ class CustomerController extends \BaseController {
     public function update($id) {
         $customer = Input::all();
         $rules = array(
-           'nit_cc' => '',
             'cliente' => 'required',
+            'cel_contacto' => '',
+            'tipo_cliente' => 'required', //1.Directo   2.Servicio
+            'nit_cc' => '',
             'empresa' => '',
-            'tipo_cliente' => 'required',
+            'telefono' => '',
             'direccion' => '',
-            'pagina_web' => '',
             'ciudad' => '',
             'pais' => '',
-            'telefono' => '',
-            'contacto' => '',
-            'otro' => 'required',
-            'email' => ''
+            'email' => '',
+            'pagina_web' => '',
+            'otro' => ''
         );
         $validate = Validator::make($customer, $rules);
         if ($validate) {
             $customer2 = Customer::find($customer['id']);
-            $customer2->nit_cc = $customer['nit_cc'];
             $customer2->cliente = $customer['cliente'];
+            $customer2->cel_contacto = $customer['cel_contacto'];
+            $customer2->tipo_cliente = $customer['tipo_cliente']; //1.Directo   2.Servicio
+            $customer2->nit_cc = $customer['nit_cc'];
             $customer2->empresa = $customer['empresa'];
-            $customer2->tipo_cliente = $customer['tipo_cliente'];
+            $customer2->telefono = $customer['telefono'];
             $customer2->direccion = $customer['direccion'];
-            $customer2->pagina_web = $customer['pagina_web'];
             $customer2->ciudad = $customer['ciudad'];
             $customer2->pais = $customer['pais'];
-            $customer2->telefono = $customer['telefono'];
-            $customer2->contacto = $customer['contacto'];
-            $customer2->otro = $customer['otro'];
             $customer2->email = $customer['email'];
+            $customer2->pagina_web = $customer['pagina_web'];
+            $customer2->otro = $customer['otro'];
             $customer2->save();
             // Session::flash('message', 'Successfully updated customer!');
-          
-              return Redirect::intended('customer/' . $customer['id'] . '/profile');
+
+            return Redirect::intended('customer/' . $customer['id'] . '/profile');
         }
     }
 

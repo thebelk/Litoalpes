@@ -6,10 +6,18 @@ class Workorder extends Eloquent {
     protected $table = 'workorders';
     protected $fillable = array(
         'id',
-        'tipo_orden', //'1' => 'Seleccionar', '2' => 'Digital', '3' => 'Litográfica','4' => 'Gigantografia' ,'5' => 'Sello','6' => 'Mater','7' => 'Plancha'
+        'tipo_orden', //'1' => 'Seleccionar', '2' => 'Servicio','3' => 'Producto'
         'no_orden',
         'clase_trabajo',
         'fecha_entrega',
+        'servicio',
+        'tipo_servicio',
+        'sublimacion',
+        'tipo_sublimacion',
+        'sello',
+        'tipo_sello',
+        'gigantografia',
+        'tipo_gigantografia',
         'detalles_trabajo',
         'valor_trabajo',
         'abono',
@@ -20,20 +28,23 @@ class Workorder extends Eloquent {
         'vendedor',
         'estado_trabajo', //1. diseño  2.impresion 3.acabados 4.disponible 6.entregado 7.por realizar                      
         'diseñador',
-        'tipo_realizado', //'1' => 'Seleccionar ','2' => 'Identidad Corporativa', '3' => 'Arte','4' => 'Correcion'
-        'tipo_elaborado', //'1' => 'Seleccionar', '2' => 'primera vez', '3' => 'igual al anterior','4' => 'segun muestra'
-        'tipo_impresion', //'1' => 'Seleccionar', '2' => 'Digital', '3' => 'Litográfica','4' => 'Gigantografia' ,'5' => 'Sello','6' => 'Mater','7' => 'Plancha'
+        'tipo_realizado', // '1' => 'Seleccionar ','2' => 'Diseño Nuevo','3' => 'Corrección','4' => 'Quema de Master','5' => 'Diseño según Muestra','6' => 'Identidad Corporativa'
+        'tipo_impresion', //'1' => 'Seleccionar', '2' => 'Digital', '3' => 'Litográfica','4' => 'Gigantografia' ,'5' => 'Sello','6' => 'Plancha / Mater'                      
+        'plancha',
+        'tipo_plancha', //'1' => 'Seleccionar', '2' => 'Ctp 52', '3' => 'M.Doble Carta'
+        'master',
+        'tipo_master', //'1' => 'Seleccionar', '2' => 'Medio Master', '3' => 'Master Entero'
         'no_dian',
         'fecha_dian',
         'habilitado_dian',
         'observacion_diseño',
         'fecha_reporte_diseño',
+        'revisado_diseño',
         'autorizado_diseño',
         'maquina',
         'clase_material',
-        'cantidad_material',
-        'cantidad_trabajo',
         'tamano',
+        'cantidad_material',
         'corte',
         'emblocado',
         'no_inicial',
@@ -47,29 +58,33 @@ class Workorder extends Eloquent {
         'copia2', // 1. Amarillo 2. Rosado 3. Verde 4.Azul 5.Blanco                     
         'copia3', // 1. Amarillo 2. Rosado 3. Verde 4.Azul 5.Blanco
         'copia4', // 1. Amarillo 2. Rosado 3. Verde 4.Azul 5.Blanco
+        'numerado', //1.Si 0.No
+        'numeradoras', //'1' => 'Cat.Numeradoras ', '2 ' => '1 Numeradora', '3' => '2 Numeradoras', '4' => '3 Numeradoras','5' => '4 Numeradoras'
         'original_todas', //1.Si 0.No
+        'original_copia',
         'tiro_retiro',
         'observacion_impresion',
-        'fechadereporte_reporte_impresion',
+        'fecha_reporte_impresion',
         'autorizado_impresion',
         'levante',  //1.si 0.no
-        'perforado', //1.si 0.no
+        'engrapado', //1.si 0.no             
         'laminado',  //1.si 0.no
-        'corte_refile', //1.Si 0.No
-        'engomado', //1.si 0.no
-        'estampado', //1.Si 0.No
-        'argollado',
-        'engrapado', //1.si 0.no 						
-        'sublimacion',
-        'plastificadomate', //1.Si 0.No
-        'plastificadoreserva',
         'plastificadouv',  //1.si 0.no
+        'engomado', //1.si 0.no
+        'corte_refile', //1.Si 0.No            
+        'estampado', //1.Si 0.No
+        'plastificadomate', //1.Si 0.No
+        'perforado', //1.si 0.no
+        'argollado',            						
+        'sublimacion',            
+        'plastificadoreserva',            
         'otro_acabados', //0. Ninguno 1.Por la cabeza 2.lado izquierdo 3.lado derecho 
         'recomendaciones',
         'observacion_acabados',
-        'fechadereporte_reporte_acabados',
+        'fecha_reporte_acabados',
         'autorizado_acabados',
-        'customers_id'
+        'customers_id',
+        'users_id'
     );
 
     public function customers() {

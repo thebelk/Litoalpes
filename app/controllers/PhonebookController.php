@@ -29,17 +29,20 @@ class PhonebookController extends \BaseController {
     public function store() {
 // validate
         $post_data = Input::all();
-        $rules = [
-            'nombre' => 'required',
-            'ocupacion' => 'required',
-            'direccion' => '',
-            'ciudad' => '',
-            'barrio' => '',
-            'telefono' => 'required',
-            'celular' => '',
-            'email' => '',
-            'empresa' => 'required'
-        ];
+        $rules = array(
+            'nombre'=> 'required',
+            'empresa'=> '',
+            'nit'=> '',
+            'tipo_actividad'=> '',
+            'descripcion_actividad'=> '',
+            'email'=> '',
+            'celular'=> '',
+            'telefono'=> '',
+            'direccion'=> '',
+            'ciudad'=> '',
+            'pais'=> '',
+            'tipo_contacto'=> ''
+        );
         $validate = Validator::make($post_data, $rules);
         if ($validate) {
             $post_data['users_id'] = Auth::user()->id;
@@ -86,28 +89,35 @@ class PhonebookController extends \BaseController {
     public function update($id) {
         $phonebook = Input::all();
         $rules = array(
-            'nombre' => 'required',
-            'ocupacion' => 'required',
-            'direccion' => '',
-            'ciudad' => '',
-            'barrio' => '',
-            'telefono' => 'required',
-            'celular' => '',
-            'email' => '',
-            'empresa' => 'required'
+            'nombre'=> 'required',
+            'empresa'=> '',
+            'nit'=> '',
+            'tipo_actividad'=> '',
+            'descripcion_actividad'=> '',
+            'email'=> '',
+            'celular'=> '',
+            'telefono'=> '',
+            'direccion'=> '',
+            'ciudad'=> '',
+            'pais'=> '',
+            'tipo_contacto'=> ''
+            
         );
         $validate = Validator::make($phonebook, $rules);
         if ($validate) {
             $phonebook2 = Phonebook::find($phonebook['id']);
-            $phonebook2->nombre = $phonebook['nombre'];
-            $phonebook2->ocupacion = $phonebook['ocupacion'];
-            $phonebook2->direccion = $phonebook['direccion'];
-            $phonebook2->ciudad = $phonebook['ciudad'];
-            $phonebook2->barrio = $phonebook['barrio'];
-            $phonebook2->telefono = $phonebook['telefono'];
-            $phonebook2->celular = $phonebook['celular'];
-            $phonebook2->email = $phonebook['email'];
-            $phonebook2->empresa = $phonebook['empresa'];
+            $phonebook2->nombre= $phonebook['nombre'];
+            $phonebook2->empresa= $phonebook['empresa'];
+            $phonebook2->nit= $phonebook['nit'];
+            $phonebook2->tipo_actividad= $phonebook['tipo_actividad'];
+            $phonebook2->descripcion_actividad= $phonebook['descripcion_actividad'];
+            $phonebook2->email= $phonebook['email'];
+            $phonebook2->celular= $phonebook['celular'];
+            $phonebook2->telefono= $phonebook['telefono'];
+            $phonebook2->direccion= $phonebook['direccion'];
+            $phonebook2->ciudad= $phonebook['ciudad'];
+            $phonebook2->pais= $phonebook['pais'];
+            $phonebook2->tipo_contacto= $phonebook['tipo_contacto'];
             $phonebook2->save();
             Session::flash('message', 'Successfully updated phonebook!');
             return Redirect::intended('/phonebooklist');

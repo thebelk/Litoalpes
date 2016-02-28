@@ -6,14 +6,17 @@ class Phonebook extends Eloquent {
     protected $fillable = array(
         'id',
         'nombre',
-        'ocupacion',
+        'empresa',
+        'nit',
+        'tipo_actividad',
+        'descripcion_actividad',
+        'email',
+        'celular',
+        'telefono',
         'direccion',
         'ciudad',
-        'barrio',
-        'telefono',
-        'celular',
-        'email',
-        'empresa',
+        'pais',
+        'tipo_contacto',
         'users_id'
     );
 
