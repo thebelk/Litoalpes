@@ -22,7 +22,7 @@
                             <li><a href="/customer" role="button" data-toggle="modal"><i class="glyphicon glyphicon-user"></i> Clientes</a>                             
                             <li><a href="/quotation" role="button" data-toggle="modal"><i class="glyphicon glyphicon-pencil"></i> Cotizar</a>
                             <li><a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-bell"></i> Notificaciones</a>
-                            <li><a href="/customer/create"><span class="badge"><i class="glyphicon glyphicon-plus"></i> Orden / Trabajo</span></a></li>
+                            <li><a href="/customer/create"><span class="badge"><i class="glyphicon glyphicon-plus"></i> Orden | Trabajo</span></a></li>
 
                         </ul>
                         <ul class="nav navbar-right navbar-nav">

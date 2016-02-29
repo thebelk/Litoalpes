@@ -83,7 +83,7 @@
             </center>    
             <div class="panel panel-default tam">                  
                 <div class="panel-body">
-                    <hr>                        
+                    <hr> <br>                       
                     @foreach($quotation as $quotlist)                    
                     <h3><strong> {{ $quotlist->clase_trabajo }} / Cotizacion:
                             <span class="estilo">
@@ -93,25 +93,25 @@
                                 @elseif($quotlist->estado_cotizacion==4) Autorizado 
                                 @endif 
                             </span>
-                        </strong></h3>
-                    <p><strong>Cliente</strong>: {{ $quotlist->cliente}}, 
+                        </strong></h3><br>
+                    <h4><strong>Cliente</strong>: {{ $quotlist->cliente}}, 
                         <strong>Telefono</strong>: {{ $quotlist->telefono }} ,
                         <strong>Celular</strong>: {{ $quotlist->cel_contacto }} ,
-                        <strong>E-mail </strong>: {{ $quotlist->email }} </p> 
-                    <p><strong>direccion</strong>: {{ $quotlist->direccion}},
-                        <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }}</p> 
-                    <br>
+                        <strong>E-mail </strong>: {{ $quotlist->email }} </h4> 
+                    <h4><strong>direccion</strong>: {{ $quotlist->direccion}},
+                        <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }}</h4> 
+                    <br><br>
                     <div class="col-md-1">
                         {{ HTML::link('/quotation/'.$quotlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
                     </div>  
+					
 
                     {{ Form::model($quotation, array('url' => array('/quotation/'.$quotlist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
-                    <div class="col-md-1">
-                        {{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
-                    </div>                    
+                    {{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
+                                       
                     {{ Form::close() }}                       
 
-                    <br> <br>
+                    <br> 
                     <hr>
                     @endforeach
                 </div>

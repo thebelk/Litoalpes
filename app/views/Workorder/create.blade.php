@@ -129,6 +129,7 @@
                                         <div class="col-xs-6">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('tipo_orden', ' TIPO DE ORDEN:') }}
+												{{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }}
                                                 {{ Form::select('tipo_orden',array('1' => 'Seleccionar', '2' => 'Servicio','3' => 'Producto'),null ,array('class' => 'form-control')); }}
                                             </div>
                                         </div>

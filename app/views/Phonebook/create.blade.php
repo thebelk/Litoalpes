@@ -55,10 +55,10 @@
     <div id="sidebar"> 
         <div class="list-group">                        
             <a href="create" class="list-group-item active text-center">
-                <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nuevo Contacto </h4>
+                <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nuevo Contacto | Proveedor </h4>
             </a>                        
             <a href="/phonebook" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-earphone"></h4><br/><h4>Listar Contactos</h4>
+                <h4 class="glyphicon glyphicon-earphone"></h4><br/><h4>Contactos | Proveedor</h4>
             </a>
         </div>     
     </div>

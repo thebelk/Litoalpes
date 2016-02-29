@@ -70,7 +70,7 @@
                                    {{ Form::checkbox('remember-me', 'value')}}
                                </div>-->
                                 <div class='form-group '>
-                                    {{ Form::button('iniciar seción', array('type' => 'submit', 'class' => 'btn btn-success')) }}  
+                                    {{ Form::button('iniciar Sesión', array('type' => 'submit', 'class' => 'btn btn-success')) }}  
                                 </div> 
 
                                 {{Form::close()}}
