@@ -85,7 +85,7 @@
                 <div class="panel-heading row panel"> 
                     <div class="col-xs-8 col-md-9 imp">
                         <h3 class="list-group-item-heading color">Pedido</h3>
-                        {{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} 
+                        {{ Form::text('customers_id', $customer->id, array('hidden' => 'false')) }} 
                     </div>
                     <div class="col-xs-2 col-md-3 imp"> 
                         {{ Form::text('no_orden', null, array('placeholder' => 'No.ORDEN', 'class' => 'form-control')) }}

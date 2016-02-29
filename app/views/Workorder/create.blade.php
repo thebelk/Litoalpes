@@ -125,6 +125,7 @@
                                     <div class="row"  align="justify">
                                         <!-- <h2  align="center"> Orden de Compra  </h2> --> 
                                         <br><br>
+										{{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} 
                                         <div class="col-xs-6">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('tipo_orden', ' TIPO DE ORDEN:') }}
