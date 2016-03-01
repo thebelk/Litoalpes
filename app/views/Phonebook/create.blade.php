@@ -53,13 +53,14 @@
     </div> 
     <hr>
     <div id="sidebar"> 
-        <div class="list-group">                        
-            <a href="create" class="list-group-item active text-center">
-                <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nuevo Contacto | Proveedor </h4>
-            </a>                        
-            <a href="/phonebook" class="list-group-item  text-center">                           
+        <div class="list-group">  
+			<a href="/phonebook" class="list-group-item  text-center">                           
                 <h4 class="glyphicon glyphicon-earphone"></h4><br/><h4>Contactos | Proveedor</h4>
-            </a>
+            </a>		
+            <a href="create" class="list-group-item active text-center">
+                <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nuevo  </h4>
+            </a>                        
+            
         </div>     
     </div>
     <hr>
@@ -81,7 +82,7 @@
                     <!-- Default panel contents -->
                     <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">
                             <h2 class="glyphicon glyphicon-user color" ></h2>
-                            <h3> Contacto / Proveedor </h3>                             
+                            <h3> Contacto | Proveedor </h3>                             
                     </div>
                 </div>
                 <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->               

@@ -83,7 +83,7 @@
     <div class="row panel">
         <div class="bhoechie-tab">                     
             <!-- work section -->
-            <div class="bhoechie-tab-content active">
+            <div class="bhoechie-tab-content active tam">
                 <center>
                     <h3 class="glyphicon glyphicon-th-list color" ></h3>
                     <h2> Lista Trabajos</h2>
@@ -91,7 +91,7 @@
                 </center>
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->                
-                    <hr>                       
+                    <hr> <br>                      
                     @foreach($workorder as $worklist)                    
                     <h3><strong> {{ $worklist->clase_trabajo}} / ESTADO TRABAJO
                             <span class="estilo">
@@ -101,22 +101,20 @@
                                 @elseif($worklist->estado_trabajo==3) Entregado 
                                 @endif 
                             </span>
-                        </strong></h3>
-                    <p><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
+                        </strong></h3><br>
+                    <h4><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
                         <strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
-                        <strong>Tamaño </strong>: {{ $worklist->tamano }} </p> 
-                    <p><strong>Valor Trabajo</strong>: {{ $worklist->valor_trabajo}},                         
+                        <strong>Tamaño </strong>: {{ $worklist->tamano }} </h4> 
+                    <h4><strong>Valor Trabajo</strong>: {{ $worklist->valor_trabajo}},                         
                         <strong>Abono</strong>: {{ $worklist->abono }} ,
                         <strong>Saldo</strong>: {{ $worklist->saldo }} ,
-                        <strong>Diseñador</strong>: {{ $worklist->diseñador}},
+                        <strong>Diseñador</strong>: {{ $worklist->diseñador}},</h4>
                     <br>
-                    <div class="col-md-1">
+                    
                         {{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
-                    </div>  
-
-                    <div class="col-md-1">
+                   
                         {{ HTML::link('/worklist/'.$worklist->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
-                    </div> 
+                    
                     {{ Form::close() }}                       
 
                     <br> <br>

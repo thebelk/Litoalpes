@@ -53,12 +53,12 @@
     </div> 
     <hr>
     <div id="sidebar"> 
-        <div class="list-group">                        
-            <a href="create" class="list-group-item active text-center">
-                <h4 class="glyphicon glyphicon-plus"></h4><br/>Nueva Cotización 
-            </a>                        
+        <div class="list-group">                       
             <a href="/quotation" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-pencil"></h4><br/>Listar Cotización
+                <h4 class="glyphicon glyphicon-pencil"></h4><br/><h4>Listar Cotización</h4>
+            </a>
+			<a href="create" class="list-group-item active text-center">
+                <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nueva Cotización</h4> 
             </a>
         </div>     
     </div>

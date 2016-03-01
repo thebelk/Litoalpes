@@ -114,7 +114,8 @@ class UserController extends \BaseController {
      * @return Response
      */
     public function destroy($id) {
-        //
+		 Auth::logout();
+         return View::make('sessions.index');
     }
 
 }

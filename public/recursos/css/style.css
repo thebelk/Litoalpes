@@ -1,6 +1,6 @@
 #header{
     background: #237d4a;
-    padding: 10px 0 10px 0;
+    padding: 20px 0 20px 0;
 }
 #container_first{
     padding: 20px 0 20px 0;
@@ -21,7 +21,6 @@
 }
 .title_page{
     color: #fff;
-
     text-transform: uppercase;
 
 }
@@ -31,7 +30,7 @@
 }
 
 .buttons{
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 #hello{

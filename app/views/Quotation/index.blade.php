@@ -54,10 +54,10 @@
     <hr>
     <div id="sidebar">  
         <div class="list-group">                        
-            <a href="quotation/create" class="list-group-item active text-center">
+            <a href="quotation/create" class="list-group-item  text-center">
                 <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nueva Cotización</h4> 
             </a>                        
-            <a href="quotationlist" class="list-group-item  text-center">                           
+            <a href="quotationlist" class="list-group-item active text-center">                           
                 <h4 class="glyphicon glyphicon-pencil"></h4><br/><h4>Listar Cotización</h4>
             </a>
         </div>  
@@ -76,7 +76,7 @@
 <div class="col col-sm-9">
     <div class="row ">                             
         <!-- cho section -->
-        <div class="bhoechie-tab-content active">
+        <div class="bhoechie-tab-content active tam">
             <center>
                 <h2 class="glyphicon glyphicon-pencil color" ></h2>
                 <h3> Listar Cotización</h3> 

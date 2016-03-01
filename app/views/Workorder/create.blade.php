@@ -25,6 +25,7 @@
                 @endif
             </h4>
             <h4 class="color"> Nit: {{ $customer->nit_cc}}  </h4>
+			<h4>{{ $customer->pagina_web}} </h4>
             <h4>{{ $customer->otro}} </h4>  
         </div>         
         <h4>{{ HTML::link('/customer/'.$customer->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h4>    
@@ -39,7 +40,8 @@
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
                 <br>
-                <p> <h4>Email: {{ $customer->email}} </h4></p>             
+                <p> <h4>Email: {{ $customer->email}} </h4>				
+				</p>             
             </div>
         </div>
         <div class="accordion-group">
@@ -52,7 +54,6 @@
                 <div class="accordion-inner">
                     <br>
                     <h4>Direccion: {{$customer->direccion}} </h4>
-                    <h4> Barrio: {{ $customer->barrio}} </h4>
                     <h4> Ciudad: {{$customer->ciudad}} </h4>
                     <h4> Pais: {{$customer->pais}} </h4>
                 </div>
@@ -66,7 +67,13 @@
                 <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nuevo Trabajo</h4> 
             </a>
             <a href="/customer/{{$customer->id}}/profile" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-user"></h4><br/><h4> Perfil</h4> 
+                <h4 class="glyphicon glyphicon-user"></h4><br/><h4>
+					@if($customer->empresa=="")
+					{{ $customer->cliente }} 
+					@endif
+					{{$customer->empresa}}
+				
+				</h4> 
             </a>                       
         </div>                     
     </div>
@@ -101,7 +108,7 @@
                  </div>
                  {{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} -->
             </div>
-            <section class="tab wow fadeInLeft"> 
+            <section class="tab wow fadeInLeft tam"> 
                 <header class="panel-heading tab-bg-dark-navy-blue">
                     <ul class="nav nav-tabs nav-justified ">
                         <li class="active">
@@ -236,13 +243,15 @@
                                             </div>
                                         </div>                                        
                                     </div>
-
+									<br>
+									 <center>
+										{{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default btn-lg')) }} 
+										{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success btn-lg')) }}                               
+                                     <center>
                                     <br><br>
                                 </div>
                                 <center>                                    
-                                {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
-                                {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                               
-                                {{ Form::close() }}
+                               {{ Form::close() }}
                                 </center>
                             </article> 
                         </div>                                                       
@@ -252,11 +261,21 @@
                                 <div class="row"  align="justify">                                        
                                     <!--  <h2  align="center">Orden de Producción</h2> --> 
                                     <br>
+									<div class="col-xs-6" align="right">
+									 <h3><b>ESTADO DEL TRABAJO<b></h3>
+									</div>
+									<div class="col-xs-6">
+										
+									     {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Diseño', '3' => 'Impresion','4' => 'Acabados', '5' => 'Disponible','6' => 'Entregado')),null ,array('class' => 'form-control')); }}
+                                       <br><br><br>
+									</div>
+									   
                                     <div class="col-xs-12">
                                         <div class='form-group form-register' align="justify">                                                                         
-                                            <h3><b>DISEÑO</b></h3><br>
+                                            <h3><b>DISEÑO</b></h3><br><!--
                                             {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Diseño', '3' => 'Impresion','4' => 'Acabados', '5' => 'Disponible','6' => 'Entregado')),null ,array('class' => 'form-control')); }}
-                                        </div>
+                                       --> 
+									   </div>
                                     </div>
                                     <br> <br>
                                     <div class="col-xs-6">
@@ -342,16 +361,18 @@
                                             <div class='form-group form-register'>
                                                 {{ Form::label('autorizado_diseño', 'AUTORIZADO:') }}
                                                 {{ Form::text('autorizado_diseño', null, array('placeholder' => 'Jefe Producción', 'class' => 'form-control')) }}
-                                            </div>                                                
-                                        </div>                                                                                        
+                                            </div>
+											<br>											
+                                        </div>								
                                     </div>
                                     <div class="row"  align="left">                                                      
-                                        <div class='form-group form-register' align="justify">                                                        
+                                        <div class='form-group form-register' align="justify">
+											<hr>
                                             <div class="col-xs-12">
                                                 <br>  <br>
-                                                <h3><b>PRE IMPRESIÓN /  IMPRESIÓN</b></h3><br>
+                                                <h3><b>PRE IMPRESIÓN /  IMPRESIÓN</b></h3><br><!--
                                                 {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Diseño', '3' => 'Impresion','4' => 'Acabados', '5' => 'Disponible','6' => 'Entregado')),null ,array('class' => 'form-control')); }}
-                                                <br> 
+                                                <br> -->
                                             </div>  
                                         </div>
 
@@ -511,16 +532,24 @@
                                         <div class='form-group form-register'>
                                             {{ Form::label('autorizado_impresion', 'AUTORIZADO:') }}
                                             {{ Form::text('autorizado_impresion', null, array('placeholder' => 'Jefe Producción', 'class' => 'form-control')) }}
-                                        </div>
-                                    </div> 
-                                    <br><br>
+                                        <br>
+										</div>
+										
+                                    </div><!-- 
+										<div class="button"align="center">
+											{{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default btn-lg')) }} 
+											{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success btn-lg')) }}                               
+										</div>   -->                          
+                                     	
+                                   
                                     <div class="row"  align="justify">                                           
-                                        <div class='form-group form-register' align="justify">                                                                                                               
+                                        <div class='form-group form-register' align="justify">
+										<hr>
                                             <div class="col-xs-12">
                                                 <br><br><br>
-                                                <h3><b>ACABADOS</b></h3><br>
+                                                <h3><b>ACABADOS</b></h3><br><!--
                                                 {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Diseño', '3' => 'Impresion','4' => 'Acabados', '5' => 'Disponible','6' => 'Entregado')),null ,array('class' => 'form-control')); }}
-                                                <br>
+                                                <br>-->
                                             </div>                                                       
                                         </div>                                                    
                                         <div class="col-xs-3"> 
@@ -639,15 +668,17 @@
                                             {{ Form::label('autorizado_acabados', 'AUTORIZADO:') }}
                                             {{ Form::text('autorizado_acabados', null, array('placeholder' => 'Jefe Producción', 'class' => 'form-control')) }}
                                         </div>
-                                    </div>  
+										<br><br>
+                                    </div>
+									<div class="button"align="center">
+										{{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default btn-lg')) }} 
+										{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success btn-lg')) }}                               
+                                    </div>
+										<br><br>									
                                 </div>
 
                             </div> 
-                            <center>
-                                {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
-                                {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn  btn-success')) }}                               
-
-                            </center>
+                            
                         </div>
                         {{ Form::close() }}
 

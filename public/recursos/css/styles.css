@@ -9,7 +9,7 @@ body {
 }
 h3.highlight  {
     padding-top:12px;
-    padding-bottom:14px;
+    padding-bottom:15px;
     border-bottom:2px solid#469DE0;
 }
 
@@ -25,13 +25,14 @@ h3.highlight  {
 
 .navbar-nav > li > a {
     color:#fff;
-    padding:26px;
+    padding:25px;
     border-left:2px solid #1676A3;
 	font-size: 125.5%;
 }
 .navbar-nav > li > a > span{
    
 	font-size: 106.5%;
+	
 }
 
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {

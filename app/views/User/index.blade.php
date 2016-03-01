@@ -52,16 +52,14 @@
         <br>
     </div> 
     <hr>
-    <div id="sidebar"> 
-        <div class="list-group">
-            <a href="/phonebooklist" class="list-group-item active text-center"><h4>
-                <h4 class="list-group-item-heading glyphicon glyphicon-earphone"></h4><h5><h4>Contactos | Proveedor</h4></h5>
-
-            </a></h4>
-            <a href="/workorderlist" class="list-group-item text-center"><h4>
-                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h5>Listar  Trabajos</h5>
-
-            </a></h4>
+     <div id="sidebar"> 
+        <div class="list-group">			
+            <a href="/phonebook" class="list-group-item  text-center">
+                <h4 class="list-group-item-heading glyphicon glyphicon-earphone"></h4><h4>Contactos | Proveedor</h4>
+            </a>
+			<a href="/workorderlist" class="list-group-item active text-center">
+                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h4>Trabajos</h4>
+            </a>
         </div>
     </div>
     <hr>
@@ -77,7 +75,7 @@
     <div class="row ">
         <div class="bhoechie-tab">                     
             <!-- work section -->
-            <div class="bhoechie-tab-content active">
+            <div class="bhoechie-tab-content active tam">
                 <center>
                     <h2 class="glyphicon glyphicon-th-list color" ></h2>
                     <h3> Trabajos por Realizar</h3>   

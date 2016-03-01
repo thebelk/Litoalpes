@@ -54,11 +54,11 @@
     <hr>
     <div id="sidebar">                         
         <div class="list-group">                        
-            <a href="phonebook/create" class="list-group-item active text-center">                           
-                <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nuevo Contacto | Proveedor</h4>
+            <a href="phonebook/create" class="list-group-item  text-center">                           
+                <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nuevo Contato </h4>
             </a>                         
-            <a href="/phonebook" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-earphone"></h4><br/><h4>Contactos | Proveedor</h4>
+            <a href="/workorderlist" class="list-group-item active  text-center">
+                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h4>Trabajos</h4>
             </a>
         </div>        
     </div>
@@ -77,7 +77,7 @@
         <div class="bhoechie-tab-content active">
             <center>
                 <h2 class="glyphicon glyphicon-user color" ></h2>
-                <h3> Lista de Contactos</h3>  
+                <h3>  Contactos & Provedor </h3>  
             </center>
             <div class="panel panel-default tam">                  
                 <div class="panel-body">
@@ -87,7 +87,7 @@
                             @if($phonlist->tipo_contacto==1) CONTACTO                                
                             @elseif($phonlist->tipo_contacto==2) PROVEEDOR
                             @endif 
-                        </strong></h3>
+                        </strong></h3><br>
                     <h4> 
                         @if($phonlist->tipo_contacto==2)
                         <strong>Actividad:</strong>                         

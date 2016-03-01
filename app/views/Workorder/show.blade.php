@@ -7,46 +7,52 @@
 @stop
 @section('content')
 <div class="col col-sm-3 complement">   
-    <h3 class="highlight nav nav-stacked ">{{$customer->cliente}}  <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
-    <div class="row ">
-        
-            <h3 class="color">Cliente:          
-                @if($customer->tipo_cliente==1) Directo
-                @elseif($customer->tipo_cliente==2) Intermediario                             
-                @endif
-            </h3>            
-            <h4 class="color"> Nit: {{ $customer->nit_cc}}  </h4>           
-            <h4>Telefono: {{$customer->telefono}} </h4>   
-            <h4>Repsponsable: {{$customer->repsponsable}} </h4> 
+   <h3 class="highlight nav nav-stacked ">
+         @if($customer->empresa=="")
+        {{ $customer->cliente }} 
+        @endif
+        {{$customer->empresa}}
+        <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
+    <br>
+    <div class="row panel">        
+        <div class="col-sm-8 col-md-12">
+            <h3 class="color">{{$customer->cliente}}&nbsp(Cliente)  </h3><br>
             <h4>Contacto: {{$customer->contacto}} </h4> 
-            <h4>{{ $customer->otro}} </h4>
-            <div class="col-md-8"></div>
-            <div class="col-md-1">
-                {{ HTML::link('/customer/'.$customer->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}    
-            </div> 
-                                                  
+            <h4>Telefono: {{$customer->telefono}} </h4> 
+            <h4 class="color">Cliente:          
+                @if($customer->tipo_cliente==1) Directo
+                @elseif($customer->tipo_cliente==2) Servicio                              
+                @endif
+            </h4>
+            <h4 class="color"> Nit: {{ $customer->nit_cc}}  </h4>
+			<h4>{{ $customer->pagina_web}} </h4>
+            <h4>{{ $customer->otro}} </h4>  
+        </div>         
+        <h4>{{ HTML::link('/customer/'.$customer->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h4>    
     </div>
+    <br><br>
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
             <div class="accordion-heading"><h4>
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                    Correo Electronico
-                </a></h4>
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                        Correo Electronico
+                    </a></h4>
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
-                <div class="accordion-inner">
-                    <p> <h4>Email: {{ $customer->email}} </h4></p>
-                </div>
+                <br>
+                <p> <h4>Email: {{ $customer->email}} </h4>				
+				</p>             
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading"><h4>
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                    Dirección
-                </a></h4>
+            <div class="accordion-heading"><br><h4>
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                        Dirección
+                    </a></h4>
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
+                    <br>
                     <h4>Direccion: {{$customer->direccion}} </h4>
                     <h4> Ciudad: {{$customer->ciudad}} </h4>
                     <h4> Pais: {{$customer->pais}} </h4>
@@ -55,13 +61,18 @@
         </div>
     </div> 
     <hr>
-    <div id="sidebar">                           
+     <div id="sidebar">                           
         <div class="list-group">    
-            <a href="create" class="list-group-item active text-center">
-                <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
+            <a href="/customer/{{$customer->id}}/workorder/create" class="list-group-item active text-center">
+                <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nuevo Trabajo</h4> 
             </a>
             <a href="/customer/{{$customer->id}}/profile" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-user"></h4><br/> Perfil
+                <h4 class="glyphicon glyphicon-user"></h4><br/><h4>
+					@if($customer->empresa=="")
+					{{ $customer->cliente }} 
+					@endif
+					{{$customer->empresa}}
+				</h4> 
             </a>                       
         </div>                     
     </div>
@@ -115,13 +126,13 @@
                                         @elseif($workorder->estado_trabajo==3) Entregado 
                                         @endif                                       
                                 </div>
-                            </div>                            
+                            </div> <!--                           
                             <div class="col-xs-6 col-md-4 imp">
                                 <div class='form-group form-register'>
                                     <p><strong>ATENDIDO:</strong><br> {{ $workorder->atendido}}</p>
                                 </div>
-                            </div>
-                        </div>                       
+                            </div>-->
+                        </div> <!--                      
                         <div class="row ">                          
                             <div class="col-xs-6 col-md-4 imp">
                                 <div class='form-group form-register'>
@@ -145,7 +156,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>  
+                        </div> --> 
                     </div>
                     <div class="panel panel-default ">
                         <div class="row ">     

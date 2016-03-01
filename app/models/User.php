@@ -26,7 +26,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         'telefono',        
         'email',       
         'password',
-        'confirpassword'
+        'confirpassword',
+		'remember_token'
     );
 
     public function customers() {

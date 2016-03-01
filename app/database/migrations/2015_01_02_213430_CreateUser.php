@@ -25,7 +25,8 @@ class CreateUser extends Migration {
                         $table->string('telefono');                                       
                         $table->string('email')->unique();                    
                         $table->string('password');
-                        $table->string('confirpassword'); 
+                        $table->string('confirpassword');
+						$table->string('remember_token')->unique(); 
 			$table->timestamps();
 		});
 	}

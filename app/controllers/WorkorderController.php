@@ -118,8 +118,15 @@ class WorkorderController extends \BaseController {
             //$customer = Customer::find($id);
             //$post_data['customers_id'] = $customer->id;
             Workorder::create($post_data);
+			/*
+			if($post_data['estado_trabajo']==0){
+				return Redirect::intended('customer/' . $post_data['customers_id'] . '/workorder/edit')
+			}*/
+			
             return Redirect::intended('customer/' . $post_data['customers_id'] . '/profile')
                             ->with('flash', 'The new customer has been created');
+							
+							
         }
         return Redirect::route('workorder.create')
                         ->withInput()
