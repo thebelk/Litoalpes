@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => 'br-cdbr-azure-south-a.cloudapp.net',
 			'database'  => 'litografia',
-			'username'  => 'root',
-			'password'  => '',
+			'username'  => 'b586cc0a9c0942',
+			'password'  => '1f4f9365',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

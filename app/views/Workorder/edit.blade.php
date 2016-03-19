@@ -131,6 +131,7 @@
                                         <!-- <h2  align="center"> Orden de Compra  </h2> --> 
                                         <br><br>
 										{{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} 
+										{{ Form::text('tipo', 'ordencompra', array('hidden' => 'true')) }} 
                                         <div class="col-xs-6">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('tipo_orden', ' TIPO DE ORDEN:') }}
@@ -262,6 +263,7 @@
                                     <div class="col-xs-6" align="right">
                                      <h3><b>ESTADO DEL TRABAJO<b></h3>
                                     </div>
+									{{ Form::text('tipo', 'ordentrabajo', array('hidden' => 'true')) }} 
                                     <div class="col-xs-6">
 
                                          {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Diseño', '3' => 'Impresion','4' => 'Acabados', '5' => 'Disponible','6' => 'Entregado')),null ,array('class' => 'form-control')); }}
