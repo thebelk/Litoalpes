@@ -248,14 +248,10 @@
 										{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success btn-lg')) }}                               
                                      <center>
                                     <br><br>
-                                </div>
-                                <center>                                    
-                               {{ Form::close() }}
-                                </center>
+                                </div>                                
                             </article> 
                         </div>                                                       
-                        <div id="ordenproducion"  class="tab-pane fade"> 
-                            {{Form::open(array('url' => '/workorder/','role'=>'form', 'method' => 'POST')) }} 
+                        <div id="ordenproducion"  class="tab-pane fade">                             
                             <div class="panel panel-default ">                                           
                                 <div class="row"  align="justify">                                        
                                     <!--  <h2  align="center">Orden de Producción</h2> --> 

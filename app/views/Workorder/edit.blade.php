@@ -130,8 +130,7 @@
                                     <div class="row"  align="justify">
                                         <!-- <h2  align="center"> Orden de Compra  </h2> --> 
                                         <br><br>
-										{{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} 
-										{{ Form::text('tipo', 'ordencompra', array('hidden' => 'true')) }} 
+										{{ Form::text('customer_id', $customer->id, array('hidden' => 'true')) }} 										
                                         <div class="col-xs-6">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('tipo_orden', ' TIPO DE ORDEN:') }}
@@ -247,14 +246,10 @@
 										{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success btn-lg')) }}                               
                                      <center>
                                     <br><br>
-                                </div>
-                                <center>                                    
-                               {{ Form::close() }}
-                                </center>
+                                </div>                                
                             </article> 
                         </div>                                                       
-                        <div id="ordenproducion"  class="tab-pane fade"> 
-                             {{Form::open(array('url' => '/workorder/'.$workorder->id,'method' => 'PUT', 'role'=>'form')) }} 
+                        <div id="ordenproducion"  class="tab-pane fade">                              
                             <div class="panel panel-default ">                                           
                                 <div class="row"  align="justify">                                        
                                     <!--  <h2  align="center">Orden de Producción</h2> --> 
@@ -262,8 +257,7 @@
                                     <div class="col-xs-6" align="right">
                                      <h3><b>ESTADO DEL TRABAJO<b></h3>
                                     </div>
-									{{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} 
-									{{ Form::text('tipo', 'ordentrabajo', array('hidden' => 'true')) }} 
+									{{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} 									
                                     <div class="col-xs-6">
 										{{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Diseño', '3' => 'Impresion','4' => 'Acabados', '5' => 'Disponible','6' => 'Entregado')), $workorder->estado_trabajo,array('class' => 'form-control')); }}
                                     <br><br><br>
