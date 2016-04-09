@@ -257,7 +257,7 @@ class WorkorderController extends \BaseController {
 				$workorder2->fecha_entrega = $workorder['fecha_entrega'];
 				$workorder2->servicio = Input::has('servicio') ? 1 : 0;
 				$workorder2->tipo_servicio = $workorder['tipo_servicio'];
-				$workorder2->sublimaciones = Input::has('sublimaciones'] ? 1 : 0;
+				$workorder2->sublimaciones = Input::has('sublimaciones') ? 1 : 0;
 				$workorder2->tipo_sublimacion = $workorder['tipo_sublimacion'];
 				$workorder2->sello = Input::has('sello') ? 1 : 0;
 				$workorder2->tipo_sello = $workorder['tipo_sello'];
@@ -319,7 +319,7 @@ class WorkorderController extends \BaseController {
 				$workorder2->plastificadouv = Input::has('plastificadouv') ? 1 : 0;
 				$workorder2->engomado = Input::has('engomado') ? 1 : 0;
 				$workorder2->corte_refile = Input::has('corte_refile') ? 1 : 0;
-				$workorder2->estampado = Input::has('estampado']) ? 1 : 0;
+				$workorder2->estampado = Input::has('estampado') ? 1 : 0;
 				$workorder2->plastificadomate = Input::has('plastificadomate') ? 1 : 0;
 				$workorder2->perforado = Input::has('perforado') ? 1 : 0;
 				$workorder2->argollado = Input::has('argollado') ? 1 : 0;
