@@ -249,8 +249,6 @@ class WorkorderController extends \BaseController {
         $validate = Validator::make($workorder, $rules);
         if ($validate) {
             $workorder2 = Workorder::find($id);
-			$tipoUpdate = Input::get('tipo');
-			if ($tipoUpdate == 'ordencompra'){
 				$workorder2->tipo_orden = $workorder['tipo_orden'];
 				$workorder2->no_orden = $workorder['no_orden'];
 				$workorder2->clase_trabajo = $workorder['clase_trabajo'];
@@ -271,8 +269,7 @@ class WorkorderController extends \BaseController {
 				$workorder2->iva = Input::has('iva') ? 1 : 0;
 				$workorder2->no_factura = $workorder['no_factura'];
 				$workorder2->vendedor = $workorder['vendedor'];
-			}
-            else{
+			
 				$workorder2->estado_trabajo = $workorder['estado_trabajo'];
 				$workorder2->diseñador = $workorder['diseñador'];
 				$workorder2->tipo_realizado = $workorder['tipo_realizado'];
@@ -330,8 +327,7 @@ class WorkorderController extends \BaseController {
 				$workorder2->observacion_acabados = $workorder['observacion_acabados'];
 				$workorder2->fecha_reporte_acabados = $workorder['fecha_reporte_acabados'];
 				$workorder2->autorizado_acabados = $workorder['autorizado_acabados'];
-			}
-            
+			
             $workorder2->save();
             return Redirect::intended('customer/' . $workorder['customer_id'] . '/profile');
         }
