@@ -84,10 +84,10 @@ class SessionsController extends \BaseController {
      * @return Response
      */
     public function destroy() {
-        $logout = Auth::logout();
-        if ($logout) {
-            return Redirect::intended('/login');
-        }
+        Auth::logout();
+		Session::flush();
+        return Redirect::intended('/login');
+        
     }
 
 }

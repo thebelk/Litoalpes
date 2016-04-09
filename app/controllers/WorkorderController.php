@@ -119,6 +119,7 @@ class WorkorderController extends \BaseController {
             //$post_data['customers_id'] = $customer->id;
             Workorder::create($post_data);
 			/*
+			
 			if($post_data['estado_trabajo']==0){
 				return Redirect::intended('customer/' . $post_data['customers_id'] . '/workorder/edit')
 			}*/
@@ -260,14 +261,14 @@ class WorkorderController extends \BaseController {
 				$workorder2->tipo_sublimacion = $workorder['tipo_sublimacion'];
 				$workorder2->sello = Input::has('sello') ? 1 : 0;
 				$workorder2->tipo_sello = $workorder['tipo_sello'];
-				$workorder2->gigantografia = $workorder['gigantografia'] ? 1 : 0;
+				$workorder2->gigantografia = Input::has('gigantografia') ? 1 : 0;
 				$workorder2->tipo_gigantografia = $workorder['tipo_gigantografia'];
 				$workorder2->detalles_trabajo = $workorder['detalles_trabajo'];
 				$workorder2->valor_trabajo = $workorder['valor_trabajo'];
 				$workorder2->abono = $workorder['abono'];
 				$workorder2->saldo = $workorder['saldo'];
 				$workorder2->pago = $workorder['pago'];
-				$workorder2->iva = $workorder['iva'];
+				$workorder2->iva = Input::has('iva') ? 1 : 0;
 				$workorder2->no_factura = $workorder['no_factura'];
 				$workorder2->vendedor = $workorder['vendedor'];
 			}
@@ -276,7 +277,7 @@ class WorkorderController extends \BaseController {
 				$workorder2->diseñador = $workorder['diseñador'];
 				$workorder2->tipo_realizado = $workorder['tipo_realizado'];
 				$workorder2->tipo_impresion = $workorder['tipo_impresion'];
-				$workorder2->plancha = $workorder['plancha'] ? 1 : 0;
+				$workorder2->plancha = Input::has('plancha') ? 1 : 0;
 				$workorder2->tipo_plancha = $workorder['tipo_plancha'];
 				$workorder2->master = Input::has('master') ? 1 : 0;
 				$workorder2->tipo_master = $workorder['tipo_master'];
@@ -306,9 +307,9 @@ class WorkorderController extends \BaseController {
 				$workorder2->copia4 = $workorder['copia4'];
 				$workorder2->numerado = Input::has('numerado') ? 1 : 0;
 				$workorder2->numeradoras = $workorder['numeradoras'];
-				$workorder2->original_todas = $workorder['original_todas'] ? 1 : 0;
-				$workorder2->original_copia = $workorder['original_copia'] ? 1 : 0;
-				$workorder2->tiro_retiro = $workorder['tiro_retiro'] ? 1 : 0;
+				$workorder2->original_todas = Input::has('original_todas') ? 1 : 0;
+				$workorder2->original_copia = Input::has('original_copia') ? 1 : 0;
+				$workorder2->tiro_retiro = Input::has('tiro_retiro') ? 1 : 0;
 				$workorder2->observacion_impresion = $workorder['observacion_impresion'];
 				$workorder2->fecha_reporte_impresion = $workorder['fecha_reporte_impresion'];
 				$workorder2->autorizado_impresion = $workorder['autorizado_impresion'];
@@ -332,7 +333,7 @@ class WorkorderController extends \BaseController {
 			}
             
             $workorder2->save();
-            return Redirect::intended('customer/' . $workorder['customers_id'] . '/profile');
+            return Redirect::intended('customer/' . $workorder['customer_id'] . '/profile');
         }
     }
 
@@ -345,7 +346,7 @@ class WorkorderController extends \BaseController {
     public function destroy($id) {
         $workorder = Workorder::find($id);
         $workorder->delete();
-        return Redirect::intended('customer/' . $workorder['customers_id'] . '/profile');
+        return Redirect::intended('customer/' . $id . '/profile');
     }
 
 }

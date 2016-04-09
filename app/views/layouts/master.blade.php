@@ -39,7 +39,7 @@
                                 <ul class="dropdown-menu" >                                   
                                     <li><a href="#">Profile</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="/logout">Salir</a></li>
+                                    <li>{{ HTML::link('/logout/','Salir')}}</li>
                                 </ul>
                             </li>  
                         </ul>
