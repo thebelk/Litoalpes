@@ -108,31 +108,31 @@
                  </div>
                  {{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} -->
             </div>
-            <section class="tab wow fadeInLeft tam"> 
-                <header class="panel-heading tab-bg-dark-navy-blue">
-                    <ul class="nav nav-tabs nav-justified ">
-                        <li class="active">
-                            <a data-toggle="tab" href="#ordencompra">
-                                <h4>ORDEN DE COMPRA</h4> 
-                            </a>
-                        </li>
-                        <li>
-                            <a data-toggle="tab" href="#ordenproducion">
-                                <h4>ORDEN PRODUCION</h4>  
-                            </a>
-                        </li>
-                    </ul>
-                </header>
+            <section class="tab wow fadeInLeft tam">                 
                 <div class="panel-body">
-                    <div class="tab-content tasi-tab" >
-                        <div id="ordencompra" class="tab-pane fade in active" height="100">                               
-                            <article class="media">
-                                {{Form::open(array('url' => '/workorder/','role'=>'form', 'method' => 'POST')) }} 
+				{{Form::open(array('url' => '/workorder/','role'=>'form', 'method' => 'POST')) }} 
+                    <div class="tab-content tasi-tab" >					
+						<header class="panel-heading tab-bg-dark-navy-blue">
+							<ul class="nav nav-tabs nav-justified ">
+								<li class="active">
+									<a data-toggle="tab" href="#ordencompra">
+										<h4>ORDEN DE COMPRA</h4> 
+									</a>
+								</li>
+								<li>
+									<a data-toggle="tab" href="#ordenproducion">
+										<h4>ORDEN PRODUCION</h4>  
+									</a>
+								</li>
+							</ul>
+						</header>
+                        <div id="ordencompra" name="ordencompra" class="tab-pane fade in active" height="100">                               
+                            <article class="media">                                
                                 <div class="panel panel-default ">                                           
                                     <div class="row"  align="justify">
                                         <!-- <h2  align="center"> Orden de Compra  </h2> --> 
                                         <br><br>
-										{{ Form::text('customer_id', $customer->id, array('hidden' => 'true')) }} 
+										{{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} 
                                         <div class="col-xs-6">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('tipo_orden', ' TIPO DE ORDEN:') }}												
@@ -251,7 +251,7 @@
                                 </div>                                
                             </article> 
                         </div>                                                       
-                        <div id="ordenproducion"  class="tab-pane fade">                             
+                        <div id="ordenproducion" name="ordenproducion"  class="tab-pane fade in">                             
                             <div class="panel panel-default ">                                           
                                 <div class="row"  align="justify">                                        
                                     <!--  <h2  align="center">Orden de Producción</h2> --> 
@@ -671,13 +671,10 @@
                                     </div>
 										<br><br>									
                                 </div>
-
                             </div> 
-                            
-                        </div>
-                        {{ Form::close() }}
-
+                        </div>						
                     </div>
+					{{ Form::close() }}
                 </div>                       
             </section>
 
