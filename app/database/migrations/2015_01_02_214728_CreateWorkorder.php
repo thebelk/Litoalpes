@@ -18,14 +18,28 @@ class CreateWorkorder extends Migration {
             $table->string('no_orden')->default("");
             $table->string('clase_trabajo');
             $table->date('fecha_entrega');
-            $table->integer('servicio')->default(0);
-            $table->integer('tipo_servicio')->default(0);
+            $table->integer('impresiones')->default(0);
+            $table->integer('tipo_impresiones')->default(0);
             $table->integer('sublimaciones')->default(0);
             $table->integer('tipo_sublimacion')->default(0);
             $table->integer('sello')->default(0);
             $table->integer('tipo_sello')->default(0);
             $table->integer('gigantografia')->default(0);
             $table->integer('tipo_gigantografia')->default(0);
+			$table->integer('encuadernado')->default(0);
+            $table->integer('tipo_encuadernado')->default(0);			
+			// Nuevos Atributos --------
+			$table->integer('servicio_numerado')->default(0);  //1.si 0.no
+			$table->integer('servicio_perforado')->default(0); //1.si 0.no
+			$table->integer('servicio_engrapado')->default(0); //1.si 0.no 			
+			$table->integer('servicio_levante')->default(0);  //1.si 0.no
+			$table->integer('servicio_grafado')->default(0);  //1.si 0.no 
+            $table->integer('servicio_laminado')->default(0);  //1.si 0.no	           
+            $table->integer('servicio_engomado')->default(0); //1.si 0.no
+            $table->integer('servicio_corte')->default(0); //1.Si 0.No    
+			$table->integer('servicio_refile')->default(0); //1.Si 0.No 
+						
+            //----------------            
             $table->string('detalles_trabajo')->default("");
             $table->float('valor_trabajo');
             $table->float('abono');
@@ -79,12 +93,12 @@ class CreateWorkorder extends Migration {
             $table->integer('laminado')->default(0);  //1.si 0.no
             $table->integer('plastificadouv')->default(0);  //1.si 0.no
             $table->integer('engomado')->default(0); //1.si 0.no
-            $table->integer('corte_refile')->default(0); //1.Si 0.No            
-            $table->integer('estampado')->default(0); //1.Si 0.No
+            $table->integer('corte')->default(0); //1.Si 0.No            
+            $table->integer('refile')->default(0); //1.Si 0.No
             $table->integer('plastificadomate')->default(0); //1.Si 0.No
             $table->integer('perforado')->default(0); //1.si 0.no
             $table->integer('argollado')->default(0);            						
-            $table->integer('sublimacion')->default(0);            
+            $table->integer('grafado')->default(0);            
             $table->integer('plastificadoreserva')->default(0);            
             $table->integer('otro_acabados')->default(0); //0. Ninguno 1.Por la cabeza 2.lado izquierdo 3.lado derecho 
             $table->string('recomendaciones')->default("");

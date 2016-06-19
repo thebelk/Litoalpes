@@ -158,26 +158,30 @@
                                                 <input type='date' id='fecha_entrega' name='fecha_entrega' class='form-control'/>
                                             </div>
                                             <br>
-                                        </div> 
+                                        </div>
+										<div class="col-xs-12">
+											<h4><b>SERVICIOS</b></h4>
+											<hr>
+										</div>										
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
                                                 {{ Form::checkbox('servicio',  1, false)}}
-                                                {{ Form::label('tipo_servicio', ' SERVICIO') }}                                                           
-                                                {{ Form::select('tipo_servicio',array('1' => 'Seleccionar', '2' => 'Numerado','3' => 'Perforado','4' => 'Argollado','5' => 'Egrapado','6' => 'Levante','7' => 'Grafado','8' => 'Laminado'),null ,array('class' => 'form-control')); }}
+                                                {{ Form::label('tipo_servicio', 'ANILLADO/ EMPASTE') }}                                                           
+                                                {{ Form::select('tipo_servicio',array('1' => 'Seleccionar', '2' => 'Anillado Espiral ','3' => 'Anillado Plástico ','4' => 'Anillado Doble – O','5' => 'Anillado  Velobind','6' => 'Empastado  Sencillo','7' => 'Empastado Pasta Dura ','8' => 'Empastado Pasta Dura / Marcado ','9' => 'Otros'),null ,array('class' => 'form-control')); }}
                                             </div>
                                         </div>
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
                                                 {{ Form::checkbox('sublimaciones',  1, false)}}
                                                 {{ Form::label('tipo_sublimacion', ' SUBLIMACIÓN ') }}                                                            
-                                                {{ Form::select('tipo_sublimacion',array('1' => 'Seleccionar', '2' => 'Mugs','3' => 'Plato','4' => 'Camiseta','5' => 'Gorra'),null ,array('class' => 'form-control')); }}
+                                                {{ Form::select('tipo_sublimacion',array('1' => 'Seleccionar', '2' => 'Mugs','3' => 'Plato','4' => 'Camiseta','5' => 'Gorra','6' => 'Botones','7' => 'Otros'),null ,array('class' => 'form-control')); }}
                                             </div>
                                         </div>
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
                                                 {{ Form::checkbox('sello',  1, false)}}
                                                 {{ Form::label('tipo_sello', ' SELLO') }}                                                            
-                                                {{ Form::select('tipo_sello',array('1' => 'Seleccionar', '2' => 'Cyrel','3' => ' Sello Seco','4' => 'Sello Madera','4' => 'Sello Printer','4' => 'Sello de Bolsillo'),null ,array('class' => 'form-control')); }}
+                                                {{ Form::select('tipo_sello',array('1' => 'Seleccionar', '2' => 'Cyrel','3' => ' Sello Seco','4' => 'Sello Madera','4' => 'Sello Printer','4' => 'Sello de Bolsillo','5' => 'Otros'),null ,array('class' => 'form-control')); }}
                                             </div>
                                             <br> 
                                         </div>
@@ -185,12 +189,68 @@
                                             <div class='form-group form-register'>
                                                 {{ Form::checkbox('gigantografia',  1, false)}}
                                                 {{ Form::label('tipo_gigantografia', ' GIGANTOGRAFÍA') }}
-                                                {{ Form::select('tipo_gigantografia',array('1' => 'Seleccionar', '2' => 'Banner','3' => 'Vinilo Blanco','4' => 'Traslucido','5' => 'Microperforado','6' => 'Acrílico'),null ,array('class' => 'form-control')); }}
+                                                {{ Form::select('tipo_gigantografia',array('1' => 'Seleccionar', '2' => 'Banner','3' => 'Vinilo Blanco','4' => 'Traslucido','5' => 'Microperforado','6' => 'Acrílico','7' => 'Otros'),null ,array('class' => 'form-control')); }}
                                             </div>
                                             <br>
+                                        </div>										
+										<div class="col-xs-3">
+                                            <div class='form-group form-register'>
+                                                {{ Form::checkbox('gigantografia',  1, false)}}
+                                                {{ Form::label('tipo_gigantografia', 'IMPRESIÓN') }}
+                                                {{ Form::select('tipo_gigantografia',array('1' => 'Seleccionar', '2' => 'Numeradora','3' => 'Multilith Doble Carta','4' => ' Heidelberg CTP 52','5' => 'Impresiòn Digital','6' => 'Impresiòn Blanco y Negro','7' => 'Impresiòn Burbuja','8' => 'Otros'),null ,array('class' => 'form-control')); }}
+                                            </div>
+                                           
                                         </div>
+										 <div class="col-xs-9">											
+											<div class="col-xs-3">
+												<div class='form-group'>												
+													{{ Form::checkbox('<!--servicio_numerado-->',  1, false)}}
+													{{ Form::label('<!--servicio_numerado-->', 'NUMERADO') }}                                                            
+												</div>
+												<div class='form-group'>
+													{{ Form::checkbox('<!--servicio_perforado-->',  1, false)}}
+													{{ Form::label('<!--servicio_perforado-->', 'PERFORADO') }}                                                            
+												</div>												
+											</div>
+											<div class="col-xs-3">
+												<div class='form-group'>												
+													{{ Form::checkbox('<!--servicio_levante-->',  1, false)}}
+													{{ Form::label('<!--servicio_levante-->', 'LEVANTE') }}                                                            
+												</div>
+												 <div class='form-group'>
+													{{ Form::checkbox('<!--servicio_engrapado-->',  1, false)}}
+													{{ Form::label('<!--servicio_engrapado-->', 'ENGRAPADO') }}                                                            
+												</div>
+												<!--
+												<div class='form-group'>
+													{{ Form::checkbox('<!--servicio_grafado--><!--',  1, false)}}
+													{{ Form::label('<!--servicio_grafado--><!--', 'GRAFADO') }}                                                            
+												</div>	-->											
+											</div>
+											<div class="col-xs-3">
+												<div class='form-group'>
+													{{ Form::checkbox('<!--servicio_laminado-->',  1, false)}}
+													{{ Form::label('<!--servicio_laminado-->', 'LAMINADO') }}                                                            
+												</div>
+												<div class='form-group'>												
+													{{ Form::checkbox('<!--servicio_engomado-->',  1, false)}}
+													{{ Form::label('<!--servicio_engomado-->', 'ENGOMADO') }}                                                            
+												</div>												
+											</div>	
+											<div class="col-xs-3">												
+												<div class='form-group'>
+													{{ Form::checkbox('<!--servicio_corte-->',  1, false)}}
+													{{ Form::label('<!--servicio_corte-->', 'CORTE') }}                                                            
+												</div>
+												<div class='form-group'>
+													{{ Form::checkbox('<!--servicio_refile-->',  1, false)}}
+													{{ Form::label('<!--servicio_refile-->', 'REFILE') }}                                                            
+												</div>
+											</div>	
+										 </div>										 									 
                                         <br>
                                         <div class="col-xs-12">
+											<hr>
                                             <div class='form-group form-register tex'>
 
                                                 {{ Form::label('detalles_trabajo', 'DETALLES DEL TRABAJO:') }}
@@ -261,7 +321,7 @@
 									</div>
 									<div class="col-xs-6">
 										
-									     {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Diseño', '3' => 'Impresion','4' => 'Acabados', '5' => 'Disponible','6' => 'Entregado')),null ,array('class' => 'form-control')); }}
+									     {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Estado Diseño', '3' => 'Estado Revisión','4' => 'Enviado para impresión ','5' => 'Estado Impresion', '6' => 'Estado Acabados','7' => 'Disponible para Entrega','8' => 'Entregado')),null ,array('class' => 'form-control')); }}
                                        <br><br><br>
 									</div>
 									   
@@ -289,7 +349,7 @@
                                     <div class="col-xs-6">
                                         <div class='form-group form-register'>
                                             {{ Form::label('tipo_impresion', ' TIPO DE  IMPRESIÓN:') }}
-                                            {{ Form::select('tipo_impresion',array('1' => 'Seleccionar', '2' => 'Digital', '3' => 'Litográfica','4' => 'Gigantografia' ,'5' => 'Sello','6' => 'Plancha / Mater'),null ,array('class' => 'form-control')); }}
+                                            {{ Form::select('tipo_impresion',array('1' => 'Seleccionar', '2' => 'Digital', '3' => 'Litográfica','4' => 'Gigantografia' ,'5' => 'Sello'),null ,array('class' => 'form-control')); }}
                                         </div>
                                         <br>
                                     </div>
@@ -583,14 +643,14 @@
                                         <div class="col-xs-3">
                                             <div class='form-group'>
                                                 {{ Form::checkbox('corte_refile',  1, false)}}
-                                                {{ Form::label('corte_refile', 'CORTE/REFILE') }}
+                                                {{ Form::label('corte_refile', 'CORTE') }}
 
                                             </div>
                                         </div>                                                     
                                         <div class="col-xs-3"> 
                                             <div class='form-group'>
                                                 {{ Form::checkbox('estampado',  1, false)}}
-                                                {{ Form::label('estampado', 'ESTAMPADO') }}
+                                                {{ Form::label('estampado', 'REFILE') }}
 
                                             </div>
                                         </div>
@@ -618,7 +678,7 @@
                                         <div class="col-xs-3">
                                             <div class='form-group'>
                                                 {{ Form::checkbox('sublimacion',  1, false)}}
-                                                {{ Form::label('sublimacion', 'SUBLIMACIÓN') }}
+                                                {{ Form::label('sublimacion', 'GRAFADO') }}
 
                                             </div>
                                         </div>                                           
