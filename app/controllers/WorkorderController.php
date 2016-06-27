@@ -266,7 +266,7 @@ class WorkorderController extends \BaseController {
 				$workorder2->abono = $workorder['abono'];
 				$workorder2->saldo = $workorder['saldo'];
 				$workorder2->pago = $workorder['pago'];
-				$workorder2->iva = Input::has('iva') ? 1 : 0;
+				$workorder2->iva = $workorder['iva'];
 				$workorder2->no_factura = $workorder['no_factura'];
 				$workorder2->vendedor = $workorder['vendedor'];
 			

@@ -285,14 +285,20 @@
                                                 {{ Form::text('pago', $workorder->pago, array('placeholder' => 'Pago', 'class' => 'form-control')) }}
                                             </div>
                                             <br>
-                                        </div> 
-                                        <div class="col-xs-3"> 
+                                        </div>
+										<div class="col-xs-3"> 
                                             <br>
-                                            <div class='form-group'>
-                                                {{ Form::checkbox('iva',  $workorder->iva, $workorder->iva == 1)}}
-                                                {{ Form::label('iva', 'PAGO IVA') }}                                                            
+                                            <div class='form-group'>												
+												{{ Form::radio('iva', '0', $workorder->iva == '0', ['hidden' => 'true']) }}
+												<br>
+                                                {{ Form::label('iva', 'MAS IVA') }}
+												{{ Form::radio('iva', '1', $workorder->iva == '1') }}
+												<br>
+												{{ Form::label('iva', 'CON IVA') }}
+												{{ Form::radio('iva', '2', $workorder->iva == '2') }}                                                
                                             </div>
                                         </div>
+										
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('no_factura', 'FACTURA:') }}

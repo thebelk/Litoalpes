@@ -52,7 +52,8 @@ class QuotationController extends \BaseController {
         $validate = Validator::make($post_data, $rules);
         if ($validate) {
             $post_data['users_id'] = Auth::user()->id;
-            Quotation::create($post_data);            
+            Quotation::create($post_data);
+			$this->sendmail($post_data);
             return Redirect::intended('/quotationlist')
                             ->with('flash', 'The new quotation has been created');
         }
@@ -130,6 +131,7 @@ class QuotationController extends \BaseController {
             $quotation2->especificaciones=$quotation['especificaciones'];
             $quotation2->cotizacion=$quotation['cotizacion']; 
             $quotation2->save();
+			$this->sendmail($quotation);
             return Redirect::intended('/quotationlist');
             
         }
@@ -147,9 +149,9 @@ class QuotationController extends \BaseController {
         return Redirect::intended('/quotationlist');
     }
 
-    public function sendmail() {
-    
-    	$config = array(
+    public function sendmail($data) {		
+    	/*
+		$config = array(
     			'driver' => $mail->driver,
     			'host' => $mail->host,
     			'port' => $mail->port,
@@ -161,15 +163,14 @@ class QuotationController extends \BaseController {
     			'pretend' => false
     	);
     	Config::set('mail',$config);
+		*/
     	 
-    	/*Mail::send('emails.welcome', [], function($message)
+    	Mail::send('emails.welcome', $data, function($message) use ($data)
     	 {
     	 $message
-    	 ->to('belkis_buelvas06@hotmail.com', 'Belkis Buelvas')
-    	 ->cc('jotallamas_o@hotmail.com', 'Jorge Llamas')
-    	 ->subject('Litograf�a Los Alpes: Cotizaci�n');
-    	});
-    	*/
-    	return View::make('emails.welcome');
+    	 ->to($data['email'], $data['cliente'])
+    	 ->subject('Litografía Los Alpes - Cotización');
+    	});    	
+    	return true;
     }
 }

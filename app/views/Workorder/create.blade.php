@@ -289,8 +289,13 @@
                                         <div class="col-xs-3"> 
                                             <br>
                                             <div class='form-group'>
-                                                {{ Form::checkbox('iva',  1, false)}}
-                                                {{ Form::label('iva', 'PAGO IVA') }}                                                            
+												{{ Form::radio('iva', '0', true, ['hidden' => 'true']) }}
+												<br>
+                                                {{ Form::label('iva', 'MAS IVA') }}
+												{{ Form::radio('iva', '1') }}
+												<br>
+												{{ Form::label('iva', 'CON IVA') }}
+												{{ Form::radio('iva', '2') }}                                                
                                             </div>
                                         </div>
                                         <div class="col-xs-3">

@@ -202,7 +202,7 @@
                             </div>
                         </div>
                         <div class="button  "align="center">                      
-                            {{ Form::button('Enviar', array('type' => 'reset', 'class' => 'btn  btn-success')) }}
+                            {{ Form::button('Enviar', array('type' => 'submit', 'class' => 'btn  btn-success')) }}
                         </div>
                         <br>
                     </div>	
