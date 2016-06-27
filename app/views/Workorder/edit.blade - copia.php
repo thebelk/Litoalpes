@@ -16,9 +16,7 @@
     <br>
     <div class="row panel">        
         <div class="col-sm-8 col-md-12">
-		<br>
-			<a href="/customer/{{$customer->id}}/profile"> 
-            <h3 class="color">{{$customer->cliente}}&nbsp(Cliente)  </h3></a><br>
+            <h3 class="color">{{$customer->cliente}}&nbsp(Cliente)  </h3><br>
             <h4>Contacto: {{$customer->contacto}} </h4> 
             <h4>Telefono: {{$customer->telefono}} </h4> 
             <h4 class="color">Cliente:          
@@ -64,7 +62,7 @@
     </div>  
     <hr>
     <div id="sidebar">                           
-        <div class="list-group">            
+        <div class="list-group">
             <a href="/customer/{{$customer->id}}/profile" class="list-group-item  text-center">                           
                 <h4 class="glyphicon glyphicon-user"></h4><br/><h4>
                     @if($customer->empresa=="")
@@ -72,9 +70,9 @@
                     @endif
                     {{$customer->empresa}}
                 </h4>
-            </a>  
-			<a href="/workorderlist" class="list-group-item active text-center">
-                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h4> Trabajos</h4>
+            </a>  			  
+			<a href="/workorderlist" class="list-group-item active  text-center">
+                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h4>Trabajos</h4>
             </a>
 			<a href="/phonebook" class="list-group-item  text-center">                           
                 <h4 class="glyphicon glyphicon-earphone"></h4><br/><h4>Contactos | Proveedor</h4>
@@ -490,22 +488,21 @@
                                                 {{ Form::text('no_final', $workorder->no_final, array('placeholder' => 'Final', 'class' => 'form-control')) }}
                                             </div>                                                
                                         </div> 
-										<div class="col-xs-3">
+                                        <div class="col-xs-3">
                                             <div class='form-group form-register'>
-                                                {{ Form::label('no_tintas', 'No. TINTAS:') }}
+                                                {{ Form::label('color_tinta', 'COLOR:') }}
+                                                {{ Form::text('color_tinta', $workorder->color_tinta, array('placeholder' => 'Tinta', 'class' => 'form-control')) }}
+                                            </div> 
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class='form-group form-register'>
+                                                {{ Form::label('no_tintas', 'No. TINTA:') }}
                                                 {{ Form::select('no_tintas', array('No.Tintas' => array('1' => 'Seleccionar','2' => 'una tinta', '3' => 'dos tintas ', '4' => 'tres tintas', '5' => 'policromía ')), $workorder->no_tintas, array('class' => 'form-control')); }}
                                             </div> 
                                         </div>
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
-                                                {{ Form::label('color_tinta', 'COLOR TINTAS:') }}
-                                                {{ Form::text('color_tinta', $workorder->color_tinta, array('placeholder' => 'Tinta', 'class' => 'form-control')) }}
-                                            </div> 
-                                        </div>
-                                        
-                                        <div class="col-xs-3">
-                                            <div class='form-group form-register'>
-                                                {{ Form::label('tinta_especial', 'TINTA ESPECIAL:') }}
+                                                {{ Form::label('tinta_especial', 'TINTA :') }}
                                                 {{ Form::text('tinta_especial', $workorder->tinta_especial, array('placeholder' => 'Especial', 'class' => 'form-control')) }}
                                             </div> 
                                         </div>  
@@ -548,7 +545,7 @@
                                         <div class="col-xs-3"> 
                                             <div class='form-group'>
                                                 {{ Form::checkbox('numerado',  $workorder->numerado, $workorder->numerado == 1)}}
-                                                {{ Form::label('numerado', 'CANT. NUMERADORAS') }} 
+                                                {{ Form::label('numerado', 'NUMERADO') }} 
                                                 {{ Form::select('numeradoras', array('1' => 'Cat.Numeradoras ', '2 ' => '1 Numeradora', '3' => '2 Numeradoras', '4' => '3 Numeradoras','5' => '4 Numeradoras'), $workorder->numeradoras,array('class' => 'form-control')); }}
                                             </div>
                                         </div>

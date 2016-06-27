@@ -57,8 +57,11 @@
             <a href="/customer" class="list-group-item text-center">
                 <h4 class="glyphicon glyphicon-user "></h4><br/><h4>Listar Clientes</h4>
             </a>
-			<a href="create" class="list-group-item active text-center">                           
-                <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nuevo Cliente</h4>
+			<a href="/workorderlist" class="list-group-item active text-center">
+                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h4>Trabajos</h4>
+            </a>
+			<a href="/phonebook" class="list-group-item  text-center">                           
+                <h4 class="glyphicon glyphicon-earphone"></h4><br/><h4>Contactos | Proveedor</h4>
             </a>
         </div>        
     </div>
