@@ -29,25 +29,29 @@ class UserController extends \BaseController {
     public function store() {
         $post_data = Input::all();
         $rules = [
-            'nit_cc' => 'required',
-            'razon_social' => 'required',
+            'nit_cc' => 'Required|Numeric',
+            'razon_social' => 'Required',
             'direccion' => '',            
             'ciudad' => '',
             'pais' => '',
             'telefono' => '',
-            'celular' => 'required',
-            'representante' => 'required',           
-            'email' => 'required',
-            'password' => 'required',
-            'confirpassword' => 'required'
+            'celular' => 'Required|Numeric',
+            'representante' => 'Required',
+            'email' => 'Required|Confirmed|Email|Unique:users,email',
+			'email_confirmation' => 'Required|Email',
+            'password' => 'Required|Confirmed',
+            'password_confirmation' => 'Required'
         ];
         $validate = Validator::make($post_data, $rules);
-        if ($validate) {
+        if ($validate->passes()) {
             $post_data['password'] = Hash::make($post_data['password']);
-            $post_data['confirpassword'] = Hash::make($post_data['confirpassword']);
+            $post_data['password_confirmation'] = Hash::make($post_data['password_confirmation']);
             User::create($post_data);
             return Redirect::intended('/login');
         }
+		else{
+			return View::make('user.create');
+		}
     }
 
     /**

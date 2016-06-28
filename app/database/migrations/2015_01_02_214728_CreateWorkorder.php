@@ -67,7 +67,7 @@ class CreateWorkorder extends Migration {
             $table->string('clase_material');
             $table->string('tamano');
             $table->string('cantidad_material')->default("");
-            $table->string('corte');
+            //$table->string('corte');
             $table->string('emblocado')->default("");
             $table->string('no_inicial')->default("");
             $table->string('no_final')->default("");

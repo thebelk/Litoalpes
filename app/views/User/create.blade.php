@@ -83,8 +83,8 @@
                                 </div>
                                 <div class="col-xs-6 ">
                                     <div class='form-group form-register' align="justify">
-                                        {{ Form::label('confiremail', 'Confirmar Email *:') }}<br>
-                                        {{ Form::email('confiremail', null, array('placeholder' => 'Confirmar Email', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::label('email_confirmation', 'Confirmar Email *:') }}<br>
+                                        {{ Form::email('email_confirmation', null, array('placeholder' => 'Confirmar Email', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-6 ">
@@ -96,8 +96,8 @@
 
                                 <div class="col-xs-6 ">
                                     <div class='form-group form-register' align="justify">
-                                        {{ Form::label('confirpassword', 'Confirmar Password *:') }}<br>
-                                        {{ Form::password('confirpassword', array('placeholder' => 'Confirmar Password', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::label('password_confirmation', 'Confirmar Password *:') }}<br>
+                                        {{ Form::password('password_confirmation', array('placeholder' => 'Confirmar Password', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
 
