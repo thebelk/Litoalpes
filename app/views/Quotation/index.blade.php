@@ -57,8 +57,11 @@
             <a href="quotation/create" class="list-group-item  text-center">
                 <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nueva Cotización</h4> 
             </a>                        
-            <a href="quotationlist" class="list-group-item active text-center">                           
-                <h4 class="glyphicon glyphicon-pencil"></h4><br/><h4>Listar Cotización</h4>
+            <a href="/workorderlist" class="list-group-item active  text-center">
+                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h4>Trabajos</h4>
+            </a>
+			<a href="/phonebook" class="list-group-item  text-center">                           
+                <h4 class="glyphicon glyphicon-earphone"></h4><br/><h4>Contactos | Proveedor</h4>
             </a>
         </div>  
     </div>
@@ -94,21 +97,21 @@
                                 @endif 
                             </span>
                         </strong></h3><br>
-                    <h4><strong>Cliente</strong>: {{ $quotlist->cliente}}, 
-                        <strong>Telefono</strong>: {{ $quotlist->telefono }} ,
+                    <h4><strong>Cliente</strong>: {{ $quotlist->cliente}},                        
                         <strong>Celular</strong>: {{ $quotlist->cel_contacto }} ,
-                        <strong>E-mail </strong>: {{ $quotlist->email }} </h4> 
-                    <h4><strong>direccion</strong>: {{ $quotlist->direccion}},
-                        <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }}</h4> 
+						 <strong>Empresa </strong>: {{ $quotlist->empresa }},
+						 <strong>Telefono</strong>: {{ $quotlist->telefono }},
+						 <strong>Direccion</strong>: {{ $quotlist->direccion}}.</h4>
+                    <h4> <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }}</h4> 
+					<h4> <strong>Cotizacion</strong>: {{ $quotlist->cotizacion }}</h4> 
                     <br><br>
                     <div class="col-md-1">
                         {{ HTML::link('/quotation/'.$quotlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
                     </div>  
-					
-
+					<div class="col-md-1">
                     {{ Form::model($quotation, array('url' => array('/quotation/'.$quotlist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
                     {{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
-                                       
+                    </div>               
                     {{ Form::close() }}                       
 
                     <br> 

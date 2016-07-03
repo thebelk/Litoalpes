@@ -54,11 +54,14 @@
     <hr>
     <div id="sidebar"> 
         <div class="list-group">                        
-            <a href="/quotation/create" class="list-group-item active text-center">
-                <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nueva Cotización</h4> 
-            </a>                        
             <a href="/quotation" class="list-group-item  text-center">                           
                 <h4 class="glyphicon glyphicon-pencil "></h4><br/><h4>Listar Cotización</h4>
+            </a>
+			<a href="/workorderlist" class="list-group-item active  text-center">
+                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h4>Trabajos</h4>
+            </a>
+			<a href="/phonebook" class="list-group-item  text-center">                           
+                <h4 class="glyphicon glyphicon-earphone"></h4><br/><h4>Contactos | Proveedor</h4>
             </a>
         </div>     
     </div>
@@ -108,7 +111,7 @@
                         <div class="col-xs-6 col-md-4 imp">                                     
                             <div class='form-group form-register'align="justify">
                                 {{ Form::label('tipo_cliente', 'TIPO CLIENTE:') }}
-                                {{ Form::select('tipo_cliente', array('Tipo Cliente' => array( '1' => 'Seleccionar','1' => 'Directo  ', '2' => 'Servicio')),$quotation->tipo_cliente ,array('class' => 'form-control')); }}
+                                {{ Form::select('tipo_cliente', array('Tipo Cliente' => array( '1' => 'Seleccionar', '2' => 'Servicio','3' => 'Producto')),$quotation->tipo_cliente ,array('class' => 'form-control')); }}
                             </div>
                             <br>
                         </div>

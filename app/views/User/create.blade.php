@@ -128,7 +128,7 @@
                                 </div>  
                             </div>
                             <div class='row buttons'>
-                                {{ Form::button('Cancelar', array('type' => 'reset', 'class' => 'btn btn-success')) }} 
+                                {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-success')) }} 
                                 {{ Form::button('Crear', array('type' => 'submit', 'class' => 'btn btn-default')) }}                                 
                             </div>
                             {{ Form::close() }}  

@@ -147,7 +147,7 @@
                                 </div>
 						
 							<div class='row buttons'> 
-								{{ HTML::link('/user','Cancelar', array('class' => 'btn btn-default'), false)}}                        
+								{{ HTML::link('/user','Reset', array('class' => 'btn btn-default'), false)}}                        
 								{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-success')) }}                                 
 							</div>	
 												
@@ -181,7 +181,7 @@
 							</div>
 							<div class="col-xs-3 ">
 							<br>
-									{{ HTML::link('/user','Cancelar', array('class' => 'btn btn-default'), false)}}                        
+									{{ HTML::link('/user','Reset', array('class' => 'btn btn-default'), false)}}                        
 									{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-success')) }}                                 
 									<br><br>
 							</div>
