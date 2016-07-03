@@ -14,9 +14,36 @@
 <body>
 	<div class="container">
 		<div class="content">
-			<h3>Hi, {{ $cliente }}</h3>
-			<p class="lead">Prueba de envio Cotización</p>
-			<p>Prueba de envio Cotización</p>
+			<h3>Estimado/a {{ $cliente }},</h3>
+			<p class="lead">Envío de Cotización electrónica.</p>
+			</br>
+			<h4>Datos de Contacto:</h4>
+			</br>
+			<p>NIT/CC: {{ $nit_cc }}</p>
+			</br>
+			<p>Empresa: {{ $empresa }}</p>
+			</br>
+			<p>Número de Contacto: {{ $cel_contacto }}</p>
+			</br>
+			<p>Telefono: {{ $telefono }}</p>
+			</br>
+			<p>Dirección: {{ $direccion }}</p>
+			</br>
+			<p>Ciudad: {{ $ciudad }}</p>
+			</br>
+			<p>País: {{ $pais }}</p>
+			</br>
+			<h4>Especificaciones de Cotización:</h4>
+			</br>
+			<p>Clase de Trabajo: {{ $clase_trabajo }}</p>
+			</br>
+			<p>Estado de Cotización: {{ $estado_cotizacion }}</p>
+			</br>
+			<p>{{ $especificaciones }}</p>
+			</br>
+			<h4>Cotización:</h4>
+			</br>
+			<p>{{ $cotizacion }}</p>
 		</div> <!-- /content -->
 	</div>
 </body>

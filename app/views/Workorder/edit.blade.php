@@ -264,13 +264,13 @@
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('valor_trabajo', 'VALOR:') }}
-                                                {{ Form::text('valor_trabajo', $workorder->valor_trabajo, array('placeholder' => 'Valor Trabajo', 'class' => 'form-control')) }}
+                                                {{ Form::text('valor_trabajo', null, array('placeholder' => 'Valor Trabajo', 'class' => 'form-control', 'onchange' => 'checkIVAType();')) }}
                                             </div>
                                         </div>
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('abono', 'ABONO:') }}
-                                                {{ Form::text('abono', $workorder->abono, array('placeholder' => 'Abono', 'class' => 'form-control')) }}
+                                                {{ Form::text('abono', null, array('placeholder' => 'Abono', 'class' => 'form-control', 'onchange' => 'checkIVAType();')) }}
                                             </div>
                                         </div>                              
                                         <div class="col-xs-3">
@@ -288,14 +288,14 @@
                                         </div>
 										<div class="col-xs-3"> 
                                             <br>
-                                            <div class='form-group'>												
-												{{ Form::radio('iva', '0', $workorder->iva == '0', ['hidden' => 'true']) }}
+                                            <div class='form-group'>
+												{{ Form::radio('iva', '0', true, ['hidden' => 'true']) }}
 												<br>
                                                 {{ Form::label('iva', 'MAS IVA') }}
-												{{ Form::radio('iva', '1', $workorder->iva == '1') }}
+												{{ Form::radio('iva', '1', null, array('onclick' => 'checkIVAType();')) }}
 												<br>
 												{{ Form::label('iva', 'CON IVA') }}
-												{{ Form::radio('iva', '2', $workorder->iva == '2') }}                                                
+												{{ Form::radio('iva', '2', null, array('onclick' => 'checkIVAType();')) }}
                                             </div>
                                         </div>
 										
@@ -754,4 +754,49 @@
         </div>
     </div>
 </div> 
+
+<script type="text/javascript">
+    // my custom script
+	function checkIVAType() {		
+		var radios = document.getElementsByName('iva');
+		var elIVA = "0";
+		for (var i = 0, length = radios.length; i < length; i++) {
+			if (radios[i].checked) {				
+				elIVA = radios[i].value;
+				break;
+			}
+		}
+		var valor = document.getElementById('valor_trabajo');		
+		switch(elIVA){
+			case "0":
+			//SIN IVA
+				if(valor != null)
+				{
+					document.getElementById('pago').value = document.getElementById('valor_trabajo').value;
+					document.getElementById('saldo').value = document.getElementById('valor_trabajo').value - document.getElementById('abono').value;
+				}				
+			break;
+			case "1":
+			//MAS IVA
+				if(valor != null)
+				{
+					document.getElementById('pago').value = Math.ceil(document.getElementById('valor_trabajo').value * 1.16);
+					document.getElementById('saldo').value = document.getElementById('pago').value - document.getElementById('abono').value;
+				}
+				
+			break;
+			case "2":
+			//CON IVA				
+				if(valor != null)
+				{
+					document.getElementById('pago').value = Math.ceil(document.getElementById('valor_trabajo').value / 1.16);
+					document.getElementById('saldo').value = document.getElementById('valor_trabajo').value - document.getElementById('abono').value;
+				}				
+				
+			break;
+		}
+    }
+</script>
+
+
 @stop
