@@ -14,35 +14,21 @@
 <body>
 	<div class="container">
 		<div class="content">
-			<h3>Estimado/a {{ $cliente }},</h3>
 			<p class="lead">Envío de Cotización electrónica.</p>
 			</br>
-			<h4>Datos de Contacto:</h4>
+			<h3>Estimado/a {{ $cliente }},</h3>
 			</br>
-			<p>NIT/CC: {{ $nit_cc }}</p>
+			<p><b>NIT/CC:</b> {{ $nit_cc }}</p>
+			<p><b>Contacto:</b> {{ $cel_contacto }}</p>
+			<p><b>Empresa:</b> {{ $empresa }}</p>			
+			<p><b>Telefono:</b> {{ $telefono }}</p>			
+			<h3>COTIZACIÓN:</h3>	
 			</br>
-			<p>Empresa: {{ $empresa }}</p>
-			</br>
-			<p>Número de Contacto: {{ $cel_contacto }}</p>
-			</br>
-			<p>Telefono: {{ $telefono }}</p>
-			</br>
-			<p>Dirección: {{ $direccion }}</p>
-			</br>
-			<p>Ciudad: {{ $ciudad }}</p>
-			</br>
-			<p>País: {{ $pais }}</p>
-			</br>
-			<h4>Especificaciones de Cotización:</h4>
-			</br>
-			<p>Clase de Trabajo: {{ $clase_trabajo }}</p>
-			</br>
-			<p>Estado de Cotización: {{ $estado_cotizacion }}</p>
-			</br>
+			<p><b>Clase de Trabajo:</b></p>
+			<p>{{ $clase_trabajo }}</p>
+			<p><b>Especificaciones:</b></p>			
 			<p>{{ $especificaciones }}</p>
-			</br>
-			<h4>Cotización:</h4>
-			</br>
+			<h4><b>Cotización:</b></h4>
 			<p>{{ $cotizacion }}</p>
 		</div> <!-- /content -->
 	</div>

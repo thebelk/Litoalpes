@@ -118,7 +118,7 @@
                         <div class="col-xs-6 col-md-4 imp">
                             <div class='form-group form-register'align="justify">
                                 {{ Form::label('nit_cc', 'NIT / CC:') }}
-                                {{ Form::text('nit_c', $quotation->nit_c, array('placeholder' => 'Nit / CC', 'class' => 'form-control')) }}
+                                {{ Form::text('nit_cc', $quotation->nit_cc, array('placeholder' => 'Nit / CC', 'class' => 'form-control')) }}
                             </div>
                         </div>
                         <div class="col-xs-6 col-md-4 imp">
@@ -208,7 +208,7 @@
                             </div>
                         </div>
                         <div class="button  "align="center">                      
-                            {{ Form::button('Enviar', array('type' => 'reset', 'class' => 'btn  btn-success')) }}
+                            {{ Form::button('Enviar', array('type' => 'submit', 'class' => 'btn  btn-success')) }}
                         </div>
                         <br>
                     </div>	

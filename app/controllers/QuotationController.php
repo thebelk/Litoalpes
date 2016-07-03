@@ -117,7 +117,7 @@ class QuotationController extends \BaseController {
             $quotation2->cliente = $quotation['cliente'];
             $quotation2->cel_contacto=$quotation['cel_contacto'];
             $quotation2->tipo_cliente=$quotation['tipo_cliente']; //1.Directo   2.Servicio
-            $quotation2->nit_cc=$quotation['nit_c'];                        
+            $quotation2->nit_cc=$quotation['nit_cc'];                        
             $quotation2->empresa=$quotation['empresa'];
             $quotation2->telefono=$quotation['telefono'];
             $quotation2->direccion=$quotation['direccion'];
