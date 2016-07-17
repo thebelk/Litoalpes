@@ -87,17 +87,69 @@
             </div>
         </header>
         @show        
-        <div class="container-fluid">   
+          <div class="container-fluid">   
             @yield('content') 
-        </div>  
-        <footer>
-            <div class="footer">
-                @yield('footer')
-
-
-            </div>
-        </footer>
-        @show       
+			 @show  
+        </div> 
+		@section('footer')		
+			 <!--footer start-->
+		<footer id="footer" class="footer">
+			<div class="container">							
+					<div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
+						<div class="footer-single"><br>					
+							<h5>UBICACIÓN</h5>
+							
+							<p>Alpes Calle 31 A - #70 - 03</p>
+							<p>Tel. (5) 6634041 - Cel. 3106054347 </p>							
+							<p>Email: litografialosalpes@gmail.com</p>
+							<p>Cartagena de Indias - Colombia.</p>
+						</div>
+					</div>			
+								
+					<div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<div class="footer-single"><br>
+							<!--<center>
+							{{ HTML::image('recursos/img/logo.png', 'a picture') }}
+							</center>
+							
+								<h6>Explore</h6>
+								<ul>
+									<li><a href="#">Inside Us</a></li>
+									<li><a href="#">Flickr</a></li>
+									<li><a href="#">Google</a></li>
+									<li><a href="#">Forum</a></li>
+								</ul>-->
+						</div>
+					</div>	
+					
+					<div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<div class="footer-single"><br>
+						<!--	<center>							
+							{{ HTML::image('recursos/img/logo.png', 'a picture') }}	
+							</center>
+							
+								<h6>Explore</h6>
+								<ul>
+									<li><a href="#">Inside Us</a></li>
+									<li><a href="#">Flickr</a></li>
+									<li><a href="#">Google</a></li>
+									<li><a href="#">Forum</a></li>
+								</ul>-->
+						</div>
+					</div>										
+		</footer>
+		<div id="footerend" class="footerend">
+			<div class="container">	
+				<div class="col-md-6"><br>
+					<div class="copyright">
+					<h5><b>&copy;  by Belkis Buelvas Castillo - Copyright - 2016</b></h5>
+					
+					</div>
+              </div>
+			</div>			  
+		</div>
+		<!-- footer end -->
+        @show        
 
         <!-- script references -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
