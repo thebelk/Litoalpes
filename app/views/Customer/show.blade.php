@@ -104,14 +104,17 @@
                                 @elseif($worklist->estado_trabajo==3) Entregado 
                                 @endif 
                             </span>
-                        </strong></h3><br>
-                    <h4><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
-                        <strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
-                        <strong>Tamaño </strong>: {{ $worklist->tamano }} </h4> 
-                    <h4><strong>Valor Trabajo</strong>: {{ $worklist->valor_trabajo}},                         
-                        <strong>Abono</strong>: {{ $worklist->abono }} ,
-                        <strong>Saldo</strong>: {{ $worklist->saldo }} ,
-                        <strong>Diseñador</strong>: {{ $worklist->diseñador}},</h4>
+                         <h4><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
+                    <strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
+                    <strong>Material</strong>: {{ $worklist->clase_material }} ,
+                    <strong>Cantidad</strong>: {{ $worklist->cantidad_trabajo }} ,
+                    <strong>Tamaño </strong>: {{ $worklist->tamano }} </h4> 
+                <h4><strong>Valor Trabajo</strong>: {{ $worklist->total}},                         
+                    <strong>Abono</strong>: {{ $worklist->abono }} ,
+                    <strong>Saldo</strong>: {{ $worklist->saldo }} ,                    
+                    <strong>Diseñador</strong>: {{ $worklist->diseñador}},
+                    <strong>Vendedor</strong>: {{ $worklist->vendedor}}</h4> 
+                <br>
                     <br>
                     
                         {{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       

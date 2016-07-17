@@ -181,17 +181,17 @@
 										</div>
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
-                                                {{ Form::checkbox('servicio',  $workorder->servicio, $workorder->servicio == 1)}}
-                                                {{ Form::label('tipo_servicio', 'ANILLADO/ EMPASTE') }}                                                           
+                                                {{ Form::checkbox('encuadernado',  $workorder->encuadernado, $workorder->encuadernado == 1)}}
+                                                {{ Form::label('tipo_encuadernado', 'ANILLADO/ EMPASTE') }}                                                           
                                                 
-												@if($workorder->tipo_servicio==1)                                
-												@elseif($workorder->tipo_servicio==2) Anillado Espiral 
-												@elseif($workorder->tipo_servicio==3) Anillado Plástico
-												@elseif($workorder->tipo_servicio==4) Anillado Anillado Doble – O 
-												@elseif($workorder->tipo_servicio==5) Anillado  Velobind
-												@elseif($workorder->tipo_servicio==6) Empastado  Sencillo 
-												@elseif($workorder->tipo_servicio==7) Empastado Pasta Dura
-												@elseif($workorder->tipo_servicio==8) Empastado Pasta Dura / Marcado
+												@if($workorder->tipo_encuadernado==1)                                
+												@elseif($workorder->tipo_encuadernado==2) Anillado Espiral 
+												@elseif($workorder->tipo_encuadernado==3) Anillado Plástico
+												@elseif($workorder->tipo_encuadernado==4) Anillado Anillado Doble – O 
+												@elseif($workorder->tipo_encuadernado==5) Anillado  Velobind
+												@elseif($workorder->tipo_encuadernado==6) Empastado  Sencillo 
+												@elseif($workorder->tipo_encuadernado==7) Empastado Pasta Dura
+												@elseif($workorder->tipo_encuadernado==8) Empastado Pasta Dura / Marcado
 												@endif
                                             </div>
                                         </div>
@@ -244,56 +244,74 @@
                                         </div>
 										<div class="col-xs-3">
                                             <div class='form-group form-register'>
-                                                {{ Form::checkbox('gigantografia',  1, false)}}
-                                                {{ Form::label('tipo_gigantografia', 'IMPRESIÓN') }}
-                                                {{ Form::select('tipo_gigantografia',array('1' => 'Seleccionar', '2' => 'Numeradora','3' => 'Multilith Doble Carta','4' => ' Heidelberg CTP 52','5' => 'Impresiòn Digital','6' => 'Impresiòn Blanco y Negro','7' => 'Impresiòn Burbuja','8' => 'Otros'),null ,array('class' => 'form-control')); }}
+                                                {{ Form::checkbox('impresiones',  1, false)}}
+                                                {{ Form::label('tipo_impresiones', 'IMPRESIÓN') }}
+												
+												@if($workorder->tipo_impresiones==1)                                
+												@elseif($workorder->tipo_impresiones==2) Numeradora'
+												@elseif($workorder->tipo_impresiones==3) Multilith Doble Carta
+												@elseif($workorder->tipo_impresiones==4) Heidelberg CTP 52
+												@elseif($workorder->tipo_impresiones==5) Impresiòn Digital
+												@elseif($workorder->tipo_impresiones==6) Impresiòn Blanco y Negro 
+												@elseif($workorder->tipo_impresiones==7) Impresiòn Burbuja
+												@endif
                                             </div>
                                            
                                         </div>
                                          <div class="col-xs-9">											
 											<div class="col-xs-3">
 												<div class='form-group'>												
-													{{ Form::checkbox('<!--servicio_numerado-->',  1, false)}}
-													{{ Form::label('<!--servicio_numerado-->', 'NUMERADO') }}                                                            
+													{{ Form::checkbox('servicio_numerado','disabled',$workorder->servicio_numerado, $workorder->servicio_numerado == 1,['disabled' => 'disabled'])}}
+													{{ Form::label('servicio_numerado', 'NUMERADO') }}                                                            
 												</div>
 												<div class='form-group'>
-													{{ Form::checkbox('<!--servicio_perforado-->',  1, false)}}
-													{{ Form::label('<!--servicio_perforado-->', 'PERFORADO') }}                                                            
-												</div>												
+													{{ Form::checkbox('servicio_perforado',  $workorder->servicio_perforado, $workorder->servicio_perforado == 1,['disabled' => 'disabled'])}}
+													{{ Form::label('servicio_perforado','PERFORADO') }}                                                            
+												</div>	
+												<div class='form-group'>
+													{{ Form::checkbox('servicio_repuje',  $workorder->servicio_repuje, $workorder->servicio_repuje  == 1,['disabled' => 'disabled'])}}
+													{{ Form::label('servicio_repuje', 'REPUJE') }}                                                            
+												</div>
 											</div>
 											<div class="col-xs-3">
 												<div class='form-group'>												
-													{{ Form::checkbox('<!--servicio_levante-->',  1, false)}}
-													{{ Form::label('<!--servicio_levante-->', 'LEVANTE') }}                                                            
+													{{ Form::checkbox('servicio_levante',  $workorder->servicio_levante, $workorder->servicio_levante == 1,['disabled' => 'disabled'])}}
+													{{ Form::label('servicio_levante', 'LEVANTE') }}                                                            
 												</div>
 												 <div class='form-group'>
-													{{ Form::checkbox('<!--servicio_engrapado-->',  1, false)}}
-													{{ Form::label('<!--servicio_engrapado-->', 'ENGRAPADO') }}                                                            
+													{{ Form::checkbox('servicio_engrapado',  $workorder->servicio_engrapado, $workorder->servicio_engrapado == 1,['disabled' => 'disabled'])}}
+													{{ Form::label('servicio_engrapado','ENGRAPADO') }}                                                            
 												</div>
-												<!--
+												
 												<div class='form-group'>
-													{{ Form::checkbox('<!--servicio_grafado--><!--',  1, false)}}
-													{{ Form::label('<!--servicio_grafado--><!--', 'GRAFADO') }}                                                            
-												</div>	-->											
+													{{ Form::checkbox('servicio_grafado,  $workorder->servicio_grafado, $workorder->servicio_grafado  == 1,['disabled' => 'disabled'])}}
+													{{ Form::label('servicio_grafado', 'GRAFADO') }}                                                            
+												</div>												
 											</div>
 											<div class="col-xs-3">
 												<div class='form-group'>
-													{{ Form::checkbox('<!--servicio_laminado-->',  1, false)}}
-													{{ Form::label('<!--servicio_laminado-->', 'LAMINADO') }}                                                            
+													{{ Form::checkbox('servicio_laminado', $workorder->servicio_laminado, $workorder->servicio_laminado == 1,['disabled' => 'disabled'])}}
+													{{ Form::label('servicio_laminado', 'LAMINADO') }}                                                            
 												</div>
 												<div class='form-group'>												
-													{{ Form::checkbox('<!--servicio_engomado-->',  1, false)}}
-													{{ Form::label('<!--servicio_engomado-->', 'ENGOMADO') }}                                                            
-												</div>												
+													{{ Form::checkbox('servicio_engomado',  $workorder->servicio_engomado, $workorder->servicio_engomado == 1,['disabled' => 'disabled'])}}
+													{{ Form::label('servicio_engomado', 'ENGOMADO') }}                                                            
+												</div>
+												<div class='form-group'>
+													{{ Form::label('detalles_trabajo', 'OTRO SERVICIO:') }}
+												</div>
 											</div>	
 											<div class="col-xs-3">												
 												<div class='form-group'>
-													{{ Form::checkbox('<!--servicio_corte-->',  1, false)}}
-													{{ Form::label('<!--servicio_corte-->', 'CORTE') }}                                                            
+													{{ Form::checkbox('servicio_corte',  $workorder->servicio_corte, $workorder->servicio_corte == 1,['disabled' => 'disabled'])}}
+													{{ Form::label('servicio_corte', 'CORTE') }}                                                            
 												</div>
 												<div class='form-group'>
-													{{ Form::checkbox('<!--servicio_refile-->',  1, false)}}
-													{{ Form::label('<!--servicio_refile-->', 'REFILE') }}                                                            
+													{{ Form::checkbox('servicio_refile',  $workorder->servicio_refile, $workorder->servicio_refile == 1,['disabled' => 'disabled'])}}
+													{{ Form::label('servicio_refile', 'REFILE') }}                                                            
+												</div>
+												<div class='form-group'>
+													{{ Form::text('subtotal', null, array('placeholder' => 'Otro', 'class' => 'form-control','disabled')) }}
 												</div>
 											</div>	
 										 </div>										 									 
@@ -325,8 +343,8 @@
                                         </div>
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
-                                                {{ Form::label('pago', 'PAGO:') }}
-                                                {{ $workorder->pago }}
+                                                {{ Form::label('subtotal', 'SUB TOTAL:') }}
+                                                {{ $workorder->subtotal }}
                                             </div>
                                             <br>
                                         </div> 
@@ -343,7 +361,13 @@
                                                 {{  $workorder->no_factura }}
                                             </div>
                                         </div>
-                                        <div class="col-xs-6">
+										<div class="col-xs-3">
+                                            <div class='form-group form-register'>
+                                                {{ Form::label('total', 'TOTAL:') }}
+                                                {{  $workorder->total }}
+                                            </div>
+                                        </div> 
+                                        <div class="col-xs-3">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('vendedor', 'VENDEDOR:') }}
                                                 {{ $workorder->vendedor }}
@@ -520,8 +544,8 @@
                                         </div>
                                         <div class="col-xs-4">
                                             <div class='form-group form-register'>
-                                                {{ Form::label('corte', 'MONTAJE:') }}
-                                                {{ $workorder->corte }}
+                                                {{ Form::label('corte_material', 'CORTE MATERIAL:') }}
+                                                {{ $workorder->corte_material }}
                                             </div>                                                  
                                         </div>                                                   
                                         <div class="col-xs-4">
@@ -738,15 +762,15 @@
                                         </div>
                                         <div class="col-xs-3">
                                             <div class='form-group'>
-                                                {{ Form::checkbox('corte_refile',  $workorder->corte_refile, $workorder->corte_refile == 1,['disabled' => 'disabled'])}}
-                                                {{ Form::label('corte_refile', 'CORTE') }}
+                                                {{ Form::checkbox('corte',  $workorder->corte, $workorder->corte == 1,['disabled' => 'disabled'])}}
+                                                {{ Form::label('corte', 'CORTE') }}
 
                                             </div>
                                         </div>                                                     
                                         <div class="col-xs-3"> 
                                             <div class='form-group'>
-                                                {{ Form::checkbox('estampado',  $workorder->estampado, $workorder->estampado == 1,['disabled' => 'disabled'])}}
-                                                {{ Form::label('estampado', 'REFILE') }}
+                                                {{ Form::checkbox('refile',  $workorder->refile, $workorder->refile == 1,['disabled' => 'disabled'])}}
+                                                {{ Form::label('refile', 'REFILE') }}
 
                                             </div>
                                         </div>
@@ -773,8 +797,8 @@
                                         </div>  
                                         <div class="col-xs-3">
                                             <div class='form-group'>
-                                                {{ Form::checkbox('sublimacion',  $workorder->sublimacion, $workorder->sublimacion == 1,['disabled' => 'disabled'])}}
-                                                {{ Form::label('sublimacion', 'GRAFADO') }}
+                                                {{ Form::checkbox('grafado',  $workorder->grafado, $workorder->grafado == 1,['disabled' => 'disabled'])}}
+                                                {{ Form::label('grafado', 'GRAFADO') }}
 
                                             </div>
                                         </div>                                           
@@ -785,6 +809,31 @@
                                                 <br><br>
                                             </div>
                                         </div> 
+										<div class="col-xs-3">
+                                            <div class='form-group'>
+                                                {{ Form::checkbox('empastado', $workorder->empastado, $workorder->empastado == 1,['disabled' => 'disabled'])}}
+                                                {{ Form::label('empastado', 'EMPASTADO') }}                                                
+                                            </div>
+                                        </div>
+										<div class="col-xs-3">
+                                            <div class='form-group'>
+                                                {{ Form::checkbox('tapaclinto',  $workorder->tapaclinto, $workorder->tapaclinto == 1,['disabled' => 'disabled'])}}
+                                                {{ Form::label('tapaclinto', 'TAPA CLINTÒN') }}                                               
+                                            </div>
+                                        </div> 
+										<div class="col-xs-3">
+                                            <div class='form-group'>
+                                                {{ Form::checkbox('tapanormal',  $workorder->, $workorder->tapanormal == 1,['disabled' => 'disabled'])}}
+                                                {{ Form::label('tapanormal', 'TAPA NORMAL') }}                                               
+                                            </div>
+                                        </div>
+										<div class="col-xs-3">
+                                            <div class='form-group'>
+                                                {{ Form::checkbox('hojassueltas', $workorder->, $workorder->hojassueltas == 1,['disabled' => 'disabled'])}}
+                                                {{ Form::label('hojassueltas', 'HOJAS SUELTAS') }}  
+												<br>
+                                            </div>
+                                        </div>
 
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>

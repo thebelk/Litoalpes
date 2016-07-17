@@ -169,9 +169,9 @@
 										</div>										
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
-                                                {{ Form::checkbox('servicio',  1, false)}}
-                                                {{ Form::label('tipo_servicio', 'ANILLADO/ EMPASTE') }}                                                           
-                                                {{ Form::select('tipo_servicio',array('1' => 'Seleccionar', '2' => 'Anillado Espiral ','3' => 'Anillado Plástico ','4' => 'Anillado Doble – O','5' => 'Anillado  Velobind','6' => 'Empastado  Sencillo','7' => 'Empastado Pasta Dura ','8' => 'Empastado Pasta Dura / Marcado ','9' => 'Otros'),null ,array('class' => 'form-control')); }}
+                                                {{ Form::checkbox('encuadernado',  1, false)}}
+                                                {{ Form::label('tipo_encuadernado', 'ANILLADO/ EMPASTE') }}                                                           
+                                                {{ Form::select('tipo_encuadernado',array('1' => 'Seleccionar', '2' => 'Anillado Espiral ','3' => 'Anillado Plástico ','4' => 'Anillado Doble – O','5' => 'Anillado  Velobind','6' => 'Empastado  Sencillo','7' => 'Empastado Pasta Dura ','8' => 'Empastado Pasta Dura / Marcado ','9' => 'Otros'),null ,array('class' => 'form-control')); }}
                                             </div>
                                         </div>
                                         <div class="col-xs-3">
@@ -199,56 +199,65 @@
                                         </div>										
 										<div class="col-xs-3">
                                             <div class='form-group form-register'>
-                                                {{ Form::checkbox('gigantografia',  1, false)}}
-                                                {{ Form::label('tipo_gigantografia', 'IMPRESIÓN') }}
-                                                {{ Form::select('tipo_gigantografia',array('1' => 'Seleccionar', '2' => 'Numeradora','3' => 'Multilith Doble Carta','4' => ' Heidelberg CTP 52','5' => 'Impresiòn Digital','6' => 'Impresiòn Blanco y Negro','7' => 'Impresiòn Burbuja','8' => 'Otros'),null ,array('class' => 'form-control')); }}
+                                                {{ Form::checkbox('impresiones',  1, false)}}
+                                                {{ Form::label('tipo_impresiones', 'IMPRESIÓN') }}
+                                                {{ Form::select('tipo_impresiones',array('1' => 'Seleccionar', '2' => 'Numeradora','3' => 'Multilith Doble Carta','4' => ' Heidelberg CTP 52','5' => 'Impresiòn Digital','6' => 'Impresiòn Blanco y Negro','7' => 'Impresiòn Burbuja','8' => 'Otros'),null ,array('class' => 'form-control')); }}
                                             </div>
                                            
                                         </div>
 										 <div class="col-xs-9">											
 											<div class="col-xs-3">
 												<div class='form-group'>												
-													{{ Form::checkbox('<!--servicio_numerado-->',  1, false)}}
-													{{ Form::label('<!--servicio_numerado-->', 'NUMERADO') }}                                                            
+													{{ Form::checkbox('servicio_numerado',  1, false)}}
+													{{ Form::label('servicio_numerado', 'NUMERADO') }}                                                            
 												</div>
 												<div class='form-group'>
-													{{ Form::checkbox('<!--servicio_perforado-->',  1, false)}}
-													{{ Form::label('<!--servicio_perforado-->', 'PERFORADO') }}                                                            
-												</div>												
+													{{ Form::checkbox('servicio_perforado',  1, false)}}
+													{{ Form::label('servicio_perforado', 'PERFORADO') }}                                                            
+												</div>
+												<div class='form-group'>
+													{{ Form::checkbox('servicio_repuje',  1, false)}}
+													{{ Form::label('servicio_repuje', 'REPUJE') }}                                                            
+												</div>
 											</div>
 											<div class="col-xs-3">
 												<div class='form-group'>												
-													{{ Form::checkbox('<!--servicio_levante-->',  1, false)}}
-													{{ Form::label('<!--servicio_levante-->', 'LEVANTE') }}                                                            
+													{{ Form::checkbox('servicio_levante',  1, false)}}
+													{{ Form::label('servicio_levante', 'LEVANTE') }}                                                            
 												</div>
 												 <div class='form-group'>
-													{{ Form::checkbox('<!--servicio_engrapado-->',  1, false)}}
-													{{ Form::label('<!--servicio_engrapado-->', 'ENGRAPADO') }}                                                            
-												</div>
-												<!--
+													{{ Form::checkbox('servicio_engrapado',  1, false)}}
+													{{ Form::label('servicio_engrapado', 'ENGRAPADO') }}                                                            
+												</div>												
 												<div class='form-group'>
-													{{ Form::checkbox('<!--servicio_grafado--><!--',  1, false)}}
-													{{ Form::label('<!--servicio_grafado--><!--', 'GRAFADO') }}                                                            
-												</div>	-->											
+													{{ Form::checkbox('servicio_grafado',  1, false)}}
+													{{ Form::label('servicio_grafado', 'GRAFADO') }}                                                            
+												</div>											
 											</div>
 											<div class="col-xs-3">
 												<div class='form-group'>
-													{{ Form::checkbox('<!--servicio_laminado-->',  1, false)}}
-													{{ Form::label('<!--servicio_laminado-->', 'LAMINADO') }}                                                            
+													{{ Form::checkbox('servicio_laminado',  1, false)}}
+													{{ Form::label('servicio_laminado', 'LAMINADO') }}                                                            
 												</div>
 												<div class='form-group'>												
-													{{ Form::checkbox('<!--servicio_engomado-->',  1, false)}}
-													{{ Form::label('<!--servicio_engomado-->', 'ENGOMADO') }}                                                            
-												</div>												
+													{{ Form::checkbox('servicio_otro',  1, false)}}
+													{{ Form::label('servicio_otro', 'ENGOMADO') }}                                                            
+												</div>
+												<div class='form-group'>
+													{{ Form::label('detalles_trabajo', 'OTRO SERVICIO:') }}
+												</div>
 											</div>	
 											<div class="col-xs-3">												
 												<div class='form-group'>
-													{{ Form::checkbox('<!--servicio_corte-->',  1, false)}}
-													{{ Form::label('<!--servicio_corte-->', 'CORTE') }}                                                            
+													{{ Form::checkbox('servicio_corte',  1, false)}}
+													{{ Form::label('servicio_corte', 'CORTE') }}                                                            
 												</div>
 												<div class='form-group'>
-													{{ Form::checkbox('<!--servicio_refile-->',  1, false)}}
-													{{ Form::label('<!--servicio_refile-->', 'REFILE') }}                                                            
+													{{ Form::checkbox('servicio_refile',  1, false)}}
+													{{ Form::label('servicio_refile', 'REFILE') }}                                                            
+												</div>
+												<div class='form-group'>
+													{{ Form::text('subtotal', null, array('placeholder' => 'Otro', 'class' => 'form-control')) }}
 												</div>
 											</div>	
 										 </div>										 									 
@@ -281,8 +290,8 @@
                                         </div>
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
-                                                {{ Form::label('pago', 'PAGO:') }}
-                                                {{ Form::text('pago', null, array('placeholder' => 'Pago', 'class' => 'form-control')) }}
+                                                {{ Form::label('subtotal', 'SUB TOTAL:') }}
+                                                {{ Form::text('subtotal', null, array('placeholder' => 'Sub.Total', 'class' => 'form-control')) }}
                                             </div>
                                             <br>
                                         </div> 
@@ -304,7 +313,13 @@
                                                 {{ Form::text('no_factura', null, array('placeholder' => 'No.Factura', 'class' => 'form-control')) }}
                                             </div>
                                         </div>
-                                        <div class="col-xs-6">
+										<div class="col-xs-3">
+                                            <div class='form-group form-register'>
+                                                {{ Form::label('total', 'TOTAL:') }}
+                                                {{ Form::text('total', null, array('placeholder' => 'Total', 'class' => 'form-control')) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('vendedor', 'VENDEDOR:') }}
                                                 {{ Form::text('vendedor', null, array('placeholder' => 'Vendedor', 'class' => 'form-control')) }}
@@ -473,8 +488,8 @@
                                         </div>
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
-                                                {{ Form::label('corte', 'MONTAJE:') }}
-                                                {{ Form::text('corte', null, array('placeholder' => 'Trabajo', 'class' => 'form-control')) }}
+                                                {{ Form::label('corte_material', 'CORTE:') }}
+                                                {{ Form::text('corte_material', null, array('placeholder' => 'Material', 'class' => 'form-control')) }}
                                             </div>                                                  
                                         </div>                                                   
                                         <div class="col-xs-3">
@@ -647,59 +662,75 @@
                                             <div class='form-group'>
                                                 {{ Form::checkbox('engomado',  1, false)}}
                                                 {{ Form::label('engomado', 'ENGOMADO') }}
-
                                             </div>
                                         </div>
                                         <div class="col-xs-3">
                                             <div class='form-group'>
-                                                {{ Form::checkbox('corte_refile',  1, false)}}
-                                                {{ Form::label('corte_refile', 'CORTE') }}
-
+                                                {{ Form::checkbox('corte',  1, false)}}
+                                                {{ Form::label('corte', 'CORTE') }}
                                             </div>
                                         </div>                                                     
                                         <div class="col-xs-3"> 
                                             <div class='form-group'>
-                                                {{ Form::checkbox('estampado',  1, false)}}
-                                                {{ Form::label('estampado', 'REFILE') }}
-
+                                                {{ Form::checkbox('refile',  1, false)}}
+                                                {{ Form::label('refile', 'REFILE') }}
                                             </div>
                                         </div>
                                         <div class="col-xs-3"> 
                                             <div class='form-group'>
                                                 {{ Form::checkbox('plastificadomate',  1, false)}}
                                                 {{ Form::label('plastificadomate', 'PLAST. MATE') }}
-
                                             </div>
                                         </div>
                                         <div class="col-xs-3"> 
                                             <div class='form-group'>
                                                 {{ Form::checkbox('perforado',  1, false)}}
                                                 {{ Form::label('perforado', 'PERFORADO') }}
-
                                             </div>
                                         </div>                                                    
                                         <div class="col-xs-3">
                                             <div class='form-group'>
                                                 {{ Form::checkbox('argollado',  1, false)}}
                                                 {{ Form::label('argollado', 'ARGOLLADO') }}
-
                                             </div>
                                         </div>  
                                         <div class="col-xs-3">
                                             <div class='form-group'>
-                                                {{ Form::checkbox('sublimacion',  1, false)}}
-                                                {{ Form::label('sublimacion', 'GRAFADO') }}
-
+                                                {{ Form::checkbox('grafado',  1, false)}}
+                                                {{ Form::label('grafado', 'GRAFADO') }}
                                             </div>
                                         </div>                                           
                                         <div class="col-xs-3">
                                             <div class='form-group'>
                                                 {{ Form::checkbox('plastificadoreserva',  1, false)}}
-                                                {{ Form::label('plastificadoreserva', 'PLAST.RESERVA') }}
-                                                <br><br>
+                                                {{ Form::label('plastificadoreserva', 'PLAST.RESERVA') }}                                              
+                                            </div>
+                                        </div>
+										<div class="col-xs-3">
+                                            <div class='form-group'>
+                                                {{ Form::checkbox('empastado',  1, false)}}
+                                                {{ Form::label('empastado', 'EMPASTADO') }}                                                
+                                            </div>
+                                        </div>
+										<div class="col-xs-3">
+                                            <div class='form-group'>
+                                                {{ Form::checkbox('tapaclinto',  1, false)}}
+                                                {{ Form::label('tapaclinto', 'TAPA CLINTÒN') }}                                               
                                             </div>
                                         </div> 
-
+										<div class="col-xs-3">
+                                            <div class='form-group'>
+                                                {{ Form::checkbox('tapanormal',  1, false)}}
+                                                {{ Form::label('tapanormal', 'TAPA NORMAL') }}                                               
+                                            </div>
+                                        </div>
+										<div class="col-xs-3">
+                                            <div class='form-group'>
+                                                {{ Form::checkbox('hojassueltas',  1, false)}}
+                                                {{ Form::label('hojassueltas', 'HOJAS SUELTAS') }}  
+												<br>
+                                            </div>
+                                        </div>
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('otro_acabados', 'OTRO:') }}

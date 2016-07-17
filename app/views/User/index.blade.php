@@ -95,21 +95,17 @@
                                 @endif 
                             </span>
                         </strong></h3>
-                    <p><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
-                        <strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
-                        <strong>Material</strong>: {{ $worklist->tipo_material }} ,
-                        <strong>Cantidad</strong>: {{ $worklist->cantidad }} ,
-                        <strong>Tamaño </strong>: {{ $worklist->tamano }} </p> 
-                    <p><strong>Valor Trabajo</strong>: {{ $worklist->valor_trabajo}},                         
-                        <strong>Abono</strong>: {{ $worklist->abono }} ,
-                        <strong>Saldo</strong>: {{ $worklist->saldo }} ,
-                        <strong>Diseño</strong>: 
-                        @if($worklist->estado_trabajo==1) Ninguno                                
-                        @elseif($worklist->diseño==2) Correcion
-                        @elseif($worklist->diseño==3) Art
-                        @endif,
-                        <strong>Diseñador</strong>: {{ $worklist->diseñador}},
-                        <strong>Atendido</strong>: {{ $worklist->atendido }}</p> 
+                     <h4><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
+                    <strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
+                    <strong>Material</strong>: {{ $worklist->clase_material }} ,
+                    <strong>Cantidad</strong>: {{ $worklist->cantidad_trabajo }} ,
+                    <strong>Tamaño </strong>: {{ $worklist->tamano }} </h4> 
+                <h4><strong>Valor Trabajo</strong>: {{ $worklist->total}},                         
+                    <strong>Abono</strong>: {{ $worklist->abono }} ,
+                    <strong>Saldo</strong>: {{ $worklist->saldo }} ,                    
+                    <strong>Diseñador</strong>: {{ $worklist->diseñador}},
+                    <strong>Vendedor</strong>: {{ $worklist->vendedor}}</h4>  
+                <br> 
                     <br>
                     <div class="col-md-1">
                         {{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       

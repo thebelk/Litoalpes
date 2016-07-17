@@ -96,14 +96,14 @@
                     </strong></h3><br>
                 <h4><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
                     <strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
-                    <strong>Material</strong>: {{ $worklist->tipo_material }} ,
-                    <strong>Cantidad</strong>: {{ $worklist->cantidad }} ,
+                    <strong>Material</strong>: {{ $worklist->clase_material }} ,
+                    <strong>Cantidad</strong>: {{ $worklist->cantidad_trabajo }} ,
                     <strong>Tamaño </strong>: {{ $worklist->tamano }} </h4> 
-                <h4><strong>Valor Trabajo</strong>: {{ $worklist->valor_trabajo}},                         
+                <h4><strong>Valor Trabajo</strong>: {{ $worklist->total}},                         
                     <strong>Abono</strong>: {{ $worklist->abono }} ,
                     <strong>Saldo</strong>: {{ $worklist->saldo }} ,                    
                     <strong>Diseñador</strong>: {{ $worklist->diseñador}},
-                    <strong>Atendido</strong>: {{ $worklist->atendido }}</h4> 
+                    <strong>Vendedor</strong>: {{ $worklist->vendedor}}</h4> 
                 <br>
                 
                     {{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       

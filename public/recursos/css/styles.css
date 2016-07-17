@@ -138,3 +138,50 @@ h3.message{
 	padding:15px;	
 	box-shadow: 1px 1px 3px 1px #999;
 }
+/*tabs*/
+.tab { background: #fff }
+.tab .nav > li > a { padding: 18px 15px }
+.tab-bg-dark-navy-blue {
+    background: #8CC63E;
+    border-bottom: none;
+    padding: 0;
+}
+.tab-bg-dark-navy-blue .nav > li > a:hover,
+.tab-bg-dark-navy-blue .nav > li > a:focus {
+    background-color: #f4f4f4;
+    text-decoration: none;
+}
+.panel-heading .nav > li > a,
+.panel-heading .nav > li.active > a,
+.panel-heading .nav > li.active > a:hover,
+.panel-heading .nav > li.active > a:focus {
+    border-width: 0;
+    border-radius: 0;
+}
+.panel-heading .nav > li > a { color: #fff }
+.panel-heading .nav > li.active > a,
+.panel-heading .nav > li > a:hover {
+    color: #1676A3;
+    background: #B6DFE3;
+}
+.panel-heading .nav > li:first-child.active > a,
+.panel-heading .nav > li:first-child > a:hover { }
+.tab .nav-tabs.nav-justified > li { border-right: 1px solid #f4f4f4 }
+.tab .nav-tabs.nav-justified > li:last-child { border-right: none }
+.p-head {
+    color: #8CC63E;
+    font-size: 14px;
+    font-weight: 400;
+}
+.cmt-head {
+    font-size: 14px;
+    font-weight: 400;
+}
+.p-thumb img {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    height: 50px;
+    width: 50px;
+}
+/*testimonial*/
