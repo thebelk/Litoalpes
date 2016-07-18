@@ -131,7 +131,7 @@ class WorkorderController extends \BaseController {
 			'customers_id' => ''
         );
         $validate = Validator::make($post_data, $rules);
-        $post_data['pago'] = (int) $post_data['pago'];
+        $post_data['subtotal'] = (int) $post_data['subtotal'];
         //return $post_data;
         if ($validate) {
             //$customer = Customer::find($id);

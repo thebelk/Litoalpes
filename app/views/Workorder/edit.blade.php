@@ -231,9 +231,9 @@
 													{{ Form::label('servicio_engrapado', 'ENGRAPADO') }}                                                            
 												</div>
 												<div class='form-group'>
-													{{ Form::checkbox('servicio_grafado,  $workorder->servicio_grafado, $workorder->servicio_grafado  == 1)}}
+													{{ Form::checkbox('servicio_grafado',  $workorder->servicio_grafado, $workorder->servicio_grafado  == 1)}}
 													{{ Form::label('servicio_grafado', 'GRAFADO') }}                                                            
-												</div>																							
+												</div>
 											</div>
 											<div class="col-xs-3">
 												<div class='form-group'>
@@ -702,8 +702,8 @@
                                         </div>  
                                         <div class="col-xs-3">
                                             <div class='form-group'>
-                                                {{ Form::checkbox('grafado',  $workorder->grafado, $workorder->grafado == 1)}}
-                                                {{ Form::label('grafado', 'GRAFADO') }}
+                                                {{ Form::checkbox('servicio_grafado',  $workorder->servicio_grafado, $workorder->servicio_grafado == 1)}}
+                                                {{ Form::label('servicio_grafado', 'GRAFADO') }}
 
                                             </div>
                                         </div>                                           
@@ -728,13 +728,13 @@
                                         </div> 
 										<div class="col-xs-3">
                                             <div class='form-group'>
-                                                {{ Form::checkbox('tapanormal',  $workorder->, $workorder->tapanormal == 1)}}
+                                                {{ Form::checkbox('tapanormal',  $workorder->tapanormal, $workorder->tapanormal == 1)}}
                                                 {{ Form::label('tapanormal', 'TAPA NORMAL') }}                                               
                                             </div>
                                         </div>
 										<div class="col-xs-3">
                                             <div class='form-group'>
-                                                {{ Form::checkbox('hojassueltas', $workorder->, $workorder->hojassueltas == 1)}}
+                                                {{ Form::checkbox('hojassueltas', $workorder->hojassueltas, $workorder->hojassueltas == 1)}}
                                                 {{ Form::label('hojassueltas', 'HOJAS SUELTAS') }}  
 												<br>
                                             </div>

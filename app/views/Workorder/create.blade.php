@@ -816,7 +816,7 @@
 				{
 					document.getElementById('total').value = Math.ceil(document.getElementById('valor_trabajo').value * 1.16);
 					document.getElementById('subtotal').value = document.getElementById('valor_trabajo').value;					
-					document.getElementById('valor_iva').hidden = false;					
+					document.getElementById('valor_iva').hidden = false;
 					document.getElementById('valor_iva').innerHTML = document.getElementById('total').value - document.getElementById('valor_trabajo').value;
 					document.getElementById('saldo').value = document.getElementById('total').value - document.getElementById('abono').value;
 				}
