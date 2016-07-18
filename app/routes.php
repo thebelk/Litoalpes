@@ -14,6 +14,7 @@
 Route::resource('user', 'UserController');
 Route::get('user', 'UserController@index');
 Route::get('signup', 'UserController@create');
+Route::get('user/{user}/income', 'UserController@show');
 Route::get('user/{user}/edit', 'UserController@edit');
 
 Route::resource('customer', 'CustomerController');

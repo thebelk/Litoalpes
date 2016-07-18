@@ -61,7 +61,13 @@ class UserController extends \BaseController {
      * @return Response
      */
     public function show($id) {
-        //
+		
+       
+		
+		$customer = Customer::all();
+		$workorder = Workorder::all();
+        return View::make('user.income')->with('workorder', $workorder,'customer', $customer);
+        
     }
 
     /**

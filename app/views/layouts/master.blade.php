@@ -75,7 +75,7 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
                                 <ul class="dropdown-menu" >                                   
-                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="/user/{user}/income">Ingresos</a></li>
                                     <li class="divider"></li>
                                     <li><a href="/logout">Salir</a></li>
                                 </ul>
