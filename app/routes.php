@@ -47,3 +47,8 @@ Route::post('/signup', 'UserController@store');
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
 Route::get('/', 'SessionsController@create');
+
+
+Route::resource('notifications', 'NotificationController');
+Route::get('notificationlist', 'NotificationController@index');
+Route::get('notifications/{notification}/details', 'NotificationController@show');

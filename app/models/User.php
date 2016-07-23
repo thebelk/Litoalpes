@@ -46,6 +46,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->hasMany('Quotation');
     }
 
+	public function notifications() {
+        return $this->hasMany('Notification');
+    }
+	
     /**
      * The attributes excluded from the model's JSON form.
      *
