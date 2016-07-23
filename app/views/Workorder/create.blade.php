@@ -18,7 +18,7 @@
         <div class="col-sm-8 col-md-12">
 			<a href="/customer/{{$customer->id}}/profile"> 
             <h3 class="color">{{$customer->cliente}}&nbsp(Cliente)  </h3></a><br>
-            <h4>Contacto: {{$customer->contacto}} </h4> 
+            <h4>Contacto: {{$customer->cel_contacto}} </h4> 
             <h4>Telefono: {{$customer->telefono}} </h4> 
             <h4 class="color">Cliente:          
                 @if($customer->tipo_cliente==1) Directo
@@ -178,7 +178,7 @@
                                             <div class='form-group form-register'>
                                                 {{ Form::checkbox('sublimaciones',  1, false)}}
                                                 {{ Form::label('tipo_sublimacion', ' SUBLIMACIÓN ') }}                                                            
-                                                {{ Form::select('tipo_sublimacion',array('1' => 'Seleccionar', '2' => 'Mugs','3' => 'Plato','4' => 'Camiseta','5' => 'Gorra','6' => 'Botones','7' => 'Otros'),null ,array('class' => 'form-control')); }}
+                                                {{ Form::select('tipo_sublimacion',array('1' => 'Seleccionar', '2' => 'Mugs','3' => 'Platos','4' => 'Camisetas','5' => 'Gorras','6' => 'Botones','7' => 'Otros'),null ,array('class' => 'form-control')); }}
                                             </div>
                                         </div>
                                         <div class="col-xs-3">
@@ -203,6 +203,10 @@
                                                 {{ Form::label('tipo_impresiones', 'IMPRESIÓN') }}
                                                 {{ Form::select('tipo_impresiones',array('1' => 'Seleccionar', '2' => 'Numeradora','3' => 'Multilith Doble Carta','4' => ' Heidelberg CTP 52','5' => 'Impresiòn Digital','6' => 'Impresiòn Blanco y Negro','7' => 'Impresiòn Burbuja','8' => 'Otros'),null ,array('class' => 'form-control')); }}
                                             </div>
+											<div class='form-group'>
+													{{ Form::text('servicio_otro', null, array('placeholder' => 'Otro Servicio', 'class' => 'form-control')) }}
+												</div>
+											
                                            
                                         </div>
 										 <div class="col-xs-9">											
@@ -219,6 +223,7 @@
 													{{ Form::checkbox('servicio_repuje',  1, false)}}
 													{{ Form::label('servicio_repuje', 'REPUJE') }}                                                            
 												</div>
+																								
 											</div>
 											<div class="col-xs-3">
 												<div class='form-group'>												
@@ -228,11 +233,12 @@
 												 <div class='form-group'>
 													{{ Form::checkbox('servicio_engrapado',  1, false)}}
 													{{ Form::label('servicio_engrapado', 'ENGRAPADO') }}                                                            
-												</div>												
+												</div>
 												<div class='form-group'>
 													{{ Form::checkbox('servicio_grafado',  1, false)}}
 													{{ Form::label('servicio_grafado', 'GRAFADO') }}                                                            
-												</div>											
+												</div>
+																							
 											</div>
 											<div class="col-xs-3">
 												<div class='form-group'>
@@ -243,9 +249,7 @@
 													{{ Form::checkbox('servicio_otro',  1, false)}}
 													{{ Form::label('servicio_otro', 'ENGOMADO') }}                                                            
 												</div>
-												<div class='form-group'>
-													{{ Form::label('detalles_trabajo', 'OTRO SERVICIO:') }}
-												</div>
+												
 											</div>	
 											<div class="col-xs-3">												
 												<div class='form-group'>
@@ -256,9 +260,7 @@
 													{{ Form::checkbox('servicio_refile',  1, false)}}
 													{{ Form::label('servicio_refile', 'REFILE') }}                                                            
 												</div>
-												<div class='form-group'>
-													{{ Form::text('subtotal', null, array('placeholder' => 'Otro', 'class' => 'form-control')) }}
-												</div>
+												
 											</div>	
 										 </div>										 									 
                                         <br>
@@ -296,20 +298,19 @@
                                             <br>
                                         </div> 
                                         <div class="col-xs-3"> 
-                                            <br>
-                                            <div class='form-group'>
-												{{ Form::radio('iva', '0', true, ['hidden' => 'true']) }}
-												<br>
-                                                {{ Form::label('iva', 'MAS IVA') }}
-												{{ Form::radio('iva', '1', null, array('onclick' => 'checkIVAType();')) }}
-												<br>
-												{{ Form::label('iva', 'CON IVA') }}
-												{{ Form::radio('iva', '2', null, array('onclick' => 'checkIVAType();')) }}
-												<br>
-												<div id="valor_iva" style="hidden:true">
-												</div>
-                                            </div>
-                                        </div>
+                                            
+												<div class='form-group'style=" float:left">
+													{{ Form::radio('iva', '0', true, ['hidden' => 'true']) }}
+													<br>
+													{{ Form::label('iva', 'MAS IVA') }}
+													{{ Form::radio('iva', '1', null, array('onclick' => 'checkIVAType();')) }}
+													<br>
+													{{ Form::label('iva', 'CON IVA') }}
+													{{ Form::radio('iva', '2', null, array('onclick' => 'checkIVAType();')) }}
+													<br>
+												</div> <br>
+												<div id="valor_iva" style="hidden:true; float:left"></div>											 
+										</div>
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('no_factura', 'FACTURA:') }}
@@ -343,12 +344,12 @@
                                 <div class="row"  align="justify">                                        
                                     <!--  <h2  align="center">Orden de Producción</h2> --> 
                                     <br>
-									<div class="col-xs-6" align="right">
+									<div class="col-xs-6" >
 									 <h3><b>ESTADO DEL TRABAJO<b></h3>
 									</div>
 									<div class="col-xs-6">
 										
-									     {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Estado Diseño', '3' => 'Estado Revisión','4' => 'Enviado para impresión ','5' => 'Estado Impresion', '6' => 'Estado Acabados','7' => 'Disponible para Entrega','8' => 'Entregado')),null ,array('class' => 'form-control')); }}
+									     {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Estado Diseño', '3' => 'Estado Revisión','4' => 'Enviado para impresión ','5' => 'Estado Impresion', '6' => 'Estado Acabados','7' => 'Listo','8' => 'Entregado')),null ,array('class' => 'form-control')); }}
                                        <br><br><br>
 									</div>
 									   
@@ -522,7 +523,7 @@
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('color_tinta', 'COLOR TINTAS:') }}
-                                                {{ Form::text('color_tinta', null, array('placeholder' => 'Tinta', 'class' => 'form-control')) }}
+                                                {{ Form::text('color_tinta', null, array('placeholder' => 'Color1, Color2 , Color3 ...', 'class' => 'form-control')) }}
                                             </div> 
                                         </div>
                                         

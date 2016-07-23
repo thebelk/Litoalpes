@@ -37,7 +37,7 @@ class CreateWorkorder extends Migration {
 			$table->integer('servicio_engrapado')->default(0); //1.si 0.no
 			$table->integer('servicio_grafado')->default(0);  //1.si 0.no 
             $table->integer('servicio_laminado')->default(0);  //1.si 0.no
-			$table->integer('servicio_otro')->default(0); //1.si 0.no
+			$table->string('servicio_otro')->default(0); //1.si 0.no
             $table->integer('servicio_engomado')->default(0); //1.si 0.no
             $table->integer('servicio_corte')->default(0); //1.Si 0.No    
 			$table->integer('servicio_refile')->default(0); //1.Si 0.No 

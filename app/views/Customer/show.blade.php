@@ -83,14 +83,14 @@
     </div>
 </div>  
 <div class="col col-sm-9">
-    <div class="row panel">
+    <div class="row ">
         <div class="bhoechie-tab">                     
             <!-- work section -->
             <div class="bhoechie-tab-content active tam">
                 <center>
                     <h3 class="glyphicon glyphicon-th-list color" ></h3>
                     <h2> Lista Trabajos</h2>
-                    <h5>trabajos de cada cliente</h5>
+                    <h5>trabajos solicitados</h5>
                 </center>
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->                
@@ -128,7 +128,7 @@
                     @endforeach
                 </div>               
             </div>
-        </div>  
+		</div>
     </div> 
 </div> 
 @stop

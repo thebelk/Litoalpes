@@ -19,7 +19,7 @@
 		<br>
 			<a href="/customer/{{$customer->id}}/profile"> 
             <h3 class="color">{{$customer->cliente}}&nbsp(Cliente)  </h3></a><br>
-            <h4>Contacto: {{$customer->contacto}} </h4> 
+            <h4>Contacto: {{$customer->cel_contacto}} </h4> 
             <h4>Telefono: {{$customer->telefono}} </h4> 
             <h4 class="color">Cliente:          
                 @if($customer->tipo_cliente==1) Directo
@@ -179,7 +179,7 @@
                                             <div class='form-group form-register'>
                                                 {{ Form::checkbox('sublimaciones', $workorder->sublimaciones, $workorder->sublimaciones == 1)}}
                                                 {{ Form::label('tipo_sublimacion', ' SUBLIMACIÓN ') }}                                                            
-                                                {{ Form::select('tipo_sublimacion',array('1' => 'Seleccionar', '2' => 'Mugs','3' => 'Plato','4' => 'Camiseta','5' => 'Gorra','6' => 'Botones','7' => 'Otros'), $workorder->tipo_sublimacion, array('class' => 'form-control')); }}
+                                                {{ Form::select('tipo_sublimacion',array('1' => 'Seleccionar', '2' => 'Mugs','3' => 'Platos','4' => 'Camisetas','5' => 'Gorras','6' => 'Botones','7' => 'Otros'), $workorder->tipo_sublimacion, array('class' => 'form-control')); }}
                                             </div>
                                         </div>
                                         <div class="col-xs-3">
@@ -204,6 +204,9 @@
                                                 {{ Form::label('tipo_impresiones', 'IMPRESIÓN') }}
                                                 {{ Form::select('tipo_impresiones',array('1' => 'Seleccionar', '2' => 'Numeradora','3' => 'Multilith Doble Carta','4' => ' Heidelberg CTP 52','5' => 'Impresiòn Digital','6' => 'Impresiòn Blanco y Negro','7' => 'Impresiòn Burbuja','8' => 'Otros'),$workorder->tipo_impresiones,array('class' => 'form-control')); }}
                                             </div>
+											<div class='form-group'>
+													{{ Form::text('servicio_otro', $workorder->servicio_otro, array('placeholder' => 'Otro Servicio', 'class' => 'form-control')) }}
+												</div>	
                                            
                                         </div>
                                          <div class="col-xs-9">											
@@ -244,9 +247,7 @@
 													{{ Form::checkbox('servicio_engomado',  $workorder->servicio_engomado, $workorder->servicio_engomado == 1)}}
 													{{ Form::label('servicio_engomado', 'ENGOMADO') }}                                                            
 												</div>
-												<div class='form-group'>
-													{{ Form::label('detalles_trabajo', 'OTRO SERVICIO:') }}
-												</div>												
+																							
 											</div>	
 											<div class="col-xs-3">												
 												<div class='form-group'>
@@ -256,9 +257,6 @@
 												<div class='form-group'>
 													{{ Form::checkbox('servicio_refile',  $workorder->servicio_refile, $workorder->servicio_refile == 1)}}
 													{{ Form::label('servicio_refile', 'REFILE') }}                                                            
-												</div>
-												<div class='form-group'>
-													{{ Form::text('subtotal', null, array('placeholder' => 'Otro', 'class' => 'form-control')) }}
 												</div>
 											</div>	
 										 </div>										 									 
@@ -295,18 +293,20 @@
                                             </div>
                                             <br>
                                         </div>
-										<div class="col-xs-3"> 
-                                            <br>
-                                            <div class='form-group'>
-												{{ Form::radio('iva', '0', true, ['hidden' => 'true']) }}
-												<br>
-                                                {{ Form::label('iva', 'MAS IVA') }}
-												{{ Form::radio('iva', '1', null, array('onclick' => 'checkIVAType();')) }}
-												<br>
-												{{ Form::label('iva', 'CON IVA') }}
-												{{ Form::radio('iva', '2', null, array('onclick' => 'checkIVAType();')) }}
-                                            </div>
-                                        </div>
+										 <div class="col-xs-3"> 
+                                            
+												<div class='form-group'style=" float:left">
+													{{ Form::radio('iva', '0', true, ['hidden' => 'true']) }}
+													<br>
+													{{ Form::label('iva', 'MAS IVA') }}
+													{{ Form::radio('iva', '1', $workorder->iva ==1, array('onclick' => 'checkIVAType();')) }}
+													<br>
+													{{ Form::label('iva', 'CON IVA') }}
+													{{ Form::radio('iva', '2', $workorder->iva, array('onclick' => 'checkIVAType();')) }}
+													<br>
+												</div> <br>
+												<div id="valor_iva" style="hidden:true; float:left"></div>											 
+										</div>
 										
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
@@ -341,12 +341,12 @@
                                 <div class="row"  align="justify">                                        
                                     <!--  <h2  align="center">Orden de Producción</h2> --> 
                                     <br>
-                                    <div class="col-xs-6" align="right">
+                                    <div class="col-xs-6">
                                      <h3><b>ESTADO DEL TRABAJO<b></h3>
                                     </div>
 									{{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} 									
                                     <div class="col-xs-6">
-										{{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Estado Diseño', '3' => 'Estado Revisión','4' => 'Enviado para impresión ','5' => 'Estado Impresion', '6' => 'Estado Acabados','7' => 'Disponible para Entrega','8' => 'Entregado')), $workorder->estado_trabajo,array('class' => 'form-control')); }}
+										{{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Estado Diseño', '3' => 'Estado Revisión','4' => 'Enviado para impresión ','5' => 'Estado Impresion', '6' => 'Estado Acabados','7' => 'Listo','8' => 'Entregado')), $workorder->estado_trabajo,array('class' => 'form-control')); }}
                                     <br><br><br>
                                     </div>
 									   
@@ -520,7 +520,7 @@
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('color_tinta', 'COLOR TINTAS:') }}
-                                                {{ Form::text('color_tinta', $workorder->color_tinta, array('placeholder' => 'Tinta', 'class' => 'form-control')) }}
+                                                {{ Form::text('color_tinta', null, array('placeholder' => 'Color1, Color2, Color3 ...', 'class' => 'form-control')) }}
                                             </div> 
                                         </div>
                                         
@@ -812,16 +812,21 @@
 			//SIN IVA
 				if(valor != null)
 				{
-					document.getElementById('pago').value = document.getElementById('valor_trabajo').value;
+					document.getElementById('subtotal').value = document.getElementById('valor_trabajo').value;
+					document.getElementById('total').value = document.getElementById('valor_trabajo').value;
 					document.getElementById('saldo').value = document.getElementById('valor_trabajo').value - document.getElementById('abono').value;
+					document.getElementById('valor_iva').hidden = true;
 				}				
 			break;
 			case "1":
 			//MAS IVA
 				if(valor != null)
 				{
-					document.getElementById('pago').value = Math.ceil(document.getElementById('valor_trabajo').value * 1.16);
-					document.getElementById('saldo').value = document.getElementById('pago').value - document.getElementById('abono').value;
+					document.getElementById('total').value = Math.ceil(document.getElementById('valor_trabajo').value * 1.16);
+					document.getElementById('subtotal').value = document.getElementById('valor_trabajo').value;					
+					document.getElementById('valor_iva').hidden = false;
+					document.getElementById('valor_iva').innerHTML = document.getElementById('total').value - document.getElementById('valor_trabajo').value;
+					document.getElementById('saldo').value = document.getElementById('total').value - document.getElementById('abono').value;
 				}
 				
 			break;
@@ -829,8 +834,11 @@
 			//CON IVA				
 				if(valor != null)
 				{
-					document.getElementById('pago').value = Math.ceil(document.getElementById('valor_trabajo').value / 1.16);
-					document.getElementById('saldo').value = document.getElementById('valor_trabajo').value - document.getElementById('abono').value;
+					document.getElementById('subtotal').value = Math.ceil(document.getElementById('valor_trabajo').value / 1.16);					
+					document.getElementById('valor_iva').hidden = false;
+					document.getElementById('valor_iva').innerHTML = document.getElementById('valor_trabajo').value - document.getElementById('subtotal').value;
+					document.getElementById('total').value = document.getElementById('valor_trabajo').value;
+					document.getElementById('saldo').value = document.getElementById('total').value - document.getElementById('abono').value;
 				}				
 				
 			break;

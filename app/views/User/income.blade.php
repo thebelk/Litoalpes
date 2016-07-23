@@ -87,18 +87,22 @@
 						<div class="col-xs-3" >
 							<h4>Día de hoy</h4>
 							<h2>0,00$</h2>
+							<h5 class="color">Iva:0,00$</h5>
 						</div>
 						<div class="col-xs-3" >
 							<h4>Ayer</h4>
 							<h2>0,00$</h2>
+							<h5 class="color">Iva:0,00$</h5>
 						</div>
 						<div class="col-xs-3" >
 							<h4>Últimos 7 días</h4>
 							<h2>0,00$</h2>
+							<h5 class="color">Iva:0,00$</h5>
 						</div>
 						<div class="col-xs-3" >
 							<h4>Últimos 30 días</h4>
 							<h2>0,00$</h2>
+							<h5 class="color">Iva:0,00$</h5>
 					</div>
 				   </div>
 				    <div class="row"  align="justify"> 
@@ -230,6 +234,57 @@
                     </div> 
                 </section> 
     </div>
-</div>       
+</div>
+
+<script type="text/javascript">
+    // my custom script
+	function checkIVAType() {		
+		var radios = document.getElementsByName('iva');
+		var elIVA = "0";
+		for (var i = 0, length = radios.length; i < length; i++) {
+			if (radios[i].checked) {				
+				elIVA = radios[i].value;
+				break;
+			}
+		}
+		var valor = document.getElementById('valor_trabajo');		
+		switch(elIVA){
+			case "0":
+			//SIN IVA
+				if(valor != null)
+				{
+					document.getElementById('subtotal').value = document.getElementById('valor_trabajo').value;
+					document.getElementById('total').value = document.getElementById('valor_trabajo').value;
+					document.getElementById('saldo').value = document.getElementById('valor_trabajo').value - document.getElementById('abono').value;
+					document.getElementById('valor_iva').hidden = true;
+				}				
+			break;
+			case "1":
+			//MAS IVA
+				if(valor != null)
+				{
+					document.getElementById('total').value = Math.ceil(document.getElementById('valor_trabajo').value * 1.16);
+					document.getElementById('subtotal').value = document.getElementById('valor_trabajo').value;					
+					document.getElementById('valor_iva').hidden = false;
+					document.getElementById('valor_iva').innerHTML = document.getElementById('total').value - document.getElementById('valor_trabajo').value;
+					document.getElementById('saldo').value = document.getElementById('total').value - document.getElementById('abono').value;
+				}
+				
+			break;
+			case "2":
+			//CON IVA				
+				if(valor != null)
+				{
+					document.getElementById('subtotal').value = Math.ceil(document.getElementById('valor_trabajo').value / 1.16);					
+					document.getElementById('valor_iva').hidden = false;
+					document.getElementById('valor_iva').innerHTML = document.getElementById('valor_trabajo').value - document.getElementById('subtotal').value;
+					document.getElementById('total').value = document.getElementById('valor_trabajo').value;
+					document.getElementById('saldo').value = document.getElementById('total').value - document.getElementById('abono').value;
+				}				
+				
+			break;
+		}
+    }
+</script>      
 
 @stop

@@ -63,7 +63,7 @@
 						  <button type="submit" class="btn btn-default">Enviar</button>
 						</form> -->
 						</ul>
-						<ul class="nav navbar-right navbar-nav nave">
+						<ul class="nav navbar-right navbar-nav nave"><!--
 						  <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
                                 <ul class="dropdown-menu" >
@@ -71,7 +71,7 @@
                                         <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control  pull-left " placeholder="Search">
                                     </form>
                                 </ul>
-                            </li>
+                            </li>-->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
                                 <ul class="dropdown-menu" >                                   

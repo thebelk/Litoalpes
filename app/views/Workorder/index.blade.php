@@ -79,7 +79,7 @@
         <div class="bhoechie-tab-content active tam">
             <center>
                 <h2 class="glyphicon glyphicon-th-list color" ></h2>
-                <h3> Listar Trabajos</h3>   
+                <h3> Todos los Trabajos</h3>				
             </center>
             <div class="panel panel-default tam">
                 <!-- Default panel contents -->                

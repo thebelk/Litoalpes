@@ -308,7 +308,7 @@ class WorkorderController extends \BaseController {
 				$workorder2->servicio_engrapado= Input::has('servicio_engrapado') ? 1 : 0; //1.si 0.no
 				$workorder2->servicio_grafado= Input::has('servicio_grafado') ? 1 : 0; //1.si 0.no 
 				$workorder2->servicio_laminado= Input::has('servicio_laminado') ? 1 : 0;  //1.si 0.no
-				$workorder2->servicio_otro= Input::has('servicio_otro') ? 1 : 0;  //1.si 0.no
+				$workorder2->servicio_otro=  $workorder['servicio_otro'];  //1.si 0.no
 				$workorder2->servicio_engomado= Input::has('servicio_engomado') ? 1 : 0; //1.si 0.no
 				$workorder2->servicio_corte= Input::has('servicio_corte') ? 1 : 0; //1.Si 0.No    
 				$workorder2->servicio_refile= Input::has('servicio_refile') ? 1 : 0; //1.Si 0.No 
@@ -399,8 +399,9 @@ class WorkorderController extends \BaseController {
      */
     public function destroy($id) {
         $workorder = Workorder::find($id);
+		$customer = Customer::find($workorder['customers_id']);
         $workorder->delete();
-        return Redirect::intended('customer/' . $id . '/profile');
+        return Redirect::intended('customer/' . $customer['id'] . '/profile');
     }
 
 }

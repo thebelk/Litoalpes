@@ -117,7 +117,7 @@
                     {{ Form::close() }}                       
 
                     <br> <br>
-                    <hr>
+                   
                     @endif 
                     @endforeach
                 </div>               
