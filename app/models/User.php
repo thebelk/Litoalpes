@@ -24,7 +24,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         'ciudad',
         'pais',
         'telefono',        
-        'email',       
+        'email',
         'password',
         'password_confirmation',
 		'remember_token'

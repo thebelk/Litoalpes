@@ -80,6 +80,7 @@
 				</div>
 				 
 					{{Form::open(array('url' => '/user/'.Auth::user()->id,'method' => 'PUT', 'role'=>'form', 'class'=>'form-inline')) }}
+					{{ Form::hidden('id', Auth::user()->id) }}<br>
 					<div class='row'>
 						<div class="col-md-7 col-md-offset-3">
                                 <div class="col-xs-6 col-md-6">
@@ -114,8 +115,8 @@
                                 </div>
                                 <div class="col-xs-6 ">
                                     <div class='form-group form-register' align="justify">
-                                        {{ Form::label('confiremail', 'Confirmar Email *:') }}<br>
-                                        {{ Form::email('confiremail', Auth::user()->confiremail, array('placeholder' => 'Confirmar Email', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::label('email_confirmation', 'Confirmar Email *:') }}<br>
+                                        {{ Form::email('email_confirmation', Auth::user()->email_confirmation, array('placeholder' => 'Confirmar Email', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
                                
@@ -152,6 +153,7 @@
 							</div>	
 												
 						</div>
+					{{ Form::hidden('save', 'savenormal') }}<br>
 					{{ Form::close() }}	
 
 					</div>
@@ -159,30 +161,31 @@
 					<br>
 						<h5 class='form-register' align="justify">Editar contraseña </h5>                                            
 						<hr>
-						{{Form::open(array('route' => 'user.store','role'=>'form')) }} 
-							<div class="col-xs-3 ">
-						
+						{{Form::open(array('url' => '/user/'.Auth::user()->id,'method' => 'PUT', 'role'=>'form', 'class'=>'form-inline')) }}
+						{{ Form::hidden('id', Auth::user()->id) }}<br>
+						{{ Form::hidden('save', 'savepassword') }}<br>
+							<div class="col-xs-3 ">						
 								<div class='form-group form-register' align="justify">
-									{{ Form::label('password', 'Password *:') }}<br>
-									{{ Form::password('password', array('placeholder' => 'Password', 'class' => 'form-control', 'required' => 'required')) }}
+									{{ Form::label('old_password', 'Contraseña Actual *:') }}<br>
+									{{ Form::password('old_password', array('placeholder' => 'Password', 'class' => 'form-control', 'required' => 'required')) }}
 								</div>
 							</div>
 							<div class="col-xs-3 ">
 								<div class='form-group form-register' align="justify">
-									{{ Form::label('confirpassword', 'Nueva Password *:') }}<br>
-									{{ Form::password('confirpassword', array('placeholder' => 'Confirmar Password', 'class' => 'form-control', 'required' => 'required')) }}
+									{{ Form::label('password', 'Nueva Contraseña *:') }}<br>
+									{{ Form::password('password', array('placeholder' => 'Confirmar Password', 'class' => 'form-control', 'required' => 'required')) }}
 								</div>
 							</div>
 							<div class="col-xs-3 ">
 								<div class='form-group form-register' align="justify">
-									{{ Form::label('confirpassword', 'Confirmar Password *:') }}<br>
-									{{ Form::password('confirpassword', array('placeholder' => 'Confirmar Password', 'class' => 'form-control', 'required' => 'required')) }}
+									{{ Form::label('password_confirmation', 'Confirmar Contraseña *:') }}<br>
+									{{ Form::password('password_confirmation', array('placeholder' => 'Confirmar Password', 'class' => 'form-control', 'required' => 'required')) }}
 								</div>
 							</div>
 							<div class="col-xs-3 ">
 							<br>
 									{{ HTML::link('/user','Reset', array('class' => 'btn btn-default'), false)}}                        
-									{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-success')) }}                                 
+									{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-success')) }}
 									<br><br>
 							</div>
 						{{ Form::close() }}
