@@ -7,69 +7,63 @@
 @stop
 @section('content')
 <div class="col col-sm-3 complement">   
-    <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
+    <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}}</h3>
     <br>
-    <div class="row panel">
-        <div class="col-sm-8 col-md-12">
-            <h2 class="color">{{ Auth::user()->representante}}  </h2><br>
-            <h4 class="color"> Nit: {{ Auth::user()->nit_cc}}  </h4>
-            <h4>Telefono: {{ Auth::user()->telefono}} </h4>
-            <h4>Celular: {{ Auth::user()->celular}} </h4>   
-            <h4>{{ Auth::user()->otro}} </h4>  
-        </div>         
-        <h4>{{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h4>     
+    <div class="comp">        
+            <h2>{{ Auth::user()->representante}}  </h2>
+            <h5> Nit: {{ Auth::user()->nit_cc}}  </h5>
+            <h5>Telefono: {{ Auth::user()->telefono}} </h5>
+            <h5>Celular: {{ Auth::user()->celular}} </h5>   
+            <h5>{{ Auth::user()->otro}} </h5>       
+            
     </div>
-    <br><br>
+    <h5>{{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h5> 
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
-            <div class="accordion-heading"><h4>
+            <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
                         Correo Electronico
-                    </a></h4>
+                    </a>
             </div>
-            <div id="collapseOne" class="accordion-body collapse in">
+            <div id="collapseOne" class="accordion-body collapse in"><br>
                 <div class="accordion-inner">
-                    <br>
-                    <p> <h4>Email: {{ Auth::user()->email}} </h4></p>
+                    <p>Email: {{ Auth::user()->email}} </p>
                 </div>
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading"><br><h4>
+            <div class="accordion-heading"><br>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                         Dirección
-                    </a></h4>
+                    </a>
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
                     <br>
-                    <h4>Direccion: {{ Auth::user()->direccion}} </h4>
-                    <h4> Ciudad: {{ Auth::user()->ciudad}} </h4>
-                    <h4> Pais: {{ Auth::user()->pais}} </h4>
+                    <p>Direccion: {{ Auth::user()->direccion}} </p>
+                    <p> Ciudad: {{ Auth::user()->ciudad}} </p>
+                    <p> Pais: {{ Auth::user()->pais}} </p>
                 </div>
             </div>
         </div>
         <br>
     </div> 
-    <hr>
+    <br>
      <div id="sidebar"> 
         <div class="list-group">			
             <a href="/phonebook" class="list-group-item  text-center">
-                <h4 class="list-group-item-heading glyphicon glyphicon-earphone"></h4><h4>Contactos | Proveedor</h4>
+                <h5 class="list-group-item-heading glyphicon glyphicon-earphone"></h5><h5>Contactos | Proveedor</h5>
             </a>
 			<a href="/workorderlist" class="list-group-item active text-center">
-                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h4>Trabajos</h4>
+                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h5>Trabajos</h5>
             </a>
         </div>
     </div>
-    <hr>
-
-    <div class="row panel">
-        <div class="col-sm-8 col-md-12">
+        <div class="col-sm-8 col-md-12 not">
             <h3 class="color" > Entregas de Hoy </h3>
             <p> Pruebas </p>
-        </div>
-    </div>
+			<p> Pruebas </p>
+        </div>  
 </div>  
 <div class="col col-sm-9">
     <div class="row ">
@@ -85,7 +79,7 @@
                     @if($worklist->estado_trabajo==1)
 
                     <!-- Default panel contents -->                
-                    <hr>                     
+                                       
                     <h3><strong> {{ $worklist->clase_trabajo}} / ESTADO TRABAJO
                             <span class="estilo">
                                 @if($worklist->estado_trabajo==1) Por realizar                                
@@ -95,18 +89,17 @@
                                 @endif 
                             </span>
                         </strong></h3>
-                     <h4><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
+                     <h5><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
                     <strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
                     <strong>Material</strong>: {{ $worklist->clase_material }} ,
                     <strong>Cantidad</strong>: {{ $worklist->cantidad_trabajo }} ,
-                    <strong>Tamaño </strong>: {{ $worklist->tamano }} </h4> 
-                <h4><strong>Valor Trabajo</strong>: {{ $worklist->total}},                         
+                    <strong>Tamaño </strong>: {{ $worklist->tamano }} </h5> 
+                <h5><strong>Valor Trabajo</strong>: {{ $worklist->total}},                         
                     <strong>Abono</strong>: {{ $worklist->abono }} ,
                     <strong>Saldo</strong>: {{ $worklist->saldo }} ,                    
                     <strong>Diseñador</strong>: {{ $worklist->diseñador}},
-                    <strong>Vendedor</strong>: {{ $worklist->vendedor}}</h4>  
+                    <strong>Vendedor</strong>: {{ $worklist->vendedor}}</h5>  
                 <br> 
-                    <br>
                     <div class="col-md-1">
                         {{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
                     </div>  
@@ -114,10 +107,8 @@
                     <div class="col-md-1">
                         {{ HTML::link('/worklist/'.$worklist->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
                     </div> 
-                    {{ Form::close() }}                       
-
+                    {{ Form::close() }} 
                     <br> <br>
-                   
                     @endif 
                     @endforeach
                 </div>               

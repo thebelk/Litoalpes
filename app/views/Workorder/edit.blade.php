@@ -7,87 +7,81 @@
 @stop
 @section('content')
 <div class="col col-sm-3 complement">   
-    <h3 class="highlight nav nav-stacked ">
+     <h3 class="highlight nav nav-stacked ">
         @if($customer->empresa=="")
         {{ $customer->cliente }} 
         @endif
         {{$customer->empresa}}
         <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
     <br>
-    <div class="row panel">        
-        <div class="col-sm-8 col-md-12">
-		<br>
+    <div class="comp"> 
 			<a href="/customer/{{$customer->id}}/profile"> 
-            <h3 class="color">{{$customer->cliente}}&nbsp(Cliente)  </h3></a><br>
-            <h4>Contacto: {{$customer->cel_contacto}} </h4> 
-            <h4>Telefono: {{$customer->telefono}} </h4> 
-            <h4 class="color">Cliente:          
+            <h3>{{$customer->cliente}}&nbsp(Cliente)  </h3></a><br>
+            <h5>Contacto: {{$customer->cel_contacto}} </h5> 
+            <h5>Telefono: {{$customer->telefono}} </h5> 
+            <h5>Cliente:          
                 @if($customer->tipo_cliente==1) Directo
                 @elseif($customer->tipo_cliente==2) Servicio                              
                 @endif
-            </h4>
-            <h4 class="color"> Nit: {{ $customer->nit_cc}}  </h4>
-            <h4>{{ $customer->pagina_web}} </h4>
-            <h4>{{ $customer->otro}} </h4>  
+            </h5>
+            <h5> Nit: {{ $customer->nit_cc}}  </h5>
+            <h5>{{ $customer->pagina_web}} </h5>
+            <h5>{{ $customer->otro}} </h5>  
         </div>         
-        <h4>{{ HTML::link('/customer/'.$customer->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h4>    
-    </div>
-    <br><br>
+        <h5>{{ HTML::link('/customer/'.$customer->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h5>    
+    
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
-            <div class="accordion-heading"><h4>
+            <div class="accordion-heading"><h5>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
                         Correo Electronico
-                    </a></h4>
+                    </a></h5>
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
                 <br>
-                <p> <h4>Email: {{ $customer->email}} </h4>				
+                <p> <h5>Email: {{ $customer->email}} </h5>				
                 </p>             
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading"><br><h4>
+            <div class="accordion-heading"><br><h5>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                         Dirección
-                    </a></h4>
+                    </a></h5>
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
                     <br>
-                    <h4>Direccion: {{$customer->direccion}} </h4>
-                    <h4> Ciudad: {{$customer->ciudad}} </h4>
-                    <h4> Pais: {{$customer->pais}} </h4>
+                    <h5>Direccion: {{$customer->direccion}} </h5>
+                    <h5> Ciudad: {{$customer->ciudad}} </h5>
+                    <h5> Pais: {{$customer->pais}} </h5>
                 </div>
             </div>
         </div>
     </div>  
-    <hr>
+    <br>
     <div id="sidebar">                           
         <div class="list-group">            
             <a href="/customer/{{$customer->id}}/profile" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-user"></h4><br/><h4>
+                <h5 class="glyphicon glyphicon-user"></h5><br/><h5>
                     @if($customer->empresa=="")
                     {{ $customer->cliente }} 
                     @endif
                     {{$customer->empresa}}
-                </h4>
+                </h5>
             </a>  
 			<a href="/workorderlist" class="list-group-item active text-center">
-                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h4> Trabajos</h4>
+                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h5> Trabajos</h5>
             </a>
 			<a href="/phonebook" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-earphone"></h4><br/><h4>Contactos | Proveedor</h4>
+                <h5 class="glyphicon glyphicon-earphone"></h5><br/><h5>Contactos | Proveedor</h5>
             </a>
         </div>                     
     </div>
-    <hr>
-    <div class="row panel">
-        <div class="col-sm-8 col-md-12">
+    <div class="col-sm-8 col-md-12 not">
             <h3 class="color" > Entregas de Hoy </h3>
             <p> Pruebas </p>
-        </div>
-    </div>
+   </div>
 </div>  
 <div class="col col-sm-9">
      <div class="row ">                             
@@ -116,12 +110,12 @@
                     <ul class="nav nav-tabs nav-justified ">
                         <li class="active">
                             <a data-toggle="tab" href="#ordencompra">
-                                <h4>ORDEN DE COMPRA</h4> 
+                                <h5>ORDEN DE COMPRA</h5> 
                             </a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#ordenproducion">
-                                <h4>ORDEN PRODUCION</h4>  
+                                <h5>ORDEN PRODUCION</h5>  
                             </a>
                         </li>
                     </ul>
@@ -165,7 +159,7 @@
                                             <br>
                                         </div> 
 										<div class="col-xs-12">
-											<h4><b>SERVICIOS</b></h4>
+											<h5><b>SERVICIOS</b></h5>
 											<hr>
 										</div>
                                         <div class="col-xs-3">
@@ -305,7 +299,8 @@
 													{{ Form::radio('iva', '2', $workorder->iva, array('onclick' => 'checkIVAType();')) }}
 													<br>
 												</div> <br>
-												<div id="valor_iva" style="hidden:true; float:left"></div>											 
+												<div id="valor_iva" style="hidden:true; float:left"></div>		
+												<div id="valor_iva" style="hidden:true; float:left; margin-top:28px"></div>	
 										</div>
 										
                                         <div class="col-xs-3">

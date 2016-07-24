@@ -7,70 +7,65 @@
 @stop
 @section('content')
 <div class="col col-sm-3 complement">   
-    <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
-    <br>
-    <div class="row panel">
-        <div class="col-sm-8 col-md-12">
-            <h2 class="color">{{ Auth::user()->representante}}  </h2><br>
-            <h4 class="color"> Nit: {{ Auth::user()->nit_cc}}  </h4>
-            <h4>Telefono: {{ Auth::user()->telefono}} </h4>
-            <h4>Celular: {{ Auth::user()->celular}} </h4>   
-            <h4>{{ Auth::user()->otro}} </h4>  
-        </div>         
-        <h4>{{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h4>     
+     <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}}</h3>
+     <br>
+    <div class="comp">        
+            <h2>{{ Auth::user()->representante}}  </h2>
+            <h5> Nit: {{ Auth::user()->nit_cc}}  </h5>
+            <h5>Telefono: {{ Auth::user()->telefono}} </h5>
+            <h5>Celular: {{ Auth::user()->celular}} </h5>   
+            <h5>{{ Auth::user()->otro}} </h5>       
+            
     </div>
-    <br><br>
+    <h5>{{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h5>
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
-            <div class="accordion-heading"><h4>
+            <div class="accordion-heading"><h5>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
                         Correo Electronico
-                    </a></h4>
+                    </a></h5>
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
                 <div class="accordion-inner">
                     <br>
-                    <p> <h4>Email: {{ Auth::user()->email}} </h4></p>
+                    <p> <h5>Email: {{ Auth::user()->email}} </h5></p>
                 </div>
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading"><br><h4>
+            <div class="accordion-heading"><br><h5>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                         Dirección
-                    </a></h4>
+                    </a></h5>
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
                     <br>
-                    <h4>Direccion: {{ Auth::user()->direccion}} </h4>
-                    <h4> Ciudad: {{ Auth::user()->ciudad}} </h4>
-                    <h4> Pais: {{ Auth::user()->pais}} </h4>
+                    <h5>Direccion: {{ Auth::user()->direccion}} </h5>
+                    <h5> Ciudad: {{ Auth::user()->ciudad}} </h5>
+                    <h5> Pais: {{ Auth::user()->pais}} </h5>
                 </div>
             </div>
         </div>
         <br>
     </div> 
-    <hr>
+    <br>
     <div id="sidebar">                         
         <div class="list-group">                        
             <a href="customer/create" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-plus"></h4><br/><h4>Nuevo Cliente</h4>
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h5>Nuevo Cliente</h5>
             </a>
 			<a href="/workorderlist" class="list-group-item active text-center">
-                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h4><h4>Trabajos</h4>
+                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h5>Trabajos</h5>
             </a>
 			<a href="/phonebook" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-earphone"></h4><br/><h4>Contactos | Proveedor</h4>
+                <h5 class="glyphicon glyphicon-earphone"></h5><br/><h5>Contactos | Proveedor</h5>
             </a>
         </div>        
     </div>
-    <hr>
-    <div class="row ">
-        <div class="col-sm-8 col-md-12">
+   <div class="col-sm-8 col-md-12 not">
             <h3 class="color" > Entregas de Hoy </h3>
             <p> Pruebas </p>
-        </div>
     </div>
 </div> 
 <div class="col col-sm-9">
@@ -81,29 +76,28 @@
                 <h3> Lista de Clientes</h3>  
             </center>
             <div class="panel panel-default tam">                  
-                <div class="panel-body ">
-                    <hr>                        
+                <div class="panel-body ">                       
                     @foreach($customer as $custlist)                      
-                    <br><h3><strong> 
+                    <h3><strong> 
                             @if($custlist->empresa=="")
                             {{ $custlist->cliente }} 
                             @endif
                             {{ $custlist->empresa }} 
                             {{ $custlist->nit_cc }}</strong>
-                    </h3><br>
-                    <h4>
+                    </h3>
+                    <h5>
                         <strong>Cliente </strong>: 
                         @if($custlist->tipo_cliente==1) Directo
-                        @elseif($customer->tipo_cliente==2) Servicio                             
+                        @elseif($customer->tipo_cliente==2) Intermediario                              
                         @endif,
                         <strong>Nombre </strong>: {{ $custlist->cliente }} ,                                               
                         <strong>Celular</strong>: {{ $custlist->cel_contacto }},
                         <strong>Telefono</strong>: {{ $custlist->telefono }}, 
-                        <strong>E-mail </strong>: {{ $custlist->email }}</h4> 
-                    <h4><strong>Direccion</strong>: {{ $custlist->direccion }},
+                        <strong>E-mail </strong>: {{ $custlist->email }}</h5> 
+                    <h5><strong>Direccion</strong>: {{ $custlist->direccion }},
                         <strong>Ciudad </strong>: {{ $custlist->ciudad }},
-                        <strong>Pais </strong>: {{ $custlist->pais}}</h4> 
-                    <br><br> 
+                        <strong>Pais </strong>: {{ $custlist->pais}}</h5> 
+                    <br>
                     {{ HTML::link('/customer/'.$custlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
                     {{ HTML::link('/customer/'.$custlist->id.'/profile','Ver', array('class' => 'btn btn-success'), false)}} 
                     <br><br>

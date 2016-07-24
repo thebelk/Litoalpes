@@ -7,16 +7,17 @@
 @stop
 @section('content')
 <div class="col col-sm-3 complement">   
-    <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} <i class="glyphicon glyphicon glyphicon-print pull-right"></i></h3>
-    <div class="row panel">
-        <div class="col-sm-8 col-md-12">
-            <h3 class="color">{{ Auth::user()->representante}}  </h3>
-            <h5 class="color"> Nit: {{ Auth::user()->nit_cc}}  </h5>
+    <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} </h3>
+     <br>
+    <div class="comp">        
+            <h2>{{ Auth::user()->representante}}  </h2>
+            <h5> Nit: {{ Auth::user()->nit_cc}}  </h5>
             <h5>Telefono: {{ Auth::user()->telefono}} </h5>
             <h5>Celular: {{ Auth::user()->celular}} </h5>   
-            <h5>{{ Auth::user()->otro}} </h5>  
-        </div>                                           
+            <h5>{{ Auth::user()->otro}} </h5>       
+            
     </div>
+    <h5>{{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h5> 
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
             <div class="accordion-heading">
@@ -26,7 +27,7 @@
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
                 <div class="accordion-inner">
-                    <p> <h4>Email: {{ Auth::user()->email}} </h4></p>
+                    <p> <h5>Email: {{ Auth::user()->email}} </h5></p>
                 </div>
             </div>
         </div>
@@ -46,30 +47,29 @@
             </div>
         </div>
     </div> 
-    <hr>
+    <br>
     <div id="sidebar">  
         <div class="list-group">                        
             <a href="/workorder/create" class="list-group-item active text-center">
-                <h4 class="glyphicon glyphicon-plus"></h4><br/>Nuevo Trabajo 
+                <h5 class="glyphicon glyphicon-plus"></h5><br/>Nuevo Trabajo 
             </a>                        
             <a href="profile" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-user"></h4><br/>Perfil
+                <h5 class="glyphicon glyphicon-user"></h5><br/>Perfil
             </a>
         </div>  
     </div>
-    <hr>
-    <div class="row panel">
-        <div class="col-sm-8 col-md-12">
+   
+    <div class="col-sm-8 col-md-12 not">
             <h3 class="color" > Entregas de Hoy </h3>
             <p> Pruebas </p>
-        </div>
     </div>
+  
 
 </div>  
 
 <div class="col col-sm-9">
     <center>
-        <div class="row panel">
+        <div class="row ">
             <div class="bhoechie-tab-content active">	
                 <div class="panel-body">
 				<div class="panel panel-default">
@@ -188,7 +188,7 @@
 									{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-success')) }}
 									<br><br>
 							</div>
-						{{ Form::close() }}
+						{{ Form::close() }}<hr>
 					</div>
                    
                     
