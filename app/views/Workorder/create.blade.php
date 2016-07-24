@@ -16,7 +16,7 @@
     <br>
     <div class="comp"> 
 			<a href="/customer/{{$customer->id}}/profile"> 
-            <h3>{{$customer->cliente}}&nbsp(Cliente)  </h3></a><br>
+            <h3>{{$customer->cliente}}&nbsp </h3></a><br>
             <h5>Contacto: {{$customer->cel_contacto}} </h5> 
             <h5>Telefono: {{$customer->telefono}} </h5> 
             <h5>Cliente:          
@@ -127,7 +127,7 @@
 						</header>
                         <div id="ordencompra" name="ordencompra" class="tab-pane fade in active" height="100">                               
                             <article class="media">                                
-                                <div class="panel panel-default ">                                           
+                                <div class="panel panel-default">                                           
                                     <div class="row"  align="justify">
                                         <!-- <h2  align="center"> Orden de Compra  </h2> --> 
                                         <br><br>
@@ -159,7 +159,7 @@
                                             <br>
                                         </div>
 										<div class="col-xs-12">
-											<h5><b>SERVICIOS</b></h5>
+											<h4><b>SERVICIOS</b></h4>
 											<hr>
 										</div>										
                                         <div class="col-xs-3">
@@ -328,8 +328,8 @@
                                     </div>
 									<br>
 									 <center>
-										{{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default btn-lg')) }} 
-										{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success btn-lg')) }}                               
+										{{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default ')) }} 
+										{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success ')) }}                               
                                      <center>
                                     <br><br>
                                 </div>                                
@@ -340,15 +340,25 @@
                                 <div class="row"  align="justify">                                        
                                     <!--  <h2  align="center">Orden de Producción</h2> --> 
                                     <br>
-									<div class="col-xs-6" >
-									 <h4><b>ESTADO DEL TRABAJO<b></h4>
+									<div class="col-xs-8" >
+										<p>
+										  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#diseno" aria-expanded="false" aria-controls="collapseExample">
+											ORDEN DISEÑO
+										  </button>
+										  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#impresion" aria-expanded="false" aria-controls="collapseExample">
+											ORDEN IMPRESIÓN
+										  </button>
+										  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#acabados" aria-expanded="false" aria-controls="collapseExample">
+											ORDEN ACABADOS
+										  </button>
+										</p>
 									</div>
-									<div class="col-xs-6">
-										
+									<div class="col-xs-4">
+									<h5><b>ESTADO DEL TRABAJO<b></h5>										
 									     {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Estado Diseño', '3' => 'Estado Revisión','4' => 'Enviado para impresión ','5' => 'Estado Impresion', '6' => 'Estado Acabados','7' => 'Listo','8' => 'Entregado')),null ,array('class' => 'form-control')); }}
-                                       <br><br><br>
+                                       <br>
 									</div>
-									   
+								<div class="collapse" id="diseno">	   
                                     <div class="col-xs-12">
                                         <div class='form-group form-register' align="justify">                                                                         
                                             <h3><b>DISEÑO</b></h3><br><!--
@@ -444,11 +454,13 @@
 											<br>											
                                         </div>								
                                     </div>
+								</div>
+								<div class="collapse" id="impresion">
                                     <div class="row"  align="left">                                                      
                                         <div class='form-group form-register' align="justify">
 											<hr>
                                             <div class="col-xs-12">
-                                                <br>  <br>
+                                                
                                                 <h3><b>PRE IMPRESIÓN /  IMPRESIÓN</b></h3><br><!--
                                                 {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Diseño', '3' => 'Impresion','4' => 'Acabados', '5' => 'Disponible','6' => 'Entregado')),null ,array('class' => 'form-control')); }}
                                                 <br> -->
@@ -612,21 +624,20 @@
                                         <div class='form-group form-register'>
                                             {{ Form::label('autorizado_impresion', 'AUTORIZADO:') }}
                                             {{ Form::text('autorizado_impresion', null, array('placeholder' => 'Jefe Producción', 'class' => 'form-control')) }}
-                                        <br>
 										</div>
-										
+										<br>
                                     </div><!-- 
 										<div class="button"align="center">
 											{{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default btn-lg')) }} 
 											{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success btn-lg')) }}                               
 										</div>   -->                          
-                                     	
-                                   
+                                     <hr>	
+                                </div>
+								<div class="collapse" id="acabados">    
                                     <div class="row"  align="justify">                                           
                                         <div class='form-group form-register' align="justify">
-										<hr>
+										
                                             <div class="col-xs-12">
-                                                <br><br><br>
                                                 <h3><b>ACABADOS</b></h3><br><!--
                                                 {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Diseño', '3' => 'Impresion','4' => 'Acabados', '5' => 'Disponible','6' => 'Entregado')),null ,array('class' => 'form-control')); }}
                                                 <br>-->
@@ -765,13 +776,14 @@
                                             {{ Form::text('autorizado_acabados', null, array('placeholder' => 'Jefe Producción', 'class' => 'form-control')) }}
                                         </div>
 										<br><br>
-                                    </div>
-									<div class="button"align="center">
-										{{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default btn-lg')) }} 
-										{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success btn-lg')) }}                               
-                                    </div>
-										<br><br>									
+                                    </div>									
                                 </div>
+							</div>
+							<div class="button"align="center"><br>
+								{{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default ')) }} 
+								{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success ')) }}                               
+							</div>
+							<br><br>
                             </div> 
                         </div>						
                     </div>

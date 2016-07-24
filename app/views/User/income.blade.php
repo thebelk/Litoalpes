@@ -73,8 +73,8 @@
             <!-- work section -->
             <div class="bhoechie-tab-content active tam">
                 <center>
-                    <h2 class="glyphicon glyphicon-th-list color" ></h2>
-                    <h3> Ingresos Estimados</h3>   
+                    <h3 class="glyphicon glyphicon-th-list color" ></h3>
+                    <h4> Ingresos Estimados</h4>   
                 </center>
                 <div class="panel panel-default tam">
                    <h5> Ingresos del </h5> 

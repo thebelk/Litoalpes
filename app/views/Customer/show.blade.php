@@ -16,7 +16,8 @@
         <i class="glyphicon glyphicon glyphicon glyphicon-user"></i></h3>
     <br>
     <div class="comp">  
-            <h2>{{$customer->cliente}}&nbsp(Cliente)  </h2>
+            <a href="/customer/{{$customer->id}}/profile"> 
+            <h3>{{$customer->cliente}}&nbsp </h3></a><br>
             <h5>Contacto: {{$customer->contacto}} </h5> 
             <h5>Telefono: {{$customer->telefono}} </h5> 
             <h5>Cliente:          

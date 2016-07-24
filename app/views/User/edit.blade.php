@@ -72,10 +72,10 @@
         <div class="row ">
             <div class="bhoechie-tab-content active">	
                 <div class="panel-body">
-				<div class="panel panel-default">
-					<div class="panel-heading row panel  tam " align="center"> <h3 class="list-group-item-heading color">
-							<h2 class="glyphicon glyphicon-user color" ></h2>
-							<h3> Editar Usuario</h3> 
+				<div class="panel panel-default  tam">
+					<div class="panel-heading" align="center"> 
+							<h3 class="glyphicon glyphicon-user color" ></h3>
+							<h4> Editar Usuario</h4> 
 					</div>
 				</div>
 				 

@@ -16,7 +16,7 @@
     <br>
     <div class="comp"> 
 			<a href="/customer/{{$customer->id}}/profile"> 
-            <h3>{{$customer->cliente}}&nbsp(Cliente)  </h3></a><br>
+            <h3>{{$customer->cliente}}&nbsp </h3></a><br>
             <h5>Contacto: {{$customer->cel_contacto}} </h5> 
             <h5>Telefono: {{$customer->telefono}} </h5> 
             <h5>Cliente:          
@@ -324,80 +324,12 @@
                                         <div class="col-xs-12">									
                                             <div class='form-group form-register tex'>
                                                 {{ Form::textarea('detalles_trabajo', $workorder->detalles_trabajo, array('rows' => '3', 'placeholder' => 'Detalles', 'class' => 'form-control','disabled')) }}
-                                            </div><br>                                                    
+                                            </div><br><br>                                                      
                                         </div>
-                                        <div class="col-xs-3">
-                                            <div class='form-group form-register'>
-                                                {{ Form::label('valor_trabajo', 'VALOR:') }}
-                                                {{ $workorder->valor_trabajo}}
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-3">
-                                            <div class='form-group form-register'>
-                                                {{ Form::label('abono', 'ABONO:') }}
-                                                {{ $workorder->abono }}
-                                            </div>
-                                        </div>                              
-                                        <div class="col-xs-3">
-                                            <div class='form-group form-register'>
-                                                {{ Form::label('saldo', 'SALDO:') }}
-                                                {{ $workorder->saldo }}
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-3">
-                                            <div class='form-group form-register'>
-                                                {{ Form::label('subtotal', 'SUB TOTAL:') }}
-                                                {{ $workorder->subtotal }}
-                                            </div>
-                                        </div> 
-                                        <div class="col-xs-3"> 
-											
-											@if($workorder->iva==0) 
-												<div class='form-group'>
-													{{ Form::label('iva', 'SIN IVA') }}
-													{{ Form::radio('iva',$workorder->iva == 0,$workorder->iva,['disabled' => 'disabled'], array('onclick' => 'checkIVAType();')) }}
-													<div id="valor_iva" style="hidden:true"></div>
-												</div>
-												
-											@elseif($workorder->iva==1)
-												<div class='form-group'style=" float:left">
-													{{ Form::label('iva', 'MAS IVA') }}
-													{{ Form::radio('iva',$workorder->iva == 1,$workorder->iva,['disabled' => 'disabled'], array('onclick' => 'checkIVAType();')) }}
-													<div id="valor_iva" style="hidden:true; float:left"></div>
-												</div>
-											
-											@elseif($workorder->iva==2) 
-												<div class='form-group'style=" float:left">
-													{{ Form::label('iva', 'CON IVA') }}
-													{{ Form::radio('iva', $workorder->iva == 2,$workorder->iva,['disabled' => 'disabled'], array('onclick' => 'checkIVAType();')) }}
-													<div id="valor_iva" style="hidden:true"></div>
-												</div>
-											@endif 
-											<div id="valor_iva" style="hidden:true; float:left"></div>
-											
-                                        </div>
-                                        <div class="col-xs-3">
-                                            <div class='form-group form-register'>
-                                                {{ Form::label('no_factura', 'FACTURA:') }}
-                                                {{  $workorder->no_factura }}
-                                            </div>
-                                        </div>
-										<div class="col-xs-3">
-                                            <div class='form-group form-register'>
-                                                {{ Form::label('total', 'TOTAL:') }}
-                                                {{  $workorder->total }}
-                                            </div>
-                                        </div> 
-                                        <div class="col-xs-3">
-                                            <div class='form-group form-register'>
-                                                {{ Form::label('vendedor', 'VENDEDOR:') }}
-                                                {{ $workorder->vendedor }}
-                                            </div>
-											 <br><br>
-                                        </div>                                   
+                                                                   
                                 <div class="row"  align="justify">                                        
                                     <!--  <h2  align="center">Orden de Producción</h2> --> 
-									<div class="collapse" id="diseno">
+								<div class="collapse" id="diseno">
 									  <div class="card card-block">
 										<br>
                                     </div>																		
@@ -512,7 +444,7 @@
                                             <div class='form-group form-register'>
                                                 {{ Form::label('autorizado_diseño', 'AUTORIZADO:') }}
                                                 {{ $workorder->autorizado_diseño}}
-                                            </div>											
+                                            </div><br><br>											
                                         </div>								
                                     </div>
 								</div>
@@ -724,7 +656,7 @@
                                         <div class='form-group form-register'>
                                             {{ Form::label('autorizado_impresion', 'AUTORIZADO:') }}
                                             {{ $workorder->autorizado_impresion}}
-										</div>
+										</div><br><br>
 										
                                     </div><!-- 
 										<div class="button"align="center">
@@ -869,25 +801,95 @@
                                         <div class='form-group form-register'>
                                             {{ Form::label('fecha_reporte_acabados', 'FECHA DE REPORTE:') }}
 											{{ $workorder->fecha_reporte_acabados}}
-                                        </div>
+                                        </div><br>
                                     </div>
                                     <div class="col-xs-6">
                                         <div class='form-group form-register'>
                                             {{ Form::label('autorizado_acabados', 'AUTORIZADO:') }}
                                             {{ $workorder->autorizado_acabados}}
                                         </div>
-										<br><br>
+										<br><br><br>
                                     </div>
 								</div>
+								 <div class="col-xs-3">
+                                            <div class='form-group form-register'>
+                                                {{ Form::label('valor_trabajo', 'VALOR:') }}
+                                                {{ $workorder->valor_trabajo}}
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class='form-group form-register'>
+                                                {{ Form::label('abono', 'ABONO:') }}
+                                                {{ $workorder->abono }}
+                                            </div>
+                                        </div>                              
+                                        <div class="col-xs-3">
+                                            <div class='form-group form-register'>
+                                                {{ Form::label('saldo', 'SALDO:') }}
+                                                {{ $workorder->saldo }}
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class='form-group form-register'>
+                                                {{ Form::label('subtotal', 'SUB TOTAL:') }}
+                                                {{ $workorder->subtotal }}
+                                            </div>
+                                        </div> 
+                                        <div class="col-xs-3"> 
+											
+											@if($workorder->iva==0) 
+												<div class='form-group'>
+													{{ Form::label('iva', 'SIN IVA') }}
+													{{ Form::radio('iva',$workorder->iva == 0,$workorder->iva,['disabled' => 'disabled'], array('onclick' => 'checkIVAType();')) }}
+													<div id="valor_iva" style="hidden:true"></div>
+												</div>
+												
+											@elseif($workorder->iva==1)
+												<div class='form-group'style=" float:left">
+													{{ Form::label('iva', 'MAS IVA') }}
+													{{ Form::radio('iva',$workorder->iva == 1,$workorder->iva,['disabled' => 'disabled'], array('onclick' => 'checkIVAType();')) }}
+													<div id="valor_iva" style="hidden:true; float:left"></div>
+												</div>
+											
+											@elseif($workorder->iva==2) 
+												<div class='form-group'style=" float:left">
+													{{ Form::label('iva', 'CON IVA') }}
+													{{ Form::radio('iva', $workorder->iva == 2,$workorder->iva,['disabled' => 'disabled'], array('onclick' => 'checkIVAType();')) }}
+													<div id="valor_iva" style="hidden:true"></div>
+												</div>
+											@endif 
+											<div id="valor_iva" style="hidden:true; float:left"></div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class='form-group form-register'>
+                                                {{ Form::label('no_factura', 'FACTURA:') }}
+                                                {{  $workorder->no_factura }}
+                                            </div>
+                                        </div>
+										<div class="col-xs-3">
+                                            <div class='form-group form-register'>
+                                                {{ Form::label('total', 'TOTAL:') }}
+                                                {{  $workorder->total }}
+                                            </div>
+                                        </div> 
+                                        <div class="col-xs-3">
+                                            <div class='form-group form-register'>
+                                                {{ Form::label('vendedor', 'VENDEDOR:') }}
+                                                {{ $workorder->vendedor }}
+                                            </div>
+											 
+                                        </div>       
 									</div>
-										<div class='row buttons '>   
-											<div class="col-md-3">											
+								
+										<div class='row buttons'align="center">   
+											<div class="col-md-3" >											
 												{{ HTML::link('/workorder/'.$workorder->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}} 
 												{{ Form::model($workorder, array('url' => array('/worklist/'.$workorder->id), 'method' => 'DELETE', 'role' => 'form')) }}
 											
 												{{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
 											</div> 
-										</div> 									
+										</div> 
+									
 										<br><br>									
                                 </div>
 

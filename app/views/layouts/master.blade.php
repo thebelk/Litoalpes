@@ -26,7 +26,7 @@
 						  <span class="icon-bar"></span>
 						  <span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#">Logotipo</a>
+						<a class="navbar-brand" href="/user">LitoAlpes</a>
 					  </div>
 					 
 					  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
@@ -109,24 +109,22 @@
 							
 							<p>Alpes Calle 31 A - #70 - 03</p>
 							<p>Tel. (5) 6634041 - Cel. 3106054347 </p>							
-							<p>Email: litografialosalpes@gmail.com</p>
-							<p>Cartagena de Indias - Colombia.</p>
+							
 						</div>
 					</div>			
 								
 					<div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
-						<div class="footer-single"><br>
-							<!--<center>
+						<div class="footer-single"><br><!--
+							<center>
 							{{ HTML::image('recursos/img/logo.png', 'a picture') }}
 							</center>
 							
-								<h6>Explore</h6>
+								<h6>Explore</h6>-->
 								<ul>
-									<li><a href="#">Inside Us</a></li>
-									<li><a href="#">Flickr</a></li>
-									<li><a href="#">Google</a></li>
-									<li><a href="#">Forum</a></li>
-								</ul>-->
+									<p> litoalpes6677@hotmail.com</p>
+									<p>litografialosalpes@gmail.com</p>
+									<p>Cartagena de Indias - Colombia.</p>
+								</ul>
 						</div>
 					</div>	
 					
