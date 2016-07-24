@@ -32,7 +32,7 @@ class CustomerController extends \BaseController {
         $rules= array(
             'cliente' => 'required',
             'cel_contacto' => '',
-            'tipo_cliente' => 'required', //1.Directo   2.Servicio
+            'tipo_cliente' => '', //1.Directo   2.Servicio
             'nit_cc' => '',
             'empresa' => '',
             'telefono' => '',
@@ -88,7 +88,7 @@ class CustomerController extends \BaseController {
         $rules = array(
             'cliente' => 'required',
             'cel_contacto' => '',
-            'tipo_cliente' => 'required', //1.Directo   2.Servicio
+            'tipo_cliente' => '', //1.Directo   2.Servicio
             'nit_cc' => '',
             'empresa' => '',
             'telefono' => '',

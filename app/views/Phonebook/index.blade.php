@@ -71,8 +71,8 @@
     <div class="row ">  
         <div class="bhoechie-tab-content active">
             <center>
-                <h2 class="glyphicon glyphicon-user color" ></h2>
-                <h3>  Contactos & Provedor </h3>  
+                <h3 class="glyphicon glyphicon-user color" ></h3>
+                <h4>  Contactos & Provedor </h4>  
             </center>
             <div class="panel panel-default tam">                  
                 <div class="panel-body">

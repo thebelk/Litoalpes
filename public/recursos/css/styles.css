@@ -88,9 +88,16 @@ h2,h3.color{
 .colr{
     column-rule-style: blue;
 }
-
+.login{
+	margin-top:106px;
+	
+}
+.menulog{
+	margin-left:80px;
+	margin-right:80px;
+}
 .tam{
-    padding: 10px;
+    padding: 15px;
     margin: 15px;
 }
 

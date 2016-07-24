@@ -92,10 +92,10 @@
                 <h3> Nuevo Contacto</h3>  -->  
 
             <!-- Default panel contents -->
-            <div class="panel panel-default">
-                <div class="panel-heading row panel  tam " align="center"> <h3 class="list-group-item-heading color">
-                        <h2 class="glyphicon glyphicon-plus color" ></h2>
-                        <h3> Detalles Trabajo</h3> 
+            <div class="panel panel-default ">
+                <div class="panel-heading tam" align="center"> 
+                        <h3 class="glyphicon glyphicon-plus color" ></h3>
+                        <h4> Detalles Trabajo</h4> 
                 </div>
             </div>
             <!-- Default panel contents -->                                   
@@ -105,40 +105,39 @@
                  </div>
                  {{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} -->
             </div>
-                            <div class="panel-body">                                                   
-                            
+                          
                                  {{Form::open(array('url' => '/workorder/'.$workorder->id,'method' => 'PUT', 'role'=>'form')) }}
                                 <div class="panel panel-default ">                                           
                                     <div class="row"  align="justify">
                                         <!-- <h2  align="center"> Orden de Compra  </h2> --> 
 										{{ Form::text('customer_id', $customer->id, array('hidden' => 'true')) }} 
-                                        <br><br>
+                                       
 										<div class="col-xs-4">
                                             <div class='form-group form-register'>
-                                                <h3><strong>ORDEN DE</strong>
+                                                <h4><strong>ORDEN DE</strong>
 												{{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }}
 														@if($workorder->tipo_orden==1)                                 
 														@elseif($workorder->tipo_orden==2) SERVICIO 
 														@elseif($workorder->tipo_orden==3) PRODUCTO
-													@endif </h3>
+													@endif </h4>
                                             </div>	
 											<div class='form-group form-register'>
 												{{ Form::label('fecha_pedido', 'FECHA PEDIDO') }}
 												{{  $workorder->created_at }}  
                                             </div>
                                         </div>
-										<div class="col-xs-3">
+										<div class="col-xs-4">
                                             <div class='form-group form-register' align="justify">
 
-                                               <h3><strong> {{ Form::label('no_orden', 'NO. ORDEN') }}</strong>
-                                                 {{ $workorder->no_orden}}</h3>
+                                               <h4><strong> {{ Form::label('no_orden', 'NO. ORDEN') }}</strong>
+                                                 {{ $workorder->no_orden}}</h4>
                                             </div>
 											{{ Form::label('fecha_entrega', 'FECHA ENTREGA') }}
 												{{ $workorder->fecha_entrega}}
                                         </div>
 										
-										<div class="col-xs-5">
-											<h3><strong>ESTADO DE TRABAJO</strong>
+										<div class="col-xs-4">
+											<h4><strong>ESTADO DE TRABAJO</strong>
 												@if($workorder->estado_trabajo==1) Por realizar	                                
 												@elseif($workorder->estado_trabajo==2) Estado Diseño
 												@elseif($workorder->estado_trabajo==3) Estado Revisión
@@ -147,13 +146,14 @@
 												@elseif($workorder->estado_trabajo==6) Estado Acabados 
 												@elseif($workorder->estado_trabajo==7) Listo
 												@elseif($workorder->estado_trabajo==8) Entregado
-												@endif  </h3>	
+												@endif  </h4>	
 										</div>
-										<div class="col-xs-12"><hr><br>
-											<h5><b>SERVICIOS</b></h5><br>
+										<div class="col-xs-12"><hr>
+											<h4><b>SERVICIOS</b></h4><br>
 										</div>
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
+												
 												@if($workorder->tipo_encuadernado==1)
 													{{ Form::checkbox('encuadernado',  $workorder->encuadernado, $workorder->encuadernado == 1,['disabled' => 'disabled'])}}
 													{{ Form::label('tipo_encuadernado', 'ANILLADO/ EMPASTE') }} 
@@ -179,7 +179,8 @@
 													{{ Form::checkbox('encuadernado',  $workorder->encuadernado, $workorder->encuadernado == 1,['disabled' => 'disabled'])}}
 													{{ Form::label('tipo_encuadernado', 'EMPASTE') }} Pasta Dura / Marcado
 												@endif
-                                            </div>
+											
+										   </div>
                                         </div>
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
@@ -893,7 +894,7 @@
                             </div>
                       
                         {{ Form::close() }}
-                </div>   
+                
         </div>
     </div>
 </div>  

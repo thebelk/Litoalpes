@@ -92,10 +92,10 @@
                 <h3> Nuevo Contacto</h3>  -->  
 
             <!-- Default panel contents -->
-            <div class="panel panel-default">
-                <div class="panel-heading row panel  tam " align="center"> <h3 class="list-group-item-heading color">
-                        <h2 class="glyphicon glyphicon-plus color" ></h2>
-                        <h3> Editar Trabajo</h3> 
+            <div class="panel panel-default tam">
+                <div class="panel-heading" align="center"> 
+                        <h3 class="glyphicon glyphicon-plus color" ></h3>
+                        <h4> Editar Trabajo</h4> 
                 </div>
             </div>
             <!-- Default panel contents -->                                   

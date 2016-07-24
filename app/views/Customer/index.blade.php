@@ -72,8 +72,8 @@
     <div class="row ">  
         <div class="bhoechie-tab-content active tam">
             <center>
-                <h2 class="glyphicon glyphicon-user color" ></h2>
-                <h3> Lista de Clientes</h3>  
+                <h3 class="glyphicon glyphicon-user color" ></h3>
+                <h4> Lista de Clientes</h4>  
             </center>
             <div class="panel panel-default tam">                  
                 <div class="panel-body ">                       
@@ -98,8 +98,11 @@
                         <strong>Ciudad </strong>: {{ $custlist->ciudad }},
                         <strong>Pais </strong>: {{ $custlist->pais}}</h5> 
                     <br>
-                    {{ HTML::link('/customer/'.$custlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
+					<div class="col-md-3">
+                    {{ HTML::link('/customer/'.$custlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}  
+					
                     {{ HTML::link('/customer/'.$custlist->id.'/profile','Ver', array('class' => 'btn btn-success'), false)}} 
+					</div>
                     <br><br>
                     <hr>
                     @endforeach

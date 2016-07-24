@@ -73,12 +73,12 @@
         <!-- cho section -->
         <div class="bhoechie-tab-content active tam">
             <center>
-                <h2 class="glyphicon glyphicon-th-list color" ></h2>
-                <h3> Listar Notificaciones</h3>   
+                <h3 class="glyphicon glyphicon-th-list color" ></h3>
+                <h4> Listar Notificaciones</h4>   
             </center>
             <div class="panel panel-default tam">
                 <!-- Default panel contents -->                
-                <hr> <br>                      
+                <br>                      
                 @foreach($notifications as $notification)                    
                 <h3><strong> {{ $notification->clase_trabajo}} | ESTADO TRABAJO
                         <span class="estilo">
@@ -100,13 +100,12 @@
                     <strong>Diseñador</strong>: {{ $worklist->diseñador}},
                     <strong>Vendedor</strong>: {{ $worklist->vendedor}}</h5> 
                 <br>
-                
-                    {{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
-                
+                <div class="col-md-3">
+                    {{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}} 
+				
                     {{ HTML::link('/worklist/'.$worklist->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
-                
-                {{ Form::close() }}                       
-
+                </div>
+                {{ Form::close() }}  
                 <br> <br>
                 <hr>
                 @endforeach

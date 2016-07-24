@@ -77,9 +77,9 @@
             <center>                  
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->
-                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">
-                            <h2 class="glyphicon glyphicon-user color" ></h2>
-                            <h3> Editar Cliente</h3> 
+                    <div class="panel-heading ">
+                            <h3 class="glyphicon glyphicon-user color" ></h3>
+                            <h4> Editar Cliente</h4> 
                     </div>
                 </div>
                 <div class="panel-body tam">
@@ -97,7 +97,7 @@
                             <div class="col-xs-6 col-md-4 imp">
                                 <div class='form-group form-register'align="justify">
                                     {{ Form::label('cel_contacto', 'NUMERO DE CONTACTO:') }}
-                                    {{ Form::text('cel_contacto', $customer->cel_contacto, array('placeholder' => 'Telefonos', 'class' => 'form-control')) }}
+                                    {{ Form::text('cel_contacto', $customer->cel_contacto, array('placeholder' => 'Celular', 'class' => 'form-control')) }}
                                 </div>
                             </div>
                             <div class="col-xs-6 col-md-4 imp">                                     
@@ -122,14 +122,14 @@
                             <div class="col-xs-6 col-md-4 imp ">
                                 <div class='form-group form-register'align="justify">
                                     {{ Form::label('telefono', 'TELEFONO:') }}
-                                    {{ Form::text('telefono', $customer->telefono, array('placeholder' => 'Telefono', 'class' => 'form-control', 'required' => 'required')) }}
+                                    {{ Form::text('telefono', $customer->telefono, array('placeholder' => 'Telefono', 'class' => 'form-control')) }}
                                 </div>
                                 <br>
                             </div>
                             <div class="col-xs-6 col-md-4 imp ">
                                 <div class='form-group form-register'align="justify">
                                     {{ Form::label('direccion', 'DIRECCIÓN:') }}
-                                    {{ Form::text('direccion', $customer->direccion, array('placeholder' => 'DirecciÓn', 'class' => 'form-control', 'required' => 'required')) }}
+                                    {{ Form::text('direccion', $customer->direccion, array('placeholder' => 'DirecciÓn', 'class' => 'form-control')) }}
                                 </div>
                             </div>
                             <div class="col-xs-6 col-md-4 imp">

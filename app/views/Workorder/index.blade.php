@@ -72,8 +72,8 @@
         <!-- cho section -->
         <div class="bhoechie-tab-content active tam">
             <center>
-                <h2 class="glyphicon glyphicon-th-list color" ></h2>
-                <h3> Todos los Trabajos</h3>				
+                <h3 class="glyphicon glyphicon-th-list color" ></h3>
+                <h4> Todos los Trabajos</h4>				
             </center>
             <div class="panel panel-default tam">
                 <!-- Default panel contents -->                

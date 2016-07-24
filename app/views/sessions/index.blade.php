@@ -13,37 +13,41 @@
     </head>
     <body>
         @section('header')
-        <header>     
-            <div class="container-">
-                <nav class="navbar navbar-static">          
-                    <div class="nav-collapse collase">
-                        <div class=" navbar-left">
-                            <div class="bootoom">
-                                <h2><span class="label label-success cont">Litografia Los Alpes</span></h2>
-                            </div>
-                        </div>
-                        <div class=" navbar-right"> 
-                            <div class="bootoom">
-                                <!--   <button type="button" class="btn btn-primary colo"><b>Registrate</b></button>  -->
-                                <button type="button" class="btn btn-default btn-lg">{{ HTML::link('/signup','Crear cuenta',array ('class' => ' colo')) }}</button>                                                               
-                            </div>                                                          
-                        </div>
-                    </div>                
-                </nav>
+		<header>  
+			<div class="container">
+               
+            </div>
+            <div class="container-">     
+				<nav class="navbar navbar-static" role="navigation">					  
+					 <div class="nav-collapse collase">
+						<div class=" navbar-left">
+							<div class="bootoom">
+								<h2><span class="label label-success cont">Litografia Los Alpes</span></h2>
+							</div>
+						</div>
+						<div class=" navbar-right"> 
+							<div class="bootoom">
+								<!--   <button type="button" class="btn btn-primary colo"><b>Registrate</b></button>  -->
+								<button type="button" class="btn btn-default btn-lg">{{ HTML::link('/signup','Crear cuenta',array ('class' => ' colo')) }}</button>                                                               
+							</div>                                                          
+						</div>
+					</div>  
+				</nav>
             </div>
         </header>
         @show        
-
         <div id="container">
-            <div class="row">
+            <div class="row login ">
                 <div class="col-xs-6">
                     <center>
-                        <h1>Bienvenido a </h1>
-                    </center>
-                    <h4>
-                        Registra las órdenes de trabajo de tus clientes. Obtén actualizaciones inmediatas  de los trabajos de mayor interés y 
-                        Cotiza  
-                    </h4>                        
+                        <h1>Bienvenido  </h1>
+						<h4>
+							Registra las órdenes de trabajo de tus clientes. Obtén actualizaciones inmediatas  de los trabajos de mayor interés y 
+							Cotiza  
+						</h4> 
+						<br><br>
+						{{ HTML::image('recursos/img/logo.png', 'a picture') }}
+					</center>
                 </div>
                 <center>
                     <div class="col-xs-6">
@@ -54,39 +58,40 @@
                                 <p> Ingresar el correo electrónico y la contraseña. Por favor, asegúrate de que el bloqueo de mayúsculas no está activado. </P>
                             </div>
                             {{Form::open(array('route' => 'sessions.store','role'=>'form', 'class'=>'form-signin')) }}
-                            <div class='form-group'>
-                                <label for="inputEmail3" class="col-sm-1 control-label">Email</label>
-                                {{ Form::email('email', null, array('placeholder' => 'Email', 'class' => 'form-control', 'required' => 'required')) }}
-                            </div>
-                            <div class='form-group'>
-                                <label for="inputEmail3" class="col-sm-1 control-label">Password</label>
-                                {{ Form::password('password', array('placeholder' => 'Password', 'class' => 'form-control', 'required' => 'required')) }}
-                            </div>
-                            <div class='form-group '>
-                                <!--    <label for="remember" >Recordar mis datos </label>
-                                   {{ Form::input('checkbox','remember','on') }}
-                               </div>
-                              <div class='form-group'>
-                                   {{ Form::checkbox('remember-me', 'value')}}
-                               </div>-->
-                                <div class='form-group '>
-                                    {{ Form::button('iniciar Sesión', array('type' => 'submit', 'class' => 'btn btn-success')) }}  
-                                </div> 
+                            <div class="menulog">
+								<div class='form-group'>
+									<label for="inputEmail3" class="col-sm-1 control-label">Email</label>
+									{{ Form::email('email', null, array('placeholder' => 'Email', 'class' => 'form-control', 'required' => 'required')) }}
+								</div>
+								<div class='form-group'>
+									<label for="inputEmail3" class="col-sm-1 control-label">Password</label>
+									{{ Form::password('password', array('placeholder' => 'Password', 'class' => 'form-control', 'required' => 'required')) }}
+								</div>
+							</div>	
+								<div class='form-group '>
+									<!--    <label for="remember" >Recordar mis datos </label>
+									   {{ Form::input('checkbox','remember','on') }}
+								   </div>
+								  <div class='form-group'>
+									   {{ Form::checkbox('remember-me', 'value')}}
+								   </div>-->
+									<div class='form-group '>
+										{{ Form::button('iniciar Sesión', array('type' => 'submit', 'class' => 'btn btn-success')) }}  
+									</div> 
 
-                                {{Form::close()}}
-                                <p> ¿Olvidaste tu contraseña ? </p>
-                                <button type="button" class="btn btn-link">Recuperar clave</button>                          
-                            </div>                        
+									{{Form::close()}}
+									<p> ¿Olvidaste tu contraseña ? </p>
+									<button type="button" class="btn btn-link">Recuperar clave</button>                          
+								</div>    
+							
                         </div>
-                </center>
-            </div>        
+					</div> 
+				</center>			
         </div>
         <footer>
-            <div class="footer">
-                @yield('footer')
-
-
-            </div>
+			@section('footer')
+			@parent
+			@stop
         </footer>
         @show    
 

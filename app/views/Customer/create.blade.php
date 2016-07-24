@@ -77,9 +77,9 @@
             <div class="bhoechie-tab-content active">
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->
-                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">
-                            <h2 class="glyphicon glyphicon-user color" ></h2>
-                            <h3> Nuevo Cliente</h3> 
+                    <div class="panel-heading "> 
+                            <h3 class="glyphicon glyphicon-user color" ></h3>
+                            <h4> Nuevo Cliente</h4> 
                     </div>
                 </div>
         </center> 
@@ -97,7 +97,7 @@
                     <div class="col-xs-6 col-md-4 imp">
                         <div class='form-group form-register'align="justify">
                             {{ Form::label('cel_contacto', 'NUMERO DE CONTACTO:') }}
-                            {{ Form::text('cel_contacto', null, array('placeholder' => 'Telefonos', 'class' => 'form-control', 'required' => 'required')) }}
+                            {{ Form::text('cel_contacto', null, array('placeholder' => 'Celular', 'class' => 'form-control')) }}
                         </div>
                     </div>
                     <div class="col-xs-6 col-md-4 imp">                                     

@@ -71,8 +71,8 @@
             <!-- work section -->
             <div class="bhoechie-tab-content active tam">
                 <center>
-                    <h2 class="glyphicon glyphicon-th-list color" ></h2>
-                    <h3> Trabajos por Realizar</h3>   
+                    <h3 class="glyphicon glyphicon-th-list color" ></h3>
+                    <h4> Trabajos por Realizar</h4>   
                 </center>
                 <div class="panel panel-default tam">
                     @foreach($workorder as $worklist)
@@ -100,11 +100,9 @@
                     <strong>Diseñador</strong>: {{ $worklist->diseñador}},
                     <strong>Vendedor</strong>: {{ $worklist->vendedor}}</h5>  
                 <br> 
-                    <div class="col-md-1">
+                    <div class="col-md-3">
                         {{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
-                    </div>  
-                    
-                    <div class="col-md-1">
+                   
                         {{ HTML::link('/worklist/'.$worklist->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
                     </div> 
                     {{ Form::close() }} 

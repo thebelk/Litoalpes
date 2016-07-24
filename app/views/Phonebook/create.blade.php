@@ -75,9 +75,9 @@
                 <h3> Nuevo Contacto</h3>  -->  
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->
-                    <div class="panel-heading row panel"> <h3 class="list-group-item-heading color">
-                            <h2 class="glyphicon glyphicon-user color" ></h2>
-                            <h3> Contacto | Proveedor </h3>                             
+                    <div class="panel-heading"> 
+                            <h3 class="glyphicon glyphicon-user color" ></h3>
+                            <h4> Contacto | Proveedor </h4>                             
                     </div>
                 </div>
                 <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->               

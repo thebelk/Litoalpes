@@ -75,10 +75,9 @@
             <center>                 
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->
-                    <div class="panel-heading row panel">
-                        <h3 class="list-group-item-heading color"></h3>
-                        <h2 class="glyphicon glyphicon-pencil color" ></h2>
-                        <h3> Nueva Cotización</h3> 
+                    <div class="panel-heading">
+                        <h3 class="glyphicon glyphicon-pencil color" ></h3>
+                        <h4> Nueva Cotización</h4> 
                     </div>
                 </div>
             </center>
