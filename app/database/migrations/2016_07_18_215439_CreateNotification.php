@@ -37,7 +37,7 @@ class CreateNotification extends Migration {
 	public function down()
 	{
 		//
-		Schema::drop('notification');
+		Schema::drop('notifications');
 	}
 
 }

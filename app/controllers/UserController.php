@@ -91,14 +91,14 @@ class UserController extends \BaseController {
     public function update($id) {
         $user = Input::all();
 		if($user['save'] == 'savepassword'){
-			$rules = [			
+			$rules = [
             'password' => 'Required|Confirmed',
             'password_confirmation' => 'Required'
 			];
 			$validate = Validator::make($user, $rules);
 			if ($validate->passes()) {
 				$user2 = User::find($user['id']);				
-				if($user['old_password'] == $user2['password']){
+				if(Hash::check($user['old_password'], $user2['password'])){
 					$user2['password'] = Hash::make($user['password']);
 					$user2['password_confirmation'] = Hash::make($user['password_confirmation']);
 					$user2->save();
