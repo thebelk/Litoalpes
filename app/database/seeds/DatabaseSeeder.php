@@ -6,8 +6,9 @@ class DatabaseSeeder extends Seeder {
         
     	$this->call('UserTableSeeder');
         $this->call('CustomerTableSeeder');
-        
-        $this->command->info('User table seeded!');
+		$this->call('WorkorderTableSeeder');
+        $this->call('NotificationTableSeeder');
+        $this->command->info('Seeders OK!');
     }
 
 }

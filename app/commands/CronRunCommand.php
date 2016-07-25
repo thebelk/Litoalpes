@@ -81,12 +81,6 @@ class CronRunCommand extends Command {
 		 * EXAMPLES
 		**/
 		// You can use any of the available schedules and pass it an anonymous function
-		$this->hourly(function()
-		{
-			// In the function, you can use anything that you can use everywhere else in Laravel.
-			// Like models:
-			
-		});
 		$this->everyFiveMinutes(function()
 		{
 			// In the function, you can use anything that you can use everywhere else in Laravel.

@@ -36,15 +36,13 @@
 						  <li><a href="/user"><i class="glyphicon glyphicon-home"></i> Home</a></li>
                             <li><a href="/customer" role="button" data-toggle="modal"><i class="glyphicon glyphicon-user"></i> Clientes</a>                             
                             <li><a href="/quotation" role="button" data-toggle="modal"><i class="glyphicon glyphicon-pencil"></i> Cotizar</a>
-                            <!-- Desplegar alertas de notificaciones
-							**
-							Si hay notificaciones no leidas
-							<li><a href="/notifications" role="button" data-toggle="modal"><i class="glyphicon glyphicon-warning-sign"></i> Notificaciones ({{ numero }})</a>
-							Si no hay notificaciones pendientes
-							<li><a href="/notifications" role="button" data-toggle="modal"><i class="glyphicon glyphicon-bell"></i> Notificaciones</a>
-							**
-							-->							
-							<li><a href="/notifications" role="button" data-toggle="modal"><i class="glyphicon glyphicon-bell"></i> Notificaciones</a>
+							<li>
+                            @if(DB::table('notifications')->count() === 0)
+								<a href="/notifications" role="button" data-toggle="modal"><i class="glyphicon glyphicon-bell"></i> Notificaciones</a>
+							@else
+								<a href="/notifications" role="button" data-toggle="modal"><i style="color:red" class="glyphicon glyphicon-warning-sign"></i> Notificaciones ({{ DB::table('notifications')->count() }})</a>
+							@endif
+							</li>
                             <li><a href="/customer/create"><span class="badge"><i class="glyphicon glyphicon-plus"></i> Orden | Trabajo</span></a></li>
 						  
 						   <!--
