@@ -39,7 +39,7 @@
                             <!-- Desplegar alertas de notificaciones
 							**
 							Si hay notificaciones no leidas
-							<li><a href="/notifications" role="button" data-toggle="modal"><i class="glyphicon glyphicon-warning-sign"></i> Notificaciones</a>							
+							<li><a href="/notifications" role="button" data-toggle="modal"><i class="glyphicon glyphicon-warning-sign"></i> Notificaciones ({{ numero }})</a>
 							Si no hay notificaciones pendientes
 							<li><a href="/notifications" role="button" data-toggle="modal"><i class="glyphicon glyphicon-bell"></i> Notificaciones</a>
 							**
