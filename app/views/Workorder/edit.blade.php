@@ -16,7 +16,7 @@
     <br>
     <div class="comp"> 
 			<a href="/customer/{{$customer->id}}/profile"> 
-            <h3>{{$customer->cliente}}&nbsp </h3></a><br>
+            <h3>{{$customer->cliente}}&nbsp </h3></a>
             <h5>Contacto: {{$customer->cel_contacto}} </h5> 
             <h5>Telefono: {{$customer->telefono}} </h5> 
             <h5>Cliente:          
@@ -265,7 +265,7 @@
                                         <div class="col-xs-3">
                                             <div class='form-group form-register'>
                                                 {{ Form::label('valor_trabajo', 'VALOR:') }}
-                                                {{ Form::text('valor_trabajo', $workorder->valor_trabajo, array('placeholder' => 'Valor Trabajo', 'class' => 'form-control', 'onchange' => 'checkIVAType();')) }}
+                                                {{ Form::text('valor_trabajo', $workorder->valor_trabajo, array('placeholder' => 'Valor Trabajo', 'class' => 'form-control','required' => 'required', 'onchange' => 'checkIVAType();')) }}
                                             </div>
                                         </div>
                                         <div class="col-xs-3">
@@ -325,7 +325,7 @@
 									<br>
 									 <center>
 										{{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
-										{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success ')) }}                               
+										{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success ')) }} 
                                      <center>
                                     <br><br>
                                 </div>                                
@@ -789,7 +789,7 @@
 							</div>
 							<div class="button"align="center"><br>
 								{{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default ')) }} 
-								{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success ')) }}                               
+								{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success ')) }}  
 							</div>
 							<br><br>
                             </div> 

@@ -44,7 +44,14 @@
 							@endif
 							</li>
                             <li><a href="/customer/create"><span class="badge"><i class="glyphicon glyphicon-plus"></i> Orden | Trabajo</span></a></li>
-						  
+							<li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge"><i class="glyphicon glyphicon-plus"></i>Orden | Trabajo</span></a>
+                                <ul class="dropdown-menu" >
+                                    <form class="form-inline">
+                                        <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control  pull-left " placeholder="Buscar Cliente">
+                                    </form>
+                                </ul>
+                            </li>
 						   <!--
 						  <li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">

@@ -16,7 +16,7 @@
     <br>
     <div class="comp"> 
 			<a href="/customer/{{$customer->id}}/profile"> 
-            <h3>{{$customer->cliente}}&nbsp </h3></a><br>
+            <h3>{{$customer->cliente}}&nbsp </h3></a>
             <h5>Contacto: {{$customer->cel_contacto}} </h5> 
             <h5>Telefono: {{$customer->telefono}} </h5> 
             <h5>Cliente:          
@@ -331,7 +331,7 @@
                                     <!--  <h2  align="center">Orden de Producción</h2> --> 
 								<div class="collapse" id="diseno">
 									  <div class="card card-block">
-										<br>
+									
                                     </div>																		
                                     <div class="col-xs-12">
 									<hr><br><br>

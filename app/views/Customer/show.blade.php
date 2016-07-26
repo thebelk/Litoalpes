@@ -17,7 +17,7 @@
     <br>
     <div class="comp">  
             <a href="/customer/{{$customer->id}}/profile"> 
-            <h3>{{$customer->cliente}}&nbsp </h3></a><br>
+            <h3>{{$customer->cliente}}&nbsp </h3></a>
             <h5>Contacto: {{$customer->contacto}} </h5> 
             <h5>Telefono: {{$customer->telefono}} </h5> 
             <h5>Cliente:          
@@ -86,12 +86,12 @@
             <div class="bhoechie-tab-content active tam">
                 <center>
                     <h3 class="glyphicon glyphicon-th-list color" ></h3>
-                    <h3> Lista Trabajos</h3>
-                    <h5>trabajos solicitados</h5>
+                    <h4> Lista Trabajos</h4>
+                    <h6>Trabajos solicitados</h6>
                 </center>
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->                
-               <br>                      
+                                 
                     @foreach($workorder as $worklist)                    
                     <h3><strong> {{ $worklist->clase_trabajo}} / ESTADO TRABAJO
                             <span class="estilo">
@@ -119,7 +119,7 @@
                     
                     {{ Form::close() }}                       
 
-                    <br> <br>
+                    <br>
                     <hr>
                     @endforeach
                 </div>               

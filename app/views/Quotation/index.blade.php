@@ -79,9 +79,8 @@
                 <h3 class="glyphicon glyphicon-pencil color" ></h3>
                 <h4> Listar Cotización</h4> 
             </center>    
-            <div class="panel panel-default tam">                  
-                <div class="panel-body">
-                                         
+            <div class="panel panel-default scroll tam">                  
+                <div class="panel-body">                   
                     @foreach($quotation as $quotlist)                    
                     <h3><strong> {{ $quotlist->clase_trabajo }} / Cotizacion:
                             <span class="estilo">

@@ -384,10 +384,10 @@ class WorkorderController extends \BaseController {
 				$workorder2->observacion_acabados= $workorder['observacion_acabados'];
 				$workorder2->fecha_reporte_acabados= $workorder['fecha_reporte_acabados'];
 				$workorder2->autorizado_acabados= $workorder['autorizado_acabados'];
-					
-			
-            $workorder2->save();
-            return Redirect::intended('customer/' . $workorder['customer_id'] . '/profile');
+				
+				$workorder2->save();
+				return Redirect::intended('worklist/' . $id . '/ver');
+			 
         }
     }
 

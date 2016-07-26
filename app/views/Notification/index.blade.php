@@ -76,7 +76,7 @@
                 <h3 class="glyphicon glyphicon-th-list color" ></h3>
                 <h4> Listar Notificaciones</h4>   
             </center>
-            <div class="panel panel-default tam">
+            <div class="panel panel-default scroll tam">
                 <!-- Default panel contents -->                
                 <br>                      
                 @foreach($notifications as $notification)                    

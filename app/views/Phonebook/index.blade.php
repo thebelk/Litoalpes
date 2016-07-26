@@ -74,9 +74,8 @@
                 <h3 class="glyphicon glyphicon-user color" ></h3>
                 <h4>  Contactos & Provedor </h4>  
             </center>
-            <div class="panel panel-default tam">                  
-                <div class="panel-body">
-                                          
+            <div class="panel panel-default scroll tam">                  
+                <div class="panel-body">                     
                     @foreach($phonebook as $phonlist)                      
                     <h3 class="color"><strong> {{ $phonlist->nombre }}&nbsp
                             @if($phonlist->tipo_contacto==1) CONTACTO                                

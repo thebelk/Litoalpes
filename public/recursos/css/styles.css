@@ -142,7 +142,14 @@ h3.message{
 .estilo{
     color:#428BCA;
 }
-
+.scroll{
+	
+	height: 1070px;
+    overflow-y:auto;
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+	margin-bottom: 5px;
+	cursor:pointer;
+}
 .footer  {
   background-color: #1676A3;
   border-top: 8px solid #fff;

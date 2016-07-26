@@ -75,7 +75,7 @@
                 <h3 class="glyphicon glyphicon-th-list color" ></h3>
                 <h4> Todos los Trabajos</h4>				
             </center>
-            <div class="panel panel-default tam">
+            <div class="panel panel-default scroll tam">
                 <!-- Default panel contents -->                
                                      
                 @foreach($workorder as $worklist)                    

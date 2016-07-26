@@ -75,7 +75,7 @@
                 <h3 class="glyphicon glyphicon-user color" ></h3>
                 <h4> Lista de Clientes</h4>  
             </center>
-            <div class="panel panel-default tam">                  
+            <div class="panel panel-default scroll tam">                  
                 <div class="panel-body ">                       
                     @foreach($customer as $custlist)                      
                     <h3><strong> 

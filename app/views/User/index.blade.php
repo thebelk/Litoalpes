@@ -69,12 +69,12 @@
     <div class="row ">
         <div class="bhoechie-tab">                     
             <!-- work section -->
-            <div class="bhoechie-tab-content active tam">
+            <div class="bhoechie-tab-content active  tam">
                 <center>
                     <h3 class="glyphicon glyphicon-th-list color" ></h3>
                     <h4> Trabajos por Realizar</h4>   
                 </center>
-                <div class="panel panel-default tam">
+                <div class="panel panel-default scroll tam">
                     @foreach($workorder as $worklist)
                     @if($worklist->estado_trabajo==1)
 
@@ -106,13 +106,13 @@
                         {{ HTML::link('/worklist/'.$worklist->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
                     </div> 
                     {{ Form::close() }} 
-                    <br> <br>
+                    <br> <br><hr>
                     @endif 
                     @endforeach
                 </div>               
             </div>
         </div>
     </div>
-</div>       
+</div>   
 
 @stop
