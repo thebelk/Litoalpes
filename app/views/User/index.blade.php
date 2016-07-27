@@ -74,45 +74,52 @@
                     <h3 class="glyphicon glyphicon-th-list color" ></h3>
                     <h4> Trabajos por Realizar</h4>   
                 </center>
-                <div class="panel panel-default scroll tam">
-                    @foreach($workorder as $worklist)
-                    @if($worklist->estado_trabajo==1)
+				<div class="com "><div class="com2 "></div>
+					<div id="testDiv3" class="panel panel-default slimScrollBar tam">
+						@foreach($workorder as $worklist)
+						@if($worklist->estado_trabajo==1)
 
-                    <!-- Default panel contents -->                
-                                       
-                    <h3><strong> {{ $worklist->clase_trabajo}} / ESTADO TRABAJO
-                            <span class="estilo">
-                                @if($worklist->estado_trabajo==1) Por realizar                                
-                                @elseif($worklist->estado_trabajo==2) Diseño 
-                                @elseif($worklist->estado_trabajo==3) Produccion 
-                                @elseif($worklist->estado_trabajo==3) Entregado 
-                                @endif 
-                            </span>
-                        </strong></h3>
-                     <h5><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
-                    <strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
-                    <strong>Material</strong>: {{ $worklist->clase_material }} ,
-                    <strong>Cantidad</strong>: {{ $worklist->cantidad_trabajo }} ,
-                    <strong>Tamaño </strong>: {{ $worklist->tamano }} </h5> 
-                <h5><strong>Valor Trabajo</strong>: {{ $worklist->total}},                         
-                    <strong>Abono</strong>: {{ $worklist->abono }} ,
-                    <strong>Saldo</strong>: {{ $worklist->saldo }} ,                    
-                    <strong>Diseñador</strong>: {{ $worklist->diseñador}},
-                    <strong>Vendedor</strong>: {{ $worklist->vendedor}}</h5>  
-                <br> 
-                    <div class="col-md-3">
-                        {{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
-                   
-                        {{ HTML::link('/worklist/'.$worklist->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
-                    </div> 
-                    {{ Form::close() }} 
-                    <br> <br><hr>
-                    @endif 
-                    @endforeach
-                </div>               
+						<!-- Default panel contents -->                
+										   
+						<h4><strong> {{ $worklist->clase_trabajo}} / ESTADO TRABAJO
+								<span class="estilo">
+									@if($worklist->estado_trabajo==1) Por realizar                                
+									@elseif($worklist->estado_trabajo==2) Diseño 
+									@elseif($worklist->estado_trabajo==3) Produccion 
+									@elseif($worklist->estado_trabajo==3) Entregado 
+									@endif 
+								</span>
+							</strong></h4>
+						 <h5><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
+						<strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
+						<strong>Material</strong>: {{ $worklist->clase_material }} ,
+						<strong>Cantidad</strong>: {{ $worklist->cantidad_trabajo }} ,
+						<strong>Tamaño </strong>: {{ $worklist->tamano }} </h5> 
+					<h5><strong>Valor Trabajo</strong>: {{ $worklist->total}},                         
+						<strong>Abono</strong>: {{ $worklist->abono }} ,
+						<strong>Saldo</strong>: {{ $worklist->saldo }} ,                    
+						<strong>Diseñador</strong>: {{ $worklist->diseñador}},
+						<strong>Vendedor</strong>: {{ $worklist->vendedor}}</h5>  
+					<br> 
+						<div class="col-md-3">
+							{{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
+					   
+							{{ HTML::link('/worklist/'.$worklist->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
+						</div> 
+						{{ Form::close() }} 
+						<br> <br><hr>
+						@endif 
+						@endforeach
+					</div> 
+				</div>              
             </div>
         </div>
     </div>
 </div>   
-
+<script>
+		 	  $('#testDiv3').slimScroll({
+				  color: '#00f'
+			  });
+		</script>	
+	
 @stop

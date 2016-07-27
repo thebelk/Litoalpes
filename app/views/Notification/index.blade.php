@@ -76,21 +76,23 @@
                 <h3 class="glyphicon glyphicon-th-list color" ></h3>
                 <h4> Listar Notificaciones</h4>   
             </center>
-            <div class="panel panel-default scroll tam">
-                <!-- Default panel contents -->                
-                <br>                      
-                @foreach($notifications as $notification)                    
-                <h3><strong>{{ $notification->subject}}</strong></h3>
-				<h5>
-					{{ $notification->body}}
-				</h5>
-                <div class="col-md-3">
-                    {{ HTML::link('/notification/'.$notification->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
-                </div>
-                <br> <br>
-                <hr>
-                @endforeach
-            </div>
+			<div class="com "><div class="com2 "></div>
+				<div class="panel panel-default scroll tam">
+					<!-- Default panel contents -->                
+					<br>                      
+					@foreach($notifications as $notification)                    
+					<h3><strong>{{ $notification->subject}}</strong></h3>
+					<h5>
+						{{ $notification->body}}
+					</h5>
+					<div class="col-md-3">
+						{{ HTML::link('/notification/'.$notification->id.'/ver','Ver', array('class' => 'btn btn-success'), false)}} 
+					</div>
+					<br> <br>
+					<hr>
+					@endforeach
+				</div>
+			</div>
         </div>
     </div>
 </div>  

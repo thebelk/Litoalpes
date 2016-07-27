@@ -78,41 +78,43 @@
             <center>
                 <h3 class="glyphicon glyphicon-pencil color" ></h3>
                 <h4> Listar Cotización</h4> 
-            </center>    
-            <div class="panel panel-default scroll tam">                  
-                <div class="panel-body">                   
-                    @foreach($quotation as $quotlist)                    
-                    <h3><strong> {{ $quotlist->clase_trabajo }} / Cotizacion:
-                            <span class="estilo">
-                                @if($quotlist->estado_cotizacion==1) Espera
-                                @elseif($quotlist->estado_cotizacion==2) Elaborada
-                                @elseif($quotlist->estado_cotizacion==3) Enviado 
-                                @elseif($quotlist->estado_cotizacion==4) Autorizado 
-                                @endif 
-                            </span>
-                        </strong></h3>
-                    <h5><strong>Cliente</strong>: {{ $quotlist->cliente}},                        
-                        <strong>Celular</strong>: {{ $quotlist->cel_contacto }} ,
-						 <strong>Empresa </strong>: {{ $quotlist->empresa }},
-						 <strong>Telefono</strong>: {{ $quotlist->telefono }},
-						 <strong>Direccion</strong>: {{ $quotlist->direccion}}.</h5>
-                    <h5> <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }}</h5> 
-					<h5> <strong>Cotizacion</strong>: {{ $quotlist->cotizacion }}</h5> 
-                    <br>
-                    <div class="col-md-1">
-                        {{ HTML::link('/quotation/'.$quotlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
-                    </div>  
-					<div class="col-md-1">
-                    {{ Form::model($quotation, array('url' => array('/quotation/'.$quotlist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
-                    {{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
-                    </div>               
-                    {{ Form::close() }}                       
+            </center>  
+			<div class="com "><div class="com2 "></div>
+				<div class="panel panel-default scroll tam">                  
+					<div class="panel-body">                   
+						@foreach($quotation as $quotlist)                    
+						<h4><strong> {{ $quotlist->clase_trabajo }} / Cotizacion:
+								<span class="estilo">
+									@if($quotlist->estado_cotizacion==1) Espera
+									@elseif($quotlist->estado_cotizacion==2) Elaborada
+									@elseif($quotlist->estado_cotizacion==3) Enviado 
+									@elseif($quotlist->estado_cotizacion==4) Autorizado 
+									@endif 
+								</span>
+							</strong></h4>
+						<h5><strong>Cliente</strong>: {{ $quotlist->cliente}},                        
+							<strong>Celular</strong>: {{ $quotlist->cel_contacto }} ,
+							 <strong>Empresa </strong>: {{ $quotlist->empresa }},
+							 <strong>Telefono</strong>: {{ $quotlist->telefono }},
+							 <strong>Direccion</strong>: {{ $quotlist->direccion}}.</h5>
+						<h5> <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }}</h5> 
+						<h5> <strong>Cotizacion</strong>: {{ $quotlist->cotizacion }}</h5> 
+						<br>
+						<div class="col-md-1">
+							{{ HTML::link('/quotation/'.$quotlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
+						</div>  
+						<div class="col-md-1">
+						{{ Form::model($quotation, array('url' => array('/quotation/'.$quotlist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
+						{{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
+						</div>               
+						{{ Form::close() }}                       
 
-                    <br> <br> 
-                    <hr>
-                    @endforeach
-                </div>
-            </div>
+						<br> <br> 
+						<hr>
+						@endforeach
+					</div>
+				</div>
+			</div>
         </div>
     </div>  
 </div>  

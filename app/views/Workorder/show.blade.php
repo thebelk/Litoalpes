@@ -16,7 +16,7 @@
     <br>
     <div class="comp"> 
 			<a href="/customer/{{$customer->id}}/profile"> 
-            <h3>{{$customer->cliente}}&nbsp </h3></a>
+            <h4>{{$customer->cliente}}&nbsp </h4></a>
             <h5>Contacto: {{$customer->cel_contacto}} </h5> 
             <h5>Telefono: {{$customer->telefono}} </h5> 
             <h5>Cliente:          

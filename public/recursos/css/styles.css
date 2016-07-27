@@ -104,7 +104,7 @@ h2,h3.color{
 .complement {
 	margin-top: 80px;
 	border-radius: 8px;
-	height:180%;
+	height: 1230px;
     background-color: #072741;
     padding-top: 64px;	
 	
@@ -136,11 +136,23 @@ h3.message{
     color: red;
 }
 .cont{
-    background-color:#05496C; 
+    background-color:#428BCA; 
     color:#fff; 
 }
 .estilo{
     color:#428BCA;
+}
+.com{
+	border-radius: 8px;
+	background-color:#F5F5F5;
+	padding: 8px;
+    margin: 8px;	
+}
+.com2{
+	border-radius: 4px;
+	background-color:#1676A3;
+	padding: 7px;
+    margin: 7px;	
 }
 .scroll{
 	
@@ -218,3 +230,7 @@ h3.message{
 	position: static;
 }
 /*testimonial*/
+
+
+.slimScrollDiv { border:1px solid #eee; }
+

@@ -75,39 +75,41 @@
                 <h3 class="glyphicon glyphicon-user color" ></h3>
                 <h4> Lista de Clientes</h4>  
             </center>
-            <div class="panel panel-default scroll tam">                  
-                <div class="panel-body ">                       
-                    @foreach($customer as $custlist)                      
-                    <h3><strong> 
-                            @if($custlist->empresa=="")
-                            {{ $custlist->cliente }} 
-                            @endif
-                            {{ $custlist->empresa }} 
-                            {{ $custlist->nit_cc }}</strong>
-                    </h3>
-                    <h5>
-                        <strong>Cliente </strong>: 
-                        @if($custlist->tipo_cliente==1) Directo
-                        @elseif($customer->tipo_cliente==2) Intermediario                              
-                        @endif,
-                        <strong>Nombre </strong>: {{ $custlist->cliente }} ,                                               
-                        <strong>Celular</strong>: {{ $custlist->cel_contacto }},
-                        <strong>Telefono</strong>: {{ $custlist->telefono }}, 
-                        <strong>E-mail </strong>: {{ $custlist->email }}</h5> 
-                    <h5><strong>Direccion</strong>: {{ $custlist->direccion }},
-                        <strong>Ciudad </strong>: {{ $custlist->ciudad }},
-                        <strong>Pais </strong>: {{ $custlist->pais}}</h5> 
-                    <br>
-					<div class="col-md-3">
-                    {{ HTML::link('/customer/'.$custlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}  
-					
-                    {{ HTML::link('/customer/'.$custlist->id.'/profile','Ver', array('class' => 'btn btn-success'), false)}} 
+			<div class="com "><div class="com2 "></div>
+				<div class="panel panel-default scroll tam">                  
+					<div class="panel-body ">                       
+						@foreach($customer as $custlist)                      
+						<h4><strong> 
+								@if($custlist->empresa=="")
+								{{ $custlist->cliente }} 
+								@endif
+								{{ $custlist->empresa }} 
+								{{ $custlist->nit_cc }}</strong>
+						</h4>
+						<h5>
+							<strong>Cliente </strong>: 
+							@if($custlist->tipo_cliente==1) Directo
+							@elseif($customer->tipo_cliente==2) Intermediario                              
+							@endif,
+							<strong>Nombre </strong>: {{ $custlist->cliente }} ,                                               
+							<strong>Celular</strong>: {{ $custlist->cel_contacto }},
+							<strong>Telefono</strong>: {{ $custlist->telefono }}, 
+							<strong>E-mail </strong>: {{ $custlist->email }}</h5> 
+						<h5><strong>Direccion</strong>: {{ $custlist->direccion }},
+							<strong>Ciudad </strong>: {{ $custlist->ciudad }},
+							<strong>Pais </strong>: {{ $custlist->pais}}</h5> 
+						<br>
+						<div class="col-md-3">
+						{{ HTML::link('/customer/'.$custlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}  
+						
+						{{ HTML::link('/customer/'.$custlist->id.'/profile','Ver', array('class' => 'btn btn-success'), false)}} 
+						</div>
+						<br><br>
+						<hr>
+						@endforeach
 					</div>
-                    <br><br>
-                    <hr>
-                    @endforeach
-                </div>
-            </div>
+				</div>
+		   </div>
         </div>
     </div>  
 </div>  
