@@ -16,13 +16,13 @@
         width : 'auto',
 
         // height in pixels of the visible scroll area
-        height : '250px',
+        height : '1070px',
 
         // width in pixels of the scrollbar and rail
         size : '7px',
 
         // scrollbar color, accepts any hex/color value
-        color: '#000',
+        color: '#1676A3',
 
         // scrollbar position - left/right
         position : 'right',

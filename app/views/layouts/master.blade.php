@@ -9,8 +9,8 @@
         <!-- Bootstrap core CSS -->
         {{ HTML::style('recursos/css/bootstrap.min.css' , array('media'=>'screen')) }}
         {{ HTML::style('recursos/css/styles.css' , array('media'=>'screen')) }}
-		<script type="text/javascript" src="libs/prettify/prettify.js"></script>
-	<script type="text/javascript" src="../jquery.slimscroll.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script type="text/javascript" src="/recursos/js/jquery.slimscroll.js"></script>
     </head>
     <body>
         @section('header')
@@ -165,13 +165,12 @@
 		
 		<script type="text/javascript">
 			$(function(){
-			  $('#testDiv3').slimScroll({
-				  color: '#00f'
-			  });
+			  $('#testDiv3').slimScroll()
+			});
 		</script>
 
         <!-- script references -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        
         <script src="/recursos/js/bootstrap.min.js"></script>
         <script src="/recursos/js/scripts.js"></script>
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
