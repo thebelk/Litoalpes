@@ -106,6 +106,7 @@
                  {{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} -->
             </div>
             <section class="tab wow fadeInLeft tam"> 
+			
                 <header class="panel-heading tab-bg-dark-navy-blue">
                     <ul class="nav nav-tabs nav-justified ">
                         <li class="active">
@@ -120,13 +121,13 @@
                         </li>
                     </ul>
                 </header>
-                <div class="panel-body">
+				<div class="panel-body pancol">
                     <div class="tab-content tasi-tab" >
                         <div id="ordencompra" class="tab-pane fade in active" height="100">                               
                             <article class="media">
                                  {{Form::open(array('url' => '/workorder/'.$workorder->id,'method' => 'PUT', 'role'=>'form')) }}
                                 <div class="panel panel-default ">                                           
-                                    <div class="row"  align="justify">
+                                    <div class="row2"  align="justify">
                                         <!-- <h2  align="center"> Orden de Compra  </h2> --> 
                                         <br><br>
 										{{ Form::text('customer_id', $customer->id, array('hidden' => 'true')) }} 										
@@ -333,7 +334,7 @@
                         </div>                                                       
                         <div id="ordenproducion"  class="tab-pane fade">                              
                             <div class="panel panel-default ">                                           
-                                <div class="row"  align="justify">                                        
+                                <div class="row2"  align="justify">                                        
                                     <!--  <h2  align="center">Orden de Producción</h2> --> 
                                     <br>
                                     <div class="col-xs-8">
@@ -400,7 +401,7 @@
                                         <br>
                                     </div>
                                     <hr>
-                                    <div class="row"  align="justify"> 
+                                    <div class="row2"  align="justify"> 
                                         <div class="col-xs-12">
                                             <h5>Facturas Reg.Común</h5>
                                             <br>
@@ -453,7 +454,7 @@
                                     </div>
 								</div>
 								<div class="collapse" id="impresion">
-                                    <div class="row"  align="left">                                                      
+                                    <div class="row2"  align="left">                                                      
                                         <div class='form-group form-register' align="justify">
 											<hr>
                                             <div class="col-xs-12">
@@ -632,7 +633,7 @@
                                      	
                                 </div>
 								<div class="collapse" id="acabados">  
-                                    <div class="row"  align="justify">                                           
+                                    <div class="row2"  align="justify">                                           
                                         <div class='form-group form-register' align="justify">
 										<hr>
                                             <div class="col-xs-12">
@@ -720,7 +721,7 @@
                                             <div class='form-group'>
                                                 {{ Form::checkbox('plastificadoreserva',  $workorder->plastificadoreserva, $workorder->plastificadoreserva == 1)}}
                                                 {{ Form::label('plastificadoreserva', 'PLAST.RESERVA') }}
-                                                <br><br>
+                                                
                                             </div>
                                         </div> 
 										<div class="col-xs-3">
@@ -745,7 +746,7 @@
                                             <div class='form-group'>
                                                 {{ Form::checkbox('hojassueltas', $workorder->hojassueltas, $workorder->hojassueltas == 1)}}
                                                 {{ Form::label('hojassueltas', 'HOJAS SUELTAS') }}  
-												<br>
+												<br><br>
                                             </div>
                                         </div>
 

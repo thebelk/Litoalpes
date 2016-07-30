@@ -52,9 +52,8 @@
     </div> 
     <br>
      <div id="sidebar"> 
-        <div class="list-group">                        
-            <a href="/phonebook/create" class="list-group-item active text-center">
-            <a href="/phonebook" class="list-group-item active text-center">                           
+        <div class="list-group"> 
+            <a href="/phonebook" class="list-group-item  text-center">                           
                 <h5 class="glyphicon glyphicon-earphone"></h5><br/><h5>Contactos | Proveedor</h5>
             </a>
 			<a href="/workorderlist" class="list-group-item active  text-center">
@@ -97,7 +96,7 @@
                             </li>
                         </ul>
                     </header>
-                    <div class="panel-body">                       
+                    <div class="panel-body pancol">                       
                         <div class="tab-content tasi-tab" >
                             @if($phonebook->tipo_contacto==1) 
                             <div id="contacto" class="tab-pane fade in active" height="100"> 

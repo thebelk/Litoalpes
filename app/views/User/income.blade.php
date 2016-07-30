@@ -127,21 +127,21 @@
                         <ul class="nav nav-tabs nav-justified ">
                             <li class="active">
                                 <a data-toggle="tab" href="#reportemes">
-                                    <h5>REPORTE MES</h5> 
+                                    <h5>INGRESOS MES</h5> 
                                 </a>
                             </li>
                             <li>
                                 <a data-toggle="tab" href="#reportecontacto">
-                                    <h5>REPORTE CLIENTES</h5>  
+                                    <h5>SALDOS CLIENTES</h5>  
                                 </a>
                             </li>
                         </ul>
                     </header>
-                    <div class="panel-body">                       
+                    <div id="scroll" class="panel-body pancol slimScrollBar ">                     
                         <div class="tab-content tasi-tab" >
                             <div id="reportemes" class="tab-pane fade in active" height="100">                               
                                 <article class="media">								
-                                    <div class="panel panel-default tam">
+                                    <div  class="panel panel-default tam">
 										<h3><span class="estilo"> Detalles ingresos por mes</span></h3> 
 										@foreach($workorder as $worklist)
 										@if($worklist->estado_trabajo==1)
@@ -231,6 +231,18 @@
                 </section> 
     </div>
 </div>
+<script>
+		 	  
+  $('#scroll').slimScroll({
+	 
+	size: '5px',
+	railColor: '#222',
+	height: '540px',
+	railOpacity: 1,
+	wheelStep: 2,
+	allowPageScroll: true		  
+			  });
+</script>
 
 <script type="text/javascript">
     // my custom script

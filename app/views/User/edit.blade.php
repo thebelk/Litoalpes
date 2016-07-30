@@ -68,135 +68,133 @@
 </div>  
 
 <div class="col col-sm-9">
-    <center>
-        <div class="row ">
-            <div class="bhoechie-tab-content active">	
-                <div class="panel-body">
-				<div class="panel panel-default  tam">
-					<div class="panel-heading" align="center"> 
-							<h3 class="glyphicon glyphicon-user color" ></h3>
-							<h4> Editar Usuario</h4> 
-					</div>
-				</div>
-				 
-					{{Form::open(array('url' => '/user/'.Auth::user()->id,'method' => 'PUT', 'role'=>'form', 'class'=>'form-inline')) }}
-					{{ Form::hidden('id', Auth::user()->id) }}<br>
-					<div class='row'>
-						<div class="col-md-7 col-md-offset-3">
-                                <div class="col-xs-6 col-md-6">
-                                    <div class="form-group form-register"align="justify">
-                                        {{ Form::label('representante', 'Nombre y Apellido *:') }}<br>
-                                        {{ Form::text('representante', Auth::user()->representante, array('placeholder' => 'Nombre y Apellido', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 col-md-6">
-                                    <div class="form-group form-register"align="justify">
-                                        {{ Form::label('celular', 'Celular *:') }}<br>
-                                        {{ Form::text('celular',Auth::user()->celular, array('placeholder' => 'Celular', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 col-md-6">
-                                    <div class='form-group form-register' align="justify">
-                                        {{ Form::label('nit_cc', 'NIT *:') }}<br>
-                                        {{ Form::text('nit_cc',Auth::user()->nit_cc, array('placeholder' => 'Nit', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 col-md-6">
-                                    <div class='form-group form-register' align="justify">
-                                        {{ Form::label('razon_social', 'Empresa *:') }}<br>
-                                        {{ Form::text('razon_social', Auth::user()->razon_social, array('placeholder' => 'Razon Social', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 ">
-                                    <div class='form-group form-register' align="justify">
-                                        {{ Form::label('email', 'Email *:') }}<br>
-                                        {{ Form::text('email', Auth::user()->email, array('placeholder' => ' Empresa', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 ">
-                                    <div class='form-group form-register' align="justify">
-                                        {{ Form::label('email_confirmation', 'Confirmar Email *:') }}<br>
-                                        {{ Form::email('email_confirmation', Auth::user()->email_confirmation, array('placeholder' => 'Confirmar Email', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
-                               
-                                <div class="col-xs-6 ">
-                                    <div class='form-group form-register' align="justify">
-                                        {{ Form::label('pais', 'Pais:') }}<br>
-                                        {{ Form::text('pais', Auth::user()->pais, array('placeholder' => 'Pais', 'class' => 'form-control')) }}
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 ">
-                                    <div class='form-group form-register' align="justify">
-                                        {{ Form::label('ciudad', 'Ciudad / Municipio:') }}<br>
-                                        {{ Form::text('ciudad', Auth::user()->ciudad, array('placeholder' => 'Ciudad', 'class' => 'form-control')) }}
-                                    </div>
-                                </div>
-
-                                <div class="col-xs-6 ">
-                                    <div class='form-group form-register' align="justify">
-                                        {{ Form::label('direccion', 'Direccion:') }}<br>
-                                        {{ Form::text('direccion', Auth::user()->direccion, array('placeholder' => 'Direccion', 'class' => 'form-control')) }}
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 ">
-                                    <div class='form-group form-register' align="justify">
-                                        {{ Form::label('telefono', 'Telefono :') }}<br>
-                                        {{ Form::text('telefono', Auth::user()->telefono, array('placeholder' => 'Telefono', 'class' => 'form-control')) }}
-                                    </div>
-									<br><br>
-                                </div>
-						
-							<div class='row buttons'> 
-								{{ HTML::link('/user','Reset', array('class' => 'btn btn-default'), false)}}                        
-								{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-success')) }}                                 
-							</div>	
-												
+	<center>
+		<div class="row ">
+			<div class="bhoechie-tab-content active">	
+				<div class="panel-body">
+					<div class="panel panel-default  tam">
+						<div class="panel-heading" align="center"> 
+								<h3 class="glyphicon glyphicon-user color" ></h3>
+								<h4> Editar Usuario</h4> 
 						</div>
-					{{ Form::hidden('save', 'savenormal') }}<br>
-					{{ Form::close() }}	
-
 					</div>
-					<div class="col-xs-12 ">
-					<br>
-						<h5 class='form-register' align="justify">Editar contraseña </h5>                                            
-						<hr>
-						{{Form::open(array('url' => '/user/'.Auth::user()->id,'method' => 'PUT', 'role'=>'form', 'class'=>'form-inline')) }}
-						{{ Form::hidden('id', Auth::user()->id) }}<br>
-						{{ Form::hidden('save', 'savepassword') }}<br>
-							<div class="col-xs-3 ">						
-								<div class='form-group form-register' align="justify">
-									{{ Form::label('old_password', 'Contraseña Actual *:') }}<br>
-									{{ Form::password('old_password', array('placeholder' => 'Password', 'class' => 'form-control', 'required' => 'required')) }}
+					
+					<div class="panel-body tam pancol">
+					<div class="com2 "></div>
+					
+						<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+						<div class="panel panel-default tam ">
+							{{Form::open(array('url' => '/user/'.Auth::user()->id,'method' => 'PUT', 'role'=>'form')) }}
+							{{ Form::hidden('id', Auth::user()->id) }}
+							<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+							<div class="row ">					
+								<div class="col-xs-6">
+									<div class="form-group form-register"align="justify">
+										{{ Form::label('representante', 'Nombre y Apellido *:') }}<br>
+										{{ Form::text('representante', Auth::user()->representante, array('placeholder' => 'Nombre y Apellido', 'class' => 'form-control', 'required' => 'required')) }}
+									</div>
 								</div>
-							</div>
-							<div class="col-xs-3 ">
-								<div class='form-group form-register' align="justify">
-									{{ Form::label('password', 'Nueva Contraseña *:') }}<br>
-									{{ Form::password('password', array('placeholder' => 'Confirmar Password', 'class' => 'form-control', 'required' => 'required')) }}
+								<div class="col-xs-6 ">
+									<div class="form-group form-register"align="justify">
+										{{ Form::label('celular', 'Celular *:') }}<br>
+										{{ Form::text('celular',Auth::user()->celular, array('placeholder' => 'Celular', 'class' => 'form-control', 'required' => 'required')) }}
+									</div>
 								</div>
-							</div>
-							<div class="col-xs-3 ">
-								<div class='form-group form-register' align="justify">
-									{{ Form::label('password_confirmation', 'Confirmar Contraseña *:') }}<br>
-									{{ Form::password('password_confirmation', array('placeholder' => 'Confirmar Password', 'class' => 'form-control', 'required' => 'required')) }}
+								<div class="col-xs-6 col-md-6">
+									<div class='form-group form-register' align="justify">
+										{{ Form::label('nit_cc', 'NIT *:') }}<br>
+										{{ Form::text('nit_cc',Auth::user()->nit_cc, array('placeholder' => 'Nit', 'class' => 'form-control', 'required' => 'required')) }}
+									</div>
 								</div>
-							</div>
-							<div class="col-xs-3 ">
-							<br>
-									{{ HTML::link('/user','Reset', array('class' => 'btn btn-default'), false)}}                        
-									{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-success')) }}
+								<div class="col-xs-6 col-md-6">
+									<div class='form-group form-register' align="justify">
+										{{ Form::label('razon_social', 'Empresa *:') }}<br>
+										{{ Form::text('razon_social', Auth::user()->razon_social, array('placeholder' => 'Razon Social', 'class' => 'form-control', 'required' => 'required')) }}
+									</div>
+								</div>
+								<div class="col-xs-6 ">
+									<div class='form-group form-register' align="justify">
+										{{ Form::label('email', 'Email *:') }}<br>
+										{{ Form::text('email', Auth::user()->email, array('placeholder' => ' Empresa', 'class' => 'form-control', 'required' => 'required')) }}
+									</div>
+								</div>
+								<div class="col-xs-6 ">
+									<div class='form-group form-register' align="justify">
+										{{ Form::label('email_confirmation', 'Confirmar Email *:') }}<br>
+										{{ Form::email('email_confirmation', Auth::user()->email_confirmation, array('placeholder' => 'Confirmar Email', 'class' => 'form-control', 'required' => 'required')) }}
+									</div>
+								</div>
+							   
+								<div class="col-xs-6 ">
+									<div class='form-group form-register' align="justify">
+										{{ Form::label('pais', 'Pais:') }}<br>
+										{{ Form::text('pais', Auth::user()->pais, array('placeholder' => 'Pais', 'class' => 'form-control')) }}
+									</div>
+								</div>
+								<div class="col-xs-6 ">
+									<div class='form-group form-register' align="justify">
+										{{ Form::label('ciudad', 'Ciudad / Municipio:') }}<br>
+										{{ Form::text('ciudad', Auth::user()->ciudad, array('placeholder' => 'Ciudad', 'class' => 'form-control')) }}
+									</div>
+								</div>
+								<div class="col-xs-6 ">
+									<div class='form-group form-register' align="justify">
+										{{ Form::label('direccion', 'Direccion:') }}<br>
+										{{ Form::text('direccion', Auth::user()->direccion, array('placeholder' => 'Direccion', 'class' => 'form-control')) }}
+									</div>
+								</div>
+								<div class="col-xs-6 ">
+									<div class='form-group form-register' align="justify">
+										{{ Form::label('telefono', 'Telefono :') }}<br>
+										{{ Form::text('telefono', Auth::user()->telefono, array('placeholder' => 'Telefono', 'class' => 'form-control')) }}
+									</div>
 									<br><br>
+								</div>
+								
+									{{ HTML::link('/user','Reset', array('class' => 'btn btn-default'), false)}}                        
+									{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-success')) }}                                 
+							
+								{{ Form::hidden('save', 'savenormal') }}
+								{{ Form::close() }}
 							</div>
-						{{ Form::close() }}<hr>
+							<div class="col-xs-12 "><br><br>
+								<h5 class='form-register' align="justify">Editar contraseña </h5><hr>
+								{{Form::open(array('url' => '/user/'.Auth::user()->id,'method' => 'PUT', 'role'=>'form', 'class'=>'form-inline')) }}
+								{{ Form::hidden('id', Auth::user()->id) }}
+								{{ Form::hidden('save', 'savepassword') }}<br>
+									<div class="col-xs-4">						
+										<div class='form-group form-register' align="justify">
+											{{ Form::label('old_password', 'Contraseña Actual *:') }}<br>
+											{{ Form::password('old_password', array('placeholder' => 'Password', 'class' => 'form-control', 'required' => 'required')) }}
+										</div>
+									</div>
+									<div class="col-xs-4">
+										<div class='form-group form-register' align="justify">
+											{{ Form::label('password', 'Nueva Contraseña *:') }}<br>
+											{{ Form::password('password', array('placeholder' => 'Confirmar Password', 'class' => 'form-control', 'required' => 'required')) }}
+										</div>
+									</div>
+									<div class="col-xs-4">
+										<div class='form-group form-register' align="justify">
+											{{ Form::label('password_confirmation', 'Confirmar Contraseña *:') }}<br>
+											{{ Form::password('password_confirmation', array('placeholder' => 'Confirmar Password', 'class' => 'form-control', 'required' => 'required')) }}
+										</div><br><br>
+									</div>
+								
+							</div>
+						
+					</div>	
+					<div class="col-xs-4">
+						<div class='button '>
+								{{ HTML::link('/user','Reset', array('class' => 'btn btn-default btn-sm'), false)}}                        
+								{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-success btn-sm')) }}
+						</div>	<br>
 					</div>
-                   
-                    
-                </div>
-            </div>
-    </center>
-</div>
-</div>  
+					{{ Form::close() }}<hr>					
+				</div>		
+			</div>
+		</div>
+	</center>
 </div>  
 @stop
 

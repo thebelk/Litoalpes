@@ -82,102 +82,100 @@
                             <h4> Editar Cliente</h4> 
                     </div>
                 </div>
-                <div class="panel-body tam">
-                    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-                    <div class="panel panel-default ">
-                        {{Form::open(array('url' => '/customer/'.$customer->id,'method' => 'PUT', 'role'=>'form')) }}
-                        <div class="row ">                                  
-                            <div class="col-xs-6 col-md-4 imp ">
-                                <div class='form-group form-register'align="justify">
-                                    {{ Form::label('cliente', 'CLIENTE:') }}
-                                    {{ Form::text('id', $customer->id, array('hidden' => 'true')) }} 
-                                    {{ Form::text('cliente', $customer->cliente, array('placeholder' => 'Cliente', 'class' => 'form-control', 'required' => 'required')) }}
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-md-4 imp">
-                                <div class='form-group form-register'align="justify">
-                                    {{ Form::label('cel_contacto', 'NUMERO DE CONTACTO:') }}
-                                    {{ Form::text('cel_contacto', $customer->cel_contacto, array('placeholder' => 'Celular', 'class' => 'form-control')) }}
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-md-4 imp">                                     
-                                <div class='form-group form-register'align="justify">
-                                    {{ Form::label('tipo_cliente', 'TIPO CLIENTE:') }}
-                                    {{ Form::select('tipo_cliente', array('Tipo Cliente' => array( '1' => 'Seleccionar','1' => 'Directo ', '2' => 'Intermediario')),$customer->tipo_cliente ,array('class' => 'form-control')); }}
-                                </div>
-                                <br>
-                            </div>
-                            <div class="col-xs-6 col-md-4 imp">
-                                <div class='form-group form-register'align="justify">
-                                    {{ Form::label('nit_cc', 'NIT / CC:') }}
-                                    {{ Form::text('nit_cc', $customer->nit_cc, array('placeholder' => 'Nit / CC', 'class' => 'form-control')) }}
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-md-4 imp">
-                                <div class='form-group form-register'align="justify">
-                                    {{ Form::label('empresa', 'EMPRESA:') }}
-                                    {{ Form::text('empresa', $customer->empresa, array('placeholder' => 'Empresa', 'class' => 'form-control')) }}
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-md-4 imp ">
-                                <div class='form-group form-register'align="justify">
-                                    {{ Form::label('telefono', 'TELEFONO:') }}
-                                    {{ Form::text('telefono', $customer->telefono, array('placeholder' => 'Telefono', 'class' => 'form-control')) }}
-                                </div>
-                                <br>
-                            </div>
-                            <div class="col-xs-6 col-md-4 imp ">
-                                <div class='form-group form-register'align="justify">
-                                    {{ Form::label('direccion', 'DIRECCIÓN:') }}
-                                    {{ Form::text('direccion', $customer->direccion, array('placeholder' => 'DirecciÓn', 'class' => 'form-control')) }}
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-md-4 imp">
-                                <div class='form-group form-register'align="justify">
-                                    {{ Form::label('ciudad', 'CIUDAD:') }}
-                                    {{ Form::text('ciudad', $customer->ciudad, array('placeholder' => 'Ciudad', 'class' => 'form-control')) }}
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-md-4 imp ">
-                                <div class='form-group form-register'align="justify">
-                                    {{ Form::label('pais', 'PAIS:') }}
-                                    {{ Form::text('pais', $customer->pais, array('placeholder' => 'Pais', 'class' => 'form-control')) }}
-                                </div>
-                                <br>
-                            </div>
-                            <div class="col-xs-6 col-md-4 imp">
-                                <div class='form-group form-register'align="justify">
-                                    {{ Form::label('email', 'E-MAIL:') }}
-                                    {{ Form::text('email', $customer->email, array('placeholder' => 'Email', 'class' => 'form-control')) }}
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-md-4 imp">
-                                <div class='form-group form-register'align="justify">
-                                    {{ Form::label('pagina_web', 'PAGINA WEB:') }}
-                                    {{ Form::text('pagina_web', $customer->pagina_web, array('placeholder' => 'Pagina Web', 'class' => 'form-control')) }}
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-md-4 imp">
-                                <div class='form-group form-register'align="justify">
-                                    {{ Form::label('otro', 'OTRO:') }}
-                                    {{ Form::text('otro', $customer->otro, array('placeholder' => 'Otro', 'class' => 'form-control')) }}
-                                </div>
-                                <br>
-                            </div>
-                        </div> 
-                        {{ HTML::link('/customer/'.$customer->id.'/profile','Resetear', array('class' => 'btn btn-default'), false)}}                       
-                        {{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success')) }}  
+				
+					<div class="panel-body pancol tam">
+						<div class="com2 "></div>
+						<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+						<div class="panel panel-default ">
+							{{Form::open(array('url' => '/customer/'.$customer->id,'method' => 'PUT', 'role'=>'form')) }}
+							<div class="row ">                                  
+								<div class="col-xs-6 col-md-4 imp ">
+									<div class='form-group form-register'align="justify">
+										{{ Form::label('cliente', 'CLIENTE:') }}
+										{{ Form::text('id', $customer->id, array('hidden' => 'true')) }} 
+										{{ Form::text('cliente', $customer->cliente, array('placeholder' => 'Cliente', 'class' => 'form-control', 'required' => 'required')) }}
+									</div>
+								</div>
+								<div class="col-xs-6 col-md-4 imp">
+									<div class='form-group form-register'align="justify">
+										{{ Form::label('cel_contacto', 'NUMERO DE CONTACTO:') }}
+										{{ Form::text('cel_contacto', $customer->cel_contacto, array('placeholder' => 'Celular', 'class' => 'form-control')) }}
+									</div>
+								</div>
+								<div class="col-xs-6 col-md-4 imp">                                     
+									<div class='form-group form-register'align="justify">
+										{{ Form::label('tipo_cliente', 'TIPO CLIENTE:') }}
+										{{ Form::select('tipo_cliente', array('Tipo Cliente' => array( '1' => 'Seleccionar','1' => 'Directo ', '2' => 'Intermediario')),$customer->tipo_cliente ,array('class' => 'form-control')); }}
+									</div>
+									<br>
+								</div>
+								<div class="col-xs-6 col-md-4 imp">
+									<div class='form-group form-register'align="justify">
+										{{ Form::label('nit_cc', 'NIT / CC:') }}
+										{{ Form::text('nit_cc', $customer->nit_cc, array('placeholder' => 'Nit / CC', 'class' => 'form-control')) }}
+									</div>
+								</div>
+								<div class="col-xs-6 col-md-4 imp">
+									<div class='form-group form-register'align="justify">
+										{{ Form::label('empresa', 'EMPRESA:') }}
+										{{ Form::text('empresa', $customer->empresa, array('placeholder' => 'Empresa', 'class' => 'form-control')) }}
+									</div>
+								</div>
+								<div class="col-xs-6 col-md-4 imp ">
+									<div class='form-group form-register'align="justify">
+										{{ Form::label('telefono', 'TELEFONO:') }}
+										{{ Form::text('telefono', $customer->telefono, array('placeholder' => 'Telefono', 'class' => 'form-control')) }}
+									</div>
+									<br>
+								</div>
+								<div class="col-xs-6 col-md-4 imp ">
+									<div class='form-group form-register'align="justify">
+										{{ Form::label('direccion', 'DIRECCIÓN:') }}
+										{{ Form::text('direccion', $customer->direccion, array('placeholder' => 'DirecciÓn', 'class' => 'form-control')) }}
+									</div>
+								</div>
+								<div class="col-xs-6 col-md-4 imp">
+									<div class='form-group form-register'align="justify">
+										{{ Form::label('ciudad', 'CIUDAD:') }}
+										{{ Form::text('ciudad', $customer->ciudad, array('placeholder' => 'Ciudad', 'class' => 'form-control')) }}
+									</div>
+								</div>
+								<div class="col-xs-6 col-md-4 imp ">
+									<div class='form-group form-register'align="justify">
+										{{ Form::label('pais', 'PAIS:') }}
+										{{ Form::text('pais', $customer->pais, array('placeholder' => 'Pais', 'class' => 'form-control')) }}
+									</div>
+									<br>
+								</div>
+								<div class="col-xs-6 col-md-4 imp">
+									<div class='form-group form-register'align="justify">
+										{{ Form::label('email', 'E-MAIL:') }}
+										{{ Form::text('email', $customer->email, array('placeholder' => 'Email', 'class' => 'form-control')) }}
+									</div>
+								</div>
+								<div class="col-xs-6 col-md-4 imp">
+									<div class='form-group form-register'align="justify">
+										{{ Form::label('pagina_web', 'PAGINA WEB:') }}
+										{{ Form::text('pagina_web', $customer->pagina_web, array('placeholder' => 'Pagina Web', 'class' => 'form-control')) }}
+									</div>
+								</div>
+								<div class="col-xs-6 col-md-4 imp">
+									<div class='form-group form-register'align="justify">
+										{{ Form::label('otro', 'OTRO:') }}
+										{{ Form::text('otro', $customer->otro, array('placeholder' => 'Otro', 'class' => 'form-control')) }}
+									</div>
+									<br>
+								</div>
+							</div> 
+							{{ HTML::link('/customer/'.$customer->id.'/profile','Resetear', array('class' => 'btn btn-default'), false)}}                       
+							{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success')) }}  
 
-                    </div> 
-                </div>
-
+						</div> 
+					</div>
             </center>
         </div>
         {{ Form::close() }}
     </div> 
-
-
-
 </div>  
 @stop
 

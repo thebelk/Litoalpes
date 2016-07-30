@@ -81,7 +81,8 @@
                     </div>
                 </div>
             </center>
-            <div class="panel-body tam">
+            <div class="panel-body tam pancol">
+				<div class="com2 "></div>
                 <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                 <div class="panel panel-default ">
                     {{Form::open(array('url' => '/quotation','role'=>'form', 'method' => 'POST')) }}

@@ -13,26 +13,55 @@
     </head>
     <body>
         @section('header')
-		<header>  
-			<div class="container">
-               
+        <header>  
+            <div class="container">
+
             </div>
             <div class="container-">     
-				<nav class="navbar navbar-static" role="navigation">					  
-					 <div class="nav-collapse collase">
-						<div class=" navbar-left">
-							<div class="bootoom">
-								<h2><span class="label label-success cont">Litografia Los Alpes</span></h2>
-							</div>
-						</div>
-						<div class=" navbar-right"> 
-							<div class="bootoom">
-								<!--   <button type="button" class="btn btn-primary colo"><b>Registrate</b></button>  -->
-								<button type="button" class="btn btn-default btn-lg">{{ HTML::link('/signup','Crear cuenta',array ('class' => ' colo')) }}</button>                                                               
-							</div>                                                          
-						</div>
-					</div>  
-				</nav>
+                <nav class="navbar navbar-static" role="navigation">					  
+                    <div class="nav-collapse collase">
+                        <div class=" navbar-left">
+                            <div class="bootoom">
+                                <h2><span class="label label-success cont">Litografia Los Alpes</span></h2>
+                            </div>
+                        </div>
+
+                        <div class=" navbar-right" style="margin: 30px" > 
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badgeadmin">Crear cuenta</span></a>
+                            <ul class="dropdown-menu" >
+                                <form id="loginform" class="form-horizontal" role="form"  autocomplete="off">
+                                    <div class="center-text adm">
+                                        <span class="error-message color-red"><i class="glyphicon glyphicon-warning-sign"></i>Administrador</span>
+                                    </div>
+                                    <div style="margin-bottom: 10px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                        <!-- USERNAME OR EMAIL ADDRESS -->
+                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email" pattern="[a-zA-Z0-9]{5,}" title="Minimum 5 letters or numbers." oninvalid="this.setCustomValidity('Enter User Name Here')" oninput="setCustomValidity('')" required>                                        
+                                    </div>
+                                    <div style="margin-bottom: 10px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+                                        <!--  PASSWORD  -->
+                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password" pattern=".{5,}" title="Minmimum 5 letters or numbers." oninvalid="this.setCustomValidity('Enter a password')" oninput="setCustomValidity('')" required>
+                                    </div>
+                                    <div class="center-textb adm">
+                                        <label><input id="login-remember" type="checkbox" name="remember" value="1"> Remember me</label>
+                                    </div>
+                                    <div class="center-text adm">
+                                        <span class="error-message color-red"><i class="glyphicon glyphicon-warning-sign"></i> Username & password don't match!</span>
+                                    </div>
+                                    <div style="margin-top:10px" class="form-group">
+                                        <!-- Button -->
+                                        <div class="col-sm-12 controls center-text adm">
+                                            <a id="btn-login" href="#" class="btn btn-block btn-success">Login</a>
+                                            <!--<a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
+                                        </div>
+                                    </div>  
+                                </form>
+                            </ul>
+                        </div> 
+                    </div>  
+
+                </nav>
             </div>
         </header>
         @show        
@@ -41,17 +70,17 @@
                 <div class="col-xs-6">
                     <center>
                         <h1>Bienvenido  </h1>
-						<h4>
-							Registra las órdenes de trabajo de tus clientes. Obtén actualizaciones inmediatas  de los trabajos de mayor interés y 
-							Cotiza  
-						</h4> 
-						<br><br>
-						{{ HTML::image('recursos/img/logo.png', 'a picture') }}
-					</center>
+                        <h4>
+                            Registra las órdenes de trabajo de tus clientes. Obtén actualizaciones inmediatas  de los trabajos de mayor interés y 
+                            Cotiza  
+                        </h4> 
+                        <br><br>
+                        {{ HTML::image('recursos/img/logo.png', 'a picture') }}
+                    </center>
                 </div>
                 <center>
                     <div class="col-xs-6">
-                        <div class="row panel panel-default "style=" padding: 25px;">
+                        <div class="row panel panel-default "style=" padding: 25px; border-radius: 8px ">
                             <div class="panel-body">
                                 <h2 class="form-signin-heading" >Lito Alpes</h2>                                                            
                                 <h4> Acceder a la cuenta. </h4>
@@ -59,39 +88,40 @@
                             </div>
                             {{Form::open(array('route' => 'sessions.store','role'=>'form', 'class'=>'form-signin')) }}
                             <div class="menulog">
-								<div class='form-group'>
-									<label for="inputEmail3" class="col-sm-1 control-label">Email</label>
-									{{ Form::email('email', null, array('placeholder' => 'Email', 'class' => 'form-control', 'required' => 'required')) }}
-								</div>
-								<div class='form-group'>
-									<label for="inputEmail3" class="col-sm-1 control-label">Password</label>
-									{{ Form::password('password', array('placeholder' => 'Password', 'class' => 'form-control', 'required' => 'required')) }}
-								</div>
-							</div>	
-								<div class='form-group '>
-									<!--    <label for="remember" >Recordar mis datos </label>
-									   {{ Form::input('checkbox','remember','on') }}
-								   </div>
-								  <div class='form-group'>
-									   {{ Form::checkbox('remember-me', 'value')}}
-								   </div>-->
-									<div class='form-group '>
-										{{ Form::button('iniciar Sesión', array('type' => 'submit', 'class' => 'btn btn-success')) }}  
-									</div> 
+                                <div class='form-group'>
+                                    <label for="inputEmail3" class="col-sm-1 control-label">Email</label>
+                                    {{ Form::email('email', null, array('placeholder' => 'Email', 'class' => 'form-control', 'required' => 'required')) }}
+                                </div>
+                                <div class='form-group'>
+                                    <label for="inputEmail3" class="col-sm-1 control-label">Password</label>
+                                    {{ Form::password('password', array('placeholder' => 'Password', 'class' => 'form-control', 'required' => 'required')) }}
+                                </div>
+                            </div>	
+                            <div class='form-group '>
+                                <!--    <label for="remember" >Recordar mis datos </label>
+                                   {{ Form::input('checkbox','remember','on') }}
+                           </div>
+                          <div class='form-group'>
+                                   {{ Form::checkbox('remember-me', 'value')}}
+                           </div>-->
+                                <div class='form-group '>
+                                    {{ Form::button('iniciar Sesión', array('type' => 'submit', 'class' => 'btn btn-success')) }}  
+                                </div> 
 
-									{{Form::close()}}
-									<p> ¿Olvidaste tu contraseña ? </p>
-									<button type="button" class="btn btn-link">Recuperar clave</button>                          
-								</div>    
-							
+                                {{Form::close()}}
+                                <p> ¿Olvidaste tu contraseña ? </p>
+                                <button type="button" class="btn btn-link">Recuperar clave</button>                          
+                            </div>    
+
                         </div>
-					</div> 
-				</center>			
+                    </div> 
+                </center>			
+            </div>
         </div>
         <footer>
-			@section('footer')
-			@parent
-			@stop
+            @section('footer')
+            @parent
+            @stop
         </footer>
         @show    
 

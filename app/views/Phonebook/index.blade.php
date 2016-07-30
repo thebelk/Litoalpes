@@ -8,14 +8,14 @@
 @section('content')
 <div class="col col-sm-3 complement">   
     <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}}</h3>
-     <br>
+    <br>
     <div class="comp">        
-            <h2>{{ Auth::user()->representante}}  </h2>
-            <h5> Nit: {{ Auth::user()->nit_cc}}  </h5>
-            <h5>Telefono: {{ Auth::user()->telefono}} </h5>
-            <h5>Celular: {{ Auth::user()->celular}} </h5>   
-            <h5>{{ Auth::user()->otro}} </h5>       
-            
+        <h2>{{ Auth::user()->representante}}  </h2>
+        <h5> Nit: {{ Auth::user()->nit_cc}}  </h5>
+        <h5>Telefono: {{ Auth::user()->telefono}} </h5>
+        <h5>Celular: {{ Auth::user()->celular}} </h5>   
+        <h5>{{ Auth::user()->otro}} </h5>       
+
     </div>
     <h5>{{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h5>
     <div class="accordion" id="accordion2">
@@ -61,60 +61,94 @@
         </div>        
     </div>
     <div class="col-sm-8 col-md-12 not">
-            <h3 class="color" > Entregas de Hoy </h3>
-            <p> Pruebas </p>
+        <h3 class="color" > Entregas de Hoy </h3>
+        <p> Pruebas </p>
     </div>
 </div>  
 
 
 <div class="col col-sm-9">
-    <div class="row ">  
-        <div class="bhoechie-tab-content active">
-            <center>
-                <h3 class="glyphicon glyphicon-user color" ></h3>
+    <div class="row ">                             
+        <!-- cho section -->
+        <div class="bhoechie-tab-content active tam">
+            <div class="titulo">
+                <h3 class="glyphicon glyphicon-pencil color" ></h3>
                 <h4>  Contactos & Provedor </h4>  
-            </center>
-			<div class="com "><div class="com2 "></div>
-				<div class="panel panel-default scroll tam">                  
-					<div class="panel-body">                     
-						@foreach($phonebook as $phonlist)                      
-						<h4 class="color"><strong> {{ $phonlist->nombre }}&nbsp
-								@if($phonlist->tipo_contacto==1) CONTACTO                                
-								@elseif($phonlist->tipo_contacto==2) PROVEEDOR
-								@endif 
-							</strong></h4>
-						<h5> 
-							@if($phonlist->tipo_contacto==2)
-							<strong>Actividad:</strong>                         
-							@if($phonlist->tipo_actividad==1) NO SELECCIONADO                                 
-							@elseif($phonlist->tipo_actividad==2)SERVICIO 
-							@elseif($phonlist->tipo_actividad==3) PRODUCTO
-							@endif  &nbsp
-							<strong>Detalle: </strong>&nbsp{{ $phonlist->descripcion_actividad}}
-							@endif </h5> 
-						<h5><strong>Empresa</strong>: {{ $phonlist->empresa}},
-							<strong> Nit:{{ $phonlist->nit}} </strong>
-							<strong>Telefono</strong>: {{ $phonlist->telefono }} ,
-							<strong>Celular </strong>: {{ $phonlist->celular }},
-							<strong>E-mail </strong>: {{ $phonlist->email }} </h5>  
-						<h5><strong>Dirección </strong>: {{ $phonlist->direccion }},
-							<strong>Ciudad </strong>: {{ $phonlist->ciudad }}
-							<strong>Pais: </strong>: {{ $phonlist->pais }}</h5> 
-						<br>
-						<div class="col-md-1">
-							{{ HTML::link('/phonebook/'.$phonlist->id.'/edit','Editar', array('class' => 'btn btn-default'), false)}}                       
-						</div> 
-						<div class="col-md-1">	
-						{{ Form::model($phonebook, array('url' => array('/phonebook/'.$phonlist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
-						{{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}
-						</div> 
-						<br> <br>
-						<hr>
-						@endforeach
-					</div>
-				</div> 
-			</div>
+            </div> 
+                 <div class="input-group" id="adv-search">
+                <input type="text" class="form-control" style="text-align:center" placeholder="Buscar Trabajos" />
+               <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                        <div class="dropdown dropdown-lg">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                              <div class="form-group">
+                                <label class="radio-inline">
+                                  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> In this location
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Everywhere
+                                </label>
+                              </div>
+                                     <a ng-href="#/search/">Advanced search</a>-
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="com "><div class="com2 "></div>
+                <div id="scroll" class="panel panel-default slimScrollBar tam">                    
+                    @foreach($phonebook as $phonlist)                      
+                    <h4 class="color"><strong> {{ $phonlist->nombre }}&nbsp
+                            @if($phonlist->tipo_contacto==1) CONTACTO                                
+                            @elseif($phonlist->tipo_contacto==2) PROVEEDOR
+                            @endif 
+                        </strong></h4>
+                    <h5> 
+                        @if($phonlist->tipo_contacto==2)
+                        <strong>Actividad:</strong>                         
+                        @if($phonlist->tipo_actividad==1) NO SELECCIONADO                                 
+                        @elseif($phonlist->tipo_actividad==2)SERVICIO 
+                        @elseif($phonlist->tipo_actividad==3) PRODUCTO
+                        @endif  &nbsp
+                        <strong>Detalle: </strong>&nbsp{{ $phonlist->descripcion_actividad}}
+                        @endif </h5> 
+                    <h5><strong>Empresa</strong>: {{ $phonlist->empresa}},
+                        <strong> Nit:{{ $phonlist->nit}} </strong>
+                        <strong>Telefono</strong>: {{ $phonlist->telefono }} ,
+                        <strong>Celular </strong>: {{ $phonlist->celular }},
+                        <strong>E-mail </strong>: {{ $phonlist->email }} </h5>  
+                    <h5><strong>Dirección </strong>: {{ $phonlist->direccion }},
+                        <strong>Ciudad </strong>: {{ $phonlist->ciudad }}
+                        <strong>Pais: </strong>: {{ $phonlist->pais }}</h5> 
+
+
+                    {{ HTML::link('/phonebook/'.$phonlist->id.'/edit','Editar', array('class' => 'btn btn-default btn-sm'), false)}}                       
+
+
+
+                    {{ Form::submit('Eliminar', array('class' => 'btn  btn-success btn-sm')) }}
+
+                    {{ Form::model($phonebook, array('url' => array('/phonebook/'.$phonlist->id), 'method' => 'DELETE', 'role' => 'form')) }}   
+                    <hr>
+                    @endforeach
+                </div>
+            </div> 
         </div>
-    </div> 
-</div>
+    </div>
+</div>  
+
+<script>
+
+    $('#scroll').slimScroll({
+        size: '5px',
+        railColor: '#222',
+        height: '1070px',
+        railOpacity: 2,
+        wheelStep: 10,
+        allowPageScroll: true
+    });
+</script>
 @stop

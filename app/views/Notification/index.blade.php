@@ -77,7 +77,7 @@
                 <h4> Listar Notificaciones</h4>   
             </center>
 			<div class="com "><div class="com2 "></div>
-				<div class="panel panel-default scroll tam">
+				<div id="scroll" class="panel panel-default slimScrollBar tam">
 					<!-- Default panel contents -->                
 					<br>                      
 					@foreach($notifications as $notification)                    
@@ -96,5 +96,17 @@
         </div>
     </div>
 </div>  
+<script>
+  $('#scroll').slimScroll({
+	 
+	height: '1070px;',
+	size: '5px',
+	railColor: '#222',
+	height: '1070px',
+	railOpacity: 0.3,
+	wheelStep: 2,
+	allowPageScroll: true		  
+			  });
+</script>
 
 @stop

@@ -96,7 +96,7 @@
                             </li>
                         </ul>
                     </header>
-                    <div class="panel-body">                       
+                    <div class="panel-body pancol">                       
                         <div class="tab-content tasi-tab" >
                             <div id="contacto" class="tab-pane fade in active" height="100">                               
                                 <article class="media">
