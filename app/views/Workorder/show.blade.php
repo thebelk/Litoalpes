@@ -16,7 +16,7 @@
     <br>
     <div class="comp"> 
 			<a href="/customer/{{$customer->id}}/profile"> 
-            <h4>{{$customer->cliente}}&nbsp </h4></a>
+            <h2 class="til">{{$customer->cliente}}&nbsp </h2></a>
             <h5>Contacto: {{$customer->cel_contacto}} </h5> 
             <h5>Telefono: {{$customer->telefono}} </h5> 
             <h5>Cliente:          
@@ -29,36 +29,37 @@
             <h5>{{ $customer->otro}} </h5>  
         </div>       
         <h5>{{ HTML::link('/customer/'.$customer->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h5>    
-   
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
-            <div class="accordion-heading"><h5>
+            <div class="accordion-heading"><h4>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
                         Correo Electronico
-                    </a></h5>
+                    </a></h4>
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
-                <br>
-                <p> <h5>Email: {{ $customer->email}} </h5>
-				</p>             
+                <div class="accordion-inner">
+                    <br>
+                    <p> <h5>Email: {{ Auth::user()->email}} </h5></p>
+                </div>
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading"><br><h5>
+            <div class="accordion-heading"><br><h4>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                         Dirección
-                    </a></h5>
+                    </a></h4>
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
                     <br>
-                    <h5>Direccion: {{$customer->direccion}} </h5>
-                    <h5> Ciudad: {{$customer->ciudad}} </h5>
-                    <h5> Pais: {{$customer->pais}} </h5>
+                    <h5>Direccion: {{ Auth::user()->direccion}} </h5>
+                    <h5> Ciudad: {{ Auth::user()->ciudad}} </h5>
+                    <h5> Pais: {{ Auth::user()->pais}} </h5>
                 </div>
             </div>
         </div>
-    </div> 
+        <br>
+    </div>
     <br>
      <div id="sidebar">                           
         <div class="list-group">
@@ -71,10 +72,10 @@
 				</h5> 
             </a> 
 			<a href="/workorderlist" class="list-group-item active  text-center">
-                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h5>Trabajos</h5>
+                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h4>Trabajos</h4>
             </a>
 			<a href="/phonebook" class="list-group-item  text-center">                           
-                <h5 class="glyphicon glyphicon-earphone"></h5><br/><h5>Contactos | Proveedor</h5>
+                <h5 class="glyphicon glyphicon-earphone"></h5><br/><h4>Contactos | Proveedor</h4>
             </a>
         </div>                     
     </div>

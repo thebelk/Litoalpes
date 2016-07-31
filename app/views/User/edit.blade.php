@@ -10,7 +10,7 @@
     <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}} </h3>
      <br>
     <div class="comp">        
-            <h2>{{ Auth::user()->representante}}  </h2>
+            <h2 class="til">{{ Auth::user()->representante}}  </h2>
             <h5> Nit: {{ Auth::user()->nit_cc}}  </h5>
             <h5>Telefono: {{ Auth::user()->telefono}} </h5>
             <h5>Celular: {{ Auth::user()->celular}} </h5>   
@@ -20,41 +20,43 @@
     <h5>{{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h5> 
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                    Correo Electronico
-                </a>
+            <div class="accordion-heading"><h4>
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                        Correo Electronico
+                    </a></h4>
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
                 <div class="accordion-inner">
+                    <br>
                     <p> <h5>Email: {{ Auth::user()->email}} </h5></p>
                 </div>
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                    Dirección
-                </a>
+            <div class="accordion-heading"><br><h4>
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                        Dirección
+                    </a></h4>
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
+                    <br>
                     <h5>Direccion: {{ Auth::user()->direccion}} </h5>
-                    <h5> Barrio: {{ Auth::user()->barrio}} </h5>
                     <h5> Ciudad: {{ Auth::user()->ciudad}} </h5>
                     <h5> Pais: {{ Auth::user()->pais}} </h5>
                 </div>
             </div>
         </div>
-    </div> 
+        <br>
+    </div>
     <br>
     <div id="sidebar">  
         <div class="list-group">                        
             <a href="/workorder/create" class="list-group-item active text-center">
-                <h5 class="glyphicon glyphicon-plus"></h5><br/>Nuevo Trabajo 
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Trabajo </h4>
             </a>                        
             <a href="profile" class="list-group-item  text-center">                           
-                <h5 class="glyphicon glyphicon-user"></h5><br/>Perfil
+                <h5 class="glyphicon glyphicon-user"></h5><br/><h4>Perfil</h4>
             </a>
         </div>  
     </div>
