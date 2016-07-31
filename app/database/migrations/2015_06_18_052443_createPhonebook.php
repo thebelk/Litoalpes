@@ -17,7 +17,7 @@ class CreatePhonebook extends Migration {
 			$table->increments('id');                    
                         $table->string('nombre');
                         $table->string('empresa');
-                        $table->string('nit');
+                        $table->string('nit')->unique(); 
                         $table->integer('tipo_actividad');
                         $table->string('descripcion_actividad');
                         $table->string('email');

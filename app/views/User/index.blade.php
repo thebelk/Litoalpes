@@ -18,7 +18,7 @@
 
     </div>
     <h5>{{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h5> 
-     <div class="accordion" id="accordion2">
+    <div class="accordion" id="accordion2">
         <div class="accordion-group">
             <div class="accordion-heading"><h4>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
@@ -75,33 +75,33 @@
                     <h3 class="glyphicon glyphicon-th-list color" ></h3>
                     <h4> Trabajos por Realizar</h4>   
                 </div>
-                	<div class="input-group" id="adv-search">
-					<input type="text" class="form-control" style="text-align:center" placeholder="Buscar Trabajos" />
-					<div class="input-group-btn">
-						<div class="btn-group" role="group">
-							<div class="dropdown dropdown-lg">
-								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-								<div class="dropdown-menu dropdown-menu-right" role="menu">
-								  <div class="form-group">
-									<label class="radio-inline">
-									  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> In this location
-									</label>
-									<label class="radio-inline">
-									  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Everywhere
-									</label>
-								  </div>
-								  <a ng-href="#/search/{{ $workorder }}">Advanced search</a>
-								</div>
-							</div>
-							<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-						</div>
-					</div>
-				</div>
+                <div class="input-group" id="adv-search">
+                    <input type="text" class="form-control" style="text-align:center" placeholder="Buscar Trabajos" />
+                    <div class="input-group-btn">
+                            <div class="btn-group" role="group">
+                                    <div class="dropdown dropdown-lg">
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                              <div class="form-group">
+                                                    <label class="radio-inline">
+                                                      <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> In this location
+                                                    </label>
+                                                    <label class="radio-inline">
+                                                      <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Everywhere
+                                                    </label>
+                                              </div>
+                                              <a ng-href="#/search/{{ $workorder }}">Advanced search</a>
+                                            </div>
+                                    </div>
+                                    <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                            </div>
+                    </div>
+            </div>
 
                 <div class="com "><div class="com2 "></div>
                     <div id="scroll" class="panel panel-default slimScrollBar tam">
                         @foreach($workorder as $worklist)
-                        @if($worklist->estado_trabajo==1)
+                        
 
                         <!-- Default panel contents -->                
 
@@ -130,7 +130,7 @@
 
                         {{ Form::close() }} 
                         <br><hr>
-                        @endif 
+                        
                         @endforeach
                     </div> 
                 </div>              
@@ -143,7 +143,7 @@
     $('#scroll').slimScroll({
         size: '5px',
         railColor: '#222',
-        height: '1070px',
+        height: '1040px',
         railOpacity: 0.3,
         wheelStep: 2,
         allowPageScroll: true

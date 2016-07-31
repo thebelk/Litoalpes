@@ -1,7 +1,7 @@
 
 body {
-   /* color:#828282;*/
-	color:#777676;
+    /* color:#828282;*/
+    color:#777676;
     background-color:fff;
 }
 .container-fluid{
@@ -14,17 +14,17 @@ h3.highlight  {
     border-bottom:2px solid#B3E181;
 }
 .list-group-item.active{
-	
-background-color: #b3e181;
-border-color: #b3e181;	
+
+    background-color: #b3e181;
+    border-color: #b3e181;	
 }
 .list-group-item.active:hover{
-background-color: #4cae4c;
-border-color: #4cae4c;
+    background-color: #4cae4c;
+    border-color: #4cae4c;
 }
 .btn-primary{
-background-color:#1676a3;
-border-color: #1676a3;
+    background-color:#1676a3;
+    border-color: #1676a3;
 }
 
 .navbar {
@@ -41,12 +41,12 @@ border-color: #1676a3;
     color:#fff;
     padding:25px;
     border-left:2px solid #1676A3;
-	font-size: 125.5%;
+    font-size: 125.5%;
 }
 .navbar-nav > li > a > span{
-   
-	font-size: 106.5%;
-	
+
+    font-size: 106.5%;
+
 }
 
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
@@ -71,9 +71,9 @@ h1 {
 
 
 h3.highlight{
-	color:#ffebb8;
-	font-size: 24px;
-	text-align: center 
+    color:#ffebb8;
+    font-size: 24px;
+    text-align: center 
 }
 
 
@@ -93,33 +93,33 @@ h2,h3.color{
     padding-top:50px;
     background-color:#FFFFFF; 
     border-color:gainsboro;	
-	width:90%;
-	position:relative;
-	margin:auto;
+    width:90%;
+    position:relative;
+    margin:auto;
 }
 .comp{ 	
-	margin:12px;
-	color:#fff;
-	
+    margin:12px;
+    color:#fff;
+
 }
 .til{ 	
-	
-	color:#fff;
+
+    color:#fff;
 }
 .not{
-	background-color:#fff;
-	border-radius: 4px;
+    background-color:#fff;
+    border-radius: 4px;
 }
 .colr{
     column-rule-style: blue;
 }
 .login{
-	margin-top:106px;
-	
+    margin-top:106px;
+
 }
 .menulog{
-	margin-left:80px;
-	margin-right:80px;
+    margin-left:80px;
+    margin-right:80px;
 }
 .tam{
     padding: 15px;
@@ -127,12 +127,12 @@ h2,h3.color{
 }
 
 .complement {
-	margin-top: 80px;
-	border-radius: 8px;
-	height: 1215px;
+    margin-top: 80px;
+    border-radius: 8px;
+    height: 1385px;
     background-color: #379dce;
     padding-top: 64px;	
-	
+
 }
 @media  (max-width: 768px) { 
     .dropdown{
@@ -168,49 +168,60 @@ h3.message{
     color:#428BCA;
 }
 .pancol{
-	background-color:whitesmoke;
-	border-radius: 8px;
-	
+    background-color:whitesmoke;
+    border-radius: 8px;
+
 }
 .btn-success{
-	
+
 }
 
 .com{
-	border-radius: 8px;
-	background-color:#F5F5F5;
-	padding: 8px;
+    border-radius: 8px;
+    background-color:#F5F5F5;
+    padding: 8px;
     margin: 8px;
-	
+
 }
 
 .com2{
-	border-radius: 4px;
-	background-color:#1676A3;
-	padding: 7px;
+    border-radius: 4px;
+    background-color:#1676A3;
+    padding: 7px;
     margin: 7px;	
 }
+.com3{
+    border-radius: 4px;
+    background-color:#1676A3;
+    height:40px;
+    padding-left: 25px;
+    padding-top: 4px;
+    color:#fff;
+   
+}
+
 .footer  {
-  background-color: #1676A3;
-  border-top: 8px solid #fff;
-  color: #fff;
+    background-color: #1676A3;
+    border-top: 8px solid #fff;
+    border-bottom: 8px solid #fff;
+    color: #fff;
 }
 .footerend {
-  background-color: #021833;
-  border-top: 8px solid #fff;
-  color: #1676A3;
-  
+    background-color: #a9e864;
+    border-top: 8px solid #1676a3 ;
+    color: #1676A3;
+
 }
 .accordion{
-	background-color:#dff0d8;
-	margin:5px;
-	padding:15px;	
-	box-shadow: 1px 1px 2px 1px #072741;
-	color:#232392;
-	border-radius: 6px;
+    background-color:#dcf7d0;
+    margin:5px;
+    padding:15px;	
+    box-shadow: 1px 1px 2px 1px #072741;
+    color:#232392;
+    border-radius: 6px;
 }
 .adm{
-	color:#428BCA;
+    color:#428BCA;
 }
 /*tabs*/
 .tab { background: #fff }
@@ -219,7 +230,7 @@ h3.message{
     background: #B3E181;
     border-bottom: none;
     padding: 0;
-	border-radius: 5px;
+    border-radius: 5px;
 }
 .tab-bg-dark-navy-blue .nav > li > a:hover,
 .tab-bg-dark-navy-blue .nav > li > a:focus {
@@ -238,7 +249,7 @@ h3.message{
 .panel-heading .nav > li > a:hover {
     color: #EAEBEC;
     background: #1676A3;
-	border-radius: 5px;
+    border-radius: 5px;
 }
 .panel-heading .nav > li:first-child.active > a,
 .panel-heading .nav > li:first-child > a:hover { }
@@ -261,19 +272,20 @@ h3.message{
     width: 50px;
 }
 .affix{
-	position: static;
+    position: static;
 }
 .badge{
-	background-color:#B3E181;
-	color:#1676A3;
-	padding:6px;
+    background-color:#B3E181;
+    color:#1676A3;
+    padding:6px;
 }
 .badgeadmin{
-	background-color:#FFFFFF;
-	color:#1676A3;
-	padding:6px;
-	border-radius: 18px;
-	
+    background-color:#FFFFFF;
+    color:#1676A3;
+    padding:6px;
+    border-radius: 50%;
+    margin-left:-35px;
+
 }
 /*testimonial*/
 .dropdown.dropdown-lg .dropdown-menu {
@@ -294,24 +306,24 @@ h3.message{
     border-bottom-right-radius: 10px;
 }
 .btn-group .form-horizontal .btn[type="submit"] {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 .form-horizontal .form-group {
     margin-left: 0;
     margin-right: 0;
-	color:072741;
+    color:072741;
 }
 .form-group .form-control:last-child {
     border-top-left-radius: 13px;
     border-bottom-left-radius: 13px;
 }
 .btn-default{
-	height:34px;
+    height:34px;
 }
 .titulo{
-	margin-left: -30;
-	text-align:center;
+    margin-left: -30;
+    text-align:center;
 }
 @media screen and (min-width: 768px) {
     #adv-search {
@@ -328,5 +340,5 @@ h3.message{
 
 
 /*------------*/
-	#98FB98
+#98FB98
 /*------------*/

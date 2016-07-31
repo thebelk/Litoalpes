@@ -16,7 +16,7 @@
     <br>
     <div class="comp"> 
         <a href="/customer/{{$customer->id}}/profile"> 
-        <h2 class="til">{{$customer->cliente}}&nbsp </h2></a>
+            <h2 class="til">{{$customer->cliente}}&nbsp </h2></a>
         <h5>Contacto: {{$customer->cel_contacto}} </h5> 
         <h5>Telefono: {{$customer->telefono}} </h5> 
         <h5>Cliente:          
@@ -29,7 +29,7 @@
         <h5>{{ $customer->otro}} </h5>  
     </div>         
     <h5>{{ HTML::link('/customer/'.$customer->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h5>    
- <div class="accordion" id="accordion2">
+    <div class="accordion" id="accordion2">
         <div class="accordion-group">
             <div class="accordion-heading"><h4>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
@@ -131,7 +131,7 @@
                             <div id="ordencompra" class="tab-pane fade in active" height="100">                               
                                 <article class="media">                               
                                     <div class="panel  panel-default">                                           
-                                        <div class="row2"  align="justify">
+                                        <div class="row"  align="justify">
                                             <!-- <h2  align="center"> Orden de Compra  </h2> --> 
                                             <br><br>
                                             {{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} 
@@ -324,19 +324,11 @@
                                             </div>
                                         </div>
                                         <br>
-
+                                        <center>
+                                            {{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default ')) }} 
+                                            {{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success ')) }}                               
+                                        </center>
                                         <br><br>
-                                    </div> 
-                                    <div class="panel panel-default ">
-                                        <div class="row ">
-                                            <center>
-                                                {{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default ')) }} 
-                                                {{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success ')) }}                               
-                                            </center>
-
-
-                                        </div>
-
                                     </div>
                                 </article>
                             </div>                                                       

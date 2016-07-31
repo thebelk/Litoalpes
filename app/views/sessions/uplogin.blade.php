@@ -25,14 +25,40 @@
                                 <h2><span class="label label-success cont">Litografia Los Alpes</span></h2>
                             </div>
                         </div>
-                        <div class=" navbar-right"> 
-                            <div class="bootoom">
-                                <!--   <button type="button" class="btn btn-primary colo"><b>Registrate</b></button>  -->
-                                <button type="button" class="btn btn-default btn-lg">{{ HTML::link('/user/create','Crear cuenta',array ('class' => 'colo')) }}</button>
-                                <button type="button" class="btn btn-success btn-lg">{{ HTML::link('/login',' Iniciar sesion',array ('class' => 'colt')) }}</button> 
+                         <div class=" navbar-right" style="margin: 30px" > 
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badgeadmin"><i class="glyphicon glyphicon-user"></i> </span> </a>
+                            <ul class="dropdown-menu" >
+                                <form class="form-horizontal" action="signup" method="post">
+                                    <div class="center-text adm">
+                                        <span class="error-message color-red"> Admin</span>
+                                    </div>
+                                    <div style="margin-bottom: 10px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                        <!-- USERNAME OR EMAIL ADDRESS -->
+                                        <input id="username " type="text" class="form-control  " name="username"  placeholder="username" pattern="[a-zA-Z0-9]{5,}" title="Minimum 5 letters or numbers." oninvalid="this.setCustomValidity('Enter User Name Here')" oninput="setCustomValidity('')" required>                                        
+                                    </div>
+                                    <div class="center-text adm">
+                                        <span class="error-message color-red"> password</span>
+                                    </div>
+                                    <div style="margin-bottom: 10px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+                                        <!--  PASSWORD  -->
+                                        <input id="passwords" type="password" class="form-control" name="passwords" placeholder="password" pattern=".{5,}" title="Minmimum 5 letters or numbers." oninvalid="this.setCustomValidity('Enter a password')" oninput="setCustomValidity('')" required>
+                                    </div><!--
+                                    <div class="center-textb adm">
+                                        <label><input id="login-remember" type="checkbox" name="remember" value="1"> Remember me</label>
+                                    </div>-->
 
-                            </div>                                                          
-                        </div>
+                                    <div style="margin-top:10px" class="form-group">
+                                        <!-- Button -->
+                                        <div class="col-sm-12 controls center-text adm">
+                                            <button  type="submit" class="btn btn-block btn-success">Login</button>
+                                            <!--<a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
+                                        </div>
+                                    </div>  
+                                </form>
+                            </ul>
+                        </div> 
                     </div>  
                 </nav>
             </div>
@@ -89,5 +115,21 @@
         <script src="/recursos/js/bootstrap.min.js"></script>
         <script src="/recursos/js/scripts.js"></script>
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        
+         <script type="text/javascript">
+       
+        session_start();
+
+        // Obtengo los datos cargados en el formulario de login.
+        $username = $_POST['username'];
+        $password = $_POST['passwords'];
+
+        // Esto se puede remplazar por un usuario real guardado en la base de datos.
+        if ($username == 'thebelk' && $passwords == 'admin2016') {
+            
+            header("signup");
+            header("Location: user.create.php");    
+        } 
+        </script>
     </body>
 </html>

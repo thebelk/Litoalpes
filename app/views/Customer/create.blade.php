@@ -167,7 +167,7 @@
                         </div>
                     </div> 
                     <center>
-                        {{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
+                        {{ Form::button('Resetear', array('type' => 'Limpiar', 'class' => 'btn btn-default')) }} 
                         {{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success')) }}
                     </center>
                     <br>

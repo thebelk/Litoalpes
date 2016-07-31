@@ -15,43 +15,41 @@ class CreateWorkorder extends Migration {
         Schema::create('workorders', function(Blueprint $table) {
             $table->increments('id');
             $table->integer('tipo_orden')->default(0); //'1' => 'Seleccionar', '2' => 'Servicio','3' => 'Producto'
-            $table->string('no_orden')->default("");
+            $table->string('no_orden')->unique() ->default("");
             $table->string('clase_trabajo');
             $table->date('fecha_entrega');
-			$table->integer('encuadernado')->default(0);
+            $table->integer('encuadernado')->default(0);
             $table->integer('tipo_encuadernado')->default(0);
-			$table->integer('sublimaciones')->default(0);
+            $table->integer('sublimaciones')->default(0);
             $table->integer('tipo_sublimacion')->default(0);
-			$table->integer('sello')->default(0);
+            $table->integer('sello')->default(0);
             $table->integer('tipo_sello')->default(0);
-			$table->integer('gigantografia')->default(0);
-            $table->integer('tipo_gigantografia')->default(0);			
+            $table->integer('gigantografia')->default(0);
+            $table->integer('tipo_gigantografia')->default(0);
             $table->integer('impresiones')->default(0);
-            $table->integer('tipo_impresiones')->default(0);          
-                     
-			// Nuevos Atributos --------
-			$table->integer('servicio_numerado')->default(0);  //1.si 0.no
-			$table->integer('servicio_perforado')->default(0); //1.si 0.no
-			$table->integer('servicio_repuje')->default(0); //1.Si 0.No
-			$table->integer('servicio_levante')->default(0);  //1.si 0.no
-			$table->integer('servicio_engrapado')->default(0); //1.si 0.no
-			$table->integer('servicio_grafado')->default(0);  //1.si 0.no 
+            $table->integer('tipo_impresiones')->default(0);
+
+            // Nuevos Atributos --------
+            $table->integer('servicio_numerado')->default(0);  //1.si 0.no
+            $table->integer('servicio_perforado')->default(0); //1.si 0.no
+            $table->integer('servicio_repuje')->default(0); //1.Si 0.No
+            $table->integer('servicio_levante')->default(0);  //1.si 0.no
+            $table->integer('servicio_engrapado')->default(0); //1.si 0.no
+            $table->integer('servicio_grafado')->default(0);  //1.si 0.no 
             $table->integer('servicio_laminado')->default(0);  //1.si 0.no
-			$table->string('servicio_otro')->default(0); //1.si 0.no
+            $table->string('servicio_otro')->default(0); //1.si 0.no
             $table->integer('servicio_engomado')->default(0); //1.si 0.no
             $table->integer('servicio_corte')->default(0); //1.Si 0.No    
-			$table->integer('servicio_refile')->default(0); //1.Si 0.No 
-			
-						
+            $table->integer('servicio_refile')->default(0); //1.Si 0.No 
             //----------------            
             $table->string('detalles_trabajo')->default("");
             $table->float('valor_trabajo');
             $table->float('abono');
             $table->float('saldo');
-            $table->float('subtotal')->default(0);			
+            $table->float('subtotal')->default(0);
             $table->integer('iva')->default(0);
-            $table->integer('no_factura')->default(0);
-			$table->float('total')->default(0);
+            $table->integer('no_factura')->unique() ->default(0);
+            $table->float('total')->default(0);
             $table->string('vendedor');
             $table->integer('estado_trabajo'); //1. diseño  2.impresion 3.acabados 4.disponible 6.entregado 7.por realizar                      
             $table->string('diseñador')->default("");
@@ -70,15 +68,15 @@ class CreateWorkorder extends Migration {
             $table->string('autorizado_diseño')->default("");
             $table->string('maquina')->default("");
             $table->string('clase_material');
-			$table->string('cantidad_trabajo');
+            $table->string('cantidad_trabajo');
             $table->string('tamano');
-            $table->string('cantidad_material')->default("");  
-			$table->string('corte_material')->default(""); 			
+            $table->string('cantidad_material')->default("");
+            $table->string('corte_material')->default("");
             $table->string('emblocado')->default("");
             $table->string('no_inicial')->default("");
             $table->string('no_final')->default("");
-			$table->integer('no_tintas')->default(0); // 1. una tinta 2.dos tintas 3. tres tintas 4.poligromia 
-            $table->string('color_tinta')->default("");            
+            $table->integer('no_tintas')->default(0); // 1. una tinta 2.dos tintas 3. tres tintas 4.poligromia 
+            $table->string('color_tinta')->default("");
             $table->string('tinta_especial')->default("");
             $table->string('color_material')->default("");
             $table->integer('no_copia')->default(0); // 0. Ninguno 1.una copia  2.dos copias 3.tres copias 4.cuatro copias                      
@@ -103,13 +101,13 @@ class CreateWorkorder extends Migration {
             $table->integer('refile')->default(0); //1.Si 0.No
             $table->integer('plastificadomate')->default(0); //1.Si 0.No
             $table->integer('perforado')->default(0); //1.si 0.no
-            $table->integer('argollado')->default(0);            						
-            $table->integer('grafado')->default(0); 
-			$table->integer('plastificadoreserva')->default(0);
-			$table->integer('empastado')->default(0); //1.Si 0.No
-			$table->integer('tapaclinto')->default(0); //1.Si 0.No
-			$table->integer('tapanormal')->default(0); //1.Si 0.No
-			$table->integer('hojassueltas')->default(0); //1.Si 0.No                        
+            $table->integer('argollado')->default(0);
+            $table->integer('grafado')->default(0);
+            $table->integer('plastificadoreserva')->default(0);
+            $table->integer('empastado')->default(0); //1.Si 0.No
+            $table->integer('tapaclinto')->default(0); //1.Si 0.No
+            $table->integer('tapanormal')->default(0); //1.Si 0.No
+            $table->integer('hojassueltas')->default(0); //1.Si 0.No                        
             $table->integer('otro_acabados')->default(0); //0. Ninguno 1.Por la cabeza 2.lado izquierdo 3.lado derecho 
             $table->string('recomendaciones')->default("");
             $table->string('observacion_acabados')->default("");

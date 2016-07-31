@@ -18,7 +18,7 @@ class CreateCustomer extends Migration {
                         $table->string('cliente');
                         $table->string('cel_contacto');
                         $table->integer('tipo_cliente'); //1.Directo   2.Servicio
-                        $table->string('nit_cc');                        
+                        $table->string('nit_cc')->unique();                         
                         $table->string('empresa');
                         $table->string('telefono');
                         $table->string('direccion');

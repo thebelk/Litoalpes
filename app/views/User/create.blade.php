@@ -25,11 +25,17 @@
                                 <h2><span class="label label-success cont">Litografia Los Alpes</span></h2>
                             </div>
                         </div>
-                        <div class=" navbar-right"> 
+                        <div class=" navbar-right" style="margin: 30px; float: left" > 
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badgeadmin"><i class="glyphicon glyphicon-user"></i> </span> </a>
+                            <ul class="dropdown-menu" > 
+                                <li><a href="/logout">Salir</a></li>
+                            </ul>
+                        </div> 
+                        <div class=" navbar-right"style="float: left" > 
                             <div class="bootoom">
                                 <!--   <button type="button" class="btn btn-primary colo"><b>Registrate</b></button>  -->
                                 <button type="button" class="btn btn-success btn-lg">{{ HTML::link('/login',' Iniciar sesion',array ('class' => 'colt')) }}</button> 
-                            </div>                                                          
+                            </div> 
                         </div>
                     </div>  
                 </nav>
@@ -46,8 +52,8 @@
                             <div class="panel-body pancol ">
                                 <h2 class="form-signin-heading" ><b>Lito Alpes</b></h2> <br>                                                          
                                 <h3 align="justify"><b>Crear una cuenta. </b> </h3>
-                                <h4 align="justify"> ¿Registra tu información  y en breve podrás acceder a nuestro servicios? </h4>
-                                <h4 align="justify">Los campos con asteriscos (*) son requeridos.</h4><br>
+                                <h5 align="justify"> ¿Registra tu información  y en breve podrás acceder a nuestro servicios? </h5>
+                                <h5 align="justify">Los campos con asteriscos (*) son requeridos.</h5><br>
                             </div>
                         </div> 
                         <div class="panel-body tam pancol">
@@ -76,13 +82,13 @@
                                     <div class="col-xs-6 col-md-6">
                                         <div class='form-group form-register' align="justify">
                                             {{ Form::label('razon_social', 'Empresa *:') }}<br>
-                                            {{ Form::text('razon_social', null, array('placeholder' => 'Razon Social', 'class' => 'form-control', 'required' => 'required')) }}
+                                            {{ Form::text('razon_social', null, array('placeholder' => 'Empresa ', 'class' => 'form-control')) }}
                                         </div>
                                     </div>
                                     <div class="col-xs-6 ">
                                         <div class='form-group form-register' align="justify">
                                             {{ Form::label('email', 'Email *:') }}<br>
-                                            {{ Form::text('email', null, array('placeholder' => ' Empresa', 'class' => 'form-control', 'required' => 'required')) }}
+                                            {{ Form::text('email', null, array('placeholder' => ' Email', 'class' => 'form-control', 'required' => 'required')) }}
                                         </div>
                                     </div>
                                     <div class="col-xs-6 ">
@@ -132,7 +138,7 @@
                                     </div>  
                                 </div>
                                 <div class='row buttons'>
-                                    {{ Form::button('Reset', array('type' => 'reset', 'class' => 'btn btn-success')) }} 
+                                    {{ Form::button('Limpiar', array('type' => 'reset', 'class' => 'btn btn-success')) }} 
                                     {{ Form::button('Crear', array('type' => 'submit', 'class' => 'btn btn-default')) }}                                 
                                 </div>
                                 {{ Form::close() }}  

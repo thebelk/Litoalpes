@@ -111,7 +111,7 @@
 								<div class="col-xs-6 col-md-6">
 									<div class='form-group form-register' align="justify">
 										{{ Form::label('razon_social', 'Empresa *:') }}<br>
-										{{ Form::text('razon_social', Auth::user()->razon_social, array('placeholder' => 'Razon Social', 'class' => 'form-control', 'required' => 'required')) }}
+										{{ Form::text('razon_social', Auth::user()->razon_social, array('placeholder' => 'Razon Social', 'class' => 'form-control')) }}
 									</div>
 								</div>
 								<div class="col-xs-6 ">
