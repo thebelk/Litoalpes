@@ -15,10 +15,8 @@
     <body>
         @section('header')
         <header>     
-            <div class="container-">     
-                <nav class="navbar navbar-static" role="navigation">
-                    <!-- El logotipo y el icono que despliega el menú se agrupan
-                             para mostrarlos mejor en los dispositivos móviles -->
+            <div class="container-fluid">     
+                <nav class="navbar navbar-static  navbar-fixed-top" role="navigation">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse"
                                 data-target=".navbar-ex1-collapse">
@@ -29,9 +27,6 @@
                         </button>
                         <a class="navbar-brand" href="/user">LitoAlpes</a>
                     </div>
-
-                    <!-- Agrupar los enlaces de navegación, los formularios y cualquier
-                             otro elemento que se pueda ocultar al minimizar la barra -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav">
                             <li><a href="/user"><i class="glyphicon glyphicon-home"></i> Home</a></li>
@@ -44,16 +39,7 @@
                                 <a href="/notifications" role="button" data-toggle="modal"><i style="color:red" class="glyphicon glyphicon-warning-sign"></i> Notificaciones ({{ DB::table('notifications')->count() }})</a>
                                 @endif
                             </li>
-<!--<li><a href="/customer/create"><span class="badge"><i class="glyphicon glyphicon-plus"></i> Orden | Trabajo</span></a></li>--><!--
-                            <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge"><i class="glyphicon glyphicon-plus"></i>Orden | Trabajo</span></a>
-    <ul class="dropdown-menu" >
-        <form class="form-inline">
-            <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control  pull-left " placeholder="Buscar Cliente">
-        </form>
-    </ul>
-</li>-->
-                            <li class="dropdown">
+                            <li>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge"><i class="glyphicon glyphicon-plus"></i> Orden | Trabajo</span></a>
                                 <ul class="dropdown-menu" >
                                     <form class="form-horizontal" role="form">
@@ -79,55 +65,41 @@
                                     </form>
                                 </ul>
                             </li>
-                            <!--
-                           <li class="dropdown">
-                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                   Menú #1 <b class="caret"></b>
-                                 </a>
-                                 <ul class="dropdown-menu">
-                                   <li><a href="#">Acción #1</a></li>
-                                   <li><a href="#">Acción #2</a></li>
-                                   <li><a href="#">Acción #3</a></li>
-                                   <li class="divider"></li>
-                                   <li><a href="#">Acción #4</a></li>
-                                   <li class="divider"></li>
-                                   <li><a href="#">Acción #5</a></li>
-                                 </ul>
-                           </li>
-                         </ul>
-                 
-                         <form class="navbar-form navbar-left" role="search">
-                           <div class="form-group">
-                                 <input type="text" class="form-control" placeholder="Buscar">
-                           </div>
-                           <button type="submit" class="btn btn-default">Enviar</button>
-                         </form> -->
-                        </ul>
-                        <ul class="nav navbar-right navbar-nav nave"><!--
-                          <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
-        <ul class="dropdown-menu" >
-            <form class="form-inline">
-                <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control  pull-left " placeholder="Search">
-            </form>
-        </ul>
-    </li>-->
+                        </ul>                        
+                        <ul class="nav navbar-right navbar-nav nave">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badgeadmin"><i class="glyphicon glyphicon-user"></i></span> </a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i> Bildirimler <span class="badge">0</span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="dropdown-header">No message.</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" class="navbar-link"><i class="glyphicon glyphicon-user"></i><span class="caret"></span></a>
+                                <ul role="menu" class="dropdown-menu">
+                                    <li class="active"><a class="animate" href="#">Home</a></li>
+                                    <li class="dropdown-header">General</li>
+                                    <li><a class="animate" href="#">Users</a></li>
+                                    <li><a class="animate" href="/user/{user}/income">Ingresos</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">User Settings</li>
+                                    <li><a class="animate" href="/logout">Salir</a></li>
+                                </ul>
+                            </li>
+                            <!--
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badgeadmin"><i class="glyphicon glyphicon-user"></i></span></a>
                                 <ul class="dropdown-menu" >                                   
                                     <li><a href="/user/{user}/income">Ingresos</a></li>
                                     <li class="divider"></li>
                                     <li><a href="/logout">Salir</a></li>
                                 </ul>
-                            </li>  
+                            </li> --> 
                         </ul>
                     </div>
                 </nav>
-
             </div>
         </header>
         @show        
-        <div class="container-fluid">   
+        <div class="container-fluid content">   
             @yield('content') 
             @show  
         </div> 

@@ -72,7 +72,7 @@
 
 <div class="col col-sm-9">
     <div class="row "> 
-        <div class="bhoechie-tab-content active">
+        <div class="bhoechie-tab-content active tam">
             <center>
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->
@@ -82,7 +82,6 @@
                     </div>
                 </div>
             </center>
-
             <div class="panel-body pancol tam">
                 <div class="com2 "></div>
                 <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->

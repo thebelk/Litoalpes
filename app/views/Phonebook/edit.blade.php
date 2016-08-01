@@ -69,7 +69,7 @@
 <div class="col col-sm-9">
     <div class="row ">                             
         <!-- cho section -->
-        <div class="bhoechie-tab-content active">
+        <div class="bhoechie-tab-content active tam">
             <center><!--
                 <h2 class="glyphicon glyphicon-user color" ></h2>
                 <h3> Nuevo Contacto</h3>  -->  

@@ -26,16 +26,16 @@
                             </div>
                         </div>
                         <div class=" navbar-right" style="margin: 30px; float: left" > 
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badgeadmin"><i class="glyphicon glyphicon-user"></i> </span> </a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badgeadmin"><i class="glyphicon glyphicon-user"></i></span> </a>
                             <ul class="dropdown-menu" > 
                                 <li><a href="/logout">Salir</a></li>
                             </ul>
                         </div> 
                         <div class=" navbar-right"style="float: left" > 
-                            <div class="bootoom">
-                                <!--   <button type="button" class="btn btn-primary colo"><b>Registrate</b></button>  -->
+                            <!--<div class="bootoom">
+                                <!--   <button type="button" class="btn btn-primary colo"><b>Registrate</b></button>  --><!--
                                 <button type="button" class="btn btn-success btn-lg">{{ HTML::link('/login',' Iniciar sesion',array ('class' => 'colt')) }}</button> 
-                            </div> 
+                            </div> -->
                         </div>
                     </div>  
                 </nav>

@@ -156,8 +156,8 @@
         height: '1070px;',
         size: '5px',
         railColor: '#222',
-        height: '1070px',
-                railOpacity: 0.3,
+        height: '1140px',
+        railOpacity: 0.3,
         wheelStep: 2,
         allowPageScroll: true
     });

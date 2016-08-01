@@ -6,7 +6,7 @@
 @parent
 @stop
 @section('content')
-<div class="col col-sm-3 complement">   
+<div class="col col-sm-3 complement " >   
     <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}}</h3>
     <br>
     <div class="comp">        
@@ -60,11 +60,14 @@
             </a>
         </div>
     </div>
-    <div class="col-sm-8 col-md-12 not">
+    <div class="hidden-phone">
+     <div class="col-sm-8 col-md-12 not ">
         <h3 class="color" > Entregas de Hoy </h3>
         <p> Pruebas </p>
         <p> Pruebas </p>
-    </div>  
+    </div>   
+    </div>
+      
 </div>  
 <div class="col col-sm-9">
     <div class="row ">
@@ -143,7 +146,7 @@
     $('#scroll').slimScroll({
         size: '5px',
         railColor: '#222',
-        height: '1040px',
+        height: '1140px',
         railOpacity: 0.3,
         wheelStep: 2,
         allowPageScroll: true

@@ -152,7 +152,7 @@
                             </div>
                             <div class="col-xs-3">
                                 <div class='form-group form-register'>
-                                    {{ Form::label('fecha_entrega', 'FECHA ENTREGA') }}
+                                    {{ Form::label('fecha_entrega', 'FECHA ENTREGA') }}<br>
                                     {{ $workorder->fecha_entrega}}  
                                 </div>
                             </div>
@@ -330,7 +330,7 @@
                             <div class="col-xs-12">									
                                 <div class='form-group form-register tex'>
                                     {{ Form::textarea('detalles_trabajo', $workorder->detalles_trabajo, array('rows' => '3', 'placeholder' => 'Detalles', 'class' => 'form-control','disabled')) }}
-                                </div><br><br>                                                      
+                                </div><br>                                                      
                             </div>
                             <br>
                             <div class="col-xs-12">

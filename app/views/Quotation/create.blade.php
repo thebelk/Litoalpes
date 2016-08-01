@@ -7,15 +7,15 @@
 @stop
 @section('content')
 <div class=" col-sm-3 complement">   
-   <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}}</h3>
-     <br>
+    <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}}</h3>
+    <br>
     <div class="comp">        
-            <h2 class="til">{{ Auth::user()->representante}}  </h2>
-            <h5> Nit: {{ Auth::user()->nit_cc}}  </h5>
-            <h5>Telefono: {{ Auth::user()->telefono}} </h5>
-            <h5>Celular: {{ Auth::user()->celular}} </h5>   
-            <h5>{{ Auth::user()->otro}} </h5>       
-            
+        <h2 class="til">{{ Auth::user()->representante}}  </h2>
+        <h5> Nit: {{ Auth::user()->nit_cc}}  </h5>
+        <h5>Telefono: {{ Auth::user()->telefono}} </h5>
+        <h5>Celular: {{ Auth::user()->celular}} </h5>   
+        <h5>{{ Auth::user()->otro}} </h5>       
+
     </div>
     <h5>{{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h5>
     <div class="accordion" id="accordion2">
@@ -55,34 +55,31 @@
             <a href="/quotation" class="list-group-item  text-center">                           
                 <h5 class="glyphicon glyphicon-pencil"></h5><br/><h4>Listar Cotización</h4>
             </a>
-			<a href="/workorderlist" class="list-group-item active  text-center">
+            <a href="/workorderlist" class="list-group-item active  text-center">
                 <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h4>Trabajos</h4>
             </a>
-			<a href="/phonebook" class="list-group-item  text-center">                           
+            <a href="/phonebook" class="list-group-item  text-center">                           
                 <h5 class="glyphicon glyphicon-earphone"></h5><br/><h4>Contactos | Proveedor</h4>
             </a>
         </div>     
     </div>
     <div class="col-sm-8 col-md-12 not">
-            <h3 class="color" > Entregas de Hoy </h3>
-            <p> Pruebas </p>
+        <h3 class="color" > Entregas de Hoy </h3>
+        <p> Pruebas </p>
     </div>
 </div>
 <div class="col col-sm-9">
     <div class="row ">                             
         <!-- cho section -->
-        <div class="bhoechie-tab-content active">
-            <center>                 
-                <div class="panel panel-default tam">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading">
-                        <h3 class="glyphicon glyphicon-pencil color" ></h3>
-                        <h4> Nueva Cotización</h4> 
-                    </div>
+        <div class="bhoechie-tab-content active tam">
+            <div class="panel panel-default tam ">
+                <div class="panel-heading " align="center"> 
+                    <h3 class="glyphicon glyphicon-plus color" ></h3>
+                    <h4> Nueva Cotización</h4>  
                 </div>
-            </center>
+            </div>
             <div class="panel-body tam pancol">
-				<div class="com2 "></div>
+                <div class="com2 "></div>
                 <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                 <div class="panel panel-default ">
                     {{Form::open(array('url' => '/quotation','role'=>'form', 'method' => 'POST')) }}

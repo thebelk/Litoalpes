@@ -119,7 +119,7 @@
     $('#scroll').slimScroll({
         size: '5px',
         railColor: '#222',
-        height: '1040px',
+        height: '1180px',
         railOpacity: 0.3,
         wheelStep: 2,
         allowPageScroll: true
