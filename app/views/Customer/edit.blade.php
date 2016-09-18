@@ -130,7 +130,7 @@
                             <div class="col-xs-6 col-md-4 imp ">
                                 <div class='form-group form-register'align="justify">
                                     {{ Form::label('direccion', 'DIRECCIÓN:') }}
-                                    {{ Form::text('direccion', $customer->direccion, array('placeholder' => 'DirecciÓn', 'class' => 'form-control')) }}
+                                    {{ Form::text('direccion', $customer->direccion, array('placeholder' => 'Dirección', 'class' => 'form-control')) }}
                                 </div>
                             </div>
                             <div class="col-xs-6 col-md-4 imp">

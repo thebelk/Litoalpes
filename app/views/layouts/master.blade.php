@@ -16,10 +16,10 @@
         @section('header')
         <header>     
             <div class="container-fluid">     
-                <nav class="navbar navbar-static  navbar-fixed-top" role="navigation">
+                <nav class="navbar navbar-default  navbar-fixed-top" role="navigation">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                data-target=".navbar-ex1-collapse">
+                            data-target=".navbar-ex1-collapse">
                             <span class="sr-only">Desplegar navegación</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -39,26 +39,26 @@
                                 <a href="/notifications" role="button" data-toggle="modal"><i style="color:red" class="glyphicon glyphicon-warning-sign"></i> Notificaciones ({{ DB::table('notifications')->count() }})</a>
                                 @endif
                             </li>
-                            <li>
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge"><i class="glyphicon glyphicon-plus"></i> Orden | Trabajo</span></a>
-                                <ul class="dropdown-menu" >
+                                <ul class="dropdown-menu nav " >
                                     <form class="form-horizontal" role="form">
+                                         <a style="margin-left: 190px" href="/customer/create" role="button" data-toggle="modal"><i class="glyphicon glyphicon-user " ></i> Nuevo</a>  
+                                      
                                         <div class="form-group">
-                                            <label for="filter">Filter by</label>
+                                            <label for="filter">Tipo de Cliente</label>
                                             <select class="form-control">
-                                                <option value="0" selected>All Snippets</option>
-                                                <option value="1">Featured</option>
-                                                <option value="2">Most popular</option>
-                                                <option value="3">Top rated</option>
-                                                <option value="4">Most commented</option>
+                                                <option value="0" selected>Seleccionar </option>
+                                                <option value="1">Persona</option>
+                                                <option value="2">Empresa</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="contain">Author</label>
+                                            <label for="contain">Nombre</label>
                                             <input class="form-control" type="text" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="contain">Contains the words</label>
+                                            <label for="contain">Nit / C.C</label>
                                             <input class="form-control" type="text" />
                                         </div>
                                         <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
@@ -66,8 +66,8 @@
                                 </ul>
                             </li>
                         </ul>                        
-                        <ul class="nav navbar-right navbar-nav nave">
-                            <li class="dropdown">
+                        <ul class="nav navbar-right   navbar-nav nave">
+                            <li class="dropdown dropdown-toggle">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i> Bildirimler <span class="badge">0</span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li class="dropdown-header">No message.</li>
@@ -76,11 +76,9 @@
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" class="navbar-link"><i class="glyphicon glyphicon-user"></i><span class="caret"></span></a>
                                 <ul role="menu" class="dropdown-menu">
                                     <li class="active"><a class="animate" href="#">Home</a></li>
-                                    <li class="dropdown-header">General</li>
-                                    <li><a class="animate" href="#">Users</a></li>
+                                    <li>{{ HTML::link('/user/'.Auth::user()->representante.'/edit','Users', array('class' => 'animate'), false)}}</li>
                                     <li><a class="animate" href="/user/{user}/income">Ingresos</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li class="dropdown-header">User Settings</li>
                                     <li><a class="animate" href="/logout">Salir</a></li>
                                 </ul>
                             </li>

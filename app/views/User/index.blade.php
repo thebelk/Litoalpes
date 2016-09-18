@@ -69,11 +69,9 @@
     </div>
       
 </div>  
-<div class="col col-sm-9">
-    <div class="row ">
-        <div class="bhoechie-tab">                     
+<div class="col col-sm-9">                   
             <!-- work section -->
-            <div class="bhoechie-tab-content active  tam">
+            <div class="bhoechie-tab-content row active  ">
                 <div class="titulo">
                     <h3 class="glyphicon glyphicon-th-list color" ></h3>
                     <h4> Trabajos por Realizar</h4>   
@@ -138,8 +136,6 @@
                     </div> 
                 </div>              
             </div>
-        </div>
-    </div>
 </div>   
 <script>
 

@@ -10,7 +10,7 @@
     <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}}</h3>
     <br>
     <div class="comp">        
-        <h2>{{ Auth::user()->representante}}  </h2>
+        <h2 class="til">{{ Auth::user()->representante}}  </h2>
         <h5> Nit: {{ Auth::user()->nit_cc}}  </h5>
         <h5>Telefono: {{ Auth::user()->telefono}} </h5>
         <h5>Celular: {{ Auth::user()->celular}} </h5>   
@@ -129,7 +129,7 @@
                         <div class="col-xs-6 col-md-4 imp ">
                             <div class='form-group form-register'align="justify">
                                 {{ Form::label('direccion', 'DIRECCIÓN:') }}
-                                {{ Form::text('direccion', null, array('placeholder' => 'DirecciÓn', 'class' => 'form-control')) }}
+                                {{ Form::text('direccion', null, array('placeholder' => 'Dirección', 'class' => 'form-control')) }}
                             </div>
                         </div>
                         <div class="col-xs-6 col-md-4 imp">
