@@ -140,7 +140,7 @@
         $password = $_POST['passwords'];
 
         // Esto se puede remplazar por un usuario real guardado en la base de datos.
-        if ($username == 'thebelk' && $passwords == 'admin2016') {
+        if ($username == 'admin' && $passwords == 'admin2016') {
             
             header("signup");
             header("Location: user.create.php");    

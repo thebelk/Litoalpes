@@ -87,18 +87,17 @@
 <div class="col col-sm-9">
     <div class="row ">                             
         <!-- cho section -->
-        <div class="bhoechie-tab-content active tam">
             <!--
                 <h2 class="glyphicon glyphicon-user color" ></h2>
                 <h3> Nuevo Contacto</h3>  -->  
 
-            <!-- Default panel contents -->
+            <!-- Default panel contents --><!--
             <div class="panel panel-default tam ">
                 <div class="panel-heading " align="center"> 
                     <h3 class="glyphicon glyphicon-plus color" ></h3>
                     <h4> Detalles Trabajo</h4> 
                 </div>
-            </div>
+            </div>-->
             <!-- Default panel contents -->                                   
             <div class="col-xs-10 col-md-9 imp">
                 <!-- <div class="col-xs-2 col-md-2 imp"> 
@@ -107,11 +106,10 @@
                  {{ Form::text('customers_id', $customer->id, array('hidden' => 'true')) }} -->
             </div>
             {{Form::open(array('url' => '/workorder/'.$workorder->id,'method' => 'PUT', 'role'=>'form')) }}
-            <div class="panel-body pancol tam">
-                <div class="com2 "></div>
+            <div class="panel-body pancol tam ">
+                <!--<div class="com2 "></div>-->
                 <div class="panel panel-default "> 
-                    <div class="row"  align="justify">
-                        <div class="row2">
+                    <div class="row"  align="justify">                       
                             <div class="col-xs-12">
                                 {{ Form::label('fecha_pedido', 'FECHA Y HORA DE SOLICITUD ') }}
                                 {{  $workorder->created_at }}<br>
@@ -120,7 +118,7 @@
                             {{ Form::text('customer_id', $customer->id, array('hidden' => 'true')) }}
 
                             <div class="col-xs-10"align="center" style="margin-left:45px">
-                                <h2 >ORDEN DE TRABAJO DE PRODUCCIÓN</h2><br>
+                                <br><h2><b>ORDEN DE PRODUCCIÓN</b></h2><br>
                             </div>
                             <div class="col-xs-3">
                                 <div class='form-group form-register' align="justify">
@@ -156,17 +154,15 @@
                                     {{ $workorder->fecha_entrega}}  
                                 </div>
                             </div>
-                        </div>
+                       
                         <div class="col-xs-12"><hr>
-                            <div class="com3 "><h4><b>SERVICIOS</b></h4><br></div>
+                            <div class="com3"><h4><b>SERVICIOS</b></h4><br></div>
                             <br>
-
-
                             <div class="col-xs-3">
                                 <div class=' form-group form-register'>
                                     @if($workorder->tipo_encuadernado==1)
                                     {{ Form::checkbox('encuadernado',  $workorder->encuadernado, $workorder->encuadernado == 1,['disabled' => 'disabled'])}}
-                                    {{ Form::label('tipo_encuadernado', 'ANILLADO/ EMPASTE') }}   
+                                    {{ Form::label('tipo_encuadernado', 'ANILLAR/EMPASTE') }}   
                                     @elseif($workorder->tipo_encuadernado==2)
                                     {{ Form::checkbox('encuadernado',  $workorder->encuadernado, $workorder->encuadernado == 1,['disabled' => 'disabled'])}}
                                     {{ Form::label('tipo_encuadernado', 'ANILLADO') }}<br>   Espiral 
@@ -322,10 +318,10 @@
                         <br>
                         <div class="col-xs-12">
                             <div class="col-xs-12"><hr>
-                                <div class="com3 "><h4><strong>PRODUCTO </strong></h4></div>
+                                <div class="com3 "><h4><strong>{{$workorder->clase_trabajo}} </strong></h4></div><br><!--
                                 <div class='form-group form-register' align="justify">
                                     <h3 class="color"><strong>{{ $workorder->clase_trabajo }}</strong></h3>												
-                                </div>
+                                </div>-->
                             </div>
                             <div class="col-xs-12">									
                                 <div class='form-group form-register tex'>
@@ -903,7 +899,7 @@
                     <br><br>									
                 </div>
             </div>
-        </div>
+     
 
         {{ Form::close() }}
 

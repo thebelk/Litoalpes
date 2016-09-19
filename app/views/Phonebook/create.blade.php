@@ -69,7 +69,6 @@
 <div class="col col-sm-9">
     <div class="row ">                             
         <!-- cho section -->
-        <div class="bhoechie-tab-content active tam">
             <center><!--
                 <h2 class="glyphicon glyphicon-user color" ></h2>
                 <h3> Nuevo Contacto</h3>  -->  
@@ -95,8 +94,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </header>
-                    <div class="panel-body pancol">                       
+                    </header>                      
                         <div class="tab-content tasi-tab" >
                             <div id="contacto" class="tab-pane fade in active" height="100">                               
                                 <article class="media">
@@ -163,7 +161,7 @@
                                                 <br>
                                             </div>
                                             <center>
-                                                {{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
+                                                {{ Form::button('Limpiar', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
                                                 {{ Form::button('Guardar ', array('type' => 'submit', 'class' => 'btn  btn-success')) }}
                                             </center>
                                             {{ Form::close() }}
@@ -251,16 +249,14 @@
                                             <br>
                                         </div> 
                                     </div>
-                                    {{ Form::button('Resetear', array('type' => 'Limpiar', 'class' => 'btn btn-default')) }} 
+                                    {{ Form::button('Limpiar', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
                                     {{ Form::button('Guardar', array('type' => 'Guardar', 'class' => 'btn  btn-success')) }}
                                     {{ Form::close() }}
                                 </div> 
                             </div> 
                         </div>
-                    </div> 
                 </section>  
             </center>
-        </div>
     </div> 
 </div>
 

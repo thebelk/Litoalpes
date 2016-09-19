@@ -87,7 +87,6 @@
 <div class="col col-sm-9">
     <div class="row ">                             
         <!-- cho section -->
-        <div class="bhoechie-tab-content active tam">
             <!--
                 <h2 class="glyphicon glyphicon-user color" ></h2>
                 <h3> Nuevo Contacto</h3>  -->  
@@ -122,7 +121,6 @@
                         </li>
                     </ul>
                 </header>
-                <div class="panel-body pancol">
                     <div class="tab-content tasi-tab" >
                         <div id="ordencompra" class="tab-pane fade in active" height="100">                               
                             <article class="media">
@@ -799,8 +797,8 @@
                                                                         </div>
                                                                         {{ Form::close() }}
 
-                                                                        </div>
-                                                                        </div>                       
+                                                                       
+                                                                                            
                                                                         </section>
                                                                         </div>
                                                                         </div>

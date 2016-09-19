@@ -72,7 +72,6 @@
 
 <div class="col col-sm-9">
     <div class="row "> 
-        <div class="bhoechie-tab-content active tam">
             <center>
                 <div class="panel panel-default tam">
                     <!-- Default panel contents -->
@@ -172,7 +171,6 @@
                     <br>
                 </div>
             </div>
-        </div>
         {{ Form::close() }}
     </div>  
 </div>  

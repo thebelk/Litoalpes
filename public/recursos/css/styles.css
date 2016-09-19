@@ -87,7 +87,7 @@ h1 {
 
 
 h3.highlight{
-    color:#ffebb8;
+    color:#dcf7d0;
     font-size: 24px;
     text-align: center 
 }
@@ -106,12 +106,13 @@ h2,h3.color{
 
 }
 .row{
-    padding-top:50px;
+    padding-top:70px;
     background-color:#FFFFFF; 
     border-color:gainsboro;	
-    width:90%;
+    width:95%;
     position:relative;
     margin:auto;
+	background-color:#FFFFFF; 	
 }
 .comp{ 	
     margin:12px;
@@ -128,7 +129,7 @@ h2,h3.color{
 }
 
 .login{
-    margin-top:106px;
+    margin-top:-40px;
 
 }
 .menulog{
@@ -145,7 +146,7 @@ h2,h3.color{
     margin-top: 80px;
     border-radius: 8px;
     height: 1320px;
-    background-color: #379dce;
+    background-color: #0f7aad;
     padding-top: 64px;	
 }
 @media  (max-width: 768px) { 
@@ -155,12 +156,7 @@ h2,h3.color{
     .imp{
         width: 99%;           
     }
-    .row{
-        background-color:#FFFFFF; 
-        border-color:gainsboro;	
-        position:relative;
-        margin:0;
-    }
+   
     .complement {
         border-radius: 8px;
         height: 760px;
@@ -196,7 +192,7 @@ h3.message{
 }
 .pancol{
     background-color:whitesmoke;
-    border-radius: 8px;
+    border-radius: 6px;
 
 }
 .btn-success{
@@ -213,13 +209,13 @@ h3.message{
 
 .com2{
     border-radius: 4px;
-    background-color:#1676A3;
+    background-color:#0f7aad;
     padding: 7px;
     margin: 7px;	
 }
 .com3{
     border-radius: 4px;
-    background-color:#1676A3;
+    background-color:#0f7aad;
     height:40px;
     padding-left: 25px;
     padding-top: 4px;
@@ -234,31 +230,40 @@ h3.message{
     color: #fff;
 }
 .footerend {
-    background-color: #a9e864;
+    background-color: #fff;
     border-top: 8px solid #1676a3 ;
     color: #1676A3;
 
 }
 .accordion{
-    background-color:#dcf7d0;
+    background-color:#f6f6f6;
     margin:5px;
     padding:15px;	
     box-shadow: 1px 1px 2px 1px #072741;
     color:#232392;
-    border-radius: 6px;
+    border-radius: 4px;
 }
 .adm{
     color:#428BCA;
 }
+
+.list-group>a{
+	color:#06032f;
+}
 /*tabs*/
-.tab { background: #fff }
-.tab .nav > li > a { padding: 18px 15px }
+.tab { 
+background: #f5f5f5;
+border-radius: 3px; 
+
+}
+.tab .nav > li > a { padding: 15px 12px }
 .tab-bg-dark-navy-blue {
-    background: #B3E181;
+    background: #0f7aad;
     border-bottom: none;
     padding: 0;
-    border-radius: 5px;
+    border-radius: 3px;
 }
+
 .tab-bg-dark-navy-blue .nav > li > a:hover,
 .tab-bg-dark-navy-blue .nav > li > a:focus {
     background-color: #f4f4f4;
@@ -271,24 +276,24 @@ h3.message{
     border-width: 0;
     border-radius: 0;
 }
-.panel-heading .nav > li > a { color: #1676A3  }
+.panel-heading .nav > li > a { color: #fff  }
 .panel-heading .nav > li.active > a,
 .panel-heading .nav > li > a:hover {
-    color: #EAEBEC;
-    background: #1676A3;
-    border-radius: 5px;
+    color: #1676A3;
+    background: #dcf7d0;
+    border-radius: 3px;
 }
 .panel-heading .nav > li:first-child.active > a,
 .panel-heading .nav > li:first-child > a:hover { }
 .tab .nav-tabs.nav-justified > li { border-right: 1px solid #f4f4f4 }
 .tab .nav-tabs.nav-justified > li:last-child { border-right: none }
 .p-head {
-    color: #8CC63E;
-    font-size: 14px;
+    color: #fff;
+    font-size: 10px;
     font-weight: 400;
 }
 .cmt-head {
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 400;
 }
 .p-thumb img {

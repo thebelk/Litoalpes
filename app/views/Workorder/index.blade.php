@@ -8,7 +8,6 @@
 @section('content')
 <div class="col col-sm-3 complement">   
     <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}}</h3>
-    <br>
     <div class="comp">        
         <h2 class="til">{{ Auth::user()->representante}}  </h2>
         <h5> Nit: {{ Auth::user()->nit_cc}}  </h5>
@@ -27,7 +26,6 @@
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
                 <div class="accordion-inner">
-                    <br>
                     <p> <h5>Email: {{ Auth::user()->email}} </h5></p>
                 </div>
             </div>
@@ -40,7 +38,6 @@
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    <br>
                     <h5>Direccion: {{ Auth::user()->direccion}} </h5>
                     <h5> Ciudad: {{ Auth::user()->ciudad}} </h5>
                     <h5> Pais: {{ Auth::user()->pais}} </h5>
@@ -70,7 +67,6 @@
 <div class="col col-sm-9">
     <div class="row ">                             
         <!-- cho section -->
-        <div class="bhoechie-tab-content active  tam">
             <div class="titulo">
                 <h3 class="glyphicon glyphicon-th-list color" ></h3>
                 <h4> Trabajos por Realizar</h4>   
@@ -111,7 +107,7 @@
                     @endforeach
                 </div>
             </div>	
-        </div>
+      
     </div>
 </div>   
 <script>

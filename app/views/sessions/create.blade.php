@@ -34,10 +34,8 @@
             </div>
         </header>
         @show        
-
         <div id="container">
             <center>
-                <div class="row login ">
                     <div class="col-md-7 col-md-offset-3">
                         <div class="row panel panel-default">
                             <div class="panel-body">
@@ -152,7 +150,7 @@
                             {{ Form::close() }}
                         </div>
                     </div>
-                </div>
+           
             </center>
         </div>
 

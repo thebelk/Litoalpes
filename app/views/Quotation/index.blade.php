@@ -8,14 +8,12 @@
 @section('content')
 <div class="col col-sm-3 complement">   
     <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}}</h3>
-    <br>
     <div class="comp">        
         <h2 class="til">{{ Auth::user()->representante}}  </h2>
         <h5> Nit: {{ Auth::user()->nit_cc}}  </h5>
         <h5>Telefono: {{ Auth::user()->telefono}} </h5>
         <h5>Celular: {{ Auth::user()->celular}} </h5>   
-        <h5>{{ Auth::user()->otro}} </h5>       
-
+        <h5>{{ Auth::user()->otro}} </h5> 
     </div>
     <h5>{{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h5>
     <div class="accordion" id="accordion2">
@@ -27,7 +25,6 @@
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
                 <div class="accordion-inner">
-                    <br>
                     <p> <h5>Email: {{ Auth::user()->email}} </h5></p>
                 </div>
             </div>
@@ -40,7 +37,6 @@
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    <br>
                     <h5>Direccion: {{ Auth::user()->direccion}} </h5>
                     <h5> Ciudad: {{ Auth::user()->ciudad}} </h5>
                     <h5> Pais: {{ Auth::user()->pais}} </h5>
@@ -53,13 +49,13 @@
     <div id="sidebar">  
         <div class="list-group">                        
             <a href="quotation/create" class="list-group-item  text-center">
-                <h4 class="glyphicon glyphicon-plus"></h5><br/><h5>Nueva Cotización</h4> 
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nueva Cotización</h4> 
             </a>                        
             <a href="/workorderlist" class="list-group-item active  text-center">
-                <h4 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h5>Trabajos</h4>
+                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h4>Trabajos</h4>
             </a>
             <a href="/phonebook" class="list-group-item  text-center">                           
-                <h4 class="glyphicon glyphicon-earphone"></h5><br/><h5>Contactos | Proveedor</h4>
+                <h5 class="glyphicon glyphicon-earphone"></h5><br/><h4>Contactos | Proveedor</h4>
             </a>
         </div>  
     </div>
@@ -74,7 +70,6 @@
 <div class="col col-sm-9">
     <div class="row ">                             
         <!-- cho section -->
-        <div class="bhoechie-tab-content active tam">
             <div class="titulo">
                 <h3 class="glyphicon glyphicon-pencil color" ></h3>
                 <h4> Listar Cotización</h4> 
@@ -132,7 +127,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>  
 </div>  
 <script>
