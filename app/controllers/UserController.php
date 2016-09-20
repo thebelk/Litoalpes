@@ -9,7 +9,17 @@ class UserController extends \BaseController {
      */
     public function index() {    
         $workorder =Workorder::whereRaw('estado_trabajo = 1')->get();
+			
+			if(isset($user["buscar"])!=""){
+			$workorder->where('clase_trabajo', 'LIKE','%'.$buscar.'%')
+			->orwhere('diseñador', 'LIKE','%'.$buscar.'%')
+			->paginate(4);	
+				
+			}
+	
+				
         return View::make('user.index')->with('workorder', $workorder);   
+		
     }
 
     /**

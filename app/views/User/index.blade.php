@@ -72,8 +72,8 @@
                     <h3 class="glyphicon glyphicon-th-list color" ></h3>
                     <h4> Trabajos por Realizar</h4>   
                 </div>
-			{{ Form::open(['route' => 'user.index', 'method' => 'GET', 'class' => 'input-group','id' => 'adv-search', 'role' => 'search ']) }}
-					{{ Form::text('name', null, ['class' => 'form-control','style' => 'text-align:center', 'placeholder' => 'Buscar Trabajos']) }}          		
+				{{ Form::open(['route' => 'user.index', 'method' => 'GET', 'class' => 'input-group'<!--,'id' => 'adv-search', 'role' => 'search '-->]) }}
+				{{ Form::text('buscar', null, ['class' => 'form-control','style' => 'text-align:center', 'placeholder' => 'Buscar Trabajos']) }}         		
                     <div class="input-group-btn">
 						<div class="btn-group" role="group">
 								<div class="dropdown dropdown-lg">
@@ -81,16 +81,18 @@
 										<div class="dropdown-menu dropdown-menu-right" role="menu">
 										  <div class="form-group">
 												<label class="radio-inline">
-												  <input type="radio" name="searchLocation" id="inThisLocation" value="trabajos" checked="checked" /> Trabajo
+												  <input type="radio" id="clase_trabajo" value="clase_trabajo" checked="checked" /> Trabajo
 												</label>
 												<label class="radio-inline">
-												  <input type="radio" name="searchLocation" id="everywhere" value="cliente" /> Cliente 
+												  <input type="radio"  id="diseñador" value="diseñador" /> Diseñador
 												</label>
 										  </div>
 										  <a ng-href="#/search/{{ $workorder }}">Advanced search</a>
 										</div>
 								</div>
-								{{ Form::button('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>', array('type' => 'submit','class' => 'btn btn-primary')) }}	
+								
+								{{ Form::button('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>', array('type' => 'submit','class' => 'btn btn-primary')) }}
+																
 						</div>
                     </div>			
            
