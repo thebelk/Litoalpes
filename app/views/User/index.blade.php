@@ -72,7 +72,7 @@
                     <h3 class="glyphicon glyphicon-th-list color" ></h3>
                     <h4> Trabajos por Realizar</h4>   
                 </div>
-				{{ Form::open(['route' => 'user.index', 'method' => 'GET', 'class' => 'input-group'<!--,'id' => 'adv-search', 'role' => 'search '-->]) }}
+				{{ Form::open(['route' => 'user.index', 'method' => 'GET', 'class' => 'input-group','id' => 'adv-search', 'role' => 'search ']) }}
 				{{ Form::text('buscar', null, ['class' => 'form-control','style' => 'text-align:center', 'placeholder' => 'Buscar Trabajos']) }}         		
                     <div class="input-group-btn">
 						<div class="btn-group" role="group">

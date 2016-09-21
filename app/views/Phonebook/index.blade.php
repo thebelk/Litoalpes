@@ -124,14 +124,11 @@
                         <strong>Ciudad </strong>: {{ $phonlist->ciudad }}
                         <strong>Pais: </strong>: {{ $phonlist->pais }}</h5> 
 
-
+					{{ Form::model($phonebook, array('url' => array('/phonebook/'.$phonlist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
+					{{ Form::submit('Eliminar', array('class' => 'btn  btn-success')) }}  
+					
                     {{ HTML::link('/phonebook/'.$phonlist->id.'/edit','Editar', array('class' => 'btn btn-default btn-sm'), false)}}                       
 
-
-
-                    {{ Form::submit('Eliminar', array('class' => 'btn  btn-success btn-sm')) }}
-
-                    {{ Form::model($phonebook, array('url' => array('/phonebook/'.$phonlist->id), 'method' => 'DELETE', 'role' => 'form')) }}   
                     <hr>
                     @endforeach
                 </div>

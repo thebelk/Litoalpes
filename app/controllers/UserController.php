@@ -7,20 +7,26 @@ class UserController extends \BaseController {
      *
      * @return Response
      */
-    public function index() {    
-        $workorder =Workorder::whereRaw('estado_trabajo = 1')->get();
+    public function index() { 
 			
-			if(isset($user["buscar"])!=""){
+			if(isset($_GET['buscar'])){
+			$buscar = Input::get('buscar');
+			$workorder =Workorder::whereRaw('estado_trabajo = 1 and (clase_material LIKE "%'.$buscar.'%" or diseñador LIKE "%'
+			.$buscar.'%" or diseñador LIKE "%'.$buscar.'%" or vendedor LIKE "%'.$buscar.'%" )')->get();
+			}else{
+			$workorder =Workorder::whereRaw('estado_trabajo = 1')->get();	
+			}
+				
+			return View::make('user.index')->with('workorder', $workorder);   
+		
+    }
+	
+	/*if(isset($user["buscar"])!=""){
 			$workorder->where('clase_trabajo', 'LIKE','%'.$buscar.'%')
 			->orwhere('diseñador', 'LIKE','%'.$buscar.'%')
 			->paginate(4);	
 				
-			}
-	
-				
-        return View::make('user.index')->with('workorder', $workorder);   
-		
-    }
+			}*/
 
     /**
      * Show the form for creating a new resource.

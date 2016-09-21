@@ -116,11 +116,12 @@
                             <strong>Direccion</strong>: {{ $quotlist->direccion}}.</h5>
                         <h5> <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }}</h5> 
                         <h5> <strong>Cotizacion</strong>: {{ $quotlist->cotizacion }}</h5> 
-                        {{ HTML::link('/quotation/'.$quotlist->id.'/edit','Editar', array('class' => 'btn btn-default btn-sm'), false)}}                       
-                        {{ Form::submit('Eliminar', array('class' => 'btn  btn-success btn-sm')) }}
-
-                        {{ Form::model($quotation, array('url' => array('/quotation/'.$quotlist->id), 'method' => 'DELETE', 'role' => 'form')) }}
-                        {{ Form::close() }}  							
+                                             
+						
+						{{ Form::model($quotation, array('url' => array('/quotation/'.$quotlist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
+						{{ Form::submit('Eliminar', array('class' => 'btn  btn-success btn-sm',)) }}  	
+						
+						{{ HTML::link('/quotation/'.$quotlist->id.'/edit','Editar', array('class' => 'btn btn-default btn-sm'), false)}} 
                         <hr>
                         @endforeach
 
