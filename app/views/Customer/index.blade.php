@@ -1,6 +1,8 @@
 @extends('layouts.master')
 <head> 
     @section ('title')Clientes @stop
+
+	
 </head>
 @section('header')
 @parent
@@ -80,7 +82,7 @@
                             <div class="dropdown-menu dropdown-menu-right" role="menu">
                               <div class="form-group">
                                 <label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> Fact.pendientes 
+                                  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> Por Pagar 
                                 </label>
                                 <label class="radio-inline">
                                   <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Directos 
@@ -90,15 +92,31 @@
                                 </label>
                               </div>
 							  
-							  
-                                     <a ng-href="#/search/">Advanced search</a>
 									 
-									 <div class="input-group date" data-provide="datepicker">
-										<input type="text" class="form-control">
-										<div class="input-group-addon">
-											<span class="glyphicon glyphicon-th"></span>
+									 <form id="dateRangeForm" method="post" class="form-horizontal">
+										<div class="form-group">
+											<label class="col-xs-3 control-label">Inicial</label>
+											<div class="col-xs-5 date">
+												<div class="input-group input-append date" id="dateRangePicker">
+													<input type="text" class="form-control" name="date" id="date" />
+													<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+												</div>
+											</div>
 										</div>
-									</div>
+
+									</form>
+									<form id="dateRangeForm" method="post" class="form-horizontal">
+										<div class="form-group">
+											<label class="col-xs-3 control-label">Final</label>
+											<div class="col-xs-5 date">
+												<div class="input-group input-append date" id="dateRangePicker">
+													<input type="text" class="form-control" name="date" id="date" />
+													<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+												</div>
+											</div>
+										</div>
+
+									</form>
 									 
 									 
                             </div>
@@ -152,6 +170,8 @@
         wheelStep: 2,
         allowPageScroll: true
     });
+	
+	
 </script> 
  
 @stop
