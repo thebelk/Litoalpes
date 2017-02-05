@@ -13,16 +13,14 @@
     </head>
     <body>
         @section('header')
-        <header>  
-            <div class="container">
-
-            </div>
+		 
+        <header>             
             <div class="container-">     
                 <nav class="navbar navbar-static" role="navigation">					  
                     <div class="nav-collapse collase">
-                        <div class=" navbar-left">
+                        <div class=" navbar-left" style=" float: left">
                             <div class="bootoom">
-                                <h2><span class="label label-success cont">Litografia Los Alpes</span></h2>
+                                <h2><span class="label label-success cont">Litografia LitoApp</span></h2>
                             </div>
                         </div>
                         <div class=" navbar-right" style="margin: 30px; float: left" > 
@@ -31,17 +29,12 @@
                                 <li><a href="/logout">Salir</a></li>
                             </ul>
                         </div> 
-                        <div class=" navbar-right"style="float: left" > 
-                            <!--<div class="bootoom">
-                                <!--   <button type="button" class="btn btn-primary colo"><b>Registrate</b></button>  --><!--
-                                <button type="button" class="btn btn-success btn-lg">{{ HTML::link('/login',' Iniciar sesion',array ('class' => 'colt')) }}</button> 
-                            </div> -->
-                        </div>
+                        
                     </div>  
                 </nav>
             </div>
         </header>
-
+	
         @show 
         <!-- container register -->
         <div id="container">
@@ -50,7 +43,7 @@
                     <div class="col-md-7 col-md-offset-3">
                         <div class=" panel panel-default tam ">
                             <div class="panel-body pancol ">
-                                <h2 class="form-signin-heading" ><b>Lito Alpes</b></h2> <br>                                                          
+                                <h2 class="form-signin-heading" ><b>LitoApp</b></h2> <br>                                                          
                                 <h3 align="justify"><b>Crear una cuenta. </b> </h3>
                                 <h5 align="justify"> ¿Registra tu información  y en breve podrás acceder a nuestro servicios? </h5>
                                 <h5 align="justify">Los campos con asteriscos (*) son requeridos.</h5><br>
@@ -67,16 +60,17 @@
                                             {{ Form::text('representante', null, array('placeholder' => 'Nombre y Apellido', 'class' => 'form-control', 'required' => 'required')) }}
                                         </div>
                                     </div>
+                                   
                                     <div class="col-xs-6 col-md-6">
+                                        <div class='form-group form-register' align="justify">
+                                            {{ Form::label('nit_cc', 'C.C / NIT *:') }}<br>
+                                            {{ Form::text('nit_cc',null, array('placeholder' => 'C.C / Nit', 'class' => 'form-control', 'required' => 'required')) }}
+                                        </div>
+                                    </div>
+									 <div class="col-xs-6 col-md-6">
                                         <div class="form-group form-register"align="justify">
                                             {{ Form::label('celular', 'Celular *:') }}<br>
                                             {{ Form::text('celular', null, array('placeholder' => 'Celular', 'class' => 'form-control', 'required' => 'required')) }}
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-md-6">
-                                        <div class='form-group form-register' align="justify">
-                                            {{ Form::label('nit_cc', 'NIT *:') }}<br>
-                                            {{ Form::text('nit_cc',null, array('placeholder' => 'Nit', 'class' => 'form-control', 'required' => 'required')) }}
                                         </div>
                                     </div>
                                     <div class="col-xs-6 col-md-6">

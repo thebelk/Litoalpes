@@ -22,7 +22,6 @@ Route::get('customerlist', 'CustomerController@index');
 Route::get('customer/create', 'CustomerController@create');
 Route::get('customer/{customer}/profile', 'CustomerController@show');
 Route::get('customer/{customer}/edit', 'CustomerController@edit');
-Route::post('customer/search', 'CustomerController@search');
 
 Route::resource('quotation', 'QuotationController');
 Route::get('quotationlist', 'QuotationController@index');

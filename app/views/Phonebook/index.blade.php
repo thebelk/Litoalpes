@@ -76,7 +76,7 @@
                 <h4>  Contactos & Provedor </h4>  
             </div> 
                  <div class="input-group" id="adv-search">
-                <input type="text" class="form-control" style="text-align:center" placeholder="Buscar Trabajos" />
+                <input type="text" class="form-control" style="text-align:center" placeholder="Buscar Contactos" />
                <div class="input-group-btn">
                     <div class="btn-group" role="group">
                         <div class="dropdown dropdown-lg">
@@ -84,13 +84,13 @@
                             <div class="dropdown-menu dropdown-menu-right" role="menu">
                               <div class="form-group">
                                 <label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> In this location
+                                  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> Contactos
                                 </label>
                                 <label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Everywhere
+                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Provedor
                                 </label>
                               </div>
-                                     <a ng-href="#/search/">Advanced search</a>-
+                                   <!--  <a ng-href="#/search/">Advanced search</a>-->
                             </div>
                         </div>
                         <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>

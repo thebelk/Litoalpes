@@ -93,25 +93,27 @@
                                 {{ Form::text('cliente', null, array('placeholder' => 'Cliente', 'class' => 'form-control', 'required' => 'required')) }}
                             </div>
                         </div>
-                        <div class="col-xs-6 col-md-4 imp">
-                            <div class='form-group form-register'align="justify">
-                                {{ Form::label('cel_contacto', 'NUMERO DE CONTACTO:') }}
-                                {{ Form::text('cel_contacto', null, array('placeholder' => 'Celular', 'class' => 'form-control')) }}
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-md-4 imp">                                     
-                            <div class='form-group form-register'align="justify">
-                                {{ Form::label('tipo_cliente', 'TIPO CLIENTE:') }}
-                                {{ Form::select('tipo_cliente', array('Tipo Cliente' => array( '1' => 'Seleccionar','1' => 'Directo ', '2' => 'Intermediario')),null ,array('class' => 'form-control')); }}
-                            </div>
-                            <br>
-                        </div>
-                        <div class="col-xs-6 col-md-4 imp">
+						<div class="col-xs-6 col-md-4 imp">
                             <div class='form-group form-register'align="justify">
                                 {{ Form::label('nit_cc', 'NIT / CC:') }}
                                 {{ Form::text('nit_cc', null, array('placeholder' => 'Nit / CC', 'class' => 'form-control')) }}
                             </div>
                         </div>
+                        
+                        <div class="col-xs-6 col-md-4 imp">                                     
+                            <div class='form-group form-register'align="justify">
+                                {{ Form::label('tipo_cliente', 'TIPO CLIENTE:') }}
+                                {{ Form::select('tipo_cliente', array('Tipo Cliente' => array( '1' => 'Seleccionar','1' => 'Directo ', '2' => 'Tercero')),null ,array('class' => 'form-control')); }}
+                            </div>
+                            <br>
+                        </div>
+						<div class="col-xs-6 col-md-4 imp">
+                            <div class='form-group form-register'align="justify">
+                                {{ Form::label('cel_contacto', 'NUMERO DE CONTACTO:') }}
+                                {{ Form::text('cel_contacto', null, array('placeholder' => 'Celular', 'class' => 'form-control')) }}
+                            </div>
+                        </div>
+                        
                         <div class="col-xs-6 col-md-4 imp">
                             <div class='form-group form-register'align="justify">
                                 {{ Form::label('empresa', 'EMPRESA:') }}

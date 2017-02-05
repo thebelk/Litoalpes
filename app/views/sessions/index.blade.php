@@ -22,7 +22,7 @@
                     <div class="nav-collapse collase">
                         <div class=" navbar-left">
                             <div class="bootoom">
-                                <h2><span class="label label-success cont">Litografia Los Alpes</span></h2>
+                                <h2><span class="label label-success cont">Litografia LitoApp</span></h2>
                             </div>
                         </div>
 
@@ -140,7 +140,7 @@
         $password = $_POST['passwords'];
 
         // Esto se puede remplazar por un usuario real guardado en la base de datos.
-        if ($username == 'admin' && $passwords == 'admin2016') {
+        if ($username == 'admin' && $passwords == 'admin2017') {
             
             header("signup");
             header("Location: user.create.php");    

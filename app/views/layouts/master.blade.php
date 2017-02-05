@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="content-type" content="text/html;">
         <meta charset="utf-8">  
-        <title>@yield('title', 'Litografia')</title>
+        <title>@yield('title', 'LitoApp')</title>
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <!-- Bootstrap core CSS -->
@@ -25,12 +25,12 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/user">LitoAlpes</a>
+                        <a class="navbar-brand" href="/user">LitoApp</a>
                     </div>
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav">
                             <li><a href="/user"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                            <li><a href="/customer" role="button" data-toggle="modal"><i class="glyphicon glyphicon-user"></i> Clientes</a>                             
+                            <li><a href="/customerlist" role="button" data-toggle="modal"><i class="glyphicon glyphicon-user"></i> Clientes</a>                             
                             <li><a href="/quotation" role="button" data-toggle="modal"><i class="glyphicon glyphicon-pencil"></i> Cotizar</a>
                             <li>
                                 @if(DB::table('notifications')->count() === 0)
@@ -42,29 +42,37 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge"><i class="glyphicon glyphicon-plus"></i> Orden | Trabajo</span></a>
                                 <ul class="dropdown-menu nav " >
-                                    <form class="form-horizontal" role="form" action="/customer/search" method="POST">
+                                    <form class="form-horizontal" role="form">
                                          <a style="margin-left: 190px" href="/customer/create" role="button" data-toggle="modal"><i class="glyphicon glyphicon-user " ></i> Nuevo</a>  
-										<div class="form-group">
-                                            <label for="nit_cc">Nit / C.C</label>
-                                            <input class="form-control" type="text" name="nit_cc" id="nit_cc"/>
+                                      <!--
+                                        <div class="form-group">
+                                            <label for="filter">Tipo de Cliente</label>
+                                            <select class="form-control">
+                                                <option value="0" selected>Seleccionar </option>
+                                                <option value="1">Persona</option>
+                                                <option value="2">Empresa</option>
+                                            </select>
+                                        </div>-->
+                                        <div class="form-group">
+                                            <label for="contain">Nit / C.C</label>
+                                            <input class="form-control" placeholder="Buscar Cliente" type="text" />
                                         </div>
-                                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                        <button type="submit"  class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true" ></span></button>
                                     </form>
                                 </ul>
                             </li>
                         </ul>                        
                         <ul class="nav navbar-right   navbar-nav nave">
                             <li class="dropdown dropdown-toggle">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i> Bildirimler <span class="badge">0</span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i> Ingresos <span class="badge">0</span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li class="dropdown-header">No message.</li>
+									<li><a class="dropdown-header" href="/user/{user}/income">Pagos</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" class="navbar-link"><i class="glyphicon glyphicon-user"></i><span class="caret"></span></a>
                                 <ul role="menu" class="dropdown-menu">
                                     <li class="active"><a class="animate" href="#">Home</a></li>
                                     <li>{{ HTML::link('/user/'.Auth::user()->representante.'/edit','Users', array('class' => 'animate'), false)}}</li>
-                                    <li><a class="animate" href="/user/{user}/income">Ingresos</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a class="animate" href="/logout">Salir</a></li>
                                 </ul>

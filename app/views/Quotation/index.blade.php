@@ -75,7 +75,7 @@
                 <h4> Listar Cotización</h4> 
             </div>
                  <div class="input-group" id="adv-search">
-                <input type="text" class="form-control" style="text-align:center" placeholder="Buscar Trabajos" />
+                <input type="text" class="form-control" style="text-align:center" placeholder="Buscar Cotización" />
                <div class="input-group-btn">
                     <div class="btn-group" role="group">
                         <div class="dropdown dropdown-lg">

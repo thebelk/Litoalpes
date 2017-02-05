@@ -96,18 +96,19 @@
                                         {{ Form::text('representante', Auth::user()->representante, array('placeholder' => 'Nombre y Apellido', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
+								 <div class="col-xs-6 col-md-6">
+                                    <div class='form-group form-register' align="justify">
+                                        {{ Form::label('nit_cc', 'C.C / NIT *:') }}<br>
+                                        {{ Form::text('nit_cc',Auth::user()->nit_cc, array('placeholder' => 'C.C / Nit', 'class' => 'form-control', 'required' => 'required')) }}
+                                    </div>
+                                </div>
                                 <div class="col-xs-6 ">
                                     <div class="form-group form-register"align="justify">
                                         {{ Form::label('celular', 'Celular *:') }}<br>
                                         {{ Form::text('celular',Auth::user()->celular, array('placeholder' => 'Celular', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
-                                <div class="col-xs-6 col-md-6">
-                                    <div class='form-group form-register' align="justify">
-                                        {{ Form::label('nit_cc', 'NIT *:') }}<br>
-                                        {{ Form::text('nit_cc',Auth::user()->nit_cc, array('placeholder' => 'Nit', 'class' => 'form-control', 'required' => 'required')) }}
-                                    </div>
-                                </div>
+                               
                                 <div class="col-xs-6 col-md-6">
                                     <div class='form-group form-register' align="justify">
                                         {{ Form::label('razon_social', 'Empresa *:') }}<br>
@@ -167,19 +168,19 @@
                                 <div class="col-xs-4">						
                                     <div class='form-group form-register' align="justify">
                                         {{ Form::label('old_password', 'Contraseña Actual *:') }}<br>
-                                        {{ Form::password('old_password', array('placeholder' => 'Password', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::password('old_password', array('placeholder' => 'Contraseña Anterior', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-4">
                                     <div class='form-group form-register' align="justify">
                                         {{ Form::label('password', 'Nueva Contraseña *:') }}<br>
-                                        {{ Form::password('password', array('placeholder' => 'Confirmar Password', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::password('password ', array('placeholder' => 'Nueva Contraseña', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div>
                                 </div>
                                 <div class="col-xs-4">
                                     <div class='form-group form-register' align="justify">
                                         {{ Form::label('password_confirmation', 'Confirmar Contraseña *:') }}<br>
-                                        {{ Form::password('password_confirmation', array('placeholder' => 'Confirmar Password', 'class' => 'form-control', 'required' => 'required')) }}
+                                        {{ Form::password('password_confirmation', array('placeholder' => 'Confirmar Contraseña', 'class' => 'form-control', 'required' => 'required')) }}
                                     </div><br><br>
                                 </div>
 

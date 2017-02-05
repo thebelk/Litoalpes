@@ -72,7 +72,7 @@
                 <h4> Lista de Clientes</h4>  
             </div>
               <div class="input-group" id="adv-search">
-                <input type="text" class="form-control" style="text-align:center" placeholder="Buscar Trabajos" />
+                <input type="text" class="form-control" style="text-align:center" placeholder="Buscar Clientes" />
                <div class="input-group-btn">
                     <div class="btn-group" role="group">
                         <div class="dropdown dropdown-lg">
@@ -80,13 +80,27 @@
                             <div class="dropdown-menu dropdown-menu-right" role="menu">
                               <div class="form-group">
                                 <label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> In this location
+                                  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> Fact.pendientes 
                                 </label>
                                 <label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Everywhere
+                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Directos 
+                                </label>
+								<label class="radio-inline">
+                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Terceros
                                 </label>
                               </div>
+							  
+							  
                                      <a ng-href="#/search/">Advanced search</a>
+									 
+									 <div class="input-group date" data-provide="datepicker">
+										<input type="text" class="form-control">
+										<div class="input-group-addon">
+											<span class="glyphicon glyphicon-th"></span>
+										</div>
+									</div>
+									 
+									 
                             </div>
                         </div>
                         <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
@@ -107,7 +121,7 @@
                         <h5>
                             <strong>Cliente </strong>: 
                             @if($custlist->tipo_cliente==1) Directo
-                            @elseif($customer->tipo_cliente==2) Intermediario                              
+                            @elseif($custlist->tipo_cliente==2) Tercero                             
                             @endif,
                             <strong>Nombre </strong>: {{ $custlist->cliente }} ,                                               
                             <strong>Celular</strong>: {{ $custlist->cel_contacto }},
@@ -138,5 +152,6 @@
         wheelStep: 2,
         allowPageScroll: true
     });
-</script>  
+</script> 
+ 
 @stop

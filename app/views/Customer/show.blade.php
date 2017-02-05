@@ -21,7 +21,7 @@
         <h5>Telefono: {{$customer->telefono}} </h5> 
         <h5>Cliente:          
             @if($customer->tipo_cliente==1) Directo
-            @elseif($customer->tipo_cliente==2) Servicio                              
+            @elseif($customer->tipo_cliente==2) Tercero                               
             @endif
         </h5>
         <h5> Nit: {{ $customer->nit_cc}}  </h5>

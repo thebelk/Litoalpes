@@ -69,7 +69,7 @@
         <!-- cho section -->
             <div class="titulo">
                 <h3 class="glyphicon glyphicon-th-list color" ></h3>
-                <h4> Trabajos por Realizar</h4>   
+                <h4> Lista de Trabajos </h4>   
             </div>
             <div class="com "><div class="com2 "></div>
                 <div id="scroll" class="panel panel-default slimScrollBar tam">

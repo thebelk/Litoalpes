@@ -88,7 +88,7 @@ class CustomerController extends \BaseController {
         $rules = array(
             'cliente' => 'required',
             'cel_contacto' => '',
-            'tipo_cliente' => '', //1.Directo   2.Servicio
+            'tipo_cliente' => '', //1.Directo   2.Tercero 
             'nit_cc' => '',
             'empresa' => '',
             'telefono' => '',
@@ -104,7 +104,7 @@ class CustomerController extends \BaseController {
             $customer2 = Customer::find($customer['id']);
             $customer2->cliente = $customer['cliente'];
             $customer2->cel_contacto = $customer['cel_contacto'];
-            $customer2->tipo_cliente = $customer['tipo_cliente']; //1.Directo   2.Servicio
+            $customer2->tipo_cliente = $customer['tipo_cliente']; //1.Directo   2.Tercero 
             $customer2->nit_cc = $customer['nit_cc'];
             $customer2->empresa = $customer['empresa'];
             $customer2->telefono = $customer['telefono'];
@@ -130,25 +130,5 @@ class CustomerController extends \BaseController {
     public function destroy($id) {
         //
     }
-	
-	public function search() {
-        
-		//
-		$data = Input::all();
-		$customer = DB::table('customers')
-			->where('users_id', '=', Auth::user()->id)
-			->where('nit_cc', 'LIKE', '%' . $data['nit_cc'] . '%')
-			->get();
-		if(!empty($customer)){
-			if(count($customer) == 1){
-				$cust = reset($customer);
-				return Redirect::intended('customer/' . $cust->id . '/workorder/create');
-			}
-			return View::make('customer.search')->with('customer', $customer);
-		}
-        return Redirect::intended('customer/create');
-		
-    }
-	
 
 }
