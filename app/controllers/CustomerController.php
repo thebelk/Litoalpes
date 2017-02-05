@@ -130,5 +130,23 @@ class CustomerController extends \BaseController {
     public function destroy($id) {
         //
     }
-
+	
+	public function search() {
+        
+		//
+		$data = Input::all();
+		$customer = DB::table('customers')
+			->where('users_id', '=', Auth::user()->id)
+			->where('nit_cc', 'LIKE', '%' . $data['nit_cc'] . '%')
+			->get();
+		if(!empty($customer)){
+			if(count($customer) == 1){
+				$cust = reset($customer);
+				return Redirect::intended('customer/' . $cust->id . '/workorder/create');
+			}
+			return View::make('customer.search')->with('customer', $customer);
+		}
+        return Redirect::intended('customer/create');
+		
+    }
 }

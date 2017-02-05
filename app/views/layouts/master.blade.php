@@ -42,7 +42,7 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge"><i class="glyphicon glyphicon-plus"></i> Orden | Trabajo</span></a>
                                 <ul class="dropdown-menu nav " >
-                                    <form class="form-horizontal" role="form">
+                                    <form class="form-horizontal" role="form" action="/customer/search" method="POST">
                                          <a style="margin-left: 190px" href="/customer/create" role="button" data-toggle="modal"><i class="glyphicon glyphicon-user " ></i> Nuevo</a>  
                                       <!--
                                         <div class="form-group">
@@ -54,8 +54,8 @@
                                             </select>
                                         </div>-->
                                         <div class="form-group">
-                                            <label for="contain">Nit / C.C</label>
-                                            <input class="form-control" placeholder="Buscar Cliente" type="text" />
+                                            <label for="nit_cc">Nit / C.C</label>
+                                            <input class="form-control" type="text" name="nit_cc" id="nit_cc"/>
                                         </div>
                                         <button type="submit"  class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true" ></span></button>
                                     </form>
