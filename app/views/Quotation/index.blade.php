@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading"><br><h4>
+            <div class="accordion-heading"><h4>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                         Dirección
                     </a></h4>
@@ -83,13 +83,30 @@
                             <div class="dropdown-menu dropdown-menu-right" role="menu">
                               <div class="form-group">
                                 <label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> In this location
+                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Espera 
                                 </label>
-                                <label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Everywhere
+								<label class="radio-inline">
+                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Realizado
                                 </label>
+								<label class="radio-inline">
+                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Enviado 
+                                </label>								
                               </div>
-                                     <a ng-href="#/search/">Advanced search</a>
+							  <label class="radio-inline">
+                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Autorizado  
+                              </label>
+							  <form id="dateRangeForm" method="post" class="form-horizontal">
+									<div class="form-group">											
+										<div class="col-xs-6 date">	
+											<label class="col-xs-3 control-label"><h6>Fecha Inicial</h6></label>
+											<input type='date' id='fecha_entrega' name='fecha_entrega' class='form-control '/>
+										</div>
+										<div class="col-xs-6 date">	
+											<label class="col-xs-3 control-label"> <h6>Fecha Final</h6></label>
+											<input type='date' id='fecha_entrega' name='fecha_entrega' class='form-control '/>
+										</div>
+									</div>
+								</form>	
                             </div>
                         </div>
                         <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
@@ -103,7 +120,7 @@
                         <h4><strong> {{ $quotlist->clase_trabajo }} / Cotizacion:
                                 <span class="estilo">
                                     @if($quotlist->estado_cotizacion==1) Espera
-                                    @elseif($quotlist->estado_cotizacion==2) Elaborada
+                                    @elseif($quotlist->estado_cotizacion==2) Realizado
                                     @elseif($quotlist->estado_cotizacion==3) Enviado 
                                     @elseif($quotlist->estado_cotizacion==4) Autorizado 
                                     @endif 

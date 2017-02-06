@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading"><br><h4>
+            <div class="accordion-heading"><h4>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                         Dirección
                     </a></h4>
@@ -80,44 +80,31 @@
                         <div class="dropdown dropdown-lg">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
                             <div class="dropdown-menu dropdown-menu-right" role="menu">
-                              <div class="form-group">
-                                <label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> Por Pagar 
-                                </label>
-                                <label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Directos 
-                                </label>
-								<label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Terceros
-                                </label>
-                              </div>
-							  
+								<div class="form-group"> 
+								
+									<label class="radio-inline">
+									  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> Por Pagar 
+									</label>
+									<label class="radio-inline">
+									  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Directos 
+									</label>
+									<label class="radio-inline">
+									  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Terceros
+									</label>
+								</div>
 									 
-									 <form id="dateRangeForm" method="post" class="form-horizontal">
-										<div class="form-group">
-											<label class="col-xs-3 control-label">Inicial</label>
-											<div class="col-xs-5 date">
-												<div class="input-group input-append date" id="dateRangePicker">
-													<input type="text" class="form-control" name="date" id="date" />
-													<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-												</div>
-											</div>
+								<form id="dateRangeForm" method="post" class="form-horizontal">
+									<div class="form-group">											
+										<div class="col-xs-6 date">	
+											<label class="col-xs-3 control-label"><h6>Fecha Inicial</h6></label>
+											<input type='date' id='fecha_entrega' name='fecha_entrega' class='form-control '/>
 										</div>
-
-									</form>
-									<form id="dateRangeForm" method="post" class="form-horizontal">
-										<div class="form-group">
-											<label class="col-xs-3 control-label">Final</label>
-											<div class="col-xs-5 date">
-												<div class="input-group input-append date" id="dateRangePicker">
-													<input type="text" class="form-control" name="date" id="date" />
-													<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-												</div>
-											</div>
+										<div class="col-xs-6 date">	
+											<label class="col-xs-3 control-label"> <h6>Fecha Final</h6></label>
+											<input type='date' id='fecha_entrega' name='fecha_entrega' class='form-control '/>
 										</div>
-
-									</form>
-									 
+									</div>
+								</form>									 
 									 
                             </div>
                         </div>

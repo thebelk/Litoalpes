@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading"><br><h4>
+            <div class="accordion-heading"><h4>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                         Dirección
                     </a></h4>
@@ -71,6 +71,45 @@
                 <h3 class="glyphicon glyphicon-th-list color" ></h3>
                 <h4> Lista de Trabajos </h4>   
             </div>
+			{{ Form::open(['route' => 'user.index', 'method' => 'GET', 'class' => 'input-group','id' => 'adv-search', 'role' => 'search ']) }}
+				{{ Form::text('buscar', null, ['class' => 'form-control','style' => 'text-align:center', 'placeholder' => 'Buscar Trabajos']) }}         		
+                    <div class="input-group-btn">
+						<div class="btn-group" role="group">
+								<div class="dropdown dropdown-lg">
+										{{ Form::button('<span class="caret"></span>', array('type' => 'submit', 'data-toggle' => 'dropdown','aria-expanded' => 'false','class' => 'btn btn-default dropdown-toggle ')) }}										
+										<div class="dropdown-menu dropdown-menu-right" role="menu">
+										  <div class="form-group">												
+												<label class="radio-inline">
+												  <input type="radio"  id="diseñador" value="diseñador" /> Diseñador
+												</label>
+												<label class="radio-inline">
+												  <input type="radio" id="clase_trabajo" value="clase_trabajo" checked="checked" /> Producto 
+												</label>
+												<label class="radio-inline">
+												  <input type="radio" id="clase_trabajo" value="clase_trabajo" checked="checked" /> Servicio
+												</label>
+										  </div>
+										  <form id="dateRangeForm" method="post" class="form-horizontal">
+												<div class="form-group">											
+													<div class="col-xs-6 date">	
+														<label class="col-xs-3 control-label"><h6>Fecha Inicial</h6></label>
+														<input type='date' id='fecha_entrega' name='fecha_entrega' class='form-control '/>
+													</div>
+													<div class="col-xs-6 date">	
+														<label class="col-xs-3 control-label"> <h6>Fecha Final</h6></label>
+														<input type='date' id='fecha_entrega' name='fecha_entrega' class='form-control '/>
+													</div>
+												</div>
+											</form>	
+										</div>
+								</div>
+								
+								{{ Form::button('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>', array('type' => 'submit','class' => 'btn btn-primary')) }}
+																
+						</div>
+                    </div>			
+           
+		   {{ Form::close() }}
             <div class="com "><div class="com2 "></div>
                 <div id="scroll" class="panel panel-default slimScrollBar tam">
                     <!-- Default panel contents -->       

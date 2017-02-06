@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading"><br><h4>
+            <div class="accordion-heading"><h4>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                         Dirección
                     </a></h4>
@@ -180,7 +180,7 @@
                         <div class="col-xs-12 col-md-6 imp">                                     
                             <div class='form-group form-register'>
                                 {{ Form::label('estado_cotizacion', 'ESTADO DE COTIZACIÓN:') }}
-                                {{ Form::select('estado_cotizacion', array('Estado Cotizacion' => array('1' => 'Espera', '2' => 'Elaborado', '3' => 'Enviado', '4' => 'Autorizado')),$quotation->estado_cotizacion ,array('class' => 'form-control')); }}
+                                {{ Form::select('estado_cotizacion', array('Estado Cotizacion' => array('1' => 'Espera', '2' => 'Realizado', '3' => 'Enviado', '4' => 'Autorizado')),$quotation->estado_cotizacion ,array('class' => 'form-control')); }}
                             </div>
                         </div>
 

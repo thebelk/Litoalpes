@@ -54,8 +54,8 @@
                                             </select>
                                         </div>-->
                                         <div class="form-group">
-                                            <label for="nit_cc">Nit / C.C</label>
-                                            <input class="form-control" type="text" name="nit_cc" id="nit_cc"/>
+                                            <label for="nit_cc">Buscar Clientes  </label>
+                                            <input class="form-control"placeholder=" Ingresar  Nit / C.C"  type="text" name="nit_cc" id="nit_cc"/>
                                         </div>
                                         <button type="submit"  class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true" ></span></button>
                                     </form>

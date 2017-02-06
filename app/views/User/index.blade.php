@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading"><br><h4>
+            <div class="accordion-heading"><h4>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                         Dirección
                     </a></h4>
@@ -79,15 +79,18 @@
 								<div class="dropdown dropdown-lg">
 										{{ Form::button('<span class="caret"></span>', array('type' => 'submit', 'data-toggle' => 'dropdown','aria-expanded' => 'false','class' => 'btn btn-default dropdown-toggle ')) }}										
 										<div class="dropdown-menu dropdown-menu-right" role="menu">
-										  <div class="form-group">
-												<label class="radio-inline">
-												  <input type="radio" id="clase_trabajo" value="clase_trabajo" checked="checked" /> Trabajo
-												</label>
+										  <div class="form-group">												
 												<label class="radio-inline">
 												  <input type="radio"  id="diseñador" value="diseñador" /> Diseñador
 												</label>
+												<label class="radio-inline">
+												  <input type="radio" id="clase_trabajo" value="clase_trabajo" checked="checked" /> Producto 
+												</label>
+												<label class="radio-inline">
+												  <input type="radio" id="clase_trabajo" value="clase_trabajo" checked="checked" /> Servicio
+												</label>
 										  </div>
-										  <a ng-href="#/search/{{ $workorder }}">Advanced search</a>
+											
 										</div>
 								</div>
 								

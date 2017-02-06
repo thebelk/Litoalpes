@@ -27,20 +27,18 @@
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
                 <div class="accordion-inner">
-                    <br>
                     <p> <h5>Email: {{ Auth::user()->email}} </h5></p>
                 </div>
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading"><br><h4>
+            <div class="accordion-heading"><h4>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                         Dirección
                     </a></h4>
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    <br>
                     <h5>Direccion: {{ Auth::user()->direccion}} </h5>
                     <h5> Ciudad: {{ Auth::user()->ciudad}} </h5>
                     <h5> Pais: {{ Auth::user()->pais}} </h5>
@@ -175,7 +173,7 @@
                         <div class="col-xs-12 col-md-6 imp">                                     
                             <div class='form-group form-register'>
                                 {{ Form::label('estado_cotizacion', 'ESTADO DE COTIZACIÓN:') }}
-                                {{ Form::select('estado_cotizacion', array('Estado Cotizacion' => array('1' => 'Espera', '2' => 'Elaborado', '3' => 'Enviado', '4' => 'Autorizado')),null ,array('class' => 'form-control')); }}
+                                {{ Form::select('estado_cotizacion', array('Estado Cotizacion' => array('1' => 'Espera', '2' => 'Realizado', '3' => 'Enviado', '4' => 'Autorizado')),null ,array('class' => 'form-control')); }}
                             </div>
                         </div>
 

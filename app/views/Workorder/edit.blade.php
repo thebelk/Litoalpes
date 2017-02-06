@@ -38,20 +38,18 @@
             </div>
             <div id="collapseOne" class="accordion-body collapse in">
                 <div class="accordion-inner">
-                    <br>
                     <p> <h5>Email: {{ Auth::user()->email}} </h5></p>
                 </div>
             </div>
         </div>
         <div class="accordion-group">
-            <div class="accordion-heading"><br><h4>
+            <div class="accordion-heading"><h4>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                         Dirección
                     </a></h4>
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    <br>
                     <h5>Direccion: {{ Auth::user()->direccion}} </h5>
                     <h5> Ciudad: {{ Auth::user()->ciudad}} </h5>
                     <h5> Pais: {{ Auth::user()->pais}} </h5>
