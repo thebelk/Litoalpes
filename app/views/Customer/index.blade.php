@@ -81,15 +81,15 @@
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
                             <div class="dropdown-menu dropdown-menu-right" role="menu">
 								<div class="form-group"> 
-								
-									<label class="radio-inline">
-									  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> Por Pagar 
-									</label>
+																	
 									<label class="radio-inline">
 									  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Directos 
 									</label>
 									<label class="radio-inline">
 									  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Terceros
+									</label>
+									<label class="radio-inline">
+									  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> Empresa 
 									</label>
 								</div>
 									 

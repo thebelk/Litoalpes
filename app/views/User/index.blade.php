@@ -79,16 +79,17 @@
 								<div class="dropdown dropdown-lg">
 										{{ Form::button('<span class="caret"></span>', array('type' => 'submit', 'data-toggle' => 'dropdown','aria-expanded' => 'false','class' => 'btn btn-default dropdown-toggle ')) }}										
 										<div class="dropdown-menu dropdown-menu-right" role="menu">
-										  <div class="form-group">												
+										  <div class="form-group">	
+												<label class="radio-inline">
+												  <input type="radio" id="clase_trabajo" value="clase_trabajo" checked="checked" /> Vendedor
+												</label>
 												<label class="radio-inline">
 												  <input type="radio"  id="diseñador" value="diseñador" /> Diseñador
 												</label>
 												<label class="radio-inline">
 												  <input type="radio" id="clase_trabajo" value="clase_trabajo" checked="checked" /> Producto 
 												</label>
-												<label class="radio-inline">
-												  <input type="radio" id="clase_trabajo" value="clase_trabajo" checked="checked" /> Servicio
-												</label>
+												
 										  </div>
 											
 										</div>

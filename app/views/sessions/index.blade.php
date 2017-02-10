@@ -82,7 +82,7 @@
                     <div class="col-xs-6">
                         <div class="row panel panel-default "style=" padding: 25px; border-radius: 8px ">
                             <div class="panel-body">
-                                <h2 class="form-signin-heading" >Lito Alpes</h2>                                                            
+                                <h2 class="form-signin-heading" >LitoApp</h2>                                                            
                                 <h4> Acceder a la cuenta. </h4>
                                 <p> Ingresar el correo electrónico y la contraseña. Por favor, asegúrate de que el bloqueo de mayúsculas no está activado. </P>
                             </div>
