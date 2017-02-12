@@ -103,7 +103,11 @@
 							 <div class="col-sm-8 col-md-12 not ">
 								<h3 class="color" > Entregas de Hoy </h3>
 								<p> Pruebas </p>
-								<p> Pruebas </p>
+								@if(isset($entregas_hoy))
+									@foreach($entregas_hoy as $entrega)
+										<p> {{ $entrega->clase_trabajo}} </p>										
+									@endforeach
+								@endif
 							</div>   
 						</div>
 					@show 

@@ -88,3 +88,18 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+
+View::composer('layouts.master', function ($view) {
+	$now = new DateTime();
+	$date = $now->format('Y-m-d');
+	$customers = DB::table('customers')->where('users_id', '=', Auth::user()->id)->lists('id');
+	$id_customers = "";
+	foreach($customers as $customer){
+		$id_customers .= '"' . $customer . '",';
+	}
+	$id_customers = rtrim($id_customers,",");
+	$entregas_hoy = Workorder::whereRaw('customers_id IN (' . $id_customers . ') and fecha_entrega = "'. $date . '"')->get();
+	
+	$view->with('entregas_hoy', $entregas_hoy);
+});
