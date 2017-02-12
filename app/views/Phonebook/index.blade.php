@@ -73,8 +73,8 @@
                 <h3 class="glyphicon glyphicon-pencil color" ></h3>
                 <h4>  Contactos & Provedor </h4>  
             </div> 
-                 <div class="input-group" id="adv-search">
-                <input type="text" class="form-control" style="text-align:center" placeholder="Buscar Contactos" />
+            {{ Form::open(['route' => 'phonebook.index', 'method' => 'GET', 'class' => 'input-group','id' => 'adv-search', 'role' => 'search ']) }}
+			{{ Form::text('buscar', null, ['class' => 'form-control','style' => 'text-align:center', 'placeholder' => 'Buscar Proveedores']) }}  
                <div class="input-group-btn">
                     <div class="btn-group" role="group">
                         <div class="dropdown dropdown-lg">
@@ -82,20 +82,19 @@
                             <div class="dropdown-menu dropdown-menu-right" role="menu">
                               <div class="form-group">
                                 <label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="inThisLocation" value="inThisLocation" checked="checked" /> Contactos
+                                  <input type="radio" name="searchType" id="contacto" value="contacto" /> Contactos
                                 </label>
                                 <label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Provedor
+                                  <input type="radio" name="searchType" id="proveedor" value="proveedor" /> Provedor
                                 </label>
                               </div>
                                    <!--  <a ng-href="#/search/">Advanced search</a>-->
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        {{ Form::button('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>', array('type' => 'submit','class' => 'btn btn-primary')) }}
                     </div>
                 </div>
-            </div>
-
+            {{ Form::close() }}
             <div class="com "><div class="com2 "></div>
                 <div id="scroll" class="panel panel-default slimScrollBar tam">                    
                     @foreach($phonebook as $phonlist)                      

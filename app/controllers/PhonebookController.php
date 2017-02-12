@@ -8,7 +8,16 @@ class PhonebookController extends \BaseController {
      * @return Response
      */
     public function index() {
-        $phonebook = DB::table('phonebooks')->where('users_id', '=', Auth::user()->id)->get();
+		
+		if(isset($_GET['buscar'])){
+				$buscar = Input::get('buscar');
+				$phonebook = Phonebook::whereRaw('users_id = '. Auth::user()->id .' and (nombre LIKE "%'.$buscar.'%" or celular LIKE "%'
+				.$buscar.'%" or nit LIKE "%'.$buscar.'%" or telefono LIKE "%'.$buscar.'%" or email LIKE "%'
+				.$buscar.'%" or empresa LIKE "%'.$buscar.'%" )')->get();
+			}else{
+				$phonebook = DB::table('phonebooks')->where('users_id', '=', Auth::user()->id)->get();
+			}
+        
         return View::make('phonebook.index')->with('phonebook', $phonebook);
     }
 
