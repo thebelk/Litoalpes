@@ -6,7 +6,8 @@
 @parent
 @stop
 @section('content')
-<div class="col col-sm-3 complement">   
+
+@section('container1')   
     <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}}</h3>
     <br>
     <div class="comp">        
@@ -49,22 +50,23 @@
     </div>
     <br>
     <div id="sidebar"> 
-        <div class="list-group">			
+        <div class="list-group">	
+			<a href="/phonebook/create" class="list-group-item  active text-center">                           
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Contato </h4>
+            </a>
             <a href="/phonebook" class="list-group-item  text-center">
                 <h5 class="list-group-item-heading glyphicon glyphicon-earphone"></h5><h4>Contactos | Proveedor</h4>
             </a>
-            <a href="/workorderlist" class="list-group-item active text-center">
-                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h4>Trabajos</h4>
-            </a>
         </div>
     </div>
-
-    <div class="col-sm-8 col-md-12 not">
-        <h3 class="color" > Entregas de Hoy </h3>
-        <p> Pruebas </p>
-    </div>
-
-</div>  
+	@stop
+	
+    @section('container2')
+	@parent
+	@stop
+	
+  
+ @section('container3') 
 <div class="col col-sm-9">
     <div class="row ">
         <div class="bhoechie-tab">                     
@@ -119,7 +121,7 @@
                     </div>
                 </div>               
             </div>
-        </div>
+        </div><!--
         <section class="tab wow fadeInLeft tam">                     
             <header class="panel-heading tab-bg-dark-navy-blue">
                 <ul class="nav nav-tabs nav-justified ">
@@ -144,7 +146,7 @@
                                 @foreach($workorder as $worklist)
                                 @if($worklist->estado_trabajo==1)
 
-                                <!-- Default panel contents -->                
+                                <!-- Default panel contents -->     <!--           
                                 <hr>                     
                                 <h3><strong> {{ $worklist->clase_trabajo}} / ESTADO TRABAJO
                                         <span class="estilo">
@@ -187,7 +189,7 @@
                             @foreach($workorder as $worklist)
                             @if($worklist->estado_trabajo==1)
 
-                            <!-- Default panel contents -->                
+                            <!-- Default panel contents -->  <!--              
                             <hr>                     
                             <h3><strong> {{ $worklist->clase_trabajo}} / ESTADO TRABAJO
                                     <span class="estilo">
@@ -225,8 +227,8 @@
                         </div> 
                     </div> 
                 </div>
-            </div> 
-        </section> 
+            </div>
+        </section>  -->
     </div>
 </div>
 <script>
@@ -292,4 +294,4 @@
     }
 </script>      
 
-@stop
+@stop@stop

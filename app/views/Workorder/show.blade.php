@@ -70,7 +70,7 @@
                     {{$customer->empresa}}
                 </h5> 
             </a> 
-            <a href="phonebook/create" class="list-group-item active text-center">                           
+            <a href="/phonebook/create" class="list-group-item active text-center">                           
                 <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Contato </h4>
             </a> 
             <a href="/phonebook" class="list-group-item  text-center">                           

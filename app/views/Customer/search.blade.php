@@ -6,7 +6,8 @@
 @parent
 @stop
 @section('content')
-<div class="col col-sm-3 complement">   
+
+@section('container1')  
     <h3 class="highlight nav nav-stacked ">{{Auth::user()->razon_social}}</h3>
     <div class="comp">        
         <h2 class="til">{{ Auth::user()->representante}}  </h2>
@@ -52,19 +53,22 @@
             <a href="customer/create" class="list-group-item  text-center">                           
                 <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Cliente</h4>
             </a>
-            <a href="/workorderlist" class="list-group-item active text-center">
-                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h4>Trabajos</h4>
-            </a>
+            <a href="/phonebook/create" class="list-group-item active text-center">                           
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Contato </h4>
+            </a> 
             <a href="/phonebook" class="list-group-item  text-center">                           
                 <h5 class="glyphicon glyphicon-earphone"></h5><br/><h4>Contactos | Proveedor</h4>
             </a>
         </div>        
     </div>
-    <div class="col-sm-8 col-md-12 not">
-        <h3 class="color" > Entregas de Hoy </h3>
-        <p> Pruebas </p>
-    </div>
-</div> 
+	@stop
+	
+    @section('container2')
+	@parent
+	@stop
+	
+  
+ @section('container3')
 <div class="col col-sm-9">
     <div class="row "> 
             <div class="titulo">
@@ -154,4 +158,4 @@
     });
 </script> 
  
-@stop
+@stop@stop
