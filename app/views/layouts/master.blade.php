@@ -101,13 +101,20 @@
 					 @section('container2')	
 						<div class="hidden-phone">
 							 <div class="col-sm-8 col-md-12 not ">
-								<h3 class="color" > Entregas de Hoy </h3>
-								<p> Pruebas </p>
-								@if(isset($entregas_hoy))
-									@foreach($entregas_hoy as $entrega)
-										<p> {{ $entrega->clase_trabajo}} </p>										
-									@endforeach
-								@endif
+								<h3 class="color" > Entregas para Hoy </h3>
+								<ul>
+									@if(isset($entregas_hoy))
+										@foreach($entregas_hoy as $entrega)
+										<li>	
+										<a href="/worklist/{{$entrega->id}}/ver"> 
+										<h5>@if($entrega->tipo_orden==1)                                 
+										@elseif($entrega->tipo_orden==2) SERVICIO: 
+										@elseif($entrega->tipo_orden==3) PRODUCTO: 
+										@endif {{ $entrega->clase_trabajo}} </h5></a>
+										</li>
+										@endforeach
+									@endif
+								</ul>
 							</div>   
 						</div>
 					@show 

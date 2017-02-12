@@ -140,7 +140,7 @@
                         <div class="col-xs-6 col-md-4 imp ">
                             <div class='form-group form-register'align="justify">
                                 {{ Form::label('pais', 'PAIS:') }}
-                                {{ Form::text('pais', null, array('placeholder' => 'Pais', 'class' => 'form-control')) }}
+                                {{ Form::text('pais', 'Colombia', array('placeholder' => 'Pais', 'class' => 'form-control')) }}
                             </div>
                             <br>
                         </div>

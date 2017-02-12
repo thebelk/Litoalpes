@@ -182,7 +182,7 @@
                                             <div class='form-group form-register'>
                                                 {{ Form::checkbox('sello',  $workorder->sello, $workorder->sello == 1)}}
                                                 {{ Form::label('tipo_sello', ' SELLO') }}                                                            
-                                                {{ Form::select('tipo_sello',array('1' => 'Seleccionar', '2' => 'Cyrel','3' => ' Sello Seco','4' => 'Sello Madera','4' => 'Sello Printer','4' => 'Sello de Bolsillo','5' => 'Otros'), $workorder->tipo_sello, array('class' => 'form-control')); }}
+                                                {{ Form::select('tipo_sello',array('1' => 'Seleccionar', '2' => 'Cyrel','3' => ' Sello Seco','4' => 'Sello Madera','5' => 'Sello Printer','6' => 'Sello de Bolsillo','7' => 'Otros'), $workorder->tipo_sello, array('class' => 'form-control')); }}
                                             </div>
                                             <br> 
                                         </div>
