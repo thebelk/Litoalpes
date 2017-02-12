@@ -74,45 +74,45 @@
                 <h3 class="glyphicon glyphicon-pencil color" ></h3>
                 <h4> Listar Cotización</h4> 
             </div>
-                 <div class="input-group" id="adv-search">
-                <input type="text" class="form-control" style="text-align:center" placeholder="Buscar Cotización" />
+			{{ Form::open(['route' => 'quotation.index', 'method' => 'GET', 'class' => 'input-group','id' => 'adv-search', 'role' => 'search ']) }}
+			{{ Form::text('buscar', null, ['class' => 'form-control','style' => 'text-align:center', 'placeholder' => 'Buscar Trabajos']) }}  
                <div class="input-group-btn">
                     <div class="btn-group" role="group">
                         <div class="dropdown dropdown-lg">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                            {{ Form::button('<span class="caret"></span>', array('type' => 'submit', 'data-toggle' => 'dropdown','aria-expanded' => 'false','class' => 'btn btn-default dropdown-toggle ')) }}
                             <div class="dropdown-menu dropdown-menu-right" role="menu">
                               <div class="form-group">
                                 <label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Espera 
+                                  <input type="radio" name="searchLocation" id="espera" value="espera" /> Espera 
                                 </label>
 								<label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Realizado
+                                  <input type="radio" name="searchLocation" id="realizado" value="realizado" /> Realizado
                                 </label>
 								<label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Enviado 
+                                  <input type="radio" name="searchLocation" id="enviado" value="everywhere" /> Enviado 
                                 </label>								
-                              </div>
-							  <label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="everywhere" value="everywhere" /> Autorizado  
-                              </label>
+								<label class="radio-inline">
+                                  <input type="radio" name="searchLocation" id="autorizado" value="everywhere" /> Autorizado  
+								</label>
+                              </div>							  
 							  <form id="dateRangeForm" method="post" class="form-horizontal">
 									<div class="form-group">											
 										<div class="col-xs-6 date">	
 											<label class="col-xs-3 control-label"><h6>Fecha Inicial</h6></label>
-											<input type='date' id='fecha_entrega' name='fecha_entrega' class='form-control '/>
+											<input type='date' id='fecha_inicial' name='fecha_inicial' class='form-control '/>
 										</div>
 										<div class="col-xs-6 date">	
 											<label class="col-xs-3 control-label"> <h6>Fecha Final</h6></label>
-											<input type='date' id='fecha_entrega' name='fecha_entrega' class='form-control '/>
+											<input type='date' id='fecha_final' name='fecha_final' class='form-control '/>
 										</div>
 									</div>
 								</form>	
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        {{ Form::button('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>', array('type' => 'submit','class' => 'btn btn-primary')) }}
                     </div>
                 </div>
-            </div>
+            {{ Form::close() }}
             <div class="com "><div class="com2 "></div>
                 <div id="scroll" class="panel panel-default slimScrollBar tam">                
                     <div class="panel-body">                   

@@ -9,7 +9,14 @@ class CustomerController extends \BaseController {
      */
     public function index() {
 
-        $customer = DB::table('customers')->where('users_id', '=', Auth::user()->id)->get();
+        if(isset($_GET['buscar'])){
+				$buscar = Input::get('buscar');
+				$customer = Customer::whereRaw('users_id = ' . Auth::user()->id . ' and (nit_cc LIKE "%'.$buscar.'%" or cliente LIKE "%'
+				.$buscar.'%" or cel_contacto LIKE "%'.$buscar.'%" or empresa LIKE "%'.$buscar.'%" or telefono LIKE "%'.$buscar.'%" )')->get();
+			}else{
+				$customer = DB::table('customers')->where('users_id', '=', Auth::user()->id)->get();
+			}
+		
         return View::make('customer.index')->with('customer', $customer);
     }
 

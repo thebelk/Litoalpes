@@ -8,8 +8,15 @@ class QuotationController extends \BaseController {
      * @return Response
      */
     public function index() {
-
-        $quotation = DB::table('quotations')->where('users_id', '=', Auth::user()->id)->get();
+		if(isset($_GET['buscar'])){
+				$buscar = Input::get('buscar');
+				$quotation = Quotation::whereRaw('users_id = '. Auth::user()->id .' and (cliente LIKE "%'.$buscar.'%" or cel_contacto LIKE "%'
+				.$buscar.'%" or nit_cc LIKE "%'.$buscar.'%" or telefono LIKE "%'.$buscar.'%" or clase_trabajo LIKE "%'.$buscar.'%" or email LIKE "%'
+				.$buscar.'%" or empresa LIKE "%'.$buscar.'%" )')->get();
+			}else{
+				$quotation = DB::table('quotations')->where('users_id', '=', Auth::user()->id)->get();
+			}
+        
         return View::make('quotation.index')->with('quotation',$quotation);
     }
 
