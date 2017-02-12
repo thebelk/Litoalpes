@@ -51,12 +51,13 @@
     <br>
     <div id="sidebar"> 
         <div class="list-group"> 
-            <a href="/phonebook" class="list-group-item  text-center">                           
+			<a href="phonebook/create" class="list-group-item  text-center">                           
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Contato </h4>
+            </a> 
+            <a href="/phonebook" class="list-group-item active text-center">                           
                 <h5 class="glyphicon glyphicon-earphone"></h5><br/><h4>Contactos | Proveedor</h4>
             </a>
-            <a href="/workorderlist" class="list-group-item active  text-center">
-                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h4>Trabajos</h4>
-            </a>
+            
         </div>     
     </div>
     <div class="col-sm-8 col-md-12 not">
@@ -111,19 +112,19 @@
 												{{ Form::text('tipo_actividad',0, array('hidden' => 'true')) }}
 												{{ Form::text('descripcion_actividad',"", array('hidden' => 'true')) }}
 												{{ Form::text('id', $phonebook->id, array('hidden' => 'true')) }}
-												{{ Form::text('nombre', $phonebook->nombre, array('placeholder' => 'Nombre del Contacto', 'class' => 'form-control', 'required' => 'required')) }}
+												{{ Form::text('nombre', $phonebook->nombre, array('placeholder' => 'Nombre Contacto', 'class' => 'form-control', 'required' => 'required')) }}
+											</div>
+										</div>										
+										<div class="col-xs-4">
+											<div class='form-group form-register'>
+												{{ Form::label('nit', 'NIT / C.C:') }}
+												{{ Form::text('nit', $phonebook->nit, array('placeholder' => 'Nit / C.C:', 'class' => 'form-control')) }}
 											</div>
 										</div>
 										<div class="col-xs-4">
 											<div class='form-group form-register'>
 												{{ Form::label('empresa', 'EMPRESA:') }}
 												{{ Form::text('empresa', $phonebook->empresa, array('placeholder' => 'Nombre de Empresa', 'class' => 'form-control')) }}
-											</div>
-										</div>
-										<div class="col-xs-4">
-											<div class='form-group form-register'>
-												{{ Form::label('nit', 'NIT:') }}
-												{{ Form::text('nit', $phonebook->nit, array('placeholder' => 'Nit . Empresa', 'class' => 'form-control')) }}
 											</div>
 											<br>
 										</div>
@@ -190,7 +191,13 @@
 												{{ Form::label('nombre', 'PROVEEDOR:') }}
 												{{ Form::text('tipo_contacto',2, array('hidden' => 'true')) }}
 												{{ Form::text('id', $phonebook->id, array('hidden' => 'true')) }}
-												{{ Form::text('nombre', $phonebook->nombre, array('placeholder' => 'Nombre del Proveedor', 'class' => 'form-control', 'required' => 'required')) }}
+												{{ Form::text('nombre', $phonebook->nombre, array('placeholder' => 'Nombre Proveedor', 'class' => 'form-control', 'required' => 'required')) }}
+											</div>
+										</div>
+										<div class="col-xs-4">
+											<div class='form-group form-register'>
+												{{ Form::label('nit', 'NIT/C.C:') }}
+												{{ Form::text('nit', $phonebook->nit, array('placeholder' => 'Nit/C.C', 'class' => 'form-control')) }}
 											</div>
 										</div>
 										<div class="col-xs-4">
@@ -198,28 +205,10 @@
 												{{ Form::label('empresa', 'EMPRESA:') }}
 												{{ Form::text('empresa', $phonebook->empresa, array('placeholder' => 'Nombre de Empresa', 'class' => 'form-control', 'required' => 'required')) }}
 											</div>
-										</div>
-										<div class="col-xs-4">
-											<div class='form-group form-register'>
-												{{ Form::label('nit', 'NIT:') }}
-												{{ Form::text('nit', $phonebook->nit, array('placeholder' => 'Nit. Empresa', 'class' => 'form-control')) }}
-											</div>
 											<br>
 										</div>
-										<div class="col-xs-4"><br>
-											<div class='form-group form-register'>
-												{{ Form::label('tipo_actividad ', 'TIPO DE ACTIVIDAD:') }}
-												{{ Form::select('tipo_actividad',array('1' => 'Seleccionar', '2' => 'Servicio','3' => 'Producto'),$phonebook->tipo_actividad ,array('class' => 'form-control')); }}
-
-											</div>
-										</div>
-										<div class="col-xs-8">
-											<div class='form-group form-register tex'>
-												{{ Form::label('descripcion_actividad ', ' DESCRIPCIÓN DE ACTIVIDAD:') }}
-												{{ Form::textarea('descripcion_actividad', $phonebook->descripcion_actividad, array('rows' => '2', 'placeholder' => 'Detalles de Actividad', 'class' => 'form-control')) }}
-											</div> 
-											<br>
-										</div>
+										
+										
 										<div class="col-xs-4">
 											<div class='form-group form-register'>
 												{{ Form::label('telefono', 'TELEFONO:') }}
@@ -258,6 +247,22 @@
 											</div>
 											<br>
 										</div> 
+												<h2>Productos  o servicio que suministra </h2>
+										
+										<div class="col-xs-4"><br>
+											<div class='form-group form-register'>
+												{{ Form::label('tipo_actividad ', 'ACTIVIDAD:PRODUCTO/SERVICIO') }}
+												{{ Form::select('tipo_actividad',array('1' => 'Seleccionar', '2' => 'Servicio','3' => 'Producto'),$phonebook->tipo_actividad ,array('class' => 'form-control')); }}
+
+											</div>
+										</div>
+										<div class="col-xs-8"><br>
+											<div class='form-group form-register tex'>
+												{{ Form::label('descripcion_actividad ', ' DESCRIPCIÓN DE ACTIVIDAD:') }}
+												{{ Form::textarea('descripcion_actividad', $phonebook->descripcion_actividad, array('rows' => '6', 'placeholder' => 'Detalles de Actividad', 'class' => 'form-control')) }}
+											</div> 
+											<br>
+										</div>
 									</div>
 									{{ Form::button('Limpiar', array('type' => 'reset', 'class' => 'btn btn-default')) }}                      
 									{{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success')) }}   

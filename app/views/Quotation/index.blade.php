@@ -51,9 +51,9 @@
             <a href="quotation/create" class="list-group-item  text-center">
                 <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nueva Cotización</h4> 
             </a>                        
-            <a href="/workorderlist" class="list-group-item active  text-center">
-                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h4>Trabajos</h4>
-            </a>
+            <a href="phonebook/create" class="list-group-item  active text-center">                           
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Contato </h4>
+            </a> 
             <a href="/phonebook" class="list-group-item  text-center">                           
                 <h5 class="glyphicon glyphicon-earphone"></h5><br/><h4>Contactos | Proveedor</h4>
             </a>
@@ -130,9 +130,8 @@
                             <strong>Celular</strong>: {{ $quotlist->cel_contacto }} ,
                             <strong>Empresa </strong>: {{ $quotlist->empresa }},
                             <strong>Telefono</strong>: {{ $quotlist->telefono }},
-                            <strong>Direccion</strong>: {{ $quotlist->direccion}}.</h5>
-                        <h5> <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }}</h5> 
-                        <h5> <strong>Cotizacion</strong>: {{ $quotlist->cotizacion }}</h5> 
+                            <strong>Direccion</strong>: {{ $quotlist->direccion}}</h5>
+                        <h5> <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }}, <strong>Cotizacion</strong>: {{ $quotlist->cotizacion }}</h5> 
                                              
 						
 						{{ Form::model($quotation, array('url' => array('/quotation/'.$quotlist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    

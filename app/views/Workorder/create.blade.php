@@ -70,9 +70,9 @@
 
                 </h5> 
             </a>  
-            <a href="/workorderlist" class="list-group-item active  text-center">
-                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h4>Trabajos</h4>
-            </a>
+            <a href="phonebook/create" class="list-group-item  active text-center">                           
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Contato </h4>
+            </a> 
             <a href="/phonebook" class="list-group-item  text-center">                           
                 <h5 class="glyphicon glyphicon-earphone"></h5><br/><h4>Contactos | Proveedor</h4>
             </a>
@@ -269,25 +269,25 @@
                                             <div class="col-xs-3">
                                                 <div class='form-group form-register'>
                                                     {{ Form::label('valor_trabajo', 'VALOR:') }}
-                                                    {{ Form::text('valor_trabajo', null, array('placeholder' => 'Valor Trabajo', 'required' => 'required','class' => 'form-control', 'onchange' => 'checkIVAType();')) }}
+                                                    {{ Form::text('valor_trabajo', null, array('placeholder' => '$', 'required' => 'required','class' => 'form-control', 'onchange' => 'checkIVAType();')) }}
                                                 </div>
                                             </div>
                                             <div class="col-xs-3">
                                                 <div class='form-group form-register'>
                                                     {{ Form::label('abono', 'ABONO:') }}
-                                                    {{ Form::text('abono', null, array('placeholder' => 'Abono', 'class' => 'form-control', 'onchange' => 'checkIVAType();')) }}
+                                                    {{ Form::text('abono', null, array('placeholder' => '$', 'class' => 'form-control', 'onchange' => 'checkIVAType();')) }}
                                                 </div>
                                             </div>                              
                                             <div class="col-xs-3">
                                                 <div class='form-group form-register'>
                                                     {{ Form::label('saldo', 'SALDO:') }}
-                                                    {{ Form::text('saldo', null, array('placeholder' => 'Saldo', 'class' => 'form-control')) }}
+                                                    {{ Form::text('saldo', null, array('placeholder' => '$', 'class' => 'form-control')) }}
                                                 </div>
                                             </div>
                                             <div class="col-xs-3">
                                                 <div class='form-group form-register'>
                                                     {{ Form::label('subtotal', 'SUB TOTAL:') }}
-                                                    {{ Form::text('subtotal', null, array('placeholder' => 'Sub.Total', 'class' => 'form-control')) }}
+                                                    {{ Form::text('subtotal', null, array('placeholder' => '$', 'class' => 'form-control')) }}
                                                 </div>
                                                 <br>
                                             </div> 
@@ -309,13 +309,13 @@
                                             <div class="col-xs-3">
                                                 <div class='form-group form-register'>
                                                     {{ Form::label('no_factura', 'FACTURA:') }}
-                                                    {{ Form::text('no_factura', null, array('placeholder' => 'No.Factura', 'class' => 'form-control')) }}
+                                                    {{ Form::text('no_factura', null, array('placeholder' => 'No.', 'class' => 'form-control')) }}
                                                 </div>
                                             </div>
                                             <div class="col-xs-3">
                                                 <div class='form-group form-register'>
                                                     {{ Form::label('total', 'TOTAL:') }}
-                                                    {{ Form::text('total', null, array('placeholder' => 'Total', 'class' => 'form-control')) }}
+                                                    {{ Form::text('total', null, array('placeholder' => '$', 'class' => 'form-control')) }}
                                                 </div>
                                             </div>
                                         </div>
@@ -348,7 +348,7 @@
                                         </div>
                                         <div class="col-xs-4">
                                             <h5><b>ESTADO DEL TRABAJO<b></h5>										
-                                                        {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Estado Diseño', '3' => 'Estado Revisión','4' => 'Enviado para impresión ','5' => 'Estado Impresion', '6' => 'Estado Acabados','7' => 'Listo','8' => 'Entregado')),null ,array('class' => 'form-control')); }}
+                                                        {{ Form::select('estado_trabajo', array('Estado Trabajo' => array('1' => 'Por realizar', '2' => 'Diseño', '3' => 'Revisión','4' => 'Impresion','5' => 'Acabados', '6' => 'Terminado','7' => 'Entregado')),null ,array('class' => 'form-control')); }}
                                                         <br>
                                                         </div>
                                                         <div class="collapse" id="diseno">	   
@@ -549,32 +549,32 @@
                                                                 <div class="col-xs-3">
                                                                     <div class='form-group form-register'>                                   
                                                                         {{ Form::label('copia1', 'COPIA1:') }}
-                                                                        {{ Form::select('copia1', array('Copia 1' => array('1' => 'Color ', '2' => 'Amarillo ', '3' => 'Rosado', '4' => 'Verde','5' => 'Azul','6' => 'Blanco')),null ,array('class' => 'form-control')); }}
+                                                                        {{ Form::select('copia1', array('Copia 1' => array('1' => 'Seleccionar', '2' => 'Amarillo ', '3' => 'Rosado', '4' => 'Verde','5' => 'Azul','6' => 'Blanco')),null ,array('class' => 'form-control')); }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-xs-3">
                                                                     <div class='form-group form-register'>
                                                                         {{ Form::label('copia2', 'COPIA2:') }}
-                                                                        {{ Form::select('copia2', array('COPIA 2' => array('1' => 'Color ', '2' => 'Amarillo ', '3' => 'Rosado', '4' => 'Verde','5' => 'Azul','6' => 'Blanco')),null ,array('class' => 'form-control')); }}
+                                                                        {{ Form::select('copia2', array('COPIA 2' => array('1' => 'Seleccionar', '2' => 'Amarillo ', '3' => 'Rosado', '4' => 'Verde','5' => 'Azul','6' => 'Blanco')),null ,array('class' => 'form-control')); }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-xs-3">
                                                                     <div class='form-group form-register'>
                                                                         {{ Form::label('copia3', 'COPIA3:') }}
-                                                                        {{ Form::select('copia3', array('COPIA 3' => array('1' => 'Color ', '2' => 'Amarillo ', '3' => 'Rosado', '4' => 'Verde','5' => 'Azul','6' => 'Blanco')),null ,array('class' => 'form-control')); }}
+                                                                        {{ Form::select('copia3', array('COPIA 3' => array('1' => 'Seleccionar', '2' => 'Amarillo ', '3' => 'Rosado', '4' => 'Verde','5' => 'Azul','6' => 'Blanco')),null ,array('class' => 'form-control')); }}
                                                                     </div>                                                           
                                                                 </div>
                                                                 <div class="col-xs-3">
                                                                     <div class='form-group form-register'>
                                                                         {{ Form::label('copia4', 'COPIA4:') }}
-                                                                        {{ Form::select('copia4', array('COPIA 4' => array('1' => 'Color ', '2' => 'Amarillo ', '3' => 'Rosado', '4' => 'Verde','5' => 'Azul','6' => 'Blanco')),null ,array('class' => 'form-control')); }}
+                                                                        {{ Form::select('copia4', array('COPIA 4' => array('1' => 'Seleccionar', '2' => 'Amarillo ', '3' => 'Rosado', '4' => 'Verde','5' => 'Azul','6' => 'Blanco')),null ,array('class' => 'form-control')); }}
                                                                     </div>                               
                                                                 </div>    
                                                                 <div class="col-xs-3"> 
                                                                     <div class='form-group'>
                                                                         {{ Form::checkbox('numerado',  1, false)}}
                                                                         {{ Form::label('numerado', 'CANT. NUMERADORAS') }} 
-                                                                        {{ Form::select('numeradoras', array('1' => 'Cat.Numeradoras ', '2 ' => '1 Numeradora', '3' => '2 Numeradoras', '4' => '3 Numeradoras','5' => '4 Numeradoras'),null ,array('class' => 'form-control')); }}
+                                                                        {{ Form::select('numeradoras', array('1' => 'Seleccionar', '2 ' => '1 Numeradora', '3' => '2 Numeradoras', '4' => '3 Numeradoras','5' => '4 Numeradoras'),null ,array('class' => 'form-control')); }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-xs-3"> 

@@ -52,12 +52,12 @@
     <br>
     <div id="sidebar"> 
         <div class="list-group">                        
-            <a href="/quotation" class="list-group-item  text-center">                           
-                <h5 class="glyphicon glyphicon-pencil "></h5><br/><h4>Listar Cotización</h4>
+            <a href="quotation/create" class="list-group-item  text-center">
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nueva Cotización</h4> 
             </a>
-            <a href="/workorderlist" class="list-group-item active  text-center">
-                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h4>Trabajos</h4>
-            </a>
+            <a href="phonebook/create" class="list-group-item active text-center">                           
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Contato </h4>
+            </a> 
             <a href="/phonebook" class="list-group-item  text-center">                           
                 <h5 class="glyphicon glyphicon-earphone"></h5><br/><h4>Contactos | Proveedor</h4>
             </a>

@@ -63,9 +63,9 @@
             <a href="workorder/create" class="list-group-item  text-center">
                 <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Trabajo</h4> 
             </a>
-            <a href="/workorderlist" class="list-group-item active text-center">
-                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h4>Trabajos</h4>
-            </a>
+            <a href="phonebook/create" class="list-group-item active text-center">                           
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Contato </h4>
+            </a> 
             <a href="/phonebook" class="list-group-item  text-center">                           
                 <h5 class="glyphicon glyphicon-earphone"></h5><br/><h4>Contactos | Proveedor</h4>
             </a>
@@ -125,25 +125,42 @@
                         <!-- Default panel contents -->                
 
                         @foreach($workorder as $worklist)                    
-                        <h4><strong> {{ $worklist->clase_trabajo}} / ESTADO TRABAJO
-                                <span class="estilo">
-                                    @if($worklist->estado_trabajo==1) Por realizar                                
-                                    @elseif($worklist->estado_trabajo==2) Diseño 
-                                    @elseif($worklist->estado_trabajo==3) Produccion 
-                                    @elseif($worklist->estado_trabajo==3) Entregado 
-                                    @endif 
-                                </span>
-                            </strong></h4>
-                        <h5><strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
-                            <strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}}, 
-                            <strong>Material</strong>: {{ $worklist->clase_material }} ,
-                            <strong>Cantidad</strong>: {{ $worklist->cantidad_trabajo }} ,
-                            <strong>Tamaño </strong>: {{ $worklist->tamano }} </h5> 
-                        <h5><strong>Valor Trabajo</strong>: {{ $worklist->total}},                         
-                            <strong>Abono</strong>: {{ $worklist->abono }} ,
-                            <strong>Saldo</strong>: {{ $worklist->saldo }} ,                    
-                            <strong>Diseñador</strong>: {{ $worklist->diseñador}},
-                            <strong>Vendedor</strong>: {{ $worklist->vendedor}}</h5> 
+                        <h4><strong> {{ $worklist->clase_trabajo}} | ESTADO TRABAJO
+                            <span class="estilo">
+                                @if($worklist->estado_trabajo==1) Por realizar                                
+                                @elseif($worklist->estado_trabajo==2) Diseño 
+                                @elseif($worklist->estado_trabajo==3) Revisión 
+                                @elseif($worklist->estado_trabajo==4) Impresion
+								@elseif($worklist->estado_trabajo==5) Acabados 
+								@elseif($worklist->estado_trabajo==6) Terminado
+								@elseif($worklist->estado_trabajo==7) Entregado 
+                                @endif 
+                            </span>
+                        </strong>							
+					</h4>					
+                    <h5><strong>No. Orden</strong>: {{ $worklist->no_orden}},
+						<strong>Orden</strong>: 
+								@if($worklist->tipo_orden==1)                                 
+								@elseif($worklist->tipo_orden==2) SERVICIO ,
+								@elseif($worklist->tipo_orden==3) PRODUCTO ,
+								@endif 
+						<strong>Fecha Pedido</strong>: {{  $worklist->created_at }},
+                        <strong>Fecha Entrega</strong>: {{ $worklist->fecha_entrega}},
+						<strong>Trabajo</strong>: 
+								@if($worklist->tipo_realizado==1)	                             
+								@elseif($worklist->tipo_realizado==2) Diseño Nuevo,
+								@elseif($worklist->tipo_realizado==3) Corrección,
+								@elseif($worklist->tipo_realizado==4) Quema de Master,
+								@elseif($worklist->tipo_realizado==5) Diseño según Muestra,
+								@elseif($worklist->tipo_realizado==6) Identidad Corporativa,
+								@endif
+						<strong>Diseñador</strong>: {{ $worklist->diseñador}},
+						<strong>Vendedor</strong>: {{ $worklist->vendedor}},
+						<strong>Valor Trabajo</strong>: ${{ $worklist->total}},                         
+                        <strong>Abono</strong>: ${{ $worklist->abono }} ,
+                        <strong>Saldo</strong>: ${{ $worklist->saldo }}                    
+                       
+                    </h5> 
 
                         {{ HTML::link('/workorder/'.$worklist->id.'/edit','Editar', array('class' => 'btn btn-default btn-sm'), false)}}                       
 

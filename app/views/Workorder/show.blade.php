@@ -6,7 +6,8 @@
 @parent
 @stop
 @section('content')
-<div class="col col-sm-3 complement">   
+
+@section('container1')
     <h3 class="highlight nav nav-stacked ">
         @if($customer->empresa=="")
         {{ $customer->cliente }} 
@@ -69,19 +70,22 @@
                     {{$customer->empresa}}
                 </h5> 
             </a> 
-            <a href="/workorderlist" class="list-group-item active  text-center">
-                <h5 class="list-group-item-heading glyphicon glyphicon-th-list"></h5><h4>Trabajos</h4>
-            </a>
+            <a href="phonebook/create" class="list-group-item active text-center">                           
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Contato </h4>
+            </a> 
             <a href="/phonebook" class="list-group-item  text-center">                           
                 <h5 class="glyphicon glyphicon-earphone"></h5><br/><h4>Contactos | Proveedor</h4>
             </a>
         </div>                     
     </div>
-    <div class="col-sm-8 col-md-12 not">
-        <h3 class="color" > Entregas de Hoy </h3>
-        <p> Pruebas </p>
-    </div>
-</div>  
+	@stop
+	
+    @section('container2')
+	@parent
+	@stop
+	
+  
+ @section('container3')
 <div class="col col-sm-9">
     <div class="row ">                             
         <!-- cho section -->
@@ -821,25 +825,25 @@
                             <div class="com3 tam "><h4><b>PAGOS</b></h4><br></div> <br>
                             <div class="col-xs-3">
                                 <div class='form-group form-register'>
-                                    {{ Form::label('valor_trabajo', 'VALOR:') }}
+                                    {{ Form::label('valor_trabajo', 'VALOR: $') }}
                                     {{ $workorder->valor_trabajo}}
                                 </div>
                             </div>
                             <div class="col-xs-3">
                                 <div class='form-group form-register'>
-                                    {{ Form::label('abono', 'ABONO:') }}
+                                    {{ Form::label('abono', 'ABONO: $') }}
                                     {{ $workorder->abono }}
                                 </div>
                             </div>                              
                             <div class="col-xs-3">
                                 <div class='form-group form-register'>
-                                    {{ Form::label('saldo', 'SALDO:') }}
+                                    {{ Form::label('saldo', 'SALDO: $') }}
                                     {{ $workorder->saldo }}
                                 </div>
                             </div>
                             <div class="col-xs-3">
                                 <div class='form-group form-register'>
-                                    {{ Form::label('subtotal', 'SUB TOTAL:') }}
+                                    {{ Form::label('subtotal', 'SUB TOTAL: $') }}
                                     {{ $workorder->subtotal }}
                                 </div>
                             </div> 
@@ -868,18 +872,19 @@
                                 @endif 
                                 <div id="valor_iva" style="hidden:true; float:left"></div>
                             </div>
+							<div class="col-xs-3">
+                                <div class='form-group form-register'>
+                                    {{ Form::label('total', 'TOTAL: $') }}
+                                    {{  $workorder->total }}
+                                </div>
+                            </div> 
                             <div class="col-xs-3">
                                 <div class='form-group form-register'>
                                     {{ Form::label('no_factura', 'FACTURA:') }}
                                     {{  $workorder->no_factura }}
                                 </div>
                             </div>
-                            <div class="col-xs-3">
-                                <div class='form-group form-register'>
-                                    {{ Form::label('total', 'TOTAL:') }}
-                                    {{  $workorder->total }}
-                                </div>
-                            </div> 
+                            
                             <div class="col-xs-3">
                                 <div class='form-group form-register'>
                                     {{ Form::label('vendedor', 'VENDEDOR:') }}
@@ -897,12 +902,12 @@
                     <br><br>									
                 </div>
             </div>
-     
+		
 
         {{ Form::close() }}
-
+		
     </div>
 </div>
+@stop@stop
 
 
-@stop

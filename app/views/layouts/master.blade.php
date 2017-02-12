@@ -30,8 +30,9 @@
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav">
                             <li><a href="/user"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                            <li><a href="/customerlist" role="button" data-toggle="modal"><i class="glyphicon glyphicon-user"></i> Clientes</a>                             
-                            <li><a href="/quotation" role="button" data-toggle="modal"><i class="glyphicon glyphicon-pencil"></i> Cotizar</a>
+                            <li><a href="/customerlist" role="button" data-toggle="modal"><i class="glyphicon glyphicon-user"></i> Clientes</a>  
+							<li><a href="/workorderlist" role="button" data-toggle="modal"><i class="glyphicon glyphicon-th-list"></i> Trabajos</a>
+							<li><a href="/quotation" role="button" data-toggle="modal"><i class="glyphicon glyphicon-pencil"></i> Cotizar</a>
                             <li>
                                 @if(DB::table('notifications')->count() === 0)
                                 <a href="/notifications" role="button" data-toggle="modal"><i class="glyphicon glyphicon-bell"></i> Notificaciones</a>
@@ -93,7 +94,24 @@
         </header>
         @show        
         <div class="container-fluid content">   
-            @yield('content') 
+            @yield('content')
+				<div class="col col-sm-3 complement ">
+					@section('container1')	
+					@show 
+					 @section('container2')	
+						<div class="hidden-phone">
+							 <div class="col-sm-8 col-md-12 not ">
+								<h3 class="color" > Entregas de Hoy </h3>
+								<p> Pruebas </p>
+								<p> Pruebas </p>
+							</div>   
+						</div>
+					@show 
+				</div>
+				 @section('container3')	
+				 @show
+				
+			
             @show  
         </div> 
         @section('footer')		
