@@ -87,9 +87,6 @@
                                   <input type="radio" name="searchLocation" id="espera" value="espera" /> Espera 
                                 </label>
 								<label class="radio-inline">
-                                  <input type="radio" name="searchLocation" id="realizado" value="realizado" /> Realizado
-                                </label>
-								<label class="radio-inline">
                                   <input type="radio" name="searchLocation" id="enviado" value="everywhere" /> Enviado 
                                 </label>								
 								<label class="radio-inline">
@@ -121,9 +118,8 @@
                         <h4><strong> {{ $quotlist->clase_trabajo }} / Cotizacion:
                                 <span class="estilo">
                                     @if($quotlist->estado_cotizacion==1) Espera
-                                    @elseif($quotlist->estado_cotizacion==2) Realizado
-                                    @elseif($quotlist->estado_cotizacion==3) Enviado 
-                                    @elseif($quotlist->estado_cotizacion==4) Autorizado 
+                                    @elseif($quotlist->estado_cotizacion==2) Enviado
+                                    @elseif($quotlist->estado_cotizacion==3)  Autorizado 
                                     @endif 
                                 </span>
                             </strong></h4>
@@ -132,7 +128,8 @@
                             <strong>Empresa </strong>: {{ $quotlist->empresa }},
                             <strong>Telefono</strong>: {{ $quotlist->telefono }},
                             <strong>Direccion</strong>: {{ $quotlist->direccion}}</h5>
-                        <h5> <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }}, <strong>Cotizacion</strong>: {{ $quotlist->cotizacion }}</h5> 
+                        <h5> <strong>Especificaciones</strong>: {{ $quotlist->especificaciones }} </h5> 
+						<h5><strong>Cotizacion</strong>: {{ $quotlist->cotizacion }}</h5>
                                              
 						
 						{{ Form::model($quotation, array('url' => array('/quotation/'.$quotlist->id), 'method' => 'DELETE', 'role' => 'form')) }}                    
