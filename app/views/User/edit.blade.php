@@ -185,7 +185,7 @@
                             </div>
 
                         </div>	
-                        <div class="col-xs-4">
+                        <div class="col-xs-6">
                             <div class='button '>
                                 {{ HTML::link('/user','Limpiar', array('class' => 'btn btn-success btn-sm'), false)}}                        
                                 {{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn btn-default btn-sm')) }}

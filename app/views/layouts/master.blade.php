@@ -95,11 +95,11 @@
         @show        
         <div class="container-fluid content">   
             @yield('content')
-				<div class="col col-sm-3 complement ">
+				<div class="col col-sm-3 complement phone1 ">
 					@section('container1')	
 					@show 
 					 @section('container2')	
-						<div class="hidden-phone">
+						<div class="hidden-phone" phone>
 							 <div class="col-sm-8 col-md-12 not ">
 								<h3 class="color" > Entregas para Hoy </h3>
 								<ul>

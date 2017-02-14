@@ -39,8 +39,8 @@
         <!-- container register -->
         <div id="container">
             <center>
-                <div class="row login ">
-                    <div class="col-md-7 col-md-offset-3">
+                <div class="row" >
+                    <div class="col-md-7 col-md-offset-3 "style=" margin-top: -65px;">
                         <div class=" panel panel-default tam ">
                             <div class="panel-body pancol ">
                                 <h2 class="form-signin-heading" ><b>LitoApp</b></h2> <br>                                                          
@@ -51,29 +51,29 @@
                         </div> 
                         <div class="panel-body tam pancol">
                             <div class="com2 "></div>
-                            <div class="  panel panel-default"style=" padding: 35px;" >
+                            <div class="  panel panel-default "style=" padding: 35px;" >
                                 {{Form::open(array('route' => 'user.store','role'=>'form')) }} 
-                                <div class=" carousel-inner ">
-                                    <div class="col-xs-6 col-md-6">
+                                <div class=" row carousel-inner ">
+                                    <div class="col-xs-6 ">
                                         <div class="form-group form-register"align="justify">
                                             {{ Form::label('representante', 'Nombre y Apellido *:') }}<br>
                                             {{ Form::text('representante', null, array('placeholder' => 'Nombre y Apellido', 'class' => 'form-control', 'required' => 'required')) }}
                                         </div>
                                     </div>
                                    
-                                    <div class="col-xs-6 col-md-6">
+                                    <div class="col-xs-6 ">
                                         <div class='form-group form-register' align="justify">
                                             {{ Form::label('nit_cc', 'C.C / NIT *:') }}<br>
                                             {{ Form::text('nit_cc',null, array('placeholder' => 'C.C / Nit', 'class' => 'form-control', 'required' => 'required')) }}
                                         </div>
                                     </div>
-									 <div class="col-xs-6 col-md-6">
+									 <div class="col-xs-6 ">
                                         <div class="form-group form-register"align="justify">
                                             {{ Form::label('celular', 'Celular *:') }}<br>
                                             {{ Form::text('celular', null, array('placeholder' => 'Celular', 'class' => 'form-control', 'required' => 'required')) }}
                                         </div>
                                     </div>
-                                    <div class="col-xs-6 col-md-6">
+                                    <div class="col-xs-6">
                                         <div class='form-group form-register' align="justify">
                                             {{ Form::label('razon_social', 'Empresa *:') }}<br>
                                             {{ Form::text('razon_social', null, array('placeholder' => 'Empresa ', 'class' => 'form-control')) }}

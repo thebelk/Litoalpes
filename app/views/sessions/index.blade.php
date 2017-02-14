@@ -6,6 +6,7 @@
         <title>@yield('title', 'Litografia')</title>
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
         <!-- Bootstrap core CSS -->
         {{ HTML::style('recursos/css/bootstrap.min.css' , array('media'=>'screen')) }}
         {{ HTML::style('recursos/css/styles.css' , array('media'=>'screen')) }}
@@ -26,7 +27,7 @@
                             </div>
                         </div>
 
-                        <div class=" navbar-right" style="margin: 30px" > 
+                        <div class=" navbar-right ico" > 
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badgeadmin"><i class="glyphicon glyphicon-user"></i> </span> </a>
                             <ul class="dropdown-menu" >
                                 <form class="form-horizontal" action="signup" method="post">
@@ -65,9 +66,9 @@
             </div>
         </header>
         @show        
-        <div id="container">
-            <div class="row login ">
-                <div class="col-xs-6">
+        <div id="container ">
+            <div class="row center">
+                <div class="col-xs-5 phone">
                     <center>
                         <h1>Bienvenido  </h1>
                         <h4>
@@ -75,12 +76,17 @@
                             Cotiza  
                         </h4> 
                         <br><br>
-                        {{ HTML::image('recursos/img/logo.png', 'a picture') }}
+						<div class="imge">
+							<!--
+							{{ HTML::image('recursos/img/logo.png', 'a picture') }}-->
+						</div>
+						
                     </center>
                 </div>
-                <center>
-                    <div class="col-xs-6">
-                        <div class="row panel panel-default "style=" padding: 25px; border-radius: 8px ">
+                
+                <div class="col-xs-5 phone">
+					<center>
+                        <div class="row panel  "style="  border-radius: 8px ">
                             <div class="panel-body">
                                 <h2 class="form-signin-heading" >LitoApp</h2>                                                            
                                 <h4> Acceder a la cuenta. </h4>
@@ -114,8 +120,9 @@
                             </div>    
 
                         </div>
-                    </div> 
-                </center>			
+					</center>
+                </div> 
+               			
             </div>
         </div>
         <footer>

@@ -128,9 +128,13 @@ h2,h3.color{
     border-radius: 4px;
 }
 
-.login{
-    margin-top:-40px;
-
+.imge{
+	background-image: url("../img/logo.png");
+	background-repeat: no-repeat;
+	background-position: 220px;	
+	height:205px;
+		
+	
 }
 .menulog{
     margin-left:80px;
@@ -358,8 +362,59 @@ border-radius: 3px;
     text-align:center;
     margin-top: 10px;
 }
+.center{
+	margin:auto;
+}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a{
+	color:#1667a3;
+	
+}
+@media (max-width: 768px) {
 
-@media screen and (min-width: 768px) {
+	.phone{
+		width:100%;
+		margin-top:-6%;
+	}
+	.phone1{
+		height:60%;
+		padding-top:15px;
+		padding:5px;
+	}
+	.ico{
+	
+	margin-left: 40px;
+	
+	}
+
+	.highlight{margin-top:-8px;}
+	.imge{
+		display:none;
+	}
+	.comp{
+		margin-top:-18px;
+	}
+	.hidden-phone{display:none;}
+	.accordion{
+		height:27%;
+		margin-top:-15px;
+	}
+	.list-group-item{
+		width:25%;
+		height:90px;
+		float:left;
+		font-size: small;
+		margin-top:-35px;
+		padding:6px;
+		margin-left:5px;
+		
+	}
+	.row{
+		padding:10px;
+		margin-top:30px;
+	}
+}
+
+@media screen and (min-width: 268px) {
     #adv-search {
         width: 300px;
         margin: 0 auto;
@@ -370,6 +425,7 @@ border-radius: 3px;
     .dropdown.dropdown-lg .dropdown-menu {
         min-width: 300px;
     }
+	
 }
 
 
