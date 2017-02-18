@@ -14,7 +14,7 @@ class UserController extends \BaseController {
 				$workorder =Workorder::whereRaw('estado_trabajo = 1 and users_id = ' . Auth::user()->id . ' and (clase_material LIKE "%'.$buscar.'%" or diseñador LIKE "%'
 				.$buscar.'%" or diseñador LIKE "%'.$buscar.'%" or vendedor LIKE "%'.$buscar.'%" )')->get();
 			}else{
-				$workorder =Workorder::whereRaw('estado_trabajo = 1 and users_id = ' . Auth::user()->id)->get();	
+				$workorder =Workorder::whereRaw('estado_trabajo = 1 and customers_id IN (SELECT id FROM customers WHERE users_id = ' . Auth::user()->id . ')')->get();
 			}
 			return View::make('user.index')->with('workorder', $workorder);   
 		
