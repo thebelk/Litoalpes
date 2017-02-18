@@ -9,6 +9,13 @@ class WorkorderController extends \BaseController {
      */
     public function index() {
         $workorder = Workorder::all();
+		if(isset($_GET['buscar'])){
+				$buscar = Input::get('buscar');
+				$workorder =Workorder::whereRaw('customers_id IN (SELECT id FROM customers WHERE users_id = ' . Auth::user()->id . ') and (clase_material LIKE "%'.$buscar.'%" or diseñador LIKE "%'
+				.$buscar.'%" or diseñador LIKE "%'.$buscar.'%" or vendedor LIKE "%'.$buscar.'%" )')->get();
+			}else{
+				$workorder =Workorder::whereRaw('customers_id IN (SELECT id FROM customers WHERE users_id = ' . Auth::user()->id . ')')->get();
+			}
         return View::make('workorder.index')->with('workorder', $workorder);
     }
 
