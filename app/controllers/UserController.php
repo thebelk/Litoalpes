@@ -11,10 +11,10 @@ class UserController extends \BaseController {
 			
 			if(isset($_GET['buscar'])){
 				$buscar = Input::get('buscar');
-				$workorder =Workorder::whereRaw('estado_trabajo = 1 and (clase_material LIKE "%'.$buscar.'%" or diseñador LIKE "%'
+				$workorder =Workorder::whereRaw('estado_trabajo = 1 and users_id = ' . Auth::user()->id ' and (clase_material LIKE "%'.$buscar.'%" or diseñador LIKE "%'
 				.$buscar.'%" or diseñador LIKE "%'.$buscar.'%" or vendedor LIKE "%'.$buscar.'%" )')->get();
 			}else{
-				$workorder =Workorder::whereRaw('estado_trabajo = 1')->get();	
+				$workorder =Workorder::whereRaw('estado_trabajo = 1 and users_id = ' . Auth::user()->id)->get();	
 			}
 			return View::make('user.index')->with('workorder', $workorder);   
 		
