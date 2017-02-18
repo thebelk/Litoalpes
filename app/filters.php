@@ -99,7 +99,7 @@ View::composer('layouts.master', function ($view) {
 		$id_customers .= '"' . $customer . '",';
 	}
 	$id_customers = rtrim($id_customers,",");
-	if(strcmp($id_customers,"") == 0){
+	if(strcmp($id_customers,"") != 0){
 		$entregas_hoy = Workorder::whereRaw('customers_id IN (' . $id_customers . ') and fecha_entrega = "'. $date . '"')->get();
 		$view->with('entregas_hoy', $entregas_hoy);
 	}
