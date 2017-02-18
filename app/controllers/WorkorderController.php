@@ -8,7 +8,7 @@ class WorkorderController extends \BaseController {
      * @return Response
      */
     public function index() {
-        $workorder = Workorder::all();
+        
 		if(isset($_GET['buscar'])){
 				$buscar = Input::get('buscar');
 				$workorder =Workorder::whereRaw('customers_id IN (SELECT id FROM customers WHERE users_id = ' . Auth::user()->id . ') and (clase_material LIKE "%'.$buscar.'%" or diseñador LIKE "%'
