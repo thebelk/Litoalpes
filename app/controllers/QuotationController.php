@@ -184,17 +184,31 @@ class QuotationController extends \BaseController {
 
     public function sendmail($data) {		
     	
-		Auth::user()->mail
-		'smtp-mail.outlook.com'
+		$host = '';
+		$port = 0;
+		$encryption = '';
+		if ((strpos(Auth::user()->email, 'hotmail.com') !== false)
+		 or (strpos(Auth::user()->email, 'outlook.com') !== false)) {
+			$host = 'smtp-mail.outlook.com';
+			$port = 587;
+			$encryption = 'tls';
+		}
+		else{
+			if ((strpos(Auth::user()->email, 'gmail.com') !== false)) {
+			$host = 'smtp.gmail.com';
+			$port = 465;
+			$encryption = 'ssl';
+			}
+		}
 		
 		$config = array(
     			'driver' => 'smtp',
-    			'host' => 'smtp.gmail.com',
-    			'port' => 465,
-    			'from' => array('address' => 'jotallamas@gmail.com', 'name' => 'Jorge Llamas'),
-    			'encryption' => 'ssl',
-    			'username' => 'jotallamas@gmail.com',
-    			'password' => 'felaj023',
+    			'host' => $host,
+    			'port' => $port,
+    			'from' => array('address' => Auth::user()->email, 'name' => Auth::user()->razon_social),
+    			'encryption' => $encryption,
+    			'username' => Auth::user()->email,
+    			'password' => $data['clave_correo'],
     			'sendmail' => '/usr/sbin/sendmail -bs',
     			'pretend' => false
     	);
