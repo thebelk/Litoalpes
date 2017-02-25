@@ -59,8 +59,18 @@ class QuotationController extends \BaseController {
         $validate = Validator::make($post_data, $rules);
         if ($validate) {
             $post_data['users_id'] = Auth::user()->id;
-            Quotation::create($post_data);
-			$this->sendmail($post_data);
+			try
+			{
+				if (isset($_POST['enviar'])) {
+					$post_data['estado_cotizacion']='2'; // 1.espera 2.elaborada 3.enviado 4.autorizado 
+					$this->sendmail($post_data);
+				}
+			}
+			catch (Exception $e)
+			{
+				$post_data['estado_cotizacion']='1'; // 1.espera 2.elaborada 3.enviado 4.autorizado 
+			}
+			Quotation::create($post_data);
             return Redirect::intended('/quotationlist')
                             ->with('flash', 'The new quotation has been created');
         }
@@ -137,8 +147,24 @@ class QuotationController extends \BaseController {
             $quotation2->estado_cotizacion=$quotation['estado_cotizacion']; // 1.espera 2.elaborada 3.enviado 4.autorizado 
             $quotation2->especificaciones=$quotation['especificaciones'];
             $quotation2->cotizacion=$quotation['cotizacion']; 
-            $quotation2->save();
-			$this->sendmail($quotation);
+			Log::info('Previo a try/catch.');
+			try
+			{
+				Log::info('Entro try/catch.');
+				if (isset($quotation['enviar'])) {
+					$quotation2->estado_cotizacion = '2';//1.espera 2.elaborada 3.enviado 4.autorizado
+					Log::info('Cambio estado.');
+					$this->sendmail($quotation);
+					Log::info('Envio Correo Ok.');
+				}
+				Log::info('Salio IF try/catch.');
+			}
+			catch (Exception $e)
+			{
+				$quotation2->estado_cotizacion = $quotation['estado_cotizacion']; // 1.espera 2.elaborada 3.enviado 4.autorizado 
+				Log::info('Excepcion' . $e);
+			}
+			$quotation2->save();
             return Redirect::intended('/quotationlist');
             
         }
@@ -157,27 +183,60 @@ class QuotationController extends \BaseController {
     }
 
     public function sendmail($data) {		
-    	/*
+    	
+		Auth::user()->mail
+		'smtp-mail.outlook.com'
+		
 		$config = array(
-    			'driver' => $mail->driver,
-    			'host' => $mail->host,
-    			'port' => $mail->port,
-    			'from' => array('address' => $mail->from_address, 'name' => $mail->from_name),
-    			'encryption' => $mail->encryption,
-    			'username' => $mail->username,
-    			'password' => $mail->password,
+    			'driver' => 'smtp',
+    			'host' => 'smtp.gmail.com',
+    			'port' => 465,
+    			'from' => array('address' => 'jotallamas@gmail.com', 'name' => 'Jorge Llamas'),
+    			'encryption' => 'ssl',
+    			'username' => 'jotallamas@gmail.com',
+    			'password' => 'felaj023',
     			'sendmail' => '/usr/sbin/sendmail -bs',
     			'pretend' => false
     	);
     	Config::set('mail',$config);
-		*/
-    	 
+		 
     	Mail::send('emails.welcome', $data, function($message) use ($data)
     	 {
     	 $message
     	 ->to($data['email'], $data['cliente'])
-    	 ->subject('Litografía Los Alpes - Cotización');
-    	});    	
+    	 ->subject('LitoApp - ' . Auth::user()->razon_social . ' - Cotización');
+    	});
+		/*
+		// setting the username and password from post data
+		//$username = 'jotallamas@gmail.com';
+		//$password = 'felaj023';
+		$body = View::make('emails.welcome')->with('data', $data);
+		$subject = 'LitoApp - ' . Auth::user()->razon_social . ' - Cotización';
+		
+		// setting the server, port and encryption
+		$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
+		  ->setUsername('jotallamas@gmail.com')
+		  ->setPassword('felaj023');
+		
+		// creating the Swift_Mailer instance and pass the config settings
+		$mailer = Swift_Mailer::newInstance($transport);
+		
+		// configuring the Swift mail instance with all details
+		$message = Swift_Message::newInstance($subject)
+		  ->setFrom(array($username => Auth::user()->razon_social))
+		  ->setTo(array($data['email'] => $data['cliente']))
+		  ->setBody($body, 'text/html');
+		  
+		try
+		{
+		  $mailer->send($message);
+		  echo 'Mail sent... Enoy.';
+		}
+		catch (Exception $e)
+		{
+		  die('Error sending email. ' . $e);
+		}
+		*/
     	return true;
     }
 }

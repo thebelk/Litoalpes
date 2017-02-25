@@ -5,16 +5,18 @@
 <meta name="viewport" content="width=device-width" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Bienvenido a LitoApp!</title>
+<title>LitoApp</title>
 <link rel="stylesheet" type="text/css" href="email.css" />
 
 </head>
-
+<?php
+setlocale(LC_ALL, 'es_CO')
+?>
 <body>
 	<div class="container">
 		<div class="content-email">
 			<div id="page1-div" style="position:relative;width:918px;height:1188px;">
-				<p style="position:absolute;top:254px;left:61px;white-space:nowrap"><i>Cartagena&#160;de Indias,{{Auth::user()->created_at }}</i></p>
+				<p style="position:absolute;top:254px;left:61px;white-space:nowrap"><i>Cartagena&#160;de Indias, {{ strftime("%B %d de %Y") }}</i></p>
 				<p style="position:absolute;top:311px;left:61px;white-space:nowrap"><i>Señores:</i></p>
 				<p style="position:absolute;top:338px;left:61px;white-space:nowrap"><b>@if($empresa==null){{ $cliente }}.  @else {{ $empresa }}. @endif </b></p>
 				<p style="position:absolute;top:332px;left:61px;white-space:nowrap"><b>Nit/C.C.&#160;{{ $nit_cc }}.</b></p>

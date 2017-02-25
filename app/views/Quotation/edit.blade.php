@@ -192,7 +192,7 @@
                         </div>
                         <div class="button col-xs-12"align="right">
                             {{ Form::button('Resetear', array('type' => 'reset', 'class' => 'btn btn-default')) }} 
-                            {{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success')) }}  
+                            {{ Form::button('Guardar', array('type' => 'submit', 'class' => 'btn  btn-success', 'name' => 'guardar', 'value' => 'guardar', 'id' => 'guardar')) }}  
                         </div>
                         <div class="col-xs-12  imp"> 
                             <br>
@@ -202,7 +202,7 @@
                             </div>
                         </div>
                         <div class="button  "align="center">                      
-                            {{ Form::button('Enviar', array('type' => 'submit', 'class' => 'btn  btn-success')) }}
+                            {{ Form::button('Enviar', array('type' => 'submit', 'class' => 'btn  btn-success', 'name' => 'enviar', 'value' => 'enviar', 'id' => 'enviar')) }}  
                         </div>
                         <br>
                     </div>	
