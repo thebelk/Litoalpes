@@ -68,7 +68,7 @@
         @show        
         <div id="container ">
             <div class="row center">
-                <div class="col-xs-5 phone">
+                <div class="col-xs-6 phone">
                     <center>
                         <h1>Bienvenido  </h1>
                         <h4>
@@ -84,7 +84,7 @@
                     </center>
                 </div>
                 
-                <div class="col-xs-5 phone">
+                <div class="col-xs-6 phone">
 					<center>
                         <div class="row panel  "style="  border-radius: 8px ">
                             <div class="panel-body">

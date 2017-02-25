@@ -63,7 +63,7 @@
     <div id="sidebar">                           
         <div class="list-group">
             <a href="/customer/{{$customer->id}}/profile" class="list-group-item  text-center">                           
-                <h5 class="glyphicon glyphicon-user"></h5><br/><h5>
+                <h5 class="glyphicon glyphicon-user"></h5 ><br/><h5 class="cel">
                     @if($customer->empresa=="")
                     {{ $customer->cliente }} 
                     @endif
@@ -72,10 +72,10 @@
                 </h5> 
             </a>  
             <a href="/phonebook/create" class="list-group-item  active text-center">                           
-                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Contato </h4>
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4 class="cel">Nuevo Contato </h4>
             </a> 
             <a href="/phonebook" class="list-group-item  text-center">                           
-                <h5 class="glyphicon glyphicon-earphone"></h5><br/><h4>Contactos | Proveedor</h4>
+                <h5 class="glyphicon glyphicon-earphone"></h5><br/><h4 class="cel">Contactos | Proveedor</h4>
             </a>
         </div>                     
     </div>

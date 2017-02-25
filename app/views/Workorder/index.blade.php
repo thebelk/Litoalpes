@@ -13,9 +13,7 @@
         <h2 class="til">{{ Auth::user()->representante}}  </h2>
         <h5> Nit: {{ Auth::user()->nit_cc}}  </h5>
         <h5>Telefono: {{ Auth::user()->telefono}} </h5>
-        <h5>Celular: {{ Auth::user()->celular}} </h5>   
-        <h5>{{ Auth::user()->otro}} </h5>       
-
+        <h5>Celular: {{ Auth::user()->celular}} </h5>
     </div>
     <h5>{{ HTML::link('/user/'.Auth::user()->id.'/edit','Editar', array('class' => 'btn btn-link'), false)}}</h5> 
      <div class="accordion" id="accordion2">
@@ -51,10 +49,10 @@
     <div id="sidebar"> 
         <div class="list-group">
 			<a href="/phonebook/create" class="list-group-item  text-center">                           
-                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4>Nuevo Contato </h4>
+                <h5 class="glyphicon glyphicon-plus"></h5><br/><h4 class="cel">Nuevo Contato </h4>
             </a> 
             <a href="/phonebook" class="list-group-item active text-center">
-                <h5 class="list-group-item-heading glyphicon glyphicon-earphone"></h5><h4>Contactos | Proveedor</h4>
+                <h5 class="list-group-item-heading glyphicon glyphicon-earphone"></h5><h4 class="cel">Contactos | Proveedor</h4>
             </a> 
         </div>
     </div>

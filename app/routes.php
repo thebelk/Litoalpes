@@ -53,3 +53,9 @@ Route::get('/', 'SessionsController@create');
 Route::resource('notifications', 'NotificationController');
 Route::get('notificationlist', 'NotificationController@index');
 Route::get('notifications/{notification}/details', 'NotificationController@show');
+
+Route::resource('income', 'IncomeController');
+Route::get('incomelist', 'IncomeController@index');
+
+Route::resource('Configuration', 'ConfigurationController');
+Route::get('nConfigurationlist', 'ConfigurationController@index');

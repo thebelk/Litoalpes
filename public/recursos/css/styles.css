@@ -398,20 +398,51 @@ border-radius: 3px;
 		height:27%;
 		margin-top:-15px;
 	}
+	
 	.list-group-item{
-		width:25%;
-		height:90px;
+		width:20%;
+		height:20%;
 		float:left;
-		font-size: small;
-		margin-top:-35px;
+		
+		margin-top:-46px;
 		padding:6px;
 		margin-left:5px;
 		
 	}
-	.row{
-		padding:10px;
-		margin-top:30px;
+	h5.cel{
+		
+		font-size: x-small;
+		margin:0;
+		margin-top:-3px;
+		
 	}
+	h4.cel{
+		
+		font-size: x-small;
+		margin:0;
+		margin-top:-3px;
+		
+	}
+	.col-sm-9{
+		padding:0;
+	}
+	.container-fluid{
+		width:100%;
+		padding:0;
+	}
+	.input-group {
+				
+		width:60%;
+		margin-left:25px;
+	}
+	
+	.accordion{
+		display:none;
+	}
+	.row{
+		padding-top:30px;
+	}
+	
 }
 
 @media screen and (min-width: 268px) {
