@@ -1,13 +1,13 @@
 <?php
 
-class Customer extends Eloquent {
+class Configuration extends Eloquent {
 
-    protected $table = 'customers';
+   /*-- protected $table = 'configuration';*/
     protected $fillable = array(
         'id',
         'correo_empre',
         'contraseña_empre',
-        'conficontraseña', 
+        'confi_contraseña', 
         'val_iva',                        
         'users_id'
     );
