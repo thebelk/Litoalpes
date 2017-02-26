@@ -109,7 +109,7 @@
 								<div class="panel panel-default "> 
 									<div class="row"  align="justify">
 										<!--    <h2  align="center"> NUEVO CONTACTO </h2>-->                                                      
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('nombre', 'CONTACTO:') }}                                                    
 												{{ Form::text('tipo_contacto',1, array('hidden' => 'true')) }}
@@ -119,51 +119,51 @@
 												{{ Form::text('nombre', $phonebook->nombre, array('placeholder' => 'Nombre Contacto', 'class' => 'form-control', 'required' => 'required')) }}
 											</div>
 										</div>										
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('nit', 'NIT / C.C:') }}
 												{{ Form::text('nit', $phonebook->nit, array('placeholder' => 'Nit / C.C:', 'class' => 'form-control')) }}
 											</div>
 										</div>
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('empresa', 'EMPRESA:') }}
 												{{ Form::text('empresa', $phonebook->empresa, array('placeholder' => 'Nombre de Empresa', 'class' => 'form-control')) }}
 											</div>
 											<br>
 										</div>
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('telefono', 'TELEFONO:') }}
 												{{ Form::text('telefono', $phonebook->telefono, array('placeholder' => 'Telefono', 'class' => 'form-control')) }}
 											</div>
 										</div> 
-										<div class="col-xs-4">								
+										<div class="col-xs-4 imp">								
 											<div class='form-group form-register'>
 												{{ Form::label('celular', 'CELULAR:') }}
 												{{ Form::text('celular', $phonebook->celular, array('placeholder' => 'Celular', 'class' => 'form-control')) }}
 											</div>
 										</div>  
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('email', 'E-MAIL:')}}
 												{{ Form::text('email', $phonebook->email, array('placeholder' => 'Email', 'class' => 'form-control')) }}
 											</div>
 											<br>
 										</div>                         
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('direccion', 'DIRECCIÓN:') }}
 												{{ Form::text('direccion', $phonebook->direccion, array('placeholder' => 'Direccion', 'class' => 'form-control')) }}
 											</div>
 										</div>                               
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('ciudad', 'CIUDAD:') }}
 												{{ Form::text('ciudad', $phonebook->ciudad, array('placeholder' => 'Ciudad', 'class' => 'form-control')) }}
 											</div>
 										</div>
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('pais', 'PAIS:') }}
 												{{ Form::text('pais', $phonebook->pais, array('placeholder' => 'País', 'class' => 'form-control')) }}
@@ -190,7 +190,7 @@
 									{{Form::open(array('url' => '/phonebook/'.$phonebook->id,'method' => 'PUT', 'role'=>'form')) }}
 									<div class="row"  align="justify">                                        
 										<!--   <h2  align="center">NUEVO PROVEEDOR</h2>-->                                                                                  
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('nombre', 'PROVEEDOR:') }}
 												{{ Form::text('tipo_contacto',2, array('hidden' => 'true')) }}
@@ -198,13 +198,13 @@
 												{{ Form::text('nombre', $phonebook->nombre, array('placeholder' => 'Nombre Proveedor', 'class' => 'form-control', 'required' => 'required')) }}
 											</div>
 										</div>
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('nit', 'NIT/C.C:') }}
 												{{ Form::text('nit', $phonebook->nit, array('placeholder' => 'Nit/C.C', 'class' => 'form-control')) }}
 											</div>
 										</div>
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('empresa', 'EMPRESA:') }}
 												{{ Form::text('empresa', $phonebook->empresa, array('placeholder' => 'Nombre de Empresa', 'class' => 'form-control', 'required' => 'required')) }}
@@ -213,38 +213,38 @@
 										</div>
 										
 										
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('telefono', 'TELEFONO:') }}
 												{{ Form::text('telefono', $phonebook->telefono, array('placeholder' => 'Telefono', 'class' => 'form-control')) }}
 											</div>
 										</div> 
-										<div class="col-xs-4">								
+										<div class="col-xs-4 imp">								
 											<div class='form-group form-register'>
 												{{ Form::label('celular', 'CELULAR:') }}
 												{{ Form::text('celular', $phonebook->celular, array('placeholder' => 'Celular', 'class' => 'form-control')) }}
 											</div>
 										</div>  
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('email', 'E-MAIL:')}}
 												{{ Form::text('email', $phonebook->email, array('placeholder' => 'Email', 'class' => 'form-control')) }}
 											</div>
 											<br>
 										</div>                         
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('direccion', 'DIRECCIÓN:') }}
 												{{ Form::text('direccion', $phonebook->direccion, array('placeholder' => 'Direccion', 'class' => 'form-control')) }}
 											</div>
 										</div>                               
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('ciudad', 'CIUDAD:') }}
 												{{ Form::text('ciudad', $phonebook->ciudad, array('placeholder' => 'Ciudad', 'class' => 'form-control')) }}
 											</div>
 										</div>
-										<div class="col-xs-4">
+										<div class="col-xs-4 imp">
 											<div class='form-group form-register'>
 												{{ Form::label('pais', 'PAIS:') }}
 												{{ Form::text('pais', $phonebook->pais, array('placeholder' => 'País', 'class' => 'form-control')) }}
@@ -253,14 +253,14 @@
 										</div> 
 												<h2>Productos  o servicio que suministra </h2>
 										
-										<div class="col-xs-4"><br>
+										<div class="col-xs-4 imp"><br>
 											<div class='form-group form-register'>
 												{{ Form::label('tipo_actividad ', 'ACTIVIDAD:PRODUCTO/SERVICIO') }}
 												{{ Form::select('tipo_actividad',array('1' => 'Seleccionar', '2' => 'Servicio','3' => 'Producto'),$phonebook->tipo_actividad ,array('class' => 'form-control')); }}
 
 											</div>
 										</div>
-										<div class="col-xs-8"><br>
+										<div class="col-xs-8 imp"><br>
 											<div class='form-group form-register tex'>
 												{{ Form::label('descripcion_actividad ', ' DESCRIPCIÓN DE ACTIVIDAD:') }}
 												{{ Form::textarea('descripcion_actividad', $phonebook->descripcion_actividad, array('rows' => '6', 'placeholder' => 'Detalles de Actividad', 'class' => 'form-control')) }}

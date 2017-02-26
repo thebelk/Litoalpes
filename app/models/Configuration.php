@@ -6,8 +6,8 @@ class Configuration extends Eloquent {
     protected $fillable = array(
         'id',
         'correo_empre',
-        'contraseña_empre',
-        'confi_contraseña', 
+        'contrasena_empre',
+        'confi_contrasena', 
         'val_iva',                        
         'users_id'
     );

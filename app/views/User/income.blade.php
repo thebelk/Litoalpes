@@ -80,22 +80,22 @@
                     <h5> Ingresos del </h5> 
                     <div class="row"  align="justify"> 
 
-                        <div class="col-xs-3" >
+                        <div class="col-xs-3 imp2" >
                             <h5>Día de hoy</h5>
                             <h2>0,00$</h2>
                             <h5 class="color">Iva:0,00$</h5>
                         </div>
-                        <div class="col-xs-3" >
+                        <div class="col-xs-3 imp2" >
                             <h5>Ayer</h5>
                             <h2>0,00$</h2>
                             <h5 class="color">Iva:0,00$</h5>
                         </div>
-                        <div class="col-xs-3" >
+                        <div class="col-xs-3 imp2" >
                             <h5>Últimos 7 días</h5>
                             <h2>0,00$</h2>
                             <h5 class="color">Iva:0,00$</h5>
                         </div>
-                        <div class="col-xs-3" >
+                        <div class="col-xs-3 imp2" >
                             <h5>Últimos 30 días</h5>
                             <h2>0,00$</h2>
                             <h5 class="color">Iva:0,00$</h5>
@@ -103,18 +103,18 @@
                     </div>
                     <div class="row"  align="justify"> 
 
-                        <div class="col-xs-3" >
+                        <div class="col-xs-3 imp2" >
                             <h5>Saldo actual</h5>
                             <h2>0,00$</h2>
                         </div>
-                        <div class="col-xs-3" >
+                        <div class="col-xs-3 imp2" >
                             <h5>Saldo pendiente</h5>
                             <h2>0,00$</h2>
                         </div>
-                        <div class="col-xs-3" >
+                        <div class="col-xs-3 imp2" >
 
                         </div>
-                        <div class="col-xs-3" >
+                        <div class="col-xs-3 imp" >
                             <h4>Ingresos finales</h4>
                             <h2>0,00$</h2>
                         </div>
@@ -270,7 +270,7 @@
                 //MAS IVA
                 if (valor != null)
                 {
-                    document.getElementById('total').value = Math.ceil(document.getElementById('valor_trabajo').value * 1.16);
+                    document.getElementById('total').value = Math.ceil(document.getElementById('valor_trabajo').value * 1.19);
                     document.getElementById('subtotal').value = document.getElementById('valor_trabajo').value;
                     document.getElementById('valor_iva').hidden = false;
                     document.getElementById('valor_iva').innerHTML = document.getElementById('total').value - document.getElementById('valor_trabajo').value;
@@ -282,7 +282,7 @@
                 //CON IVA				
                 if (valor != null)
                 {
-                    document.getElementById('subtotal').value = Math.ceil(document.getElementById('valor_trabajo').value / 1.16);
+                    document.getElementById('subtotal').value = Math.ceil(document.getElementById('valor_trabajo').value / 1.19);
                     document.getElementById('valor_iva').hidden = false;
                     document.getElementById('valor_iva').innerHTML = document.getElementById('valor_trabajo').value - document.getElementById('subtotal').value;
                     document.getElementById('total').value = document.getElementById('valor_trabajo').value;

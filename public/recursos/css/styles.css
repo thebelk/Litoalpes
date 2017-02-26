@@ -136,6 +136,7 @@ h2,h3.color{
 		
 	
 }
+
 .menulog{
     margin-left:80px;
     margin-right:80px;
@@ -385,7 +386,11 @@ border-radius: 3px;
 	margin-left: 40px;
 	
 	}
-
+	.imp2{
+	width: 49%;
+	float:left;
+	
+	}
 	.highlight{margin-top:-8px;}
 	.imge{
 		display:none;
@@ -399,16 +404,30 @@ border-radius: 3px;
 		margin-top:-15px;
 	}
 	
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a{
+	color:#fff;
+	
+}
 	.list-group-item{
 		width:20%;
 		height:20%;
 		float:left;
-		
 		margin-top:-46px;
 		padding:6px;
 		margin-left:5px;
 		
 	}
+	
+	.phone3{
+		margin-bottom: 10px;
+		width:100%;
+		margin-top:1px;
+		
+	}
+	.phonecel{
+		font-size: x-small;
+	}
+
 	h5.cel{
 		
 		font-size: x-small;
