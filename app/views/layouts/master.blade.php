@@ -67,7 +67,8 @@
                             <li class="dropdown dropdown-toggle">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i> Ingresos <span class="badge">0</span></a>
                                 <ul class="dropdown-menu" role="menu">
-									<li><a class="dropdown-header" href="/user/{user}/income">Pagos</a></li>
+									<li>{{ HTML::link('/user/'.Auth::user()->id.'/income','Pagos', array('class' => 'dropdown-header'), false)}}</li>
+									<!--<li><a class="dropdown-header" href="/user/{user}/income">Pagos</a></li>-->
                                 </ul>
                             </li>
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" class="navbar-link"><i class="glyphicon glyphicon-user"></i><span class="caret"></span></a>
