@@ -84,20 +84,20 @@
 				<h4 class="modal-title">Configurar correo para enviar cotizaciónes</h4>
 			  </div>
 			  <div class="modal-body">
-					<form class="form-horizontal">
+					{{Form::open(array('url' => '/quotation/configmail', 'method'=> 'POST', 'role'=>'form', 'class'=>'form-horizontal', 'id' => 'config_correo')) }}
 						<fieldset>
 
 						<!-- Text input-->
 						  <div class="col-md-6">
 							  {{ Form::label('', 'Correo Electronico:',array('class' => 'control-label')) }}
-                              {{ Form::email('', null, array('placeholder' => '','id' => 'mail1','name' => 'mail1', 'class' => 'form-control input-md','required' => 'required')) }}
+                              {{ Form::email('email', null, array('placeholder' => '','id' => 'email','name' => 'email', 'class' => 'form-control input-md','required' => 'required')) }}
 						  </div>
 
 
 						<!-- Text input-->
 						 <div class="col-md-6">
 						   {{ Form::label('', 'Confirme Correo Electronico:',array('class' => 'control-label')) }}
-                           {{ Form::email('', null, array('placeholder' => '','id' => 'mail2','name' => 'mail2', 'class' => 'form-control input-md','required' => 'required')) }}
+                           {{ Form::email('', null, array('placeholder' => '','id' => 'email2','name' => 'email2', 'class' => 'form-control input-md','required' => 'required')) }}
 						</div>
 
 						<!-- Password input-->
@@ -123,7 +123,7 @@
 						</div>
 
 						</fieldset>
-					</form>
+					{{ Form::close() }}
 				
 			  </div>
 			  <div class="modal-footer">
@@ -220,5 +220,6 @@
         wheelStep: 2,
         allowPageScroll: true
     });
+	
 </script>
 @stop@stop

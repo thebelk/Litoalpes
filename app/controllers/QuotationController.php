@@ -182,39 +182,62 @@ class QuotationController extends \BaseController {
         $quotation->delete();
         return Redirect::intended('/quotationlist');
     }
-
-    public function sendmail($data) {		
-    	
+	
+	public function configmail() {
+		$data = Input::all();
+		$encryption = '';
 		$host = '';
 		$port = 0;
-		$encryption = '';
-		if ((strpos(Auth::user()->email, 'hotmail.com') !== false)
-		 or (strpos(Auth::user()->email, 'outlook.com') !== false)) {
+		if ((strpos($data['email'], 'hotmail') !== false)
+		 or (strpos($data['email'], 'outlook') !== false)) {
 			$host = 'smtp-mail.outlook.com';
 			$port = 587;
 			$encryption = 'tls';
+			Log::info('Configuro Hotmail Ok');
 		}
 		else{
-			if ((strpos(Auth::user()->email, 'gmail.com') !== false)) {
-			$host = 'smtp.gmail.com';
-			$port = 465;
-			$encryption = 'ssl';
+			if (strpos($data['email'], 'gmail') !== false) {
+				$host = 'smtp.gmail.com';
+				$port = 465;
+				$encryption = 'ssl';
+				Log::info('Configuro Gmail Ok');
 			}
+			else{
+				if (strpos($data['email'], 'yahoo') !== false) {
+					$host = 'smtp.mail.yahoo.com';
+					$port = 465;
+					$encryption = 'ssl';
+					Log::info('Configuro Yahoo Ok');
+				}
+			}			
 		}
-		
+		/*
 		$config = array(
-    			'driver' => 'smtp',
-    			'host' => $host,
-    			'port' => $port,
-    			'from' => array('address' => Auth::user()->email, 'name' => Auth::user()->razon_social),
-    			'encryption' => $encryption,
-    			'username' => Auth::user()->email,
-    			'password' => $data['clave_correo'],
-    			'sendmail' => '/usr/sbin/sendmail -bs',
-    			'pretend' => false
+    			'mail.driver' => 'smtp',
+    			'mail.host' => $host,
+    			'mail.port' => $port,
+    			'mail.from' => array('address' => $data['email'], 'name' => Auth::user()->razon_social),
+    			'mail.encryption' => $encryption,
+    			'mail.username' => $data['email'],
+    			'mail.password' => $data['clave_correo'],
+    			'mail.sendmail' => '/usr/sbin/sendmail -bs',
+    			'mail.pretend' => false
     	);
-    	Config::set('mail',$config);
-		 
+		*/
+		Config::write(['mail.driver','mail.host','mail.port','mail.encryption',
+						'mail.username','mail.password','mail.sendmail','mail.pretend'],
+						['smtp',$host,$port,$encryption,$data['email'],$data['clave_correo'],'/usr/sbin/sendmail -bs',false]);
+						
+		$array = Config::get('mail');
+		$array['from']['address'] = $data['email'];
+		$array['from']['name'] = Auth::user()->razon_social;
+		$data = var_export($array, 1);
+		File::put(app_path() . '/config/mail.php', "<?php\n return $data;");
+		return Redirect::intended('/quotationlist')
+                            ->with('flash', 'The new quotation has been created');
+	}
+
+    public function sendmail($data) {		
     	Mail::send('emails.welcome', $data, function($message) use ($data)
     	 {
     	 $message

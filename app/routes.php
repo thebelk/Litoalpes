@@ -14,7 +14,7 @@
 Route::resource('user', 'UserController');
 Route::get('user', 'UserController@index');
 Route::get('signup', 'UserController@create');
-Route::get('user/{user}/income', 'UserController@show');
+Route::get('user/{user}/income', 'IncomeController@index');
 Route::get('user/{user}/edit', 'UserController@edit');
 
 Route::resource('customer', 'CustomerController');
@@ -29,6 +29,8 @@ Route::get('quotationlist', 'QuotationController@index');
 Route::get('quotation/create', 'QuotationController@create');
 Route::get('quotation/{quotation}/edit', 'QuotationController@edit');
 Route::delete('/quotation/{quotation}', 'QuotationController@destroy');
+Route::post('quotation/configmail', 'QuotationController@configmail');
+
 
 Route::resource('workorder', 'WorkorderController');
 Route::get('workorderlist', 'WorkorderController@index');
