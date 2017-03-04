@@ -32,7 +32,7 @@
                             <li><a href="/user"><i class="glyphicon glyphicon-home"></i> Home</a></li>
                             <li><a href="/customerlist" role="button" data-toggle="modal"><i class="glyphicon glyphicon-user"></i> Clientes</a>  
 							<li><a href="/workorderlist" role="button" data-toggle="modal"><i class="glyphicon glyphicon-th-list"></i> Trabajos</a>
-							<li><a href="/quotation" role="button" data-toggle="modal"><i class="glyphicon glyphicon-pencil"></i> Cotizar</a>
+							<li><a href="/quotationlist" role="button" data-toggle="modal"><i class="glyphicon glyphicon-pencil"></i> Cotizar</a>
                             <li>
                                 @if(DB::table('notifications')->count() === 0)
                                 <a href="/notifications" role="button" data-toggle="modal"><i class="glyphicon glyphicon-bell"></i> Notificaciones</a>

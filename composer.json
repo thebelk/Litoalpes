@@ -6,7 +6,9 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"swiftmailer/swiftmailer": "^5.4"
+		"swiftmailer/swiftmailer": "^5.4",
+		"rasim/config": "dev-master"
+		
 	},
 	"autoload": {
 		"classmap": [

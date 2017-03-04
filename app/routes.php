@@ -29,6 +29,8 @@ Route::get('quotationlist', 'QuotationController@index');
 Route::get('quotation/create', 'QuotationController@create');
 Route::get('quotation/{quotation}/edit', 'QuotationController@edit');
 Route::delete('/quotation/{quotation}', 'QuotationController@destroy');
+Route::post('quotation/configmail', 'QuotationController@configmail');
+
 
 Route::resource('workorder', 'WorkorderController');
 Route::get('workorderlist', 'WorkorderController@index');
