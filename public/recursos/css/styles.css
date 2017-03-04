@@ -316,6 +316,9 @@ border-radius: 3px;
     color:#1676A3;
     padding:6px;
 }
+.address{
+	margin-left:85%;
+}
 .badgeadmin{
     background-color:#FFFFFF;
     color:#1676A3;
@@ -370,6 +373,11 @@ border-radius: 3px;
 	color:#1667a3;
 	
 }
+
+
+
+
+
 @media (max-width: 768px) {
 
 	.phone{
@@ -385,6 +393,9 @@ border-radius: 3px;
 	
 	margin-left: 40px;
 	
+	}
+	.address{
+	margin-left:55%;
 	}
 	.imp2{
 	width: 49%;

@@ -69,7 +69,70 @@
   
  @section('container3')   
 <div class="col col-sm-9">
-    <div class="row ">                             
+    <div class="row ">  
+		<div class="address">
+		  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ordine">Configurar Correo </button>
+		</div>
+		<!-- Modal -->
+		<div id="ordine" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h4 class="modal-title">Configurar correo para enviar cotizaciónes</h4>
+			  </div>
+			  <div class="modal-body">
+					<form class="form-horizontal">
+						<fieldset>
+
+						<!-- Text input-->
+						  <div class="col-md-6">
+							  {{ Form::label('', 'Correo Electronico:',array('class' => 'control-label')) }}
+                              {{ Form::email('', null, array('placeholder' => '','id' => 'mail1','name' => 'mail1', 'class' => 'form-control input-md','required' => 'required')) }}
+						  </div>
+
+
+						<!-- Text input-->
+						 <div class="col-md-6">
+						   {{ Form::label('', 'Confirme Correo Electronico:',array('class' => 'control-label')) }}
+                           {{ Form::email('', null, array('placeholder' => '','id' => 'mail2','name' => 'mail2', 'class' => 'form-control input-md','required' => 'required')) }}
+						</div>
+
+						<!-- Password input-->
+						 <div class="col-md-6">
+							{{ Form::label('', 'Contraseña:',array('class' => 'control-label')) }}
+							{{ Form::password('clave_correo', array('placeholder' => '', 'class' => 'form-control', 'required' => 'required')) }}
+						</div>
+
+						<!-- Password input-->
+
+						  <div class="col-md-6">
+							{{ Form::label('', 'Confirme Contraseña:',array('class' => 'control-label')) }}
+							{{ Form::password('', array('placeholder' => '', 'class' => 'form-control', 'required' => 'required')) }}
+							<br>
+						  </div>
+
+						<!-- Button -->
+						  <div class="col-md-12">
+							
+							{{ Form::button('Limpiar', array('type' => 'reset', 'class' => ' btn btn-primary')) }}
+							{{ Form::button('Registrar', array('type' => 'submit', 'class' => 'btn btn-success ')) }}
+							
+						</div>
+
+						</fieldset>
+					</form>
+				
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+
+		  </div>
+		</div>
         <!-- cho section -->
             <div class="titulo">
                 <h3 class="glyphicon glyphicon-pencil color" ></h3>
