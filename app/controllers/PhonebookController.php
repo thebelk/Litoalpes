@@ -58,7 +58,7 @@ class PhonebookController extends \BaseController {
             Phonebook::create($post_data);
 
             return Redirect::route('phonebook.index')
-                            ->with('flash', 'The new phonebook has been created');
+                            ->with('message', 'El nuevo contacto ha sido creado');
         }
         return Redirect::route('phonebook.create')
                         ->withInput()
@@ -112,6 +112,7 @@ class PhonebookController extends \BaseController {
             'tipo_contacto'=> ''
             
         );
+		
         $validate = Validator::make($phonebook, $rules);
         if ($validate) {
             $phonebook2 = Phonebook::find($phonebook['id']);
@@ -127,9 +128,9 @@ class PhonebookController extends \BaseController {
             $phonebook2->ciudad= $phonebook['ciudad'];
             $phonebook2->pais= $phonebook['pais'];
             $phonebook2->tipo_contacto= $phonebook['tipo_contacto'];
-            $phonebook2->save();
-            Session::flash('message', 'Successfully updated phonebook!');
-            return Redirect::intended('/phonebooklist');
+            $phonebook2->save();          
+            return Redirect::intended('/phonebooklist')
+							->with('message', 'Contacto actualizado con éxito');
         }
     }
 

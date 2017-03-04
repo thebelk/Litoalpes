@@ -143,15 +143,15 @@ class WorkorderController extends \BaseController {
         if ($validate) {
             //$customer = Customer::find($id);
             //$post_data['customers_id'] = $customer->id;
-            Workorder::create($post_data);
+           $workorder = Workorder::create($post_data);
             /*
 
               if($post_data['estado_trabajo']==0){
               return Redirect::intended('customer/' . $post_data['customers_id'] . '/workorder/edit')
-              } */
+              } */ 
 
-            return Redirect::intended('customer/' . $post_data['customers_id'] . '/profile')
-                            ->with('flash', 'The new customer has been created');
+            return Redirect::intended('worklist/' . $workorder['id'] . '/ver')
+							->with('message', 'El nuevo trabajo ha sido creado');
         }
         return Redirect::route('workorder.create')
                         ->withInput()
@@ -391,7 +391,8 @@ class WorkorderController extends \BaseController {
             $workorder2->autorizado_acabados = $workorder['autorizado_acabados'];
 
             $workorder2->save();
-            return Redirect::intended('worklist/' . $id . '/ver');
+            return Redirect::intended('worklist/' . $id . '/ver')
+							->with('message', 'Trabajo actualizado con éxito');
         }
     }
 

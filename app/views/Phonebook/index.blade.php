@@ -71,6 +71,10 @@
     <div class="row ">                             
         <!-- cho section -->
         <div class="bhoechie-tab-content active tam">
+			@if(Session::has('message'))
+					<p class="alert alert-info">{{ Session::get('message') }}</p>
+			@endif
+		
             <div class="titulo">
                 <h3 class="glyphicon glyphicon-pencil color" ></h3>
                 <h4>  Contactos & Provedor </h4>  

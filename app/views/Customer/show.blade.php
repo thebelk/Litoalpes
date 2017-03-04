@@ -81,7 +81,10 @@
   
  @section('container3')
 <div class="col col-sm-9">
-    <div class="row ">                    
+    <div class="row "> 
+				@if(Session::has('message'))
+					<p class="alert alert-info">{{ Session::get('message') }}</p>
+				@endif
             <!-- work section -->
                 <div class="titulo">
                     <h3 class="glyphicon glyphicon-th-list color" ></h3>
