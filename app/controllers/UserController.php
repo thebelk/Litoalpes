@@ -62,7 +62,8 @@ class UserController extends \BaseController {
             $post_data['password'] = Hash::make($post_data['password']);
             $post_data['password_confirmation'] = Hash::make($post_data['password_confirmation']);
             User::create($post_data);
-            return Redirect::intended('/login');
+            return Redirect::intended('/login')
+				->with('message','El nuevo usuario ha sido creado');
         } else {
             return View::make('user.create');
         }
@@ -129,6 +130,13 @@ class UserController extends \BaseController {
                 'email' => 'Required|Confirmed|Email',
                 'email_confirmation' => 'Required|Email'
             ];
+			
+			$messages = array(
+            'required' => ' Se: requiere los siguientes campo',
+            'email' => ' El: campo debe ser un correo electrónico válido.',
+            'email.unique' => 'El correo electrónico ya está registrado.',
+            'confirmed' => 'El: campo tiene que ser igual.'
+			);
             $validate = Validator::make($user, $rules);
             if ($validate->passes()) {
                 $user2 = User::find($user['id']);
@@ -139,9 +147,11 @@ class UserController extends \BaseController {
                 $user2->telefono = $user['telefono'];
                 $user2->celular = $user['celular'];
                 $user2->save();
-                return Redirect::intended('/user');
+                return Redirect::intended('/user')
+					->with('message',' Usuario actualizado con éxito');;
             }
-            return Redirect::intended('/user/' . $user['id'] . '/edit');
+            return Redirect::intended('/user/' . $user['id'] . '/edit')
+							->messages();
         }
     }
 

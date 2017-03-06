@@ -19,7 +19,10 @@
 
             </div>
             <div class="container-">     
-                <nav class="navbar navbar-static" role="navigation">					  
+                <nav class="navbar navbar-static" role="navigation">
+					@if(Session::has('message'))
+					<p class="alert alert-info">{{ Session::get('message') }}</p>
+					@endif
                     <div class="nav-collapse collase">
                         <div class=" navbar-left">
                             <div class="bootoom">

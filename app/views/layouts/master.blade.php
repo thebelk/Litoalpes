@@ -131,13 +131,13 @@
         <footer id="footer" class="footer">
             <div class="container">							
                 <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
-                    <div class="footer-single"><br>					
+                    <div class="footer-single"><br>	<!--				
                         <h5>UBICACIÓN</h5>
 
                         <p>Alpes Calle 31 A - #70 - 03</p>
                         <p>Tel. (5) 6634041 - Cel. 3106054347 </p>							
 
-                    </div>
+                    </div>-->
                 </div>			
 
                 <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
@@ -146,13 +146,13 @@
                             {{ HTML::image('recursos/img/logo.png', 'a picture') }}
                             </center>
                             
-                                    <h6>Explore</h6>-->
+                                    <h6>Explore</h6>--><!--
                         <ul>
                             <p> litoalpes6677@hotmail.com</p>
                             <p>litografialosalpes@gmail.com</p>
                             <p>Cartagena de Indias - Colombia.</p>
                         </ul>
-                    </div>
+                    </div>-->
                 </div>	
 
                 <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
