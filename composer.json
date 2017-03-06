@@ -6,8 +6,7 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"swiftmailer/swiftmailer": "^5.4",
-		"thujohn/pdf": "^1.0"
+		"swiftmailer/swiftmailer": "^5.4"
 	},
 	"autoload": {
 		"classmap": [

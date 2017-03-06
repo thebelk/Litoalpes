@@ -73,9 +73,6 @@
  @section('container3')
 <div class="col col-sm-9">
     <div class="row "> 
-			@if(Session::has('message'))
-				<p class="alert alert-info">{{ Session::get('message') }}</p>
-			@endif
             <div class="titulo">
                 <h3 class="glyphicon glyphicon-user color" ></h3>
                 <h4> Lista de Clientes</h4>  

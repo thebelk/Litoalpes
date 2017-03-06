@@ -26,8 +26,7 @@ class CustomerController extends \BaseController {
      * @return Response
      */
     public function create() {
-        return View::make('customer.create')
-		->with('message', 'Cliente actualizado con éxito');
+        return View::make('customer.create');
     }
 
     /**
@@ -125,8 +124,7 @@ class CustomerController extends \BaseController {
             $customer2->save();
             // Session::flash('message', 'Successfully updated customer!');
 
-            return Redirect::intended('customer/' . $customer['id'] . '/profile')
-							->with('message', 'Cliente actualizado con éxito');
+            return Redirect::intended('customer/' . $customer['id'] . '/profile');
         }
     }
 
@@ -155,8 +153,7 @@ class CustomerController extends \BaseController {
 			}
 			return View::make('customer.search')->with('customer', $customer);
 		}
-        return Redirect::intended('customer/create')
-						->with('message', 'Cliente no registrado');
+        return Redirect::intended('customer/create');
 		
     }
 }

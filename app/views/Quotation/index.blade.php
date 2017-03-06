@@ -134,9 +134,6 @@
 		  </div>
 		</div>
         <!-- cho section -->
-			@if(Session::has('message'))
-				<br><p class="alert alert-info">{{ Session::get('message') }}</p>
-			@endif
             <div class="titulo">
                 <h3 class="glyphicon glyphicon-pencil color" ></h3>
                 <h4> Listar Cotización</h4> 

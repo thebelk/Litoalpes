@@ -72,7 +72,7 @@ class QuotationController extends \BaseController {
 			}
 			Quotation::create($post_data);
             return Redirect::intended('/quotationlist')
-                            ->with('message', ' La nueva cotización ha sido creada');
+                            ->with('flash', 'The new quotation has been created');
         }
         return Redirect::route('quotation.create')
                         ->withInput()
@@ -165,8 +165,7 @@ class QuotationController extends \BaseController {
 				Log::info('Excepcion' . $e);
 			}
 			$quotation2->save();
-            return Redirect::intended('/quotationlist')
-					->with('message', 'Cotización actualizada con éxito');
+            return Redirect::intended('/quotationlist');
             
         }
     }
