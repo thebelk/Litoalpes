@@ -1,4 +1,4 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 @section('content')
 <!-- page content -->
 	<div class="right_col"  role="main">
@@ -8,7 +8,7 @@
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="x_panel">
 					<div class="x_title">
-						<h2> Consolidar Solicitud de compras</h2>
+						<h2>Solicitud de compras</h2>
 						<ul class="nav navbar-right panel_toolbox">
 							<li><p data-placement="top" data-toggle="tooltip" title="Regresar"><a href="/workflow/proceso" class="btn btn-default btn-xs" data-title="Ver"><span class="glyphicon glyphicon-arrow-left"></span></a></p></li>
 							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
@@ -16,16 +16,36 @@
 						<div class="clearfix"></div>
 					</div>
 					<div class="x_content">
-						<div class="col-md-4 col-md-offset-3 ">
-							<form class="navbar-form navbar-search" role="search">	
+						<div class="col-md-9 col-md-offset-4 ">
+							<form class="navbar-form navbar-search" role="search">
+								<div class="input-group">
+									<input type="text" class="form-control">
+									<div class="input-group-btn">
+										<button type="button" class="btn btn-search btn-danger">
+											<span class="glyphicon glyphicon-search"></span>
+											<span class="label-icon">Buscar</span>
+										</button>
+										<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu pull-right" role="menu">
+										  <li>
+												<a href="#">
+													<span class="glyphicon glyphicon-user"></span>
+													<span class="label-icon">Search By User</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<span class="glyphicon glyphicon-book"></span>
+												<span class="label-icon">Search By Organization</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+									<h5>   Buscar RQS pendientes<h5>
 							</form> 
-							 <div class="filter">
-							  <div id="reportrange" class="pull-center" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-								<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-								<span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
-							  </div>
-							</div>
-							<h5>   Buscar RQS pendientes<h5>
 						</div>
 						<div role="content">
 							<!-- widget content -->
@@ -47,10 +67,6 @@
 																<div class="x_panel">
 																	<div class="x_title">
 																		<h2> Requisicion Interna </h2>
-																		<ul class="nav navbar-right panel_toolbox">
-																		  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-																		  </li>
-																		</ul>
 																		<div class="clearfix"></div>
 																	</div>
 																	<div class="x_content">
@@ -97,7 +113,7 @@
 															<div class="block_content">
 																<div class="x_panel">
 																	<div class="x_title">
-																		<h2>Nueva solicitud de compras </h2>
+																		<h2>Crear solicitud de compras </h2>
 																		<div class="clearfix"></div>
 																	</div>
 																	<div class="x_content">
@@ -108,6 +124,13 @@
 																					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Cod. SC</label>
 																					<div class="col-md-6 col-sm-6 col-xs-12">
 																					  <input type="text" id="first-name"   required="required" class="form-control col-md-7 col-xs-12" disabled>
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Cod. RQS</label>
+																					
+																					<div class="col-md-6 col-sm-6 col-xs-12">
+																					  <input type="text" id="last-name"  name="last-name" required="required" class="form-control col-md-7 col-xs-12" disabled>
 																					</div>
 																				</div>	
 																				<div class="form-group"><br>
@@ -128,7 +151,7 @@
 																</div>
 																	<div class="x_panel">
 																			<div class="x_title">
-																				<h2>Consolidado SC</h2> 
+																				<h2>Listado SC</h2> 
 																				<ul class="nav navbar-right panel_toolbox">
 																				  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 																				  </li>
